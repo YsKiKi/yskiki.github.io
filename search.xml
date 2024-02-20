@@ -1,45 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>基于GitHub的博客搭建</title>
-      <link href="//post/Blog-building/"/>
-      <url>//post/Blog-building/</url>
-      
-        <content type="html"><![CDATA[<h4 id="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"><a href="#前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。" class="headerlink" title="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"></a>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</h4><h3 id="如不具备上述能力，请立即关闭此教程。"><a href="#如不具备上述能力，请立即关闭此教程。" class="headerlink" title="如不具备上述能力，请立即关闭此教程。"></a>如不具备上述能力，请立即关闭此教程。</h3><h3 id="0-环境准备"><a href="#0-环境准备" class="headerlink" title="0.环境准备"></a>0.环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p><p>↓ 附上下载链接 ↓</p><ul><li>Windows<br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/Git-2.43.0-64-bit.exe">Git-v2.43.0-x64</a><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/node-v18.19.0-x64.msi">node-v18.19.0-x64</a></li></ul><h3 id="1-GitHub账号注册"><a href="#1-GitHub账号注册" class="headerlink" title="1.GitHub账号注册"></a>1.GitHub账号注册</h3><blockquote><p>Github是全球最大的程序员交友♂平台（doge）</p><blockquote><p>有GitHub账号的可以跳过这一步</p></blockquote></blockquote><p>点击进入<a href="https://github.com/">Github官网</a>  </p><p>点击右上角<code>sign up</code>进入注册页面，输入邮箱，创建密码，设置昵称</p><blockquote><p>然后 下一步 下一步 下一步 下一步……</p><blockquote><p>如果实在不会，请使用<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>进行搜索</p></blockquote></blockquote><h3 id="2-Git通过ssh绑定GitHub"><a href="#2-Git通过ssh绑定GitHub" class="headerlink" title="2.Git通过ssh绑定GitHub"></a>2.Git通过ssh绑定GitHub</h3><blockquote><p>SSH（安全外壳协议，Secure Shell 的缩写）是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。简单来说，SSH可以保障你的账户安全，将你的数据加密压缩，它不仅可以防止其他人截获你的数据，还能加快传输速度。</p></blockquote><p>由于Git bash自带ssh，所以无需安装  </p><p>在任意位置点击鼠标右键，打开<code>Git Bash</code>，输入<code>ssh</code>检查ssh<br>如果出现以下内容即已安装ssh：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ssh</span><br><span class="line">usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]</span><br><span class="line">           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]</span><br><span class="line">           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]</span><br><span class="line">           [-J destination] [-L address] [-l login_name] [-m mac_spec]</span><br><span class="line">           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-Q query_option]</span><br><span class="line">           [-R address] [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]</span><br><span class="line">           destination [command [argument ...]]</span><br></pre></td></tr></table></figure><p>输入<code>ssh-keygen -t rsa</code>，敲击四次回车键，创建ssh密钥  </p><p>ssh密钥保存在<code>C:\Users\&lt;你的用户名&gt;\.ssh</code>  </p><blockquote><p>如果没有<code>.ssh</code>,请打开“显示隐藏文件”<br>若不会，请通过<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>自行查找 ⌈如何显示隐藏文件⌋</p></blockquote><p>右键用记事本打开<code>id_rsa.pub</code>，复制里面的全部内容，进入你的 GitHub 主页，先点击右上角，再点击 <strong>settings</strong>  </p><p>先点击右边的 <strong>SSH and GPG keys</strong>，再点击 <strong>New SSH key</strong>：<br><img src="/Resources/GitHub-1.png" alt="GitHub-1">  </p><p>将复制的公钥 id_rsa.pub 的内容粘贴到 key 内，再点击 Add SSH key，如下图：<br><img src="/Resources/GitHub-2.png" alt="GitHub-2">  </p><p>在<code>Git Bash</code>窗口输入<code>ssh -T git@github.com</code>进行检验，出现  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Are you sure you want to continue connecting(yes/no/[fingerprint])?</span><br></pre></td></tr></table></figure><p>输入<code>yes</code>出现：  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi &lt;你的GitHub昵称&gt;! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure><p>即为成功  </p><h3 id="3-Nodejs配置"><a href="#3-Nodejs配置" class="headerlink" title="3.Nodejs配置"></a>3.Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v18.19.0</span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line">10.2.3</span><br></pre></td></tr></table></figure><blockquote><p>主要是检查nodejs和npm有没有安装，版本不同影响不大  </p></blockquote><h4 id="设置npm在安装全局模块时的路径和环境变量"><a href="#设置npm在安装全局模块时的路径和环境变量" class="headerlink" title="设置npm在安装全局模块时的路径和环境变量"></a><strong>设置npm在安装全局模块时的路径和环境变量</strong></h4><p>在 <strong>你永远不会删除的地方中</strong> 新建 <strong>文件夹 “A”</strong><br>在其中 新建两个空文件夹<code>node_cache</code>、<code>node_global</code>：<br><img src="/Resources/GitHub-3.png" alt="GitHub-3">  </p><blockquote><p><strong>！！！请勿删除此文件夹！！！</strong><br>否则模块将被删除，需要重新配置</p></blockquote><p>打开cmd，输入如下两个命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix &quot;&lt;你的node_global文件夹路径&gt;&quot;</span><br><span class="line">npm config set cache &quot;&lt;你的node_cache文件夹路径&gt;&quot;</span><br></pre></td></tr></table></figure><p>设置环境变量：  </p><p>右键 此电脑 –&gt; 属性 –&gt; 高级系统设置 –&gt; 环境变量  </p><p>然后在系统变量中新建一个变量<br>点击<code>系统变量(S)</code>下的<code>新建(W)…</code><br>出现：<br><img src="/Resources/GitHub-4.png" alt="GitHub-4">  </p><p>输入 变量名为 <strong>“NODE_PATH”</strong><br>输入 变量值为 <strong>“&lt;文件夹 “A” 的路径&gt;”</strong>  </p><blockquote><p>你问我什么是 <strong>文件夹 “A”</strong> ？</p><blockquote><p><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">喏，在这</a></p></blockquote></blockquote><p>然后编辑<code>用户变量(U)</code>里的<code>Path</code>，点按<code>编辑(E)…</code>，将相应npm的路径改为：<br><code>&lt;你的node_global文件夹路径&gt;</code>  </p><p><strong>按确定！按确定！按确定！</strong>  </p><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在 cmd 命令行下执行<code>npm install webpack -g</code>，出现：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ webpack@4.41.5</span><br><span class="line">added 322 packages from 197 contributors in 250.122s</span><br></pre></td></tr></table></figure><p>即为成功，然后<code>webpack</code>这个模块已经在我们设置默认的文件夹中了  </p><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h4><p>Hexo就是我们搭建博客的框架，在安装之前，我们要先在GitHub上创立一个仓库<br>进入<a href="https://github.com/">GitHub个人主页</a>，右上角创建仓库：  </p><p><img src="/Resources/GitHub-5.png" alt="GitHub-5"><br><img src="/Resources/GitHub-6.png" alt="GitHub-6"><br>点击 <strong>settings</strong> ：  </p><p><img src="/Resources/GitHub-7.png" alt="GitHub-7"><br>点击 <strong>pages</strong> ：  </p><p><img src="/Resources/GitHub-8.png" alt="GitHub-8"><br>出现<code>&lt;你的GitHub昵称&gt;.github.io</code>即为成功：  </p><p><img src="/Resources/GitHub-9.png" alt="GitHub-9">  </p><h4 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h4><p>新建Blog文件夹，在文件夹内右键打开<code>Git Bash</code>，输入以下npm命令安装Hexo：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>安装完成后，输入<code>hexo init</code>初始化博客,文件夹内会出现以下文件：  </p><p><img src="/Resources/GitHub-10.png" alt="GitHub-10"><br>这个文件夹就是你的博客啦！  </p><p>接下来，在 Bash 窗口内：<br>输入<code>hexo g</code>静态部署<br>输入<code>hexo s</code>在4000端口上部署：  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure><p>这时候用浏览器打开 <a href="https://localhost:4000/">https://localhost:4000</a> 即可看到新部署的网页。<br>别急，回到Git Bash窗口，按ctrl +c 停止运行服务器。  </p><h4 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h4><p>在文件夹内 右键 用记事本打开<code>_config.yml</code>，在最底下加上：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:&lt;………………&gt;.github.io.git  #你的仓库地址</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure><p>你的仓库地址：<br><img src="/Resources/GitHub-11.png" alt="GitHub-11">  </p><p>回到Blog文件夹，右键<code>Git Bash here</code>，在Git Bash中输入：  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>然后 <strong>分别</strong> 输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean   #清除缓存文件 db.json 和已生成的静态文件 public</span><br><span class="line">hexo g       #生成网站静态文件到默认设置的 public 文件夹</span><br><span class="line">hexo d       #生成网站静态文件，并部署到设定的仓库</span><br></pre></td></tr></table></figure><p>或者输入：  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d#和上面的没有不同，只是将命令串起来了</span><br></pre></td></tr></table></figure><p>完成以后，打开浏览器，输入 <a href="https://xxx.github.io/">https://xxx.github.io</a> 就可以打开你的网页了。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 教程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>工具获取</title>
-      <link href="//post/tools-acquisition/"/>
-      <url>//post/tools-acquisition/</url>
-      
-        <content type="html"><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote><p><del>（记得解压缩哦~）</del></p><blockquote><p>（换仓库了，不用解压缩了）  </p></blockquote></blockquote><hr><ul><li><strong>原神抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin</a></li></ul><hr><ul><li><strong>崩坏·星穹铁道抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail</a></li></ul><hr><ul><li><strong>原神、崩铁三端私服打包下载</strong><br><a href="https://www.acfun.cn/v/ac24519842">私服</a></li></ul><hr><center><del>其他资源咕咕咕中，不要期待OwO</del> </center>   <p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p><hr><ul><li><a href="https://kk-wuyue.top/">返回主页</a></li></ul><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 资源文件 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>基于GitHub的博客搭建</title>
+    <url>//post/Blog-building/</url>
+    <content><![CDATA[<h4 id="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"><a href="#前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。" class="headerlink" title="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"></a>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</h4><h3 id="如不具备上述能力，请立即关闭此教程。"><a href="#如不具备上述能力，请立即关闭此教程。" class="headerlink" title="如不具备上述能力，请立即关闭此教程。"></a>如不具备上述能力，请立即关闭此教程。</h3><h3 id="0-环境准备"><a href="#0-环境准备" class="headerlink" title="0.环境准备"></a>0.环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
+<p>↓ 附上下载链接 ↓</p>
+<ul>
+<li>Windows<br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/Git-2.43.0-64-bit.exe">Git-v2.43.0-x64</a><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/node-v18.19.0-x64.msi">node-v18.19.0-x64</a></li>
+</ul>
+<h3 id="1-GitHub账号注册"><a href="#1-GitHub账号注册" class="headerlink" title="1.GitHub账号注册"></a>1.GitHub账号注册</h3><blockquote>
+<p>Github是全球最大的程序员交友♂平台（doge）</p>
+<blockquote>
+<p>有GitHub账号的可以跳过这一步</p>
+</blockquote>
+</blockquote>
+<p>点击进入<a href="https://github.com/">Github官网</a>  </p>
+<p>点击右上角<code>sign up</code>进入注册页面，输入邮箱，创建密码，设置昵称</p>
+<blockquote>
+<p>然后 下一步 下一步 下一步 下一步……</p>
+<blockquote>
+<p>如果实在不会，请使用<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>进行搜索</p>
+</blockquote>
+</blockquote>
+<h3 id="2-Git通过ssh绑定GitHub"><a href="#2-Git通过ssh绑定GitHub" class="headerlink" title="2.Git通过ssh绑定GitHub"></a>2.Git通过ssh绑定GitHub</h3><blockquote>
+<p>SSH（安全外壳协议，Secure Shell 的缩写）是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。简单来说，SSH可以保障你的账户安全，将你的数据加密压缩，它不仅可以防止其他人截获你的数据，还能加快传输速度。</p>
+</blockquote>
+<p>由于Git bash自带ssh，所以无需安装  </p>
+<p>在任意位置点击鼠标右键，打开<code>Git Bash</code>，输入<code>ssh</code>检查ssh<br>如果出现以下内容即已安装ssh：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh</span><br><span class="line">usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]</span><br><span class="line">           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]</span><br><span class="line">           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]</span><br><span class="line">           [-J destination] [-L address] [-l login_name] [-m mac_spec]</span><br><span class="line">           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-Q query_option]</span><br><span class="line">           [-R address] [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]</span><br><span class="line">           destination [command [argument ...]]</span><br></pre></td></tr></table></figure>
+<p>输入<code>ssh-keygen -t rsa</code>，敲击四次回车键，创建ssh密钥  </p>
+<p>ssh密钥保存在<code>C:\Users\&lt;你的用户名&gt;\.ssh</code>  </p>
+<blockquote>
+<p>如果没有<code>.ssh</code>,请打开“显示隐藏文件”<br>若不会，请通过<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>自行查找 ⌈如何显示隐藏文件⌋</p>
+</blockquote>
+<p>右键用记事本打开<code>id_rsa.pub</code>，复制里面的全部内容，进入你的 GitHub 主页，先点击右上角，再点击 <strong>settings</strong>  </p>
+<p>先点击右边的 <strong>SSH and GPG keys</strong>，再点击 <strong>New SSH key</strong>：<br><img src="/Resources/GitHub-1.png" alt="GitHub-1">  </p>
+<p>将复制的公钥 id_rsa.pub 的内容粘贴到 key 内，再点击 Add SSH key，如下图：<br><img src="/Resources/GitHub-2.png" alt="GitHub-2">  </p>
+<p>在<code>Git Bash</code>窗口输入<code>ssh -T git@github.com</code>进行检验，出现  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Are you sure you want to continue connecting(yes/no/[fingerprint])?</span><br></pre></td></tr></table></figure>
+<p>输入<code>yes</code>出现：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hi &lt;你的GitHub昵称&gt;! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<p>即为成功  </p>
+<h3 id="3-Nodejs配置"><a href="#3-Nodejs配置" class="headerlink" title="3.Nodejs配置"></a>3.Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v18.19.0</span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line">10.2.3</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>主要是检查nodejs和npm有没有安装，版本不同影响不大  </p>
+</blockquote>
+<h4 id="设置npm在安装全局模块时的路径和环境变量"><a href="#设置npm在安装全局模块时的路径和环境变量" class="headerlink" title="设置npm在安装全局模块时的路径和环境变量"></a><strong>设置npm在安装全局模块时的路径和环境变量</strong></h4><p>在 <strong>你永远不会删除的地方中</strong> 新建 <strong>文件夹 “A”</strong><br>在其中 新建两个空文件夹<code>node_cache</code>、<code>node_global</code>：<br><img src="/Resources/GitHub-3.png" alt="GitHub-3">  </p>
+<blockquote>
+<p><strong>！！！请勿删除此文件夹！！！</strong><br>否则模块将被删除，需要重新配置</p>
+</blockquote>
+<p>打开cmd，输入如下两个命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set prefix &quot;&lt;你的node_global文件夹路径&gt;&quot;</span><br><span class="line">npm config set cache &quot;&lt;你的node_cache文件夹路径&gt;&quot;</span><br></pre></td></tr></table></figure>
+<p>设置环境变量：  </p>
+<p>右键 此电脑 –&gt; 属性 –&gt; 高级系统设置 –&gt; 环境变量  </p>
+<p>然后在系统变量中新建一个变量<br>点击<code>系统变量(S)</code>下的<code>新建(W)…</code><br>出现：<br><img src="/Resources/GitHub-4.png" alt="GitHub-4">  </p>
+<p>输入 变量名为 <strong>“NODE_PATH”</strong><br>输入 变量值为 <strong>“&lt;文件夹 “A” 的路径&gt;”</strong>  </p>
+<blockquote>
+<p>你问我什么是 <strong>文件夹 “A”</strong> ？</p>
+<blockquote>
+<p><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">喏，在这</a></p>
+</blockquote>
+</blockquote>
+<p>然后编辑<code>用户变量(U)</code>里的<code>Path</code>，点按<code>编辑(E)…</code>，将相应npm的路径改为：<br><code>&lt;你的node_global文件夹路径&gt;</code>  </p>
+<p><strong>按确定！按确定！按确定！</strong>  </p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在 cmd 命令行下执行<code>npm install webpack -g</code>，出现：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+ webpack@4.41.5</span><br><span class="line">added 322 packages from 197 contributors in 250.122s</span><br></pre></td></tr></table></figure>
+<p>即为成功，然后<code>webpack</code>这个模块已经在我们设置默认的文件夹中了  </p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h4><p>Hexo就是我们搭建博客的框架，在安装之前，我们要先在GitHub上创立一个仓库<br>进入<a href="https://github.com/">GitHub个人主页</a>，右上角创建仓库：  </p>
+<p><img src="/Resources/GitHub-5.png" alt="GitHub-5"><br><img src="/Resources/GitHub-6.png" alt="GitHub-6"><br>点击 <strong>settings</strong> ：  </p>
+<p><img src="/Resources/GitHub-7.png" alt="GitHub-7"><br>点击 <strong>pages</strong> ：  </p>
+<p><img src="/Resources/GitHub-8.png" alt="GitHub-8"><br>出现<code>&lt;你的GitHub昵称&gt;.github.io</code>即为成功：  </p>
+<p><img src="/Resources/GitHub-9.png" alt="GitHub-9">  </p>
+<h4 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h4><p>新建Blog文件夹，在文件夹内右键打开<code>Git Bash</code>，输入以下npm命令安装Hexo：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装完成后，输入<code>hexo init</code>初始化博客,文件夹内会出现以下文件：  </p>
+<p><img src="/Resources/GitHub-10.png" alt="GitHub-10"><br>这个文件夹就是你的博客啦！  </p>
+<p>接下来，在 Bash 窗口内：<br>输入<code>hexo g</code>静态部署<br>输入<code>hexo s</code>在4000端口上部署：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>这时候用浏览器打开 <a href="https://localhost:4000/">https://localhost:4000</a> 即可看到新部署的网页。<br>别急，回到Git Bash窗口，按ctrl +c 停止运行服务器。  </p>
+<h4 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h4><p>在文件夹内 右键 用记事本打开<code>_config.yml</code>，在最底下加上：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:&lt;………………&gt;.github.io.git  #你的仓库地址</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+<p>你的仓库地址：<br><img src="/Resources/GitHub-11.png" alt="GitHub-11">  </p>
+<p>回到Blog文件夹，右键<code>Git Bash here</code>，在Git Bash中输入：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后 <strong>分别</strong> 输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean   #清除缓存文件 db.json 和已生成的静态文件 public</span><br><span class="line">hexo g       #生成网站静态文件到默认设置的 public 文件夹</span><br><span class="line">hexo d       #生成网站静态文件，并部署到设定的仓库</span><br></pre></td></tr></table></figure>
+<p>或者输入：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d		#和上面的没有不同，只是将命令串起来了</span><br></pre></td></tr></table></figure>
+<p>完成以后，打开浏览器，输入 <a href="https://xxx.github.io/">https://xxx.github.io</a> 就可以打开你的网页了。</p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工具获取</title>
+    <url>//post/tools-acquisition/</url>
+    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
+</blockquote>
+</blockquote>
+<hr>
+<ul>
+<li><strong>原神抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin</a></li>
+</ul>
+<hr>
+<ul>
+<li><strong>崩坏·星穹铁道抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail</a></li>
+</ul>
+<hr>
+<ul>
+<li><strong>原神、崩铁三端私服打包下载</strong><br><a href="https://www.acfun.cn/v/ac24519842">私服</a></li>
+</ul>
+<hr>
+<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
+ 
+<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
+<hr>
+<ul>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+</ul>
+<hr>
+]]></content>
+      <tags>
+        <tag>资源文件</tag>
+      </tags>
+  </entry>
 </search>
