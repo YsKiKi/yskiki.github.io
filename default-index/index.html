@@ -17,20 +17,20 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"kk-wuyue.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="我将万物藏在心底的寒冬，只为它们能在春天发芽">
 <meta property="og:type" content="website">
 <meta property="og:title" content="五月のBlog">
-<meta property="og:url" content="http://example.com/default-index/index.html">
+<meta property="og:url" content="https://kk-wuyue.top/default-index/">
 <meta property="og:site_name" content="五月のBlog">
 <meta property="og:description" content="我将万物藏在心底的寒冬，只为它们能在春天发芽">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="May">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/default-index/">
+<link rel="canonical" href="https://kk-wuyue.top/default-index/">
 
 
 <script id="page-configurations">
@@ -101,6 +101,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -115,16 +116,48 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -147,7 +180,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/19/Blog%20building/">
+    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/post/Blog-building/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -161,7 +194,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2024/02/19/Blog%20building/" class="post-title-link" itemprop="url">基于GitHub的博客搭建</a>
+            <a href="/post/Blog-building/" class="post-title-link" itemprop="url">基于GitHub的博客搭建</a>
         </h2>
 
         <div class="post-meta">
@@ -178,7 +211,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-20 08:56:06" itemprop="dateModified" datetime="2024-02-20T08:56:06+08:00">2024-02-20</time>
+                <time title="修改时间：2024-02-20 09:54:31" itemprop="dateModified" datetime="2024-02-20T09:54:31+08:00">2024-02-20</time>
               </span>
 
           
@@ -297,7 +330,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/15/Tools/">
+    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/post/tools-acquisition/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -311,7 +344,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2024/02/15/Tools/" class="post-title-link" itemprop="url">工具获取</a>
+            <a href="/post/tools-acquisition/" class="post-title-link" itemprop="url">工具获取</a>
         </h2>
 
         <div class="post-meta">
@@ -328,7 +361,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-20 08:54:41" itemprop="dateModified" datetime="2024-02-20T08:54:41+08:00">2024-02-20</time>
+                <time title="修改时间：2024-02-20 09:54:42" itemprop="dateModified" datetime="2024-02-20T09:54:42+08:00">2024-02-20</time>
               </span>
 
           
@@ -366,7 +399,7 @@
 <p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
 <hr>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://kk-wuyue.top/">返回主页</a></li>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
 </ul>
 <hr>
 
@@ -488,8 +521,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">May</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
-  </div>
 
         
 
@@ -525,6 +556,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
