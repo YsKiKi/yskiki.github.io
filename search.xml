@@ -90,8 +90,13 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d		#和上面的没有不同，只是将命令串起来了</span><br></pre></td></tr></table></figure>
 <p>完成以后，打开浏览器，输入 <a href="https://xxx.github.io/">https://xxx.github.io</a> 就可以打开你的网页了。</p>
 ]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
       <tags>
-        <tag>教程</tag>
+        <tag>GitHub</tag>
+        <tag>Blog</tag>
+        <tag>Nodejs</tag>
       </tags>
   </entry>
   <entry>
@@ -125,8 +130,13 @@
 </ul>
 <hr>
 ]]></content>
+      <categories>
+        <category>工具获取</category>
+      </categories>
       <tags>
-        <tag>资源文件</tag>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
       </tags>
   </entry>
 </search>
