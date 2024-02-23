@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>工具获取</title>
-    <url>//post/tools-acquisition/</url>
-    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
-<p><del>（记得解压缩哦~）</del></p>
-<blockquote>
-<p>（换仓库了，不用解压缩了）  </p>
-</blockquote>
-</blockquote>
-<hr>
-<ul>
-<li><strong>原神抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin</a></li>
-</ul>
-<hr>
-<ul>
-<li><strong>崩坏·星穹铁道抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail</a></li>
-</ul>
-<hr>
-<ul>
-<li><strong>原神、崩铁三端私服打包下载</strong><br><a href="https://www.acfun.cn/v/ac24519842">私服</a></li>
-</ul>
-<hr>
-<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
- 
-<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
-<hr>
-<ul>
-<li><a href="https://kk-wuyue.top/">返回主页</a></li>
-</ul>
-<hr>
-]]></content>
-      <categories>
-        <category>工具获取</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>崩坏·星穹铁道</tag>
-        <tag>私服</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于GitHub的博客搭建</title>
     <url>//post/Blog-building/</url>
     <content><![CDATA[<h4 id="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"><a href="#前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。" class="headerlink" title="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"></a>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</h4><h3 id="如不具备上述能力，请立即关闭此教程。"><a href="#如不具备上述能力，请立即关闭此教程。" class="headerlink" title="如不具备上述能力，请立即关闭此教程。"></a>如不具备上述能力，请立即关闭此教程。</h3><h3 id="0-环境准备"><a href="#0-环境准备" class="headerlink" title="0.环境准备"></a>0.环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
@@ -140,8 +100,48 @@
       </tags>
   </entry>
   <entry>
+    <title>工具获取</title>
+    <url>//post/tools-acquisition/</url>
+    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
+</blockquote>
+</blockquote>
+<hr>
+<ul>
+<li><strong>原神抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin</a></li>
+</ul>
+<hr>
+<ul>
+<li><strong>崩坏·星穹铁道抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail</a></li>
+</ul>
+<hr>
+<ul>
+<li><strong>原神、崩铁三端私服打包下载</strong><br><a href="https://www.acfun.cn/v/ac24519842">私服</a></li>
+</ul>
+<hr>
+<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
+ 
+<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
+<hr>
+<ul>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>工具获取</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在Ubuntu上配置nodejs和redis</title>
-    <url>//posts/Ubuntu-nr-settings</url>
+    <url>//posts/Ubuntu-nr-help/</url>
     <content><![CDATA[<h2 id="在Ubuntu上配置nodejs和redis（记录篇）"><a href="#在Ubuntu上配置nodejs和redis（记录篇）" class="headerlink" title="在Ubuntu上配置nodejs和redis（记录篇）"></a>在Ubuntu上配置nodejs和redis（记录篇）</h2><p>由于嫌弃服务器上用Windows的话图形化界面太耗资源，这两天把服务器系统换成了Ubuntu，虽然速度提升聊胜于无，但蚊子腿再小也是肉~o.0~<br>为了防止云服务器到期的时候再配置又要查资料，在这里写一篇记录篇，查起来也方便  </p>
 <h3 id="系统：Ubuntu-20-04"><a href="#系统：Ubuntu-20-04" class="headerlink" title="系统：Ubuntu-20.04"></a>系统：Ubuntu-20.04</h3><p>Ubuntu自带apt包，所以大部分时候只要<code>apt-get install</code>就行了，非常方便  </p>
 <p>输入：</p>
@@ -170,11 +170,14 @@
 <li>puppeteer的版本太新会抽风，使用以下代码进行治疗： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pnpm install puppeteer@13.7.0 -w</span><br></pre></td></tr></table></figure></li>
 <li>Ubuntu会出现：<code>Error: Failed to launch the browser process!</code>，网上查了好久一点有用的没有，我直接：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ca-certificates fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 lsb-release wget xdg-utils -y</span><br></pre></td></tr></table></figure>
 安装依赖，然后就好了✓</li>
-<li>Ubuntu里要用screen同时运行 签名API[^1] 和 本体，附上↓↓↓仅供参考：<blockquote>
+<li>Ubuntu里要用screen同时运行 签名API 和 本体，附上↓↓↓仅供参考：<blockquote>
 <p>其实这玩意只要脑子没坏都知道，但是万一脑子坏了呢o.0</p>
+<blockquote>
+<p>签名API填地址用<code>http://</code>嗷，不要傻乎乎地用<code>https://</code></p>
+</blockquote>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;				#创建一个新的终端会话</span><br><span class="line">Ctrl-A-D				#退出当前的终端会话，保持后台运行</span><br><span class="line">screen -ls				#查看当前存在的所有终端会话</span><br><span class="line">screen -S &lt;名字&gt; -X quit			#删除某个终端会话</span><br><span class="line">screen -r &lt;名字&gt;				#切换到某个终端会话</span><br></pre></td></tr></table></figure>
-到时候看需要再补充吧。<br>[^1]用<code>http://</code>嗷，不要傻乎乎地用<code>https://</code></li>
+到时候看需要再补充吧。</li>
 </ul>
 ]]></content>
       <categories>
