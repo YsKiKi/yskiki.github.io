@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>工具获取</title>
+    <url>//post/tools-acquisition/</url>
+    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
+</blockquote>
+</blockquote>
+<hr>
+<ul>
+<li><strong>原神抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin</a></li>
+</ul>
+<hr>
+<ul>
+<li><strong>崩坏·星穹铁道抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail</a></li>
+</ul>
+<hr>
+<ul>
+<li><strong>原神、崩铁三端私服打包下载</strong><br><a href="https://www.acfun.cn/v/ac24519842">私服</a></li>
+</ul>
+<hr>
+<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
+ 
+<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
+<hr>
+<ul>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>工具获取</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于GitHub的博客搭建</title>
     <url>//post/Blog-building/</url>
     <content><![CDATA[<h4 id="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"><a href="#前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。" class="headerlink" title="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"></a>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</h4><h3 id="如不具备上述能力，请立即关闭此教程。"><a href="#如不具备上述能力，请立即关闭此教程。" class="headerlink" title="如不具备上述能力，请立即关闭此教程。"></a>如不具备上述能力，请立即关闭此教程。</h3><h3 id="0-环境准备"><a href="#0-环境准备" class="headerlink" title="0.环境准备"></a>0.环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
@@ -100,43 +140,50 @@
       </tags>
   </entry>
   <entry>
-    <title>工具获取</title>
-    <url>//post/tools-acquisition/</url>
-    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
-<p><del>（记得解压缩哦~）</del></p>
+    <title>在Ubuntu上配置nodejs和redis</title>
+    <url>//posts/Ubuntu-nr-settings</url>
+    <content><![CDATA[<h2 id="在Ubuntu上配置nodejs和redis（记录篇）"><a href="#在Ubuntu上配置nodejs和redis（记录篇）" class="headerlink" title="在Ubuntu上配置nodejs和redis（记录篇）"></a>在Ubuntu上配置nodejs和redis（记录篇）</h2><p>由于嫌弃服务器上用Windows的话图形化界面太耗资源，这两天把服务器系统换成了Ubuntu，虽然速度提升聊胜于无，但蚊子腿再小也是肉~o.0~<br>为了防止云服务器到期的时候再配置又要查资料，在这里写一篇记录篇，查起来也方便  </p>
+<h3 id="系统：Ubuntu-20-04"><a href="#系统：Ubuntu-20-04" class="headerlink" title="系统：Ubuntu-20.04"></a>系统：Ubuntu-20.04</h3><p>Ubuntu自带apt包，所以大部分时候只要<code>apt-get install</code>就行了，非常方便  </p>
+<p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+<p>进入管理员形态！！  </p>
+<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p>这个没什么好说的，脑子没毛病都知道怎么做</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<h4 id="安装Nodejs-18-x"><a href="#安装Nodejs-18-x" class="headerlink" title="安装Nodejs 18.x"></a>安装Nodejs 18.x</h4><p>先安装<code>curl</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install curl</span><br></pre></td></tr></table></figure>
+<p>然后输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &amp;&amp;\</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+<p>Nodejs 18.x就安装好了<br>检查：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@VM-4-10-ubuntu:~# node -v</span><br><span class="line">v18.19.1</span><br><span class="line">root@VM-4-10-ubuntu:~# npm -v</span><br><span class="line">10.2.4</span><br><span class="line">root@VM-4-10-ubuntu:~# npx -v</span><br><span class="line">10.2.4</span><br></pre></td></tr></table></figure>
+<p>装的好好的，没啥毛病✓</p>
+<h4 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h4><p>官方的apt包里包含了redis，所以同上：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install redis</span><br></pre></td></tr></table></figure>
+<p>就好了  </p>
+<p>与Windows里redis需要自己启动运行不同，这里的redis安装完自动运行，省心得很<br>如果要查看redis有没有在运行了，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl status redis-server</span><br><span class="line">service --status-all				#查询开启的服务</span><br></pre></td></tr></table></figure>
+<p>两个命令都可以看出redis的运行状态</p>
 <blockquote>
-<p>（换仓库了，不用解压缩了）  </p>
+<p>附上开启、关闭和重启redis服务命令：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;/etc/init.d/redis-server stop  </span><br><span class="line">&gt;/etc/init.d/redis-server start  </span><br><span class="line">&gt;/etc/init.d/redis-server restart  </span><br></pre></td></tr></table></figure>
 </blockquote>
+<h4 id="PS：一些ex人的地方："><a href="#PS：一些ex人的地方：" class="headerlink" title="PS：一些ex人的地方："></a>PS：一些ex人的地方：</h4><ul>
+<li>puppeteer的版本太新会抽风，使用以下代码进行治疗： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pnpm install puppeteer@13.7.0 -w</span><br></pre></td></tr></table></figure></li>
+<li>Ubuntu会出现：<code>Error: Failed to launch the browser process!</code>，网上查了好久一点有用的没有，我直接：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ca-certificates fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 lsb-release wget xdg-utils -y</span><br></pre></td></tr></table></figure>
+安装依赖，然后就好了✓</li>
+<li>Ubuntu里要用screen同时运行 签名API[^1] 和 本体，附上↓↓↓仅供参考：<blockquote>
+<p>其实这玩意只要脑子没坏都知道，但是万一脑子坏了呢o.0</p>
 </blockquote>
-<hr>
-<ul>
-<li><strong>原神抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin</a></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;				#创建一个新的终端会话</span><br><span class="line">Ctrl-A-D				#退出当前的终端会话，保持后台运行</span><br><span class="line">screen -ls				#查看当前存在的所有终端会话</span><br><span class="line">screen -S &lt;名字&gt; -X quit			#删除某个终端会话</span><br><span class="line">screen -r &lt;名字&gt;				#切换到某个终端会话</span><br></pre></td></tr></table></figure>
+到时候看需要再补充吧。<br>[^1]用<code>http://</code>嗷，不要傻乎乎地用<code>https://</code></li>
 </ul>
-<hr>
-<ul>
-<li><strong>崩坏·星穹铁道抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail</a></li>
-</ul>
-<hr>
-<ul>
-<li><strong>原神、崩铁三端私服打包下载</strong><br><a href="https://www.acfun.cn/v/ac24519842">私服</a></li>
-</ul>
-<hr>
-<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
- 
-<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
-<hr>
-<ul>
-<li><a href="https://kk-wuyue.top/">返回主页</a></li>
-</ul>
-<hr>
 ]]></content>
       <categories>
-        <category>工具获取</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>原神</tag>
-        <tag>崩坏·星穹铁道</tag>
-        <tag>私服</tag>
+        <tag>Nodejs</tag>
+        <tag>Ubuntu22.04</tag>
+        <tag>Redis-Server</tag>
       </tags>
   </entry>
 </search>
