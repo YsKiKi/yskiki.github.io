@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>工具获取</title>
+    <url>//post/tools-acquisition/</url>
+    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
+</blockquote>
+</blockquote>
+<hr>
+<ul>
+<li><strong>原神抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin</a></li>
+</ul>
+<hr>
+<ul>
+<li><strong>崩坏·星穹铁道抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail</a></li>
+</ul>
+<hr>
+<ul>
+<li><strong>原神、崩铁三端私服打包下载</strong><br><a href="https://www.acfun.cn/v/ac24519842">私服</a></li>
+</ul>
+<hr>
+<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
+ 
+<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
+<hr>
+<ul>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>工具获取</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于GitHub的博客搭建</title>
     <url>//post/Blog-building/</url>
     <content><![CDATA[<h4 id="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"><a href="#前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。" class="headerlink" title="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"></a>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</h4><h3 id="如不具备上述能力，请立即关闭此教程。"><a href="#如不具备上述能力，请立即关闭此教程。" class="headerlink" title="如不具备上述能力，请立即关闭此教程。"></a>如不具备上述能力，请立即关闭此教程。</h3><h3 id="0-环境准备"><a href="#0-环境准备" class="headerlink" title="0.环境准备"></a>0.环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
@@ -97,46 +137,6 @@
         <tag>GitHub</tag>
         <tag>Blog</tag>
         <tag>Nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工具获取</title>
-    <url>//post/tools-acquisition/</url>
-    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
-<p><del>（记得解压缩哦~）</del></p>
-<blockquote>
-<p>（换仓库了，不用解压缩了）  </p>
-</blockquote>
-</blockquote>
-<hr>
-<ul>
-<li><strong>原神抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin</a></li>
-</ul>
-<hr>
-<ul>
-<li><strong>崩坏·星穹铁道抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail</a></li>
-</ul>
-<hr>
-<ul>
-<li><strong>原神、崩铁三端私服打包下载</strong><br><a href="https://www.acfun.cn/v/ac24519842">私服</a></li>
-</ul>
-<hr>
-<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
- 
-<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
-<hr>
-<ul>
-<li><a href="https://kk-wuyue.top/">返回主页</a></li>
-</ul>
-<hr>
-]]></content>
-      <categories>
-        <category>工具获取</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>崩坏·星穹铁道</tag>
-        <tag>私服</tag>
       </tags>
   </entry>
   <entry>
