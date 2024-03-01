@@ -101,6 +101,46 @@
       </tags>
   </entry>
   <entry>
+    <title>工具获取</title>
+    <url>//posts/tools-acquisition/</url>
+    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
+</blockquote>
+</blockquote>
+<hr>
+<ul>
+<li><strong>原神抽卡链接获取工具</strong><br><strong>Android：</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a><br><strong>Windows：</strong><br>打开游戏，切换到抽卡记录页面，翻几页<br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iex(irm  &#x27;https://img.lelaer.com/gf.ps1&#x27;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li><strong>崩坏·星穹铁道抽卡链接获取工具</strong><br><strong>Android：</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a><br><strong>Windows：</strong><br>打开游戏，切换到抽卡记录页面，翻几页<br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iex(irm  &#x27;https://img.lelaer.com/srcn.ps1&#x27;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li><strong>原神、崩铁三端私服打包下载</strong><br><a href="https://www.acfun.cn/v/ac24519842">私服</a></li>
+</ul>
+<hr>
+<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
+ 
+<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
+<hr>
+<ul>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>工具获取</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在Ubuntu上配置nodejs和redis</title>
     <url>//posts/Ubuntu-nr-help/</url>
     <content><![CDATA[<h2 id="在Ubuntu上配置nodejs和redis（记录篇）"><a href="#在Ubuntu上配置nodejs和redis（记录篇）" class="headerlink" title="在Ubuntu上配置nodejs和redis（记录篇）"></a>在Ubuntu上配置nodejs和redis（记录篇）</h2><p>由于嫌弃服务器上用Windows的话图形化界面太耗资源，这两天把服务器系统换成了Ubuntu，虽然速度提升聊胜于无，但蚊子腿再小也是肉~o.0~<br>为了防止云服务器到期的时候再配置又要查资料，在这里写一篇记录篇，查起来也方便  </p>
@@ -148,46 +188,6 @@
         <tag>Nodejs</tag>
         <tag>Ubuntu22.04</tag>
         <tag>Redis-Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工具获取</title>
-    <url>//posts/tools-acquisition/</url>
-    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
-<p><del>（记得解压缩哦~）</del></p>
-<blockquote>
-<p>（换仓库了，不用解压缩了）  </p>
-</blockquote>
-</blockquote>
-<hr>
-<ul>
-<li><strong>原神抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin</a></li>
-</ul>
-<hr>
-<ul>
-<li><strong>崩坏·星穹铁道抽卡链接获取工具</strong><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail</a></li>
-</ul>
-<hr>
-<ul>
-<li><strong>原神、崩铁三端私服打包下载</strong><br><a href="https://www.acfun.cn/v/ac24519842">私服</a></li>
-</ul>
-<hr>
-<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
- 
-<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
-<hr>
-<ul>
-<li><a href="https://kk-wuyue.top/">返回主页</a></li>
-</ul>
-<hr>
-]]></content>
-      <categories>
-        <category>工具获取</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>崩坏·星穹铁道</tag>
-        <tag>私服</tag>
       </tags>
   </entry>
   <entry>
