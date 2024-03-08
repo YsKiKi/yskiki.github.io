@@ -185,6 +185,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="May">
+      <meta itemprop="description" content="我将万物藏在心底的寒冬，只为它们能在春天发芽">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="五月のBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/" class="post-title-link" itemprop="url">ffmpeg的配置和B站视频转化的简单使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-03-08 17:05:38 / 修改时间：18:57:14" itemprop="dateCreated datePublished" datetime="2024-03-08T17:05:38+08:00">2024-03-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>604</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><p>环境：<br>    - Windows<br>工具：<br>    - notepad++<br>    - ffmpeg</p>
+<h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
+<blockquote>
+<p>建议国内无 &amp;…*￥ 用户选择该方式下载</p>
+</blockquote>
+<p>也可以在<a target="_blank" rel="noopener" href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
+<blockquote>
+<p>建议 *&amp;%…… 用户选择该方式下载</p>
+</blockquote>
+<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
+<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
+<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
+<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
+<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/G-blog-To-domain/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -758,7 +856,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -771,7 +869,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -807,12 +905,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">6k</span>
+    <span title="站点总字数">7k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
 </div>
 
         

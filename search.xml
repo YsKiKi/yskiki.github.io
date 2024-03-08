@@ -101,6 +101,75 @@
       </tags>
   </entry>
   <entry>
+    <title>ffmpeg的配置和B站视频转化的简单使用</title>
+    <url>//posts/</url>
+    <content><![CDATA[<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><p>环境：<br>    - Windows<br>工具：<br>    - notepad++<br>    - ffmpeg</p>
+<h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
+<blockquote>
+<p>建议国内无 &amp;…*￥ 用户选择该方式下载</p>
+</blockquote>
+<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
+<blockquote>
+<p>建议 *&amp;%…… 用户选择该方式下载</p>
+</blockquote>
+<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
+<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
+<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
+<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
+<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ffmpeg</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工具获取</title>
+    <url>//posts/tools-acquisition/</url>
+    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
+</blockquote>
+</blockquote>
+<hr>
+<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
+<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，切换到抽卡记录页面，翻几页<br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iex(irm  &#x27;https://img.lelaer.com/gf.ps1&#x27;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
+<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，切换到抽卡记录页面，翻几页<br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iex(irm  &#x27;https://img.lelaer.com/srcn.ps1&#x27;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
+<hr>
+<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
+ 
+<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
+<hr>
+<ul>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>工具获取</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在Ubuntu上配置nodejs和redis</title>
     <url>//posts/Ubuntu-nr-help/</url>
     <content><![CDATA[<h2 id="在Ubuntu上配置nodejs和redis（记录篇）"><a href="#在Ubuntu上配置nodejs和redis（记录篇）" class="headerlink" title="在Ubuntu上配置nodejs和redis（记录篇）"></a>在Ubuntu上配置nodejs和redis（记录篇）</h2><p>由于嫌弃服务器上用Windows的话图形化界面太耗资源，这两天把服务器系统换成了Ubuntu，虽然速度提升聊胜于无，但蚊子腿再小也是肉~o.0~<br>为了防止云服务器到期的时候再配置又要查资料，在这里写一篇记录篇，查起来也方便  </p>
@@ -148,46 +217,6 @@
         <tag>Nodejs</tag>
         <tag>Ubuntu22.04</tag>
         <tag>Redis-Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工具获取</title>
-    <url>//posts/tools-acquisition/</url>
-    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
-<p><del>（记得解压缩哦~）</del></p>
-<blockquote>
-<p>（换仓库了，不用解压缩了）  </p>
-</blockquote>
-</blockquote>
-<hr>
-<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
-<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，切换到抽卡记录页面，翻几页<br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iex(irm  &#x27;https://img.lelaer.com/gf.ps1&#x27;)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
-<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，切换到抽卡记录页面，翻几页<br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iex(irm  &#x27;https://img.lelaer.com/srcn.ps1&#x27;)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
-<hr>
-<center><del>其他资源咕咕咕中，不要期待OwO</del> </center>  
- 
-<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
-<hr>
-<ul>
-<li><a href="https://kk-wuyue.top/">返回主页</a></li>
-</ul>
-<hr>
-]]></content>
-      <categories>
-        <category>工具获取</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>崩坏·星穹铁道</tag>
-        <tag>私服</tag>
       </tags>
   </entry>
   <entry>
