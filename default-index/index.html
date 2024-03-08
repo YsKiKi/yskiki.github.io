@@ -185,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/">
+    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/ffmpeg-Deploy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -199,7 +199,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/" class="post-title-link" itemprop="url">ffmpeg的配置和B站视频转化的简单使用</a>
+            <a href="/posts/ffmpeg-Deploy/" class="post-title-link" itemprop="url">ffmpeg的配置和B站视频转化的简单使用</a>
         </h2>
 
         <div class="post-meta">
@@ -210,7 +210,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-03-08 17:05:38 / 修改时间：18:57:14" itemprop="dateCreated datePublished" datetime="2024-03-08T17:05:38+08:00">2024-03-08</time>
+              <time title="创建时间：2024-03-08 17:05:38 / 修改时间：19:29:26" itemprop="dateCreated datePublished" datetime="2024-03-08T17:05:38+08:00">2024-03-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,7 +263,7 @@
 <p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
 <h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
-<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频</p>
+<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
 
       
     </div>
