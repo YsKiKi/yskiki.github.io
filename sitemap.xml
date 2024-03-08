@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kk-wuyue.top/posts/Blog-building/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kk-wuyue.top/</loc>
     
     <lastmod>2024-03-08</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://kk-wuyue.top/posts/tools-acquisition/</loc>
-    
-    <lastmod>2024-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kk-wuyue.top/posts/Blog-building/</loc>
     
     <lastmod>2024-03-01</lastmod>
     
@@ -104,6 +104,20 @@
   </url>
   
   <url>
+    <loc>https://kk-wuyue.top/tags/ffmpeg/</loc>
+    <lastmod>2024-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/tags/Windows/</loc>
+    <lastmod>2024-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://kk-wuyue.top/tags/%E5%8E%9F%E7%A5%9E/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -133,20 +147,6 @@
   
   <url>
     <loc>https://kk-wuyue.top/tags/Redis-Server/</loc>
-    <lastmod>2024-03-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kk-wuyue.top/tags/ffmpeg/</loc>
-    <lastmod>2024-03-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kk-wuyue.top/tags/Windows/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

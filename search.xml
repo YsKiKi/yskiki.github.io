@@ -3,12 +3,12 @@
   <entry>
     <title>基于GitHub的博客搭建</title>
     <url>//posts/Blog-building/</url>
-    <content><![CDATA[<h4 id="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"><a href="#前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。" class="headerlink" title="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"></a>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</h4><h3 id="如不具备上述能力，请立即关闭此教程。"><a href="#如不具备上述能力，请立即关闭此教程。" class="headerlink" title="如不具备上述能力，请立即关闭此教程。"></a>如不具备上述能力，请立即关闭此教程。</h3><h3 id="0-环境准备"><a href="#0-环境准备" class="headerlink" title="0.环境准备"></a>0.环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
+    <content><![CDATA[<h4 id="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"><a href="#前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。" class="headerlink" title="前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。"></a>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</h4><h3 id="如不具备上述能力，请立即关闭此教程。"><a href="#如不具备上述能力，请立即关闭此教程。" class="headerlink" title="如不具备上述能力，请立即关闭此教程。"></a>如不具备上述能力，请立即关闭此教程。</h3><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
 <p>↓ 附上下载链接 ↓</p>
 <ul>
 <li>Windows<br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/Git-2.43.0-64-bit.exe">Git-v2.43.0-x64</a><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/node-v18.19.0-x64.msi">node-v18.19.0-x64</a></li>
 </ul>
-<h3 id="1-GitHub账号注册"><a href="#1-GitHub账号注册" class="headerlink" title="1.GitHub账号注册"></a>1.GitHub账号注册</h3><blockquote>
+<h3 id="GitHub账号注册"><a href="#GitHub账号注册" class="headerlink" title="GitHub账号注册"></a>GitHub账号注册</h3><blockquote>
 <p>Github是全球最大的程序员交友♂平台（doge）</p>
 <blockquote>
 <p>有GitHub账号的可以跳过这一步</p>
@@ -22,7 +22,7 @@
 <p>如果实在不会，请使用<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>进行搜索</p>
 </blockquote>
 </blockquote>
-<h3 id="2-Git通过ssh绑定GitHub"><a href="#2-Git通过ssh绑定GitHub" class="headerlink" title="2.Git通过ssh绑定GitHub"></a>2.Git通过ssh绑定GitHub</h3><blockquote>
+<h3 id="Git通过ssh绑定GitHub"><a href="#Git通过ssh绑定GitHub" class="headerlink" title="Git通过ssh绑定GitHub"></a>Git通过ssh绑定GitHub</h3><blockquote>
 <p>SSH（安全外壳协议，Secure Shell 的缩写）是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。简单来说，SSH可以保障你的账户安全，将你的数据加密压缩，它不仅可以防止其他人截获你的数据，还能加快传输速度。</p>
 </blockquote>
 <p>由于Git bash自带ssh，所以无需安装  </p>
@@ -41,7 +41,7 @@
 <p>输入<code>yes</code>出现：  </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hi &lt;你的GitHub昵称&gt;! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 <p>即为成功  </p>
-<h3 id="3-Nodejs配置"><a href="#3-Nodejs配置" class="headerlink" title="3.Nodejs配置"></a>3.Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p>
+<h3 id="Nodejs配置"><a href="#Nodejs配置" class="headerlink" title="Nodejs配置"></a>Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v18.19.0</span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line">10.2.3</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>主要是检查nodejs和npm有没有安装，版本不同影响不大  </p>
@@ -98,6 +98,35 @@
         <tag>GitHub</tag>
         <tag>Blog</tag>
         <tag>Nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ffmpeg的配置和B站视频转化的简单使用</title>
+    <url>//posts/ffmpeg-Deploy/</url>
+    <content><![CDATA[<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><p>环境：<br>    - Windows<br>工具：<br>    - notepad++<br>    - ffmpeg</p>
+<h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
+<blockquote>
+<p>建议国内无 &amp;…*￥ 用户选择该方式下载</p>
+</blockquote>
+<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
+<blockquote>
+<p>建议 *&amp;%…… 用户选择该方式下载</p>
+</blockquote>
+<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
+<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
+<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
+<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
+<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ffmpeg</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -188,35 +217,6 @@
         <tag>Nodejs</tag>
         <tag>Ubuntu22.04</tag>
         <tag>Redis-Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ffmpeg的配置和B站视频转化的简单使用</title>
-    <url>//posts/ffmpeg-Deploy/</url>
-    <content><![CDATA[<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><p>环境：<br>    - Windows<br>工具：<br>    - notepad++<br>    - ffmpeg</p>
-<h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
-<blockquote>
-<p>建议国内无 &amp;…*￥ 用户选择该方式下载</p>
-</blockquote>
-<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
-<blockquote>
-<p>建议 *&amp;%…… 用户选择该方式下载</p>
-</blockquote>
-<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
-<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
-<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
-<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
-<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
-<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>ffmpeg</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
