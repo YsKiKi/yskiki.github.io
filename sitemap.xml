@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kk-wuyue.top/posts/ffmpeg-Deploy/</loc>
+    <loc>https://kk-wuyue.top/</loc>
     
     <lastmod>2024-03-08</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://kk-wuyue.top/</loc>
+    <loc>https://kk-wuyue.top/posts/ffmpeg-Deploy/</loc>
     
-    <lastmod>2024-03-01</lastmod>
+    <lastmod>2024-03-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -125,20 +125,6 @@
   </url>
   
   <url>
-    <loc>https://kk-wuyue.top/tags/ffmpeg/</loc>
-    <lastmod>2024-03-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kk-wuyue.top/tags/Windows/</loc>
-    <lastmod>2024-03-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kk-wuyue.top/tags/Ubuntu22-04/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -147,6 +133,20 @@
   
   <url>
     <loc>https://kk-wuyue.top/tags/Redis-Server/</loc>
+    <lastmod>2024-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/tags/ffmpeg/</loc>
+    <lastmod>2024-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/tags/Windows/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
