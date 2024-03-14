@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kk-wuyue.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="ǰ���Ҫ�����Ĵ����鹹��ΪAI���ɡ�  ��һ˵һ��AIд�����¹��ڳ����ˣ���  ��һ�£�������������� �����ȹ���վ��Ұ���ݵص����룬����������̨���ϵ���������ľ�ͷ�������صĹ�â������������Χ��һ��Ȧ������ع۲��š� ��������������������������̨���">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mr. Floze-ai">
+<meta property="og:url" content="https://kk-wuyue.top/posts/Mr_Floze-ai/">
+<meta property="og:site_name" content="五月のBlog">
+<meta property="og:description" content="ǰ���Ҫ�����Ĵ����鹹��ΪAI���ɡ�  ��һ˵һ��AIд�����¹��ڳ����ˣ���  ��һ�£�������������� �����ȹ���վ��Ұ���ݵص����룬����������̨���ϵ���������ľ�ͷ�������صĹ�â������������Χ��һ��Ȧ������ع۲��š� ��������������������������̨���">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-14T15:29:20.000Z">
+<meta property="article:modified_time" content="2024-03-14T15:37:01.411Z">
+<meta property="article:author" content="May">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="����">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://kk-wuyue.top/posts/Mr_Floze-ai/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Mr. Floze-ai | 五月のBlog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">五月のBlog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/Mr_Floze-ai/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="May">
+      <meta itemprop="description" content="我将万物藏在心底的寒冬，只为它们能在春天发芽">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="五月のBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mr. Floze-ai
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-03-14 23:29:20 / 修改时间：23:37:01" itemprop="dateCreated datePublished" datetime="2024-03-14T23:29:20+08:00">2024-03-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD/" itemprop="url" rel="index"><span itemprop="name">���</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>15 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><font size="6"><font color="ff8819"><strong>ǰ���Ҫ�����Ĵ����鹹��ΪAI���ɡ�</strong></font></font></p>
+<blockquote>
+<p>��һ˵һ��AIд�����¹��ڳ����ˣ���</p>
+</blockquote>
+<p><strong>��һ�£��������������</strong></p>
+<p>�����ȹ���վ��Ұ���ݵص����룬����������̨���ϵ���������ľ�ͷ�������صĹ�â������������Χ��һ��Ȧ������ع۲��š�</p>
+<p>��������������������������̨��������������ǰ��δ�е���������</p>
+<p>������С��������Ц��Ц�����ҸҴ�ģ������ҵ�è���򾲲��ˡ���</p>
+<p>����������ҡ��ҡͷ�������۾����������������⣬������������ҵľɹ�ͷ������ʹ����Ը�Ⳣ�ԡ���</p>
+<p>��ѧ����˹�ذ����к��ص��鱾����һ�ԣ�����ΪȻ��˵�����Ҷ����������û��Ȥ�������������ҵ������Լ�д�ꡣ��</p>
+<p>Ƥķ˹����������Ц������˹�أ�������ı���ɽ��Ҫ���أ���</p>
+<p>���Ա���ﰺ����ؼ�¼��һ�У����ıʼ���ֽ�Ϸɿ���趯�����⽫��һ��ΰ���ʵ�顣��</p>
+<p><strong>�ڶ��£�����������</strong></p>
+<p>���������˿��ţ����������һ����΢����������ͻȻ��һ�ж���ֹ�ˡ���ֹͣ�˴��������ֹͣ�˸質����ʱ���ƺ���ͣ���˽Ų���</p>
+<p>������С���Ц�������������ϣ������۾�������˾��ȡ�</p>
+<p>���������޵��۾��ӱ����ϻ��䣬����ȴû��ȥ������</p>
+<p>��ѧ����˹�ص�����ŵ��ϴ󣬷·�������һ�仰��Ҫ˵���ڣ���ȴ��ԶҲ˵��������</p>
+<p>Ƥķ˹������Ц���Ȼ��ֹ�����ĺ��ӷ·𱻷紵�ý�Ӳ��</p>
+<p>���Ա���ﰺ�ı�ͣ���˿��У�īˮ������ֽ�ϣ��γ���һ��������Բ�㡣</p>
+<p><strong>�����£�ʱ��Ļָ�</strong></p>
+<p>�����Ӻ����������ƣ�һ���ָֻ��˻����������������������¿�ʼ�˸質��</p>
+<p>������С��¶������Ȼ��΢Ц����������̫�����ˣ���</p>
+<p>���������޼������۾�������˵�������Ҹо��ö��ˡ���</p>
+<p>��ѧ����˹��ҡ��ҡͷ�����ҵó��ϣ����ȷ��һ���˲���ķ�������</p>
+<p>Ƥķ˹���������Ĺ����ļ�򣬡��������������������ˡ���</p>
+<p>���Ա���ﰺ������¼������һ�����Ϊ��ʷ�ϵ�һ���漣����</p>
+<p><strong>�����£���Ӫ�صĴ�˵</strong></p>
+<p>����ʱ������ƣ�����Ӫ�ء�����Ĺ����ڹ���䴫������������Ϊ��һ����������֣�Ҳ��Ϊ��һ�ִ�˵��</p>
+<p>�����ȹ����������������ڸ�ɽ������Ұ���ݵ������������ǵ��㼣����������¼��������ÿһ������˲�䡣</p>
+<p>����ֻ�ǹ��µĿ�ʼ���ڽ���������������ǽ���̨�������������˸���ĵط�����¼���˸��������ʱ�̡�</p>
+<p><strong>�����£�ɽ��ĵ���</strong></p>
+<p>������������������ɢ��ɽ���ٴ��ڲݵ��ϵ�������ȹ������������������»�Ծ���������ǵĶ������������ţ��·���һ�����ı��ŵ��赸��</p>
+<p>������С����ӯ��ת�˸�Ȧ������ȹ���ڿ��л���һ�������Ļ��ߡ��������ң�����������Ц��˵���·�������ս�����ħ����</p>
+<p>��������������վ���������������ڵ����û��Ž��࣬ÿһ�����Ե���ô���ȡ�����磬����̫�����ˡ���</p>
+<p>��ѧ����˹�����������鱾������һҳ���۾������ض������֣��·���Ѱ����ʲôΰ���������</p>
+<p>Ƥķ˹�������˸����������ĺ����������Ķ�������ڶ�������Ц���ٴλص��ڿ����С�</p>
+<p>���Ա���ﰺ�ıʼ��ٴηɿ����ֽ���趯����¼����һ�У������۾������������Ź⡣</p>
+<p><strong>�����£�������ٴ�����</strong></p>
+<p>�����ȹ����ٴε���������ľ�ͷ��׼����׽��һ��������˲�䡣������ָ����ش����ſ��ţ��·����ڵ���һ����������ӡ�</p>
+<p>������С��վ��һ�ô����£�����ͷ�������������Ž�ɫ�Ĺ�â�������۾������ض���������ȴ�����һ�̵ĵ�����</p>
+<p>���������޿���һ���ʯ�ϣ���������¶���������΢Ц���·����Ѿ�Ԥ�����˼����������漣��</p>
+<p>��ѧ����˹��̧��ͷ�������۾�͸���۾�����Զ����������˼����ĳ����µ����⡣</p>
+<p>Ƥķ˹����վ��һ�ԣ������ֱ۽�������ǰ��������̬�Եü��������ڴ���</p>
+<p>���Ա���ﰺ������һ�����ıʼǱ���׼����¼����һ�̣����ı��������רע��</p>
+<p><strong>�����£�����������</strong></p>
+<p>����һ��������Ŀ����ٴΰ��£������������ٴν��١�һ�ж���þ�ֹ�����綼ֹͣ�˺�����</p>
+<p>������С�����Ӱ���������£�����Ц����ͬ������ؿ̻������</p>
+<p>���������޵��۾������ˣ����ĺ������ƽ����������������һ�����õ��Ρ�</p>
+<p>��ѧ����˹�ص���ָͣ������ҳ�ϣ��������¶����һ˿΢Ц���·��������ҵ������Ĵ𰸡�</p>
+<p>Ƥķ˹���������彩Ӳ�������۾����ô��ģ�������˵����������̫����˼���ˣ���</p>
+<p>���Ա���ﰺ�ı�ͣ���˰���У����ıʼǱ��ϵ��ּ������ɼ�����¼����һ�̵��漣��</p>
+<p><strong>�ڰ��£�����֮��ĺ�г</strong></p>
+<p>ʱ���ٴ�������������������������ȥ��һ���ָֻ��˻���������Σ�һ�ж���ø��Ӻ�г��</p>
+<p>������С��������������������Ķ������������źͻ�����</p>
+<p>���������޺���ѧ����˹�ؿ�ʼ��һ��������ѧ�����ۣ����ǵ��Դǳ������ǻۺ���ȡ�</p>
+<p>Ƥķ˹���������Ա���ﰺһ����������Χ�ķ羰�����ǵ����϶�¶���������΢Ц��</p>
+<p>�����ȹ���վ��һ�ԣ������۾���˸�Ž����Ĺ�â����֪�����ķ����Ѿ��ı������ǵ����硣</p>
+<p><strong>�ھ��£���Ӫ�ص�δ��</strong></p>
+<p>����ʱ������ƣ�����Ӫ�ء�����Ĺ����ڹ���䴫������������Ϊ��һ����������֣�Ҳ��Ϊ��һ�ִ�˵��</p>
+<p>�����ȹ����������������ڸ�ɽ������Ұ���ݵ������������ǵ��㼣����������¼��������ÿһ������˲�䡣</p>
+<p>����ֻ�ǹ��µĿ�ʼ���ڽ���������������ǽ���̨�������������˸���ĵط�����¼���˸��������ʱ�̡�</p>
+<p><strong>��ʮ�£�Ů��ɭ�ֵ�����</strong></p>
+<p>��Ů��ɭ�ֵ�����֮�У������ȹ��������������Ǵ�����̨����������̤������Ƭδ֪��������ľ�ߴ�����ϣ����ǵ�֦Ҷ��΢���е���·��ڽ����Ź��ϵ����ܡ�</p>
+<p>������С����ŵظ��������������������������٣�������˸�ź�����η��Ĺ�â�����������������̫�����ˣ���������˵��������������ɭ���л��졣</p>
+<p>���������޽������������ȣ������۾��ڲ�ͣ����������Χ�����г����˶�δ֪�ľ�η�����Ҵ�δ��������ǻ��������ĵط�����ʵ�顣��</p>
+<p>��ѧ����˹�ذ������鱾��������ǰ������üͷ���������е��ɻ�����潻֯��һ�𡣡������ÿһ������ÿһƬҶ�ӣ����ƺ�����˵��ʲô����</p>
+<p>Ƥķ˹����������Ĵ����Լ������ţ���ͼƽ���Լ��������������Ǳ��뱣���侲���������Լ�˵������������ɭ���еͳ���������</p>
+<p>���Ա���ﰺ���ŵص����������۾����������ڲ������ʼ���ֽ�ϻ���ʱ������΢�����졣���⽫��һ�ηǷ���̽�ա���</p>
+<p><strong>��ʮһ�£��������ս</strong></p>
+<p>����С�������ؽ����������һ��̦޺���ǵ�ʯͷ�ϣ�����������΢�ز��������г������ڴ��벻�����������̨����������﹤��������������������ܡ���</p>
+<p>������С��������һ�������������г����˶Լ��������������Ŀ������������ǿ�������̨����Ƿ�����ɢ�������������</p>
+<p>���������޾�����վ��һ�ԣ���������ӿ�ֳ�һ������������ƽ������Ҳ������������ܼ������ҿ�����</p>
+<p>��ѧ����˹�ر������۾�����������������˶�֪ʶ�Ŀ��󡣡�����ط������������Ĺ����أ���</p>
+<p>Ƥķ˹�����������Լ���ȭͷ��������������һ˿���ġ������۷���ʲô�����Ƕ������������</p>
+<p>���Ա���ﰺ�ı�Ѹ�ٵ���ֽ�Ϸ��裬�������г����˶���һ�̵ļ�¼�����θС�����һ�У�������Ϊ��ʷ����</p>
+<p><strong>��ʮ���£�������ħ��</strong></p>
+<p>���������˿��ţ����������һ����΢����������ͻȻ������ɭ��������һ���������������ľֹͣ�˵����ֹͣ�˴���������ɭ���е����ﶼ��ֹ�ˡ�</p>
+<p>������С����۾����ô��ģ��������г��������뾴η�����⡭������̫����˼���ˣ���</p>
+<p>���������޵����¶����һ˿΢Ц��������������ܵ���һ��ǰ��δ�е�������������������ħ������</p>
+<p>��ѧ����˹�ص��۾���������������������ӿ�ֳ�һ�ֶ�������µ����⡣���Ҵ�δ����������������ǿ�󡣡�</p>
+<p>Ƥķ˹�����ļ��������������������г����˶���̨����ľ��塣���������㴴�����漣����</p>
+<p>���Ա���ﰺ�ı�ͣ���˰���У��������г����˶���һ�̵ľ�η������һ���ᱻ�������ǡ���</p>
+<p>����ʱ������ţ�������������ɢ��ɭ���ٴλָ������������ǣ��Ƿ�����������Ѿ�����ؿ�����ÿ���˵����С�</p>
+<p><strong>��ʮ���£�Ů��ɭ�ֵĴ�˵</strong></p>
+<p>�ڽ�����������������ȹ��������������ǽ���̨�������������˸���ĵط�����¼���˸��������ʱ�̡���Ů��ɭ�ֵĹ��£�Ҳ��Ϊ������֮��������һ�������Ĵ�˵��</p>
+<p>������ɭ���еľ����������Ǹ�����ϧ�˴˵����꣬Ҳ�����Ǹ������ţ�������ȷʵ������һЩ����˼���ħ����</p>
+<p>����������������Ϊ����Ӫ�ء������淢������Ϊ���������ĲƸ�֮һ����������¼�������ǵ����գ�Ҳ��¼�����������е��������г��</p>
+<p><strong>��ʮ���£�����֮�ǵ���Ӱ</strong></p>
+<p>�ڵ���������֮�ǣ�һ������깹�ɵĹ��ϳǱ��������޾��ĺڰ��С������ȹ��������������Ǵ�����̨����������̤�������������ĵط������еĿ����������Ű��˺;���������Χ��һ�ж���һ�㲻����������֡�</p>
+<p>������С�����ץס�Լ��Ķ��������������������ؼӿ죬�����������ֳ�һ˿�־塣���������̫�����ˣ���������������˵����</p>
+<p>���������޵���ɫ�԰ף����������ڵ��Ϸ������Ƶ����죬�������г����˶�����ط��Ĳ��������������Ӧ���������𣿡��������ʵ���</p>
+<p>��ѧ����˹�ؽ����������鱾����������ᶨ���������ȴ��һƬ���ҡ��������ÿһ��ʯͷ��ÿһ�Ʒ磬���ƺ�����˵�ű��˵Ĺ��¡���</p>
+<p>Ƥķ˹������üͷ��������������ӿ�ֳ�һ�������������Ǳ����ǿ���������Լ�˵����ͼ��ɢ���еĿ־塣</p>
+<p>���Ա���ﰺ�����ڲ��������ıʼ����޷����ƣ��������г����˶�����ط���η�塣���⽫��һ�ηǳ���ͬѰ���ļ�¼����</p>
+<p><strong>��ʮ���£��������ս</strong></p>
+<p>����С�������ؽ������׼�˳Ǳ��Ĵ��ţ�����������΢�ز��������г����˶�δ֪�Ŀ־塣�������̨����������﹤������������ǳ������󡣡�</p>
+<p>������С��������һ�������������г����˶Լ��������������Ŀ������������ǿ�������̨����Ƿ�����ɢ�������������</p>
+<p>���������޾�����վ��һ�ԣ���������ӿ�ֳ�һ������������ƽ������Ҳ������������ܼ������ҿ�����</p>
+<p>��ѧ����˹�ر������۾�����������������˶�֪ʶ�Ŀ��󡣡�����ط������������Ĺ����أ���</p>
+<p>Ƥķ˹�����������Լ���ȭͷ��������������һ˿���ġ������۷���ʲô�����Ƕ������������</p>
+<p>���Ա���ﰺ������һ�����ıʼǱ���׼����¼����һ�̣����ı��������רע��</p>
+<p><strong>��ʮ���£�����������</strong></p>
+<p>���������˿��ţ����������һ����΢����������ͻȻ����������֮��������һ�������������������ɢ�����˵���Ϣ��һ��ƽ����������ȡ����</p>
+<p>������С����۾����ô��ģ��������г��������뾴η�����⡭������̫����˼���ˣ���</p>
+<p>���������޵����¶����һ˿΢Ц��������������ܵ���һ��ǰ��δ�е�������������������ħ������</p>
+<p>��ѧ����˹�ص��۾���������������������ӿ�ֳ�һ�ֶ�������µ����⡣���Ҵ�δ����������������ǿ�󡣡�</p>
+<p>Ƥķ˹�����ļ��������������������г����˶���̨����ľ��塣���������㴴�����漣����</p>
+<p>���Ա���ﰺ�ı�ͣ���˰���У��������г����˶���һ�̵ľ�η������һ���ᱻ�������ǡ���</p>
+<p>����ʱ������ţ�������������ɢ������֮���ٴλָ������������ǣ��Ƿ�����������Ѿ�����ؿ�����ÿ���˵����С�</p>
+<p><strong>��ʮ���£�����֮�������</strong></p>
+<p>����֮�ǵı�Ե����һƬ����ȼ�յĻ𺣣�����Ϊ����֮�𡣸����ȹ���������������վ����Ƭ��ǰ�����ǵ���Ӱ�ڻ���ӳ�����Ե�Ť�����İ���</p>
+<p>������С������з����Ż������������������ӿ�ֳ�һ������������������Ǳ��봩����Ƭ�𺣣������ᶨ��˵��</p>
+<p>���������޽��������ȣ�����������˸�ž��ĵĹ�â�������Ƕ�������־�Ŀ��顣��</p>
+<p>��ѧ����˹�ص�������¶��һ˿���ȣ��������г����˶�δ֪�Ŀ�����������У��������������ܣ���</p>
+<p>Ƥķ˹��������һ�������������г����˶���ս�Ŀ�������������֤�������ǲ�η���κ���������</p>
+<p>���Ա���ﰺ�ı���ֽ�Ϸɿ���趯����¼����һ�̵ľ��ġ����⽫�����������ļ�֤����</p>
+<p><strong>��ʮ���£���Խ��</strong></p>
+<p>������������������ã�׼����׽��һ�̵�Ӣ�¡��������˿��ţ����������һ����΢����������ͻȻ�����еĻ����ø��ӳ��ң����������ħ���£������ƺ���Ϊ�����ó���һ����·��</p>
+<p>������С�����������˲�����������Ӱ�ڻ�����Եüᶨ�����š��������������������������ˡ�</p>
+<p>���������޽���������Ĳ������ȣ�ÿһ����̤�ڻ����ó��ĵ�·�ϡ�</p>
+<p>��ѧ����˹�ؽ����������鱾�������۾������ض���ǰ�����·���Ѱ���Ŵ𰸡�</p>
+<p>Ƥķ˹��������ǰ��������Ӱ�ڻ����Ե���׳���¸ҡ�</p>
+<p>���Ա���ﰺС�������ظ��ں��棬���ıʲ�ͣ�ؼ�¼����һ�̵�׳�١�</p>
+<p><strong>��ʮ���£���֮�����ʾ</strong></p>
+<p>�����Ǵ�Խ�𺣣���������һ��ʱ�����Ƿ����Լ�վ����һƬ�����Һ���ǹ��ɵĻĵ��ϡ�����Ŀ����г�������ǵ�ζ���������ϵ������ڻ���������</p>
+<p>������С�������¶����һ˿΢Ц���������г����˶Գɹ���ϲ�á������������ˡ���</p>
+<p>���������޵�������˸���ǻ۵Ĺ�â���������и��ܵ���һ����������㡣������һ��������ð�ա���</p>
+<p>��ѧ����˹�ص��۾���˸���˷ܵĹ�â���������г����˶���֪ʶ�Ŀ������������ÿһ��ʯͷ���������Ĺ��¡���</p>
+<p>Ƥķ˹���������Ź��ͣ��������г����˶�δ�����ڴ�������ֻ�ǿ�ʼ����</p>
+<p>���Ա���ﰺ�ıʼ���ֽ���ȶ����ƶ����������г����˶���һ�̵ļ�¼�����θС����⽫�����Ǵ����һ���֡���</p>
+<p>����ʱ������ţ���������Ƭ�ĵ����������Լ����㼣����������¼��������ÿһ������˲�䡣���ǵĹ��£����ᱻ�������ǣ���Ϊһ�δ��档</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AI/" rel="tag"># AI</a>
+              <a href="/tags/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/" rel="tag"># ����</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/ffmpeg-Deploy/" rel="prev" title="ffmpeg的配置和B站视频转化的简单使用">
+      <i class="fa fa-chevron-left"></i> ffmpeg的配置和B站视频转化的简单使用
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">May</p>
+  <div class="site-description" itemprop="description">我将万物藏在心底的寒冬，只为它们能在春天发芽</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">May</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">15k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">27 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
