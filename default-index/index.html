@@ -209,10 +209,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-03-31 21:08:25 / 修改时间：22:04:02" itemprop="dateCreated datePublished" datetime="2024-03-31T21:08:25+08:00">2024-03-31</time>
+              <time title="创建时间：2024-03-31 21:08:25" itemprop="dateCreated datePublished" datetime="2024-03-31T21:08:25+08:00">2024-03-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-04-15 19:36:35" itemprop="dateModified" datetime="2024-04-15T19:36:35+08:00">2024-04-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -229,7 +235,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>454</span>
+              <span>172</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -251,15 +257,19 @@
           <blockquote>
 <p>项目：P38图2-24  </p>
 <blockquote>
-<p>点击下载 <a target="_blank" rel="noopener" href="https://gitee.com/YsKIKI/blog/releases/download/1.0.3/%E5%9B%BE2-24.zip">本期资源</a></p>
+<p>点击下载 <a target="_blank" rel="noopener" href="https://gitee.com/YsKIKI/blog/releases/download/1.0.3/Proj_2.3.pdsprj">本期资源</a></p>
 </blockquote>
 </blockquote>
-<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件：<br><img src="/Microcontroller-project-driver/Mega16-1.png">  </p>
-<h4 id="将Device-Configuratiom设置为ATMega16"><a href="#将Device-Configuratiom设置为ATMega16" class="headerlink" title="将Device Configuratiom设置为ATMega16"></a>将<code>Device Configuratiom</code>设置为<code>ATMega16</code></h4><p><img src="/Microcontroller-project-driver/Mega16-2.png">  </p>
-<h4 id="编译程序"><a href="#编译程序" class="headerlink" title="编译程序"></a>编译程序</h4><p>点击上方<code>Build Project</code>按钮进行编译，显示：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    iccavr -c -e -D__ICC_VERSION=722 -DATMega16  -l -g -MLongJump -MHasMul -MEnhanced  main.c</span><br><span class="line">    iccavr -o PROJECT_2.2 -g -e:0x4000 -ucrtatmega.o -bfunc_lit:0x54.0x4000 -dram_end:0x45f -bdata:0x60.0x45f -dhwstk_size:30 -beeprom:0.512 -fihx_coff -S2 @PROJECT_2.2.lk   -lcatmega</span><br><span class="line">Device 1% full.</span><br><span class="line">Done. Sun Mar 31 21:50:14 2024</span><br></pre></td></tr></table></figure>
-<p>即为成功</p>
-<h4 id="将编译完的程序放入模拟程序中运行"><a href="#将编译完的程序放入模拟程序中运行" class="headerlink" title="将编译完的程序放入模拟程序中运行"></a>将编译完的程序放入模拟程序中运行</h4><p><img src="/Microcontroller-project-driver/Mega16-3.png">  </p>
+<h2 id="本期资源中目前仅为模拟电路文件（2024-4-15）"><a href="#本期资源中目前仅为模拟电路文件（2024-4-15）" class="headerlink" title="本期资源中目前仅为模拟电路文件（2024&#x2F;4&#x2F;15）"></a><code>本期资源</code>中目前仅为模拟电路文件（2024&#x2F;4&#x2F;15）</h2><h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件  </p>
+<blockquote>
+<p>有一说一，项目驱动手册里的模板程序居然是继承上个项目更新的  </p>
+<blockquote>
+<p>真是有够懒的  </p>
+<blockquote>
+<p>(╯°□°）╯︵ ┻━┻</p>
+</blockquote>
+</blockquote>
+</blockquote>
 
       
     </div>
@@ -1022,7 +1032,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
 </div>
 
         
