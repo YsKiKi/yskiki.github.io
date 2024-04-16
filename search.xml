@@ -105,33 +105,6 @@
       </tags>
   </entry>
   <entry>
-    <title>单片机项目驱动</title>
-    <url>//posts/Microcontroller-project-driver/</url>
-    <content><![CDATA[<blockquote>
-<p>项目：P38图2-24  </p>
-<blockquote>
-<p>点击下载 <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.3/Proj_2.3.pdsprj">本期资源</a></p>
-</blockquote>
-</blockquote>
-<h2 id="本期资源中目前仅为模拟电路文件（2024-4-15）"><a href="#本期资源中目前仅为模拟电路文件（2024-4-15）" class="headerlink" title="本期资源中目前仅为模拟电路文件（2024&#x2F;4&#x2F;15）"></a><code>本期资源</code>中目前仅为模拟电路文件（2024&#x2F;4&#x2F;15）</h2><h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件  </p>
-<blockquote>
-<p>有一说一，项目驱动手册里的模板程序居然是继承上个项目更新的  </p>
-<blockquote>
-<p>真是有够懒的  </p>
-<blockquote>
-<p>(╯°□°）╯︵ ┻━┻</p>
-</blockquote>
-</blockquote>
-</blockquote>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>单片机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>工具获取</title>
     <url>//posts/tools-acquisition/</url>
     <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
@@ -171,6 +144,28 @@
         <tag>原神</tag>
         <tag>崩坏·星穹铁道</tag>
         <tag>私服</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>单片机项目驱动</title>
+    <url>//posts/Microcontroller-project-driver/</url>
+    <content><![CDATA[<blockquote>
+<p>项目：P38图2-24  </p>
+<blockquote>
+<p>点击下载 <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.3/Proj_2.3.pdsprj">本期资源</a></p>
+</blockquote>
+</blockquote>
+<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件  </p>
+<h4 id="共阳-阴极数码管"><a href="#共阳-阴极数码管" class="headerlink" title="共阳&#x2F;阴极数码管"></a>共阳&#x2F;阴极数码管</h4><p><img src="https://img-blog.csdnimg.cn/25ff237d316e43e6b45d1fc993fd41b8.png"><br>如图所示：<br>共阳极 <strong><code>a</code></strong> - <strong><code>dp</code></strong> 端若为<code>1</code>，则电路不导通，若为<code>0</code>，则电路导通。<br>同理可得：<br>共阳极 <strong><code>a</code></strong> - <strong><code>dp</code></strong> 端若为<code>0</code>，则电路不导通，若为<code>1</code>，则电路导通。  </p>
+<p>了解了这一点，程序就容易编写了。</p>
+<h4 id="编写程序"><a href="#编写程序" class="headerlink" title="编写程序"></a>编写程序</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;iom16v.h&gt;</span><br><span class="line">#include &lt;macros.h&gt;				//包含所需的头文件</span><br><span class="line"></span><br><span class="line">void delay(unsigned int nms)			//延时函数编写</span><br><span class="line">&#123;</span><br><span class="line"> unsigned int i,j;</span><br><span class="line"> for(i=nms;i&gt;0;i--)</span><br><span class="line">  for(j=110;j&gt;0;j--)</span><br><span class="line">  &#123;;&#125;</span><br><span class="line">&#125;</span><br><span class="line">unsigned char smg[]=&#123;0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90&#125;;</span><br><span class="line">						//将数码管的编码写入数组 smg</span><br><span class="line">void main()</span><br><span class="line">&#123;</span><br><span class="line"> PORTA &amp;=~ BIT(PA2);</span><br><span class="line"> DDRA |= BIT(PA2);				//初始化PA2口</span><br><span class="line"> PORTB = 0Xff;</span><br><span class="line"> DDRB = 0xFF;					//初始化所有PB口</span><br><span class="line"> while(1)</span><br><span class="line"> &#123;</span><br><span class="line">  PORTB = smg[0];				//将数组第三位smg[2]的数据置到PB口</span><br><span class="line">  delay(500);					//延时500ms，以下同理</span><br><span class="line">  PORTB = smg[1];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[2];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[3];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[4];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[5];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[6];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[7];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[8];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[9];</span><br><span class="line">  delay(500);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数码管真值表"><a href="#数码管真值表" class="headerlink" title="数码管真值表"></a>数码管真值表</h4><p>dp|g|f|e|d|c|b|a|显示数字|十六进制<br>:—:|:—:|:—:|:—:|:—:|:—:|:—:|:—:|:—:|<br>0|1|1|0|0|0|0|0|0|0xc0<br>1|1|1|1|1|1|0|0|1|0xf9<br>3|1|0|1|0|0|1|0|0|0xa4<br>4|1|0|0|1|1|0|0|1|0xb0<br>5|1|0|0|1|0|0|1|0|0x99<br>6|1|0|0|0|0|0|1|0|0x92<br>7|1|1|1|1|1|0|0|0|0x82<br>8|1|0|0|0|0|0|0|0|0xf8<br>9|1|0|0|1|0|0|0|0|0x80</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>单片机</tag>
       </tags>
   </entry>
   <entry>
