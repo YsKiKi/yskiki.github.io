@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>工具获取</title>
+    <url>//posts/tools-acquisition/</url>
+    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
+</blockquote>
+</blockquote>
+<hr>
+<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
+<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iex(irm  &#x27;https://img.lelaer.com/gf.ps1&#x27;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
+<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iex(irm  &#x27;https://img.lelaer.com/srcn.ps1&#x27;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
+<hr>
+<h3 id="Notepad-下载"><a href="#Notepad-下载" class="headerlink" title="Notepad++下载"></a>Notepad++下载</h3><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++ [ v8.6.4 ]</a></p>
+<hr>
+<center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>  
+<center><font size="5"><font color="#ADFF2F">↓↓看看瑶瑶吧✓</font></font></center>  
+
+<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
+<hr>
+<ul>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具获取</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ffmpeg的配置和B站视频转化的简单使用</title>
+    <url>//posts/ffmpeg-Deploy/</url>
+    <content><![CDATA[<p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
+<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
+<blockquote>
+<p>建议国内无VPN用户选择该方式下载</p>
+</blockquote>
+<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
+<blockquote>
+<p>建议有VPN的用户选择该方式下载</p>
+</blockquote>
+<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
+<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
+<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
+<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
+<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ffmpeg</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于GitHub的博客搭建</title>
     <url>//posts/Blog-building/</url>
     <content><![CDATA[<ul>
@@ -105,113 +176,6 @@
       </tags>
   </entry>
   <entry>
-    <title>工具获取</title>
-    <url>//posts/tools-acquisition/</url>
-    <content><![CDATA[<h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
-<p><del>（记得解压缩哦~）</del></p>
-<blockquote>
-<p>（换仓库了，不用解压缩了）  </p>
-</blockquote>
-</blockquote>
-<hr>
-<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
-<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iex(irm  &#x27;https://img.lelaer.com/gf.ps1&#x27;)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
-<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iex(irm  &#x27;https://img.lelaer.com/srcn.ps1&#x27;)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
-<hr>
-<h3 id="Notepad-下载"><a href="#Notepad-下载" class="headerlink" title="Notepad++下载"></a>Notepad++下载</h3><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++ [ v8.6.4 ]</a></p>
-<hr>
-<center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>  
-<center><font size="5"><font color="#ADFF2F">↓↓看看瑶瑶吧✓</font></font></center>  
-
-<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
-<hr>
-<ul>
-<li><a href="https://kk-wuyue.top/">返回主页</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具获取</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>崩坏·星穹铁道</tag>
-        <tag>私服</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ffmpeg的配置和B站视频转化的简单使用</title>
-    <url>//posts/ffmpeg-Deploy/</url>
-    <content><![CDATA[<p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
-<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
-<blockquote>
-<p>建议国内无VPN用户选择该方式下载</p>
-</blockquote>
-<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
-<blockquote>
-<p>建议有VPN的用户选择该方式下载</p>
-</blockquote>
-<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
-<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
-<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
-<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
-<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
-<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>ffmpeg</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何将GitHub博客与域名关联</title>
-    <url>//posts/G-blog-To-domain/</url>
-    <content><![CDATA[<h2 id="如何将GitHub博客与域名关联"><a href="#如何将GitHub博客与域名关联" class="headerlink" title="如何将GitHub博客与域名关联"></a>如何将GitHub博客与域名关联</h2><p>书接上文，配置好了在GitHub上的个人博客之后，由于GitHub给我们的网址是 <a href="https://xxx.github.io/">https://xxx.github.io</a> ，有的人可能会觉得不是很美观。那么，有没有什么方法改变这个网址呢？  </p>
-<p>当然是有的啦！首先我们需要准备一个域名</p>
-<h4 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h4><p>国内有很多域名注册商，可以找一个注册域名：  </p>
-<p>老牌域名注册商，运营正规 <a href="https://wanwang.aliyun.com/">万网</a> ⌈阿里云旗下⌋<br>专注于DNS解析服务 <a href="https://dnspod.cloud.tencent.com/">DNSPod</a> ⌈腾讯云旗下⌋  </p>
-<blockquote>
-<p>除了这两家还有很多域名注册商，不喜欢也可以换 新网，西部数码，易名中国 这些</p>
-</blockquote>
-<h4 id="进行DNS解析"><a href="#进行DNS解析" class="headerlink" title="进行DNS解析"></a>进行DNS解析</h4><p>什么？域名不能拿来就用吗？<br>当然不能啦！在使用域名之前，要先对域名进行DNS解析  </p>
-<blockquote>
-<p>域名解析（DNS解析）是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站的一种服务。IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成。  </p>
-</blockquote>
-<p>如果你是通过<code>万网</code>或<code>DNSPod</code>购买的域名，那么在购买完后进入控制台即可进行域名解析<br>或者，你还可以用 <a href="https://www.cloudflare-cn.com/">Cloudflare</a> 等进行解析  </p>
-<p><strong>以cloudflare为例：</strong>  </p>
-<blockquote>
-<p>Cloudflare有自带防DDOS攻击，太香了（doge  </p>
-</blockquote>
-<p>要想用Cloudflare，需要在域名注册商处将<code>NS</code>改为 Cloudflare 的 NS：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brad.ns.cloudflare.com</span><br><span class="line">sunny.ns.cloudflare.com</span><br></pre></td></tr></table></figure>
-<p><img src="/Blog-domain/Blog-domain-3.png"><br>在<code>DNS</code>中添加四条<code>A</code>类型，指向GitHub服务器：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
-<p>添加一条www记录，让你的好友习惯性输入<code>www</code>后也可以访问你的博客：<br><img src="/Blog-domain/Blog-domain-1.png"><br>代理状态改为<code>已代理</code>，国内访问也很快啦！</p>
-<h4 id="将域名关联到GitHub"><a href="#将域名关联到GitHub" class="headerlink" title="将域名关联到GitHub"></a>将域名关联到GitHub</h4><p>我们已经成功解析了域名，将域名关联到GitHub后，就可以输入你的域名访问博客了  </p>
-<p>在输入域名之前，我们需要在本地 Blog 文件夹目录下的 sources 文件夹中新建一个 CHAME 文件：<br>新建 文本文档(.txt)&gt;&gt;双击打开编辑，在里面输入你的域名：<br><img src="/Blog-domain/Blog-domain-4.png"><br>保存，将文件后缀名<code>.txt</code>删除，返回 Blog 根目录，Hexo三连上传到GitHub    </p>
-<p>打开你的 <strong>博客仓库</strong> ，点击：Settings-Pages，在这里输入你的域名：<br><img src="/Blog-domain/Blog-domain-2.png"><br>点击<code>save</code>，GitHub会自动对你的DNS进行检测，显示<code>successful</code>的时候就大功告成啦！</p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>域名</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>单片机项目驱动</title>
     <url>//posts/Microcontroller-project-driver/</url>
     <content><![CDATA[<blockquote>
@@ -224,8 +188,7 @@
 <h4 id="共阳-阴极数码管"><a href="#共阳-阴极数码管" class="headerlink" title="共阳&#x2F;阴极数码管"></a>共阳&#x2F;阴极数码管</h4><p><img src="/Microcontroller-project-driver/Mega16-1.png"><br>如图所示：<br>共阳极 <strong><code>a</code></strong> - <strong><code>dp</code></strong> 端若为<code>1</code>，则电路不导通，若为<code>0</code>，则电路导通。<br>同理可得：<br>共阳极 <strong><code>a</code></strong> - <strong><code>dp</code></strong> 端若为<code>0</code>，则电路不导通，若为<code>1</code>，则电路导通。  </p>
 <p>了解了这一点，程序就容易编写了。</p>
 <h4 id="编写程序"><a href="#编写程序" class="headerlink" title="编写程序"></a>编写程序</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;iom16v.h&gt;</span><br><span class="line">#include &lt;macros.h&gt;				//包含所需的头文件</span><br><span class="line"></span><br><span class="line">void delay(unsigned int nms)			//延时函数编写</span><br><span class="line">&#123;</span><br><span class="line"> unsigned int i,j;</span><br><span class="line"> for(i=nms;i&gt;0;i--)</span><br><span class="line">  for(j=110;j&gt;0;j--)</span><br><span class="line">  &#123;;&#125;</span><br><span class="line">&#125;</span><br><span class="line">unsigned char smg[]=&#123;0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90&#125;;</span><br><span class="line">						//将数码管的编码写入数组 smg</span><br><span class="line">void main()</span><br><span class="line">&#123;</span><br><span class="line"> PORTA &amp;=~ BIT(PA2);</span><br><span class="line"> DDRA |= BIT(PA2);				//初始化PA2口</span><br><span class="line"> PORTB = 0Xff;</span><br><span class="line"> DDRB = 0xFF;					//初始化所有PB口</span><br><span class="line"> while(1)</span><br><span class="line"> &#123;</span><br><span class="line">  PORTB = smg[0];				//将数组第三位smg[2]的数据置到PB口</span><br><span class="line">  delay(500);					//延时500ms，以下同理</span><br><span class="line">  PORTB = smg[1];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[2];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[3];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[4];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[5];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[6];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[7];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[8];</span><br><span class="line">  delay(500);</span><br><span class="line">  PORTB = smg[9];</span><br><span class="line">  delay(500);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="数码管真值表"><a href="#数码管真值表" class="headerlink" title="数码管真值表"></a>数码管真值表</h4><p>数码管真值表</p>
-<table>
+<h4 id="共阳极数码管真值表"><a href="#共阳极数码管真值表" class="headerlink" title="共阳极数码管真值表"></a>共阳极数码管真值表</h4><table>
   <thead>
     <tr>
       <th style="text-align: center;">dp</th>
@@ -357,6 +320,42 @@
       </categories>
       <tags>
         <tag>单片机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何将GitHub博客与域名关联</title>
+    <url>//posts/G-blog-To-domain/</url>
+    <content><![CDATA[<h2 id="如何将GitHub博客与域名关联"><a href="#如何将GitHub博客与域名关联" class="headerlink" title="如何将GitHub博客与域名关联"></a>如何将GitHub博客与域名关联</h2><p>书接上文，配置好了在GitHub上的个人博客之后，由于GitHub给我们的网址是 <a href="https://xxx.github.io/">https://xxx.github.io</a> ，有的人可能会觉得不是很美观。那么，有没有什么方法改变这个网址呢？  </p>
+<p>当然是有的啦！首先我们需要准备一个域名</p>
+<h4 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h4><p>国内有很多域名注册商，可以找一个注册域名：  </p>
+<p>老牌域名注册商，运营正规 <a href="https://wanwang.aliyun.com/">万网</a> ⌈阿里云旗下⌋<br>专注于DNS解析服务 <a href="https://dnspod.cloud.tencent.com/">DNSPod</a> ⌈腾讯云旗下⌋  </p>
+<blockquote>
+<p>除了这两家还有很多域名注册商，不喜欢也可以换 新网，西部数码，易名中国 这些</p>
+</blockquote>
+<h4 id="进行DNS解析"><a href="#进行DNS解析" class="headerlink" title="进行DNS解析"></a>进行DNS解析</h4><p>什么？域名不能拿来就用吗？<br>当然不能啦！在使用域名之前，要先对域名进行DNS解析  </p>
+<blockquote>
+<p>域名解析（DNS解析）是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站的一种服务。IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成。  </p>
+</blockquote>
+<p>如果你是通过<code>万网</code>或<code>DNSPod</code>购买的域名，那么在购买完后进入控制台即可进行域名解析<br>或者，你还可以用 <a href="https://www.cloudflare-cn.com/">Cloudflare</a> 等进行解析  </p>
+<p><strong>以cloudflare为例：</strong>  </p>
+<blockquote>
+<p>Cloudflare有自带防DDOS攻击，太香了（doge  </p>
+</blockquote>
+<p>要想用Cloudflare，需要在域名注册商处将<code>NS</code>改为 Cloudflare 的 NS：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brad.ns.cloudflare.com</span><br><span class="line">sunny.ns.cloudflare.com</span><br></pre></td></tr></table></figure>
+<p><img src="/Blog-domain/Blog-domain-3.png"><br>在<code>DNS</code>中添加四条<code>A</code>类型，指向GitHub服务器：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
+<p>添加一条www记录，让你的好友习惯性输入<code>www</code>后也可以访问你的博客：<br><img src="/Blog-domain/Blog-domain-1.png"><br>代理状态改为<code>已代理</code>，国内访问也很快啦！</p>
+<h4 id="将域名关联到GitHub"><a href="#将域名关联到GitHub" class="headerlink" title="将域名关联到GitHub"></a>将域名关联到GitHub</h4><p>我们已经成功解析了域名，将域名关联到GitHub后，就可以输入你的域名访问博客了  </p>
+<p>在输入域名之前，我们需要在本地 Blog 文件夹目录下的 sources 文件夹中新建一个 CHAME 文件：<br>新建 文本文档(.txt)&gt;&gt;双击打开编辑，在里面输入你的域名：<br><img src="/Blog-domain/Blog-domain-4.png"><br>保存，将文件后缀名<code>.txt</code>删除，返回 Blog 根目录，Hexo三连上传到GitHub    </p>
+<p>打开你的 <strong>博客仓库</strong> ，点击：Settings-Pages，在这里输入你的域名：<br><img src="/Blog-domain/Blog-domain-2.png"><br>点击<code>save</code>，GitHub会自动对你的DNS进行检测，显示<code>successful</code>的时候就大功告成啦！</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>域名</tag>
       </tags>
   </entry>
   <entry>
