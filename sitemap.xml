@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kk-wuyue.top/posts/bedrock/</loc>
-    
-    <lastmod>2024-05-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kk-wuyue.top/posts/Microcontroller-project-driver/</loc>
     
     <lastmod>2024-05-10</lastmod>
@@ -101,27 +92,6 @@
 
   
   <url>
-    <loc>https://kk-wuyue.top/tags/%E5%8E%9F%E7%A5%9E/</loc>
-    <lastmod>2024-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kk-wuyue.top/tags/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93/</loc>
-    <lastmod>2024-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kk-wuyue.top/tags/%E7%A7%81%E6%9C%8D/</loc>
-    <lastmod>2024-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kk-wuyue.top/tags/GitHub/</loc>
     <lastmod>2024-05-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -143,6 +113,27 @@
   </url>
   
   <url>
+    <loc>https://kk-wuyue.top/tags/%E5%8E%9F%E7%A5%9E/</loc>
+    <lastmod>2024-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/tags/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93/</loc>
+    <lastmod>2024-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/tags/%E7%A7%81%E6%9C%8D/</loc>
+    <lastmod>2024-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://kk-wuyue.top/tags/ffmpeg/</loc>
     <lastmod>2024-05-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -151,6 +142,13 @@
   
   <url>
     <loc>https://kk-wuyue.top/tags/Windows/</loc>
+    <lastmod>2024-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/</loc>
     <lastmod>2024-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -177,21 +175,7 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://kk-wuyue.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/</loc>
-    <lastmod>2024-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
-  
-  <url>
-    <loc>https://kk-wuyue.top/categories/%E5%B7%A5%E5%85%B7%E8%8E%B7%E5%8F%96/</loc>
-    <lastmod>2024-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
   <url>
     <loc>https://kk-wuyue.top/categories/%E6%95%99%E7%A8%8B/</loc>
@@ -201,7 +185,7 @@
   </url>
   
   <url>
-    <loc>https://kk-wuyue.top/categories/noun/</loc>
+    <loc>https://kk-wuyue.top/categories/%E5%B7%A5%E5%85%B7%E8%8E%B7%E5%8F%96/</loc>
     <lastmod>2024-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
