@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kk-wuyue.top/posts/bedrock/</loc>
+    
+    <lastmod>2024-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kk-wuyue.top/posts/Microcontroller-project-driver/</loc>
     
     <lastmod>2024-05-10</lastmod>
@@ -148,13 +157,6 @@
   </url>
   
   <url>
-    <loc>https://kk-wuyue.top/tags/%E5%9F%9F%E5%90%8D/</loc>
-    <lastmod>2024-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kk-wuyue.top/tags/Ubuntu22-04/</loc>
     <lastmod>2024-05-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -163,6 +165,13 @@
   
   <url>
     <loc>https://kk-wuyue.top/tags/Redis-Server/</loc>
+    <lastmod>2024-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/tags/%E5%9F%9F%E5%90%8D/</loc>
     <lastmod>2024-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -186,6 +195,13 @@
   
   <url>
     <loc>https://kk-wuyue.top/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2024-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/categories/noun/</loc>
     <lastmod>2024-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

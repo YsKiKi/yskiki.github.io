@@ -923,6 +923,668 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/bedrock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="May">
+      <meta itemprop="description" content="我将万物藏在心底的寒冬，只为它们能在春天发芽">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="五月のBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/bedrock/" class="post-title-link" itemprop="url">bedrock</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-02-19 13:02:39" itemprop="dateCreated datePublished" datetime="2024-02-19T13:02:39+08:00">2024-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-05-16 23:51:34" itemprop="dateModified" datetime="2024-05-16T23:51:34+08:00">2024-05-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/noun/" itemprop="url" rel="index"><span itemprop="name">noun</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>23k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>42 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html>
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <style type="text/css">
+    body {
+        max-width: 1500px;
+        font-family: Arial;
+    }
+
+<pre><code>blockquote, pre &#123;
+    border: 1px solid #000;
+    margin: 5px 0;
+    padding: 5px;
+    font-family: &quot;Courier New&quot;;
+    font-size: 11pt;
+    background: #eee;
+&#125;
+
+code &#123;
+    background: #eee;
+    padding: 2px;
+&#125;
+
+table &#123;
+    border-spacing: 0;
+    border-collapse: collapse;
+&#125;
+
+table th,
+table td &#123;
+    border: 1px solid #000;
+    padding: 5px;
+&#125;
+
+&lt;/style&gt;
+</code></pre>
+</head>
+
+<body class="c31">
+    <h1>How to use the dedicated server</h1>
+    <h2>Disclaimer</h2>
+    <p>
+        This is an early release (alpha) which we don't fully support yet. It might contain severe issues and we could stop supporting it at any time.
+    </p>
+
+<pre><code>&lt;h2&gt;Recommended Hardware&lt;/h2&gt;
+&lt;p&gt;
+    We recommend running the Bedrock Minecraft Server on 64-bit Intel or AMD processor machines with at least 2 cores and 1 Gb RAM.
+&lt;/p&gt;
+
+&lt;h2&gt;Platforms&lt;/h2&gt;
+
+&lt;h3&gt;Linux&lt;/h3&gt;
+&lt;p&gt;
+    The Linux version of the Bedrock Server requires Ubuntu 18 or later. Other distributions are not supported.
+    Unzip the container file into an empty folder. Start the server with the following command:
+&lt;/p&gt;
+&lt;blockquote&gt;
+    LD_LIBRARY_PATH=. ./bedrock_server
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;p&gt;
+    The Windows version of the Bedrock Server requires either:
+    &lt;ul type=&quot;disc&quot;&gt;
+        &lt;li&gt;Windows 10 version 1703 or later&lt;/li&gt;
+        &lt;li&gt;Windows Server 2016 or later&lt;/li&gt;
+    &lt;/ul&gt;
+    Unzip the container file into an empty folder. Start the server by executing the &lt;code&gt;bedrock_server.exe&lt;/code&gt; file.
+&lt;/p&gt;
+&lt;p&gt;
+    On some systems, when you wish to connect to the server using a client running on the same machine as the
+    server is running on, you will need to exempt the Minecraft client from UWP loopback restrictions:
+    &lt;blockquote&gt;CheckNetIsolation.exe LoopbackExempt -a -p=S-1-15-2-1958404141-86561845-1752920682-3514627264-368642714-62675701-733520436&lt;/blockquote&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;
+    The server will try to read a file named &lt;code&gt;server.properties&lt;/code&gt;. Some of these options are only read when a new world is created, while some others are read every startup. The file should contain a list with keys and values separated with an equal sign, one per line.
+&lt;/p&gt;
+&lt;p&gt;
+    The following options are available. If a value as a number in parenthesis, that number can be used instead of the text value.
+&lt;/p&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Option name&lt;/th&gt;
+            &lt;th style=&quot;min-width:200px&quot;&gt;Possible values&lt;/th&gt;
+            &lt;th&gt;Default value&lt;/th&gt;
+            &lt;th&gt;When is it used&lt;/th&gt;
+            &lt;th&gt;Notes&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;server-name&lt;/td&gt;
+            &lt;td&gt;Any string (no semicolon allowed)&lt;/td&gt;
+            &lt;td&gt;Dedicated Server&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;This is the server name shown in the in-game server list.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;gamemode&lt;/td&gt;
+            &lt;td&gt;survival, creative, adventure&lt;/td&gt;
+            &lt;td&gt;survival&lt;/td&gt;
+            &lt;td&gt;Always or only for new players&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;force-gamemode&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;false&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;
+                &lt;b&gt;force-gamemode=false&lt;/b&gt;(or &lt;b&gt;force-gamemode is not defined&lt;/b&gt; in the server.properties file)
+                prevents the server from sending to the client gamemode values other
+                than the gamemode value saved by the server during world creation
+                even if those values are set in server.properties file after world creation.&lt;br /&gt;
+                &lt;b&gt;force-gamemode=true&lt;/b&gt; forces the server to send to the client gamemode values
+                other than the gamemode value saved by the server during world creation
+                if those values are set in server.properties file after world creation.
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;difficulty&lt;/td&gt;
+            &lt;td&gt;peaceful, easy, normal, hard&lt;/td&gt;
+            &lt;td&gt;easy&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;allow-cheats&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;false&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;If true then cheats like commands can be used.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;max-players&lt;/td&gt;
+            &lt;td&gt;Any integer&lt;/td&gt;
+            &lt;td&gt;10&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;The maximum numbers of players that should be able to play on the server. &lt;b&gt;Higher values have performance impact.&lt;/b&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;server-port&lt;/td&gt;
+            &lt;td&gt;Integer between 1024 and 65535&lt;/td&gt;
+            &lt;td&gt;19132&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;Values below 1024 may be used, but are generally reserved for well known applications&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;server-portv6&lt;/td&gt;
+            &lt;td&gt;Integer between 1024 and 65535&lt;/td&gt;
+            &lt;td&gt;19133&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;Values below 1024 may be used, but are generally reserved for well known applications&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;enable-lan-visibility&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;true&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;Listen and respond to clients that are looking for servers on the LAN. This will cause the server to bind to
+                the default ports (19132, 19133) even when &#39;server-port&#39; and &#39;server-portv6&#39; have non-default values. Consider
+                turning this off if LAN discovery is not desirable, or when running multiple servers on the same host may lead to port conflicts.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;level-name&lt;/td&gt;
+            &lt;td&gt;Any string&lt;/td&gt;
+            &lt;td&gt;Bedrock level&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;The name of level to be used/generated. Each level has its own folder in &lt;code&gt;/worlds&lt;/code&gt;.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;level-seed&lt;/td&gt;
+            &lt;td&gt;Any string &lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;World creation&lt;/td&gt;
+            &lt;td&gt;The seed to be used for randomizing the world. If left empty a seed will be chosen at random.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;online-mode&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;true&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;If true, all connected players must be authenticated with Xbox Live.
+                Clients connecting to remote (non-LAN) servers will always require Xbox Live authentication regardless of this setting.
+                If the server accepts connections from the Internet, then it is &lt;b&gt;highly&lt;/b&gt; recommended to enable online-mode.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;allow-list&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;false&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;If true then all connected players must be listed in the separate &lt;code&gt;allowlist.json&lt;/code&gt; file.
+                See the &lt;i&gt;Allowlist&lt;/i&gt; section.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;view-distance&lt;/td&gt;
+            &lt;td&gt;Any integer greater than 5&lt;/td&gt;
+            &lt;td&gt;32&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;The maximum allowed view distance. &lt;b&gt;Higher values have performance impact.&lt;/b&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;player-idle-timeout&lt;/td&gt;
+            &lt;td&gt;Any positive integer, including 0&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;After a player has idled for this many minutes they will be kicked. If set to 0 then players can idle indefinitely.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;max-threads&lt;/td&gt;
+            &lt;td&gt;Any integer&lt;/td&gt;
+            &lt;td&gt;8&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;Maximum number of threads the server will try to use. If set to 0 or removed then it will use as many as possible.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;tick-distance&lt;/td&gt;
+            &lt;td&gt;An integer in the range [4, 12]&lt;/td&gt;
+            &lt;td&gt;4&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;The world will be ticked this many chunks away from any player. &lt;b&gt;Higher values have performance impact.&lt;/b&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;default-player-permission-level&lt;/td&gt;
+            &lt;td&gt;visitor, member, operator&lt;/td&gt;
+            &lt;td&gt;member&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;Which permission level new players will have when they join for the first time.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;texturepack-required&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;false&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;If the world uses any specific texture packs then this setting will force the client to use it.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;content-log-file-enabled&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;false&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;Enables logging content errors to a file.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;compression-threshold&lt;/td&gt;
+            &lt;td&gt;An integer in the range [0-65535]&lt;/td&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;Determines the smallest size of raw network payload to compress. Can be used to experiment with CPU-bandwidth tradeoffs.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;compression-algorithm&lt;/td&gt;
+            &lt;td&gt;zlib, snappy&lt;/td&gt;
+            &lt;td&gt;zlib&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;Determines the compression algorithm to use for networking.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;server-authoritative-movement&lt;/td&gt;
+            &lt;td&gt;client-auth,&lt;br&gt;server-auth,&lt;br&gt;server-auth-with-rewind&lt;/td&gt;
+            &lt;td&gt;server-auth&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;Changes the server authority on movement:&lt;br&gt;
+                &lt;b&gt;&quot;client-auth&quot;&lt;/b&gt;: Server has no authority and accepts all positions from the client.&lt;br&gt;
+                &lt;b&gt;&quot;server-auth&quot;&lt;/b&gt;: Server takes user input and simulates the Player movement but accepts the Client version if there is disagreement.&lt;br&gt;
+                &lt;b&gt;&quot;server-auth-with-rewind&quot;&lt;/b&gt;: The server will replay local user input and will push it to the Client so it can correct the position if it does not match.
+                The clients will rewind time back to the correction time, apply the correction, then replay all the player&#39;s inputs since then.
+                This results in smoother and more frequent corrections.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;player-position-acceptance-threshold&lt;/td&gt;
+            &lt;td&gt;Any positive float&lt;/td&gt;
+            &lt;td&gt;0.5&lt;/td&gt;
+            &lt;td&gt;With &quot;server-auth-with-rewind&quot;&lt;/td&gt;
+            &lt;td&gt;Only used with &quot;server-auth-with-rewind&quot;. This is the tolerance of discrepancies between the Client and Server Player position.
+            This helps in problematic scenarios. The higher the number, the more tolerant the server will be before asking for a correction.
+            Passed value of 1.0, the chance of missing cheating increases.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;player-movement-action-direction-threshold&lt;/td&gt;
+            &lt;td&gt;Any positive float in the range of [-1.00, 1.00]&lt;/td&gt;
+            &lt;td&gt;0.85&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;The amount that the direction the player is attacking can differ from the direction the
+                player is looking as cos(x) where x is the angle between the two vectors. A value of 1
+                means the two vectors must be parallel, 0 means anything in front of the player, and -1
+                means any vector.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;server-authoritative-block-breaking&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;false&lt;/td&gt;
+            &lt;td&gt;Not when client-auth&lt;/td&gt;
+            &lt;td&gt;If true, the server will compute block mining operations in sync with the client so it can verify that the client should be able to break blocks when it thinks it can.
+                This setting cannot be combined with client authoritative movement and will be disabled if that setting is enabled.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;server-authoritative-block-breaking-pick-range-scalar&lt;/td&gt;
+            &lt;td&gt;Any float above 1.0&lt;/td&gt;
+            &lt;td&gt;1.5&lt;/td&gt;
+            &lt;td&gt;When server-authoritative-block-breaking is true&lt;/td&gt;
+            &lt;td&gt;This increase the range of block breaking. This is squared and multiplied with the default range.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;chat-restriction&lt;/td&gt;
+            &lt;td&gt;None, Dropped, Disabled&lt;/td&gt;
+            &lt;td&gt;None&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;This represents the level of restriction applied to the chat for each player that joins the server.
+                &quot;None&quot; is the default and represents regular free chat.
+                &quot;Dropped&quot; means the chat messages are dropped and never sent to any client. Players receive a message to let them know the feature is disabled.
+                &quot;Disabled&quot; means that unless the player is an operator, the chat UI does not even appear. No information is displayed to the player.
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;disable-player-interaction&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;false&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;If true, the server will inform clients that they should ignore other players when interacting with the world.
+                This is not server authoritative.&lt;/td&gt;
+        &lt;/tr&gt;
+            &lt;td&gt;client-side-chunk-generation-enabled&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;true&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;If true, the server will inform clients that they have the ability to generate visual level chunks outside of player interaction distances.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;block-network-ids-are-hashes&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;true&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;If true, the server will send hashed block network ID&#39;s instead of id&#39;s that start from 0 and go up.  These id&#39;s are stable and won&#39;t change regardless of other block changes.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;disable-persona&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;false&lt;/td&gt;
+            &lt;td&gt;Internal Use Only&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;disable-custom-skins&lt;/td&gt;
+            &lt;td&gt;true, false&lt;/td&gt;
+            &lt;td&gt;false&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;If true, disable players customized skins that were customized outside of the Minecraft store assets or in game assets.  This is used to disable possibly offensive custom skins players make.&lt;/td&gt;
+        &lt;/tr&gt;
+            &lt;td&gt;server-build-radius-ratio&lt;/td&gt;
+            &lt;td&gt;Disabled, 0.0-1.0&lt;/td&gt;
+            &lt;td&gt;Disabled&lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+            &lt;td&gt;If &quot;Disabled&quot; the server will dynamically calculate how much of the player&#39;s view it will generate, assigning the rest to the client to build.
+                Otherwise from the overridden ratio tell the server how much of the player&#39;s view to generate, disregarding client hardware capability.
+                &lt;b&gt;Only valid if client-side-chunk-generation-enabled is enabled.&lt;/b&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;Folders&lt;/h2&gt;
+&lt;p&gt;
+    When unpacking you will see a few folders and the binary executable. When starting the server for the first time a bunch of new (empty) folders will be created. The folders you should care about are the following:
+&lt;/p&gt;
+
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Folder name&lt;/th&gt;
+            &lt;th&gt;Purpose&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;behavior_packs&lt;/td&gt;
+            &lt;td&gt;This is where new behavior packs can be installed. At the moment there&#39;s no way of activating
+                        them in a level.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;resource_packs&lt;/td&gt;
+            &lt;td&gt;This is where new resource packs can be installed. At the moment there&#39;s no way of activating
+                        them in a level.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;worlds&lt;/td&gt;
+            &lt;td&gt;This folder will be created at startup if it doesn&#39;t already exist. Every world created will have a folder named according to their &lt;code&gt;level-name&lt;/code&gt; inside the &lt;code&gt;server.properties&lt;/code&gt; file.&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;Allowlist&lt;/h2&gt;
+&lt;p&gt;
+    If the &lt;code&gt;allow-list&lt;/code&gt; property is enabled in &lt;code&gt;server.properties&lt;/code&gt; then the server will only allow selected users to connect. To allow a user to connect you need to know their Xbox Live Gamertag. The easiest way to add a user to the allowlist is to use the command &lt;code&gt;allowlist add &amp;lt;Gamertag&amp;gt;&lt;/code&gt; (eg: &lt;code&gt;allowlist add ExampleName&lt;/code&gt;). Note: If there is a white-space in the Gamertag you need to enclose it with double quotes: &lt;code&gt;allowlist add &quot;Example Name&quot;&lt;/code&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    If you later want to remove someone from the list you can use the command &lt;code&gt;allowlist remove &amp;lt;Gamertag&amp;gt;&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+    The allowlist will be saved in a file called &lt;code&gt;allowlist.json&lt;/code&gt;. If you want to automate the process of adding or removing players from it you can do so. After you&#39;ve modified the file you need to run the command &lt;code&gt;allowlist reload&lt;/code&gt; to make sure that the server knows about your new change.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;b&gt;NOTE:&lt;/b&gt; This file was previously named &lt;code&gt;whitelist.json&lt;/code&gt;. For backwards compatability, if a &lt;code&gt;whitelist.json&lt;/code&gt; file is also present, it will be used instead of &lt;code&gt;allowlist.json&lt;/code&gt;.
+    To migrate, delete the default &lt;code&gt;allowlist.json&lt;/code&gt; file, rename &lt;code&gt;whitelist.json&lt;/code&gt; to &lt;code&gt;allowlist.json&lt;/code&gt;, then restart the server.
+&lt;/p&gt;
+&lt;p&gt;
+    The file contains a JSON array with objects that contains the following key/values.
+&lt;/p&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Key&lt;/th&gt;
+            &lt;th&gt;Type&lt;/th&gt;
+            &lt;th&gt;Value&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;name&lt;/td&gt;
+            &lt;td&gt;String&lt;/td&gt;
+            &lt;td&gt;The gamertag of the user.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;xuid&lt;/td&gt;
+            &lt;td&gt;String&lt;/td&gt;
+            &lt;td&gt;Optional. The XUID of the user. If it&#39;s not set then it will be populated when someone with a matching name connects.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;ignoresPlayerLimit&lt;/td&gt;
+            &lt;td&gt;Boolean&lt;/td&gt;
+            &lt;td&gt;True if this user should not count towards the maximum player limit. Currently there&#39;s another soft limit of 30 (or 1 higher than the specified number of max players) connected players, even if players use this option. The intention for this is to have some players be able to join even if the server is full.&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;
+    Example &lt;code&gt;allowlist.json&lt;/code&gt; file:
+&lt;/p&gt;
+&lt;pre&gt;
+</code></pre>
+<p>[<br>    {<br>        “ignoresPlayerLimit”: false,<br>        “name”: “MyPlayer”<br>    },<br>    {<br>        “ignoresPlayerLimit”: false,<br>        “name”: “AnotherPlayer”,<br>        “xuid”: “274817248”<br>    }<br>]</pre></p>
+<pre><code>&lt;h2&gt;Permissions&lt;/h2&gt;
+&lt;p&gt;
+    You can adjust player specific permissions by assigning them roles in the &lt;code&gt;permissions.json&lt;/code&gt; that is placed in the same directory as the server executable. The file contains a simple JSON object with XUIDs and permissions. Valid permissions are: &lt;code&gt;operator&lt;/code&gt;, &lt;code&gt;member&lt;/code&gt;, &lt;code&gt;visitor&lt;/code&gt;. Every player that connects with these accounts will be treated according to the set premission. If you change this file while the server is running, then run the command &lt;code&gt;permission reload&lt;/code&gt; to make sure that the server knows about your new change. You could also list the current permissions with &lt;code&gt;permission list&lt;/code&gt;. Note that &lt;code&gt;online-mode&lt;/code&gt; needs to be enabled for this feature to work since xuid requires online verification of the user account. If a new player that is not in this list connects, the &lt;code&gt;default-player-permission-level&lt;/code&gt; option will apply.
+
+&lt;/p&gt;
+&lt;p&gt;
+    Example &lt;code&gt;permissions.json&lt;/code&gt; file:
+&lt;/p&gt;
+
+&lt;pre&gt;
+</code></pre>
+<p>[<br>    {<br>        “permission”: “operator”,<br>        “xuid”: “451298348”<br>    },<br>    {<br>        “permission”: “member”,<br>        “xuid”: “52819329”<br>    },<br>    {<br>        “permission”: “visitor”,<br>        “xuid”: “234114123”<br>    }<br>]</pre></p>
+<pre><code>&lt;h2&gt;Crash reporting&lt;/h2&gt;
+&lt;p&gt;
+    If the server crashes it will automatically send us various information that helps us solve it for the future.
+&lt;/p&gt;
+
+&lt;h2&gt;Commands&lt;/h2&gt;
+&lt;p&gt;
+    You can issue commands to the server by typing in the console. The following commands are available. &amp;lt; &amp;gt; means a parameter is required, [ ] means it&#39;s optional and | denotes different allowed values. Strings can be enclosed in double quotes, &quot;, if they contain spaces.
+&lt;/p&gt;
+
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Command syntax&lt;/th&gt;
+            &lt;th&gt;Description&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;kick &amp;lt;player name or xuid&amp;gt; &amp;lt;reason&amp;gt;&lt;/td&gt;
+            &lt;td&gt;Immediately kicks a player. The reason will be shown on the kicked players screen.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;stop&lt;/td&gt;
+            &lt;td&gt;Shuts down the server gracefully.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;save &amp;lt;hold | resume | query&amp;gt;&lt;/td&gt;
+            &lt;td&gt;Used to make atomic backups while the server is running. See the backup section for more information.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;allowlist &amp;lt;on | off | list | reload&amp;gt;&lt;/td&gt;
+            &lt;td&gt;
+                &lt;p&gt;
+                    &lt;code&gt;on&lt;/code&gt; and &lt;code&gt;off&lt;/code&gt; turns the allowlist on and off. Note that this does not change the value in the &lt;code&gt;server.properties&lt;/code&gt; file!
+                &lt;/p&gt;
+                &lt;p&gt;
+                    &lt;code&gt;list&lt;/code&gt; prints the current allowlist used by the server
+                &lt;/p&gt;
+                &lt;p&gt;
+                    &lt;code&gt;reload&lt;/code&gt; makes the server reload the allowlist from the file.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    See the allowlist section for more information.
+                &lt;/p&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;allowlist &amp;lt;add | remove&amp;gt; &amp;lt;name&amp;gt;&lt;/td&gt;
+            &lt;td&gt;Adds or removes a player from the allowlist file. The name parameter should be the Xbox Gamertag of the player you want to add or remove. You don&#39;t need to specify a XUID here, it will be resolved the first time the player connects.&lt;br/&gt;&lt;br/&gt;See the Allowlist section for more information.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;permission &amp;lt;list | reload&amp;gt;&lt;/td&gt;
+            &lt;td&gt;
+                &lt;p&gt;
+                    &lt;code&gt;list&lt;/code&gt; prints the current used operator list.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    &lt;code&gt;reload&lt;/code&gt; makes the server reload the operator list from the ops file.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    See the Permissions section for more information.
+                &lt;/p&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;op &amp;lt;player&amp;gt;&lt;/td&gt;
+            &lt;td&gt;
+                &lt;p&gt;
+                    Promote a player to &lt;code&gt;operator&lt;/code&gt;. This will also persist in &lt;code&gt;permissions.json&lt;/code&gt; if the player is authenticated to XBL. If &lt;code&gt;permissions.json&lt;/code&gt; is missing it will be created. If the player is not connected to XBL, the player is promoted for the current server session and it will not be persisted on disk. Defualt server permission level will be assigned to the player after a server restart.
+                &lt;/p&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;deop &amp;lt;player&amp;gt;&lt;/td&gt;
+            &lt;td&gt;
+                &lt;p&gt;
+                    Demote a player to &lt;code&gt;member&lt;/code&gt;. This will also persist in &lt;code&gt;permissions.json&lt;/code&gt; if the player is authenticated to XBL. If &lt;code&gt;permissions.json&lt;/code&gt; is missing it will be created.
+                &lt;/p&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;changesetting &amp;lt;setting&amp;gt; &amp;lt;value&amp;gt;&lt;/td&gt;
+            &lt;td&gt;Changes a server setting without having to restart the server. Currently only two settings are supported to be changed, &lt;code&gt;allow-cheats&lt;/code&gt; (true or false) and &lt;code&gt;difficulty&lt;/code&gt; (0, &lt;code&gt;peaceful&lt;/code&gt;, 1, &lt;code&gt;easy&lt;/code&gt;, 2, &lt;code&gt;normal&lt;/code&gt;, 3 or &lt;code&gt;hard&lt;/code&gt;). They do not modify the value that&#39;s specified in &lt;code&gt;server.properties&lt;/code&gt;.&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;Backups&lt;/h2&gt;
+&lt;p&gt;
+    The server supports taking backups of the world files while the server is running. It&#39;s not particularly friendly for taking manual backups, but works better when automated. The backup (from the servers perspective) consists of three commands.
+&lt;/p&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Command&lt;/th&gt;
+            &lt;th&gt;Description&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;save hold&lt;/td&gt;
+            &lt;td&gt;This will ask the server to prepare for a backup. It’s asynchronous and will return immediately.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;save query&lt;/td&gt;
+            &lt;td&gt;After calling &lt;code&gt;save hold&lt;/code&gt; you should call this command repeatedly to see if the preparation has finished. When it returns a success it will return a file list (with lengths for each file) of the files you need to copy. The server will not pause while this is happening, so some files can be modified while the backup is taking place. As long as you only copy the files in the given file list and truncate the copied files to the specified lengths, then the backup should be valid.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;save resume&lt;/td&gt;
+            &lt;td&gt;When you’re finished with copying the files you should call this to tell the server that it’s okay to remove old files again.&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+</body>
+
+</html>
+</style></head></html>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/tools-acquisition/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1101,14 +1763,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1150,12 +1812,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">7k</span>
+    <span title="站点总字数">30k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13 分钟</span>
+    <span title="站点阅读时长">55 分钟</span>
 </div>
 
         
