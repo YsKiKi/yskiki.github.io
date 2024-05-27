@@ -28,13 +28,11 @@
 <meta property="og:site_name" content="五月のBlog">
 <meta property="og:description" content="项目：1602液晶显示    点击下载 本期编程文件   将文件添加到AVR中先解压缩文件 将.c文件和.h文件添加到AVR：AVR新建Project，Files 目录下添加.c文件，Headers 目录下添加.h文件。点击上方 Project Options -&gt; Target ，将Device Configuration项改为ATmega16，点击编译按钮进行编译。 将编译好的.hex">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://kk-wuyue.top/Microcontroller-project-driver/Mega16-1.png">
 <meta property="article:published_time" content="2024-03-31T13:08:25.000Z">
-<meta property="article:modified_time" content="2024-05-10T07:46:31.564Z">
+<meta property="article:modified_time" content="2024-05-27T10:01:56.543Z">
 <meta property="article:author" content="May">
 <meta property="article:tag" content="单片机">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://kk-wuyue.top/Microcontroller-project-driver/Mega16-1.png">
 
 <link rel="canonical" href="https://kk-wuyue.top/posts/Microcontroller-project-driver/">
 
@@ -222,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-05-10 15:46:31" itemprop="dateModified" datetime="2024-05-10T15:46:31+08:00">2024-05-10</time>
+                <time title="修改时间：2024-05-27 18:01:56" itemprop="dateModified" datetime="2024-05-27T18:01:56+08:00">2024-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,7 +238,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>448</span>
+              <span>213</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -262,143 +260,12 @@
         <blockquote>
 <p>项目：1602液晶显示  </p>
 <blockquote>
-<p>点击下载 <strong><a target="_blank" rel="noopener" href="https://gitee.com/YsKIKI/blog/releases/download/1.0.3/16_2.zip">本期编程文件</a></strong></p>
+<p>点击下载 <strong><a target="_blank" rel="noopener" href="https://gitee.com/YsKIKI/blog/releases/download/1.0.3/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
 </blockquote>
 </blockquote>
 <h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
 <h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
-<h4 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h4><hr>
-<p>以下内容和仅完成本次作业无关</p>
-<hr>
-<h4 id="共阳-阴极数码管"><a href="#共阳-阴极数码管" class="headerlink" title="共阳&#x2F;阴极数码管"></a>共阳&#x2F;阴极数码管</h4><p><img src="/Microcontroller-project-driver/Mega16-1.png"><br>如图所示：<br>共阳极 <strong><code>a</code></strong> - <strong><code>dp</code></strong> 端若为<code>1</code>，则电路不导通，若为<code>0</code>，则电路导通。<br>同理可得：<br>共阳极 <strong><code>a</code></strong> - <strong><code>dp</code></strong> 端若为<code>0</code>，则电路不导通，若为<code>1</code>，则电路导通。  </p>
-<p>了解了这一点，程序就容易编写了。</p>
-<h4 id="共阳极数码管真值表"><a href="#共阳极数码管真值表" class="headerlink" title="共阳极数码管真值表"></a>共阳极数码管真值表</h4><table>
-  <thead>
-    <tr>
-      <th style="text-align: center;">dp</th>
-      <th style="text-align: center;">g</th>
-      <th style="text-align: center;">f</th>
-      <th style="text-align: center;">e</th>
-      <th style="text-align: center;">d</th>
-      <th style="text-align: center;">c</th>
-      <th style="text-align: center;">b</th>
-      <th style="text-align: center;">a</th>
-      <th style="text-align: center;">显示数字</th>
-      <th style="text-align: center;">十六进制</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th style="text-align: center;">0
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0xc0
-    </th></tr>
-    <tr>
-      <th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0xf9
-    </th></tr>
-    <tr>
-      <th style="text-align: center;">3
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0xa4
-    </th></tr>
-    <tr>
-      <th style="text-align: center;">4
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0xb0
-    </th></tr>
-    <tr>
-      <th style="text-align: center;">5
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0x99
-    </th></tr>
-    <tr>
-      <th style="text-align: center;">6
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0x92
-    </th></tr>
-    <tr>
-      <th style="text-align: center;">7
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0x82
-    </th></tr>
-    <tr>
-      <th style="text-align: center;">8
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0xf8
-    </th></tr>
-    <tr>
-      <th style="text-align: center;">9
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">1
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0
-      </th><th style="text-align: center;">0x80
-    </th></tr>
-  </tbody>
-</table>
-
+<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>
     </div>
 
     
@@ -478,7 +345,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0AVR%E4%B8%AD"><span class="nav-number">1.</span> <span class="nav-text">将文件添加到AVR中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86-c%E6%96%87%E4%BB%B6%E5%92%8C-h%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0AVR%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">将.c文件和.h文件添加到AVR：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E7%BC%96%E8%AF%91%E5%A5%BD%E7%9A%84-hex%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0Proteus%E4%B8%AD"><span class="nav-number">1.2.</span> <span class="nav-text">将编译好的.hex文件添加到Proteus中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B1%E9%98%B3-%E9%98%B4%E6%9E%81%E6%95%B0%E7%A0%81%E7%AE%A1"><span class="nav-number">1.3.</span> <span class="nav-text">共阳&#x2F;阴极数码管</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B1%E9%98%B3%E6%9E%81%E6%95%B0%E7%A0%81%E7%AE%A1%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="nav-number">1.4.</span> <span class="nav-text">共阳极数码管真值表</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0AVR%E4%B8%AD"><span class="nav-number">1.</span> <span class="nav-text">将文件添加到AVR中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86-c%E6%96%87%E4%BB%B6%E5%92%8C-h%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0AVR%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">将.c文件和.h文件添加到AVR：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E7%BC%96%E8%AF%91%E5%A5%BD%E7%9A%84-hex%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0Proteus%E4%B8%AD"><span class="nav-number">2.</span> <span class="nav-text">将编译好的.hex文件添加到Proteus中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEATmega16%E7%9A%84%E5%85%B3%E8%81%94%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.1.</span> <span class="nav-text">设置ATmega16的关联程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.2.</span> <span class="nav-text">运行程序</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -546,7 +413,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
 </div>
 
         
