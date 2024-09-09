@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kk-wuyue.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Screen������12345screen -S &lt;����&gt;        # ����һ���µ��ն˻ỰCtrl-A-D                # �˳���ǰ���ն˻Ự�����ֺ�̨����screen -ls              # �鿴��ǰ���ڵ������ն˻Ựscreen -S &lt;����&gt; -X quit # ɾ��ĳ���ն˻">
+<meta property="og:type" content="article">
+<meta property="og:title" content="���������screen��vim��ϵͳ���á�ѹ�����ѹ">
+<meta property="og:url" content="https://kk-wuyue.top/posts/command-collection/">
+<meta property="og:site_name" content="五月のBlog">
+<meta property="og:description" content="Screen������12345screen -S &lt;����&gt;        # ����һ���µ��ն˻ỰCtrl-A-D                # �˳���ǰ���ն˻Ự�����ֺ�̨����screen -ls              # �鿴��ǰ���ڵ������ն˻Ựscreen -S &lt;����&gt; -X quit # ɾ��ĳ���ն˻">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-25T15:14:05.000Z">
+<meta property="article:modified_time" content="2024-09-09T02:43:57.205Z">
+<meta property="article:author" content="May">
+<meta property="article:tag" content="������">
+<meta property="article:tag" content="screen">
+<meta property="article:tag" content="vim">
+<meta property="article:tag" content="ѹ����ѹ">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://kk-wuyue.top/posts/command-collection/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>���������screen��vim��ϵͳ���á�ѹ�����ѹ | 五月のBlog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">五月のBlog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/command-collection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="May">
+      <meta itemprop="description" content="我将万物藏在心底的寒冬，只为它们能在春天发芽">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="五月のBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ���������screen��vim��ϵͳ���á�ѹ�����ѹ
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-25 23:14:05" itemprop="dateCreated datePublished" datetime="2024-08-25T23:14:05+08:00">2024-08-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-09-09 10:43:57" itemprop="dateModified" datetime="2024-09-09T10:43:57+08:00">2024-09-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EF%BF%BD%CC%B3%EF%BF%BD/" itemprop="url" rel="index"><span itemprop="name">�̳�</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="Screen������"><a href="#Screen������" class="headerlink" title="Screen������"></a>Screen������</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">screen -S &lt;����&gt;        <span class="comment"># ����һ���µ��ն˻Ự</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># �˳���ǰ���ն˻Ự�����ֺ�̨����</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># �鿴��ǰ���ڵ������ն˻Ự</span></span><br><span class="line">screen -S &lt;����&gt; -X quit <span class="comment"># ɾ��ĳ���ն˻Ự</span></span><br><span class="line">screen -r &lt;����&gt;        <span class="comment"># �л���ĳ���ն˻Ự</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Vim������"><a href="#Vim������" class="headerlink" title="Vim������"></a>Vim������</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim &lt;�ļ���&gt;            <span class="comment"># ���ļ�</span></span><br><span class="line">i                       <span class="comment"># ���� insert �༭ģʽ</span></span><br><span class="line">esc                     <span class="comment"># �˳� insert �༭ģʽ</span></span><br><span class="line">:w                      <span class="comment"># ���浫���˳�</span></span><br><span class="line">:w &lt;���ļ���&gt;           <span class="comment"># ���ļ�����Ϊ���ļ�</span></span><br><span class="line">:q                      <span class="comment"># �������˳�</span></span><br><span class="line">:wq                     <span class="comment"># ���沢�˳�</span></span><br><span class="line">:!                      <span class="comment"># ǿ��ִ������</span></span><br><span class="line">:q!                     <span class="comment"># ǿ�Ʋ������˳��������޸��ļ�֮�󲻱��������˳�</span></span><br><span class="line">:wq!                    <span class="comment"># ǿ�Ʊ����˳������ļ������߻� root �û����ļ�û��дȨ��ʱ��ǿ��д������ʹ��</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="�޸�ϵͳ���м�����������C��ʾ���棺"><a href="#�޸�ϵͳ���м�����������C��ʾ���棺" class="headerlink" title="�޸�ϵͳ���м�����������Ȼ��ʾ���棺"></a>�޸�ϵͳ���м�����������Ȼ��ʾ���棺</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
+
+<h3 id="�l�������"><a href="#�l�������" class="headerlink" title="�ļ�������"></a>�ļ�������</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;�ļ���&gt;          <span class="comment"># �½��ļ�</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;Ŀ¼��&gt;          <span class="comment"># �½��ļ���</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="���y�ѹ��ѹ�����"><a href="#���y�ѹ��ѹ�����" class="headerlink" title="���ý�ѹ��ѹ�����"></a>���ý�ѹ��ѹ�����</h3><h4 id="tar�l�"><a href="#tar�l�" class="headerlink" title=".tar�ļ�"></a>.tar�ļ�</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf &lt;�ļ���&gt;.tar                  <span class="comment"># ��������������ѹ����</span></span><br><span class="line">tar -cvf &lt;�ļ���&gt;.tar DirName          <span class="comment"># ��DirName�����������ļ����У����</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="gz�l�"><a href="#gz�l�" class="headerlink" title=".gz�ļ�"></a>.gz�ļ�</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gunzip &lt;�ļ���&gt;.gz                     <span class="comment"># ��ѹ��ʽ1</span></span><br><span class="line">gzip -d &lt;�ļ���&gt;.gz                    <span class="comment"># ��ѹ��ʽ2</span></span><br><span class="line">gzip &lt;�ļ���&gt;                          <span class="comment"># ѹ����ֻ��ѹ���ļ�</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="tar-gz-��-tgz�l�"><a href="#tar-gz-��-tgz�l�" class="headerlink" title=".tar.gz �� .tgz�ļ�"></a>.tar.gz �� .tgz�ļ�</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf &lt;�ļ���&gt;.tar.gz              <span class="comment"># ��ѹ</span></span><br><span class="line">tar -zcvf &lt;�ļ���&gt;.tar.gz DirName      <span class="comment"># ѹ������DirName�����������ļ����У�ѹ��</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;�ļ���&gt;.tar.gz <span class="comment"># ��ѹ��Ŀ��·��</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="zip�l�"><a href="#zip�l�" class="headerlink" title=".zip�ļ�"></a>.zip�ļ�</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unzip &lt;�ļ���&gt;.zip                     <span class="comment"># ��ѹ</span></span><br><span class="line">zip &lt;�ļ���&gt;.zip DirName               <span class="comment"># ��DirNameѹ��</span></span><br><span class="line">zip -r &lt;�ļ���&gt;.zip DirName            <span class="comment"># ѹ�����ݹ鴦������ָ��Ŀ¼�µ������ļ�����Ŀ¼һ��ѹ��</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="rar�l�"><a href="#rar�l�" class="headerlink" title=".rar�ļ�"></a>.rar�ļ�</h4><blockquote>
+<p>ע�⣺macOS��LinuxĬ��û���Դ�rar���ߣ���Ҫ������װ��</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rar x &lt;�ļ���&gt;.rar                     <span class="comment"># ��ѹ</span></span><br><span class="line">rar a &lt;�ļ���&gt;.rar DirName             <span class="comment"># ѹ��</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/" rel="tag"># ������</a>
+              <a href="/tags/screen/" rel="tag"># screen</a>
+              <a href="/tags/vim/" rel="tag"># vim</a>
+              <a href="/tags/%D1%B9%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%D1%B9/" rel="tag"># ѹ����ѹ</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/clash-for-linux/" rel="prev" title="将Clash配置到纯cli的Ubuntu">
+      <i class="fa fa-chevron-left"></i> 将Clash配置到纯cli的Ubuntu
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Screen%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EE%A3%BA"><span class="nav-number">1.</span> <span class="nav-text">Screen������</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vim%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EE%A3%BA"><span class="nav-number">2.</span> <span class="nav-text">Vim������</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BF%BD%DE%B8%EF%BF%BD%CF%B5%CD%B3%EF%BF%BD%EF%BF%BD%EF%BF%BD%D0%BC%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDC%EF%BF%BD%EF%BF%BD%CA%BE%EF%BF%BD%EF%BF%BD%EF%BF%BD%E6%A3%BA"><span class="nav-number">3.</span> <span class="nav-text">�޸�ϵͳ���м�����������Ȼ��ʾ���棺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BF%BDl%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EE%A3%BA"><span class="nav-number">4.</span> <span class="nav-text">�ļ�������</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BF%BD%EF%BF%BD%EF%BF%BDy%EF%BF%BD%D1%B9%EF%BF%BD%EF%BF%BD%D1%B9%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EE%A3%BA"><span class="nav-number">5.</span> <span class="nav-text">���ý�ѹ��ѹ�����</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tar%EF%BF%BDl%EF%BF%BD"><span class="nav-number">5.1.</span> <span class="nav-text">.tar�ļ�</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gz%EF%BF%BDl%EF%BF%BD"><span class="nav-number">5.2.</span> <span class="nav-text">.gz�ļ�</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tar-gz-%EF%BF%BD%EF%BF%BD-tgz%EF%BF%BDl%EF%BF%BD"><span class="nav-number">5.3.</span> <span class="nav-text">.tar.gz �� .tgz�ļ�</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zip%EF%BF%BDl%EF%BF%BD"><span class="nav-number">5.4.</span> <span class="nav-text">.zip�ļ�</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rar%EF%BF%BDl%EF%BF%BD"><span class="nav-number">5.5.</span> <span class="nav-text">.rar�ļ�</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">May</p>
+  <div class="site-description" itemprop="description">我将万物藏在心底的寒冬，只为它们能在春天发芽</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">May</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">16 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
