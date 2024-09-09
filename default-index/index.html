@@ -200,7 +200,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/command-collection/" class="post-title-link" itemprop="url">���������screen��vim��ϵͳ���á�ѹ�����ѹ</a>
+            <a href="/posts/command-collection/" class="post-title-link" itemprop="url">常用命令集：screen、vim、系统设置、压缩与解压</a>
         </h2>
 
         <div class="post-meta">
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-09 10:43:57" itemprop="dateModified" datetime="2024-09-09T10:43:57+08:00">2024-09-09</time>
+                <time title="修改时间：2024-09-09 10:48:53" itemprop="dateModified" datetime="2024-09-09T10:48:53+08:00">2024-09-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,7 +225,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EF%BF%BD%CC%B3%EF%BF%BD/" itemprop="url" rel="index"><span itemprop="name">�̳�</span></a>
+                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
                 </span>
             </span>
 
@@ -235,7 +235,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -254,26 +254,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Screen������"><a href="#Screen������" class="headerlink" title="Screen������"></a>Screen������</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">screen -S &lt;����&gt;        <span class="comment"># ����һ���µ��ն˻Ự</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># �˳���ǰ���ն˻Ự�����ֺ�̨����</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># �鿴��ǰ���ڵ������ն˻Ự</span></span><br><span class="line">screen -S &lt;����&gt; -X quit <span class="comment"># ɾ��ĳ���ն˻Ự</span></span><br><span class="line">screen -r &lt;����&gt;        <span class="comment"># �л���ĳ���ն˻Ự</span></span><br></pre></td></tr></table></figure>
+          <h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Vim������"><a href="#Vim������" class="headerlink" title="Vim������"></a>Vim������</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim &lt;�ļ���&gt;            <span class="comment"># ���ļ�</span></span><br><span class="line">i                       <span class="comment"># ���� insert �༭ģʽ</span></span><br><span class="line">esc                     <span class="comment"># �˳� insert �༭ģʽ</span></span><br><span class="line">:w                      <span class="comment"># ���浫���˳�</span></span><br><span class="line">:w &lt;���ļ���&gt;           <span class="comment"># ���ļ�����Ϊ���ļ�</span></span><br><span class="line">:q                      <span class="comment"># �������˳�</span></span><br><span class="line">:wq                     <span class="comment"># ���沢�˳�</span></span><br><span class="line">:!                      <span class="comment"># ǿ��ִ������</span></span><br><span class="line">:q!                     <span class="comment"># ǿ�Ʋ������˳��������޸��ļ�֮�󲻱��������˳�</span></span><br><span class="line">:wq!                    <span class="comment"># ǿ�Ʊ����˳������ļ������߻� root �û����ļ�û��дȨ��ʱ��ǿ��д������ʹ��</span></span><br></pre></td></tr></table></figure>
+<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="�޸�ϵͳ���м�����������C��ʾ���棺"><a href="#�޸�ϵͳ���м�����������C��ʾ���棺" class="headerlink" title="�޸�ϵͳ���м�����������Ȼ��ʾ���棺"></a>�޸�ϵͳ���м�����������Ȼ��ʾ���棺</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
+<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
 
-<h3 id="�l�������"><a href="#�l�������" class="headerlink" title="�ļ�������"></a>�ļ�������</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;�ļ���&gt;          <span class="comment"># �½��ļ�</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;Ŀ¼��&gt;          <span class="comment"># �½��ļ���</span></span><br></pre></td></tr></table></figure>
+<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="���y�ѹ��ѹ�����"><a href="#���y�ѹ��ѹ�����" class="headerlink" title="���ý�ѹ��ѹ�����"></a>���ý�ѹ��ѹ�����</h3><h4 id="tar�l�"><a href="#tar�l�" class="headerlink" title=".tar�ļ�"></a>.tar�ļ�</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf &lt;�ļ���&gt;.tar                  <span class="comment"># ��������������ѹ����</span></span><br><span class="line">tar -cvf &lt;�ļ���&gt;.tar DirName          <span class="comment"># ��DirName�����������ļ����У����</span></span><br></pre></td></tr></table></figure>
+<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="gz�l�"><a href="#gz�l�" class="headerlink" title=".gz�ļ�"></a>.gz�ļ�</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gunzip &lt;�ļ���&gt;.gz                     <span class="comment"># ��ѹ��ʽ1</span></span><br><span class="line">gzip -d &lt;�ļ���&gt;.gz                    <span class="comment"># ��ѹ��ʽ2</span></span><br><span class="line">gzip &lt;�ļ���&gt;                          <span class="comment"># ѹ����ֻ��ѹ���ļ�</span></span><br></pre></td></tr></table></figure>
+<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="tar-gz-��-tgz�l�"><a href="#tar-gz-��-tgz�l�" class="headerlink" title=".tar.gz �� .tgz�ļ�"></a>.tar.gz �� .tgz�ļ�</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf &lt;�ļ���&gt;.tar.gz              <span class="comment"># ��ѹ</span></span><br><span class="line">tar -zcvf &lt;�ļ���&gt;.tar.gz DirName      <span class="comment"># ѹ������DirName�����������ļ����У�ѹ��</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;�ļ���&gt;.tar.gz <span class="comment"># ��ѹ��Ŀ��·��</span></span><br></pre></td></tr></table></figure>
+<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="zip�l�"><a href="#zip�l�" class="headerlink" title=".zip�ļ�"></a>.zip�ļ�</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unzip &lt;�ļ���&gt;.zip                     <span class="comment"># ��ѹ</span></span><br><span class="line">zip &lt;�ļ���&gt;.zip DirName               <span class="comment"># ��DirNameѹ��</span></span><br><span class="line">zip -r &lt;�ļ���&gt;.zip DirName            <span class="comment"># ѹ�����ݹ鴦������ָ��Ŀ¼�µ������ļ�����Ŀ¼һ��ѹ��</span></span><br></pre></td></tr></table></figure>
+<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="rar�l�"><a href="#rar�l�" class="headerlink" title=".rar�ļ�"></a>.rar�ļ�</h4><blockquote>
-<p>ע�⣺macOS��LinuxĬ��û���Դ�rar���ߣ���Ҫ������װ��</p>
+<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
+<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rar x &lt;�ļ���&gt;.rar                     <span class="comment"># ��ѹ</span></span><br><span class="line">rar a &lt;�ļ���&gt;.rar DirName             <span class="comment"># ѹ��</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1202,7 +1202,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
