@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-20 20:27:35" itemprop="dateModified" datetime="2024-09-20T20:27:35+08:00">2024-09-20</time>
+                <time title="修改时间：2024-09-20 20:35:41" itemprop="dateModified" datetime="2024-09-20T20:35:41+08:00">2024-09-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,9 +274,10 @@
 <li><p>更改 <strong>你的原中文用户名</strong> 为 <strong>你的新英文用户名</strong> 。</p>
 </li>
 </ol>
-<h3 id="更改注册表中的路径"><a href="#更改注册表中的路径" class="headerlink" title="更改注册表中的路径"></a>更改注册表中的路径</h3><ol>
+<h3 id="更改注册表中的路径"><a href="#更改注册表中的路径" class="headerlink" title="更改注册表中的路径"></a>更改注册表中的路径</h3><ol start="0">
+<li>注意：注册表操作位高风险操作，建议操作前先备份注册表。</li>
 <li>按 <code>Win+R</code> 输入 <code>regedit</code> 进入注册表。</li>
-<li>进入目录：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code></li>
+<li>依次展开以下路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code></li>
 <li>在此目录下有多个文件夹，注意 <code>ProfileImagePath</code> 的数据，找到你的原中文用户名，双击进入编辑，将其更改为你的新英文用户名，点击确定。</li>
 </ol>
 <h3 id="回到更改好的用户"><a href="#回到更改好的用户" class="headerlink" title="回到更改好的用户"></a>回到更改好的用户</h3><ol>
@@ -294,9 +295,8 @@
 <li>按 <code>Win+R</code>，输入 <code>msconfig</code>，回车。</li>
 <li>在弹出的 <strong>系统配置</strong> 窗口中，选择 <strong>引导</strong> 标签页，然后勾选 <strong>安全引导</strong> 。</li>
 <li>点击 <strong>确定</strong> 并重启电脑，系统将进入安全模式。</li>
-<li>在此模式下对文件夹进行更改，改完后按 <code>Win+R</code>，输入 <code>msconfig</code>，回车。</li>
-<li>在弹出的 <strong>系统配置</strong> 窗口中，选择 <strong>引导</strong> 标签页，然后 <strong>取消勾选</strong> 安全引导。</li>
-<li>点击 <strong>确定</strong> 并重启电脑。</li>
+<li>在此模式下对文件夹进行更改。</li>
+<li>改完后按照上述方法再次打开系统配置， <strong>取消</strong> 勾选安全引导</li>
 </ol>
 <h3 id="在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码"><a href="#在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码" class="headerlink" title="在登录 Administrator 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码"></a>在登录 <code>Administrator</code> 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码</h3><p>解决办法：</p>
 <ol>
