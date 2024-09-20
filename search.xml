@@ -105,6 +105,82 @@
       </tags>
   </entry>
   <entry>
+    <title>工具获取</title>
+    <url>//posts/tools-acquisition/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
+</blockquote>
+</blockquote>
+<hr>
+<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
+<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/gf.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
+<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/srcn.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
+<hr>
+<h3 id="Notepad-下载"><a href="#Notepad-下载" class="headerlink" title="Notepad++下载"></a>Notepad++下载</h3><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++ [ v8.6.4 ]</a></p>
+<hr>
+<center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>  
+<center><font size="5"><font color="#ADFF2F">↓↓看看瑶瑶吧✓</font></font></center>  
+
+<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
+<hr>
+<ul>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具获取</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
+    <url>//posts/command-collection/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
+<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>命令行</tag>
+        <tag>screen</tag>
+        <tag>vim</tag>
+        <tag>压缩解压</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows更改用户名</title>
     <url>//posts/Windows-change-Username/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
@@ -174,40 +250,6 @@
       </categories>
       <tags>
         <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
-    <url>//posts/command-collection/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
-<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>命令行</tag>
-        <tag>screen</tag>
-        <tag>vim</tag>
-        <tag>压缩解压</tag>
       </tags>
   </entry>
   <entry>
@@ -283,67 +325,6 @@
       </tags>
   </entry>
   <entry>
-    <title>工具获取</title>
-    <url>//posts/tools-acquisition/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
-<p><del>（记得解压缩哦~）</del></p>
-<blockquote>
-<p>（换仓库了，不用解压缩了）  </p>
-</blockquote>
-</blockquote>
-<hr>
-<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
-<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/gf.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
-<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/srcn.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
-<hr>
-<h3 id="Notepad-下载"><a href="#Notepad-下载" class="headerlink" title="Notepad++下载"></a>Notepad++下载</h3><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++ [ v8.6.4 ]</a></p>
-<hr>
-<center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>  
-<center><font size="5"><font color="#ADFF2F">↓↓看看瑶瑶吧✓</font></font></center>  
-
-<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
-<hr>
-<ul>
-<li><a href="https://kk-wuyue.top/">返回主页</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具获取</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>崩坏·星穹铁道</tag>
-        <tag>私服</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>单片机项目驱动</title>
-    <url>//posts/Microcontroller-project-driver/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>项目：1602液晶显示  </p>
-<blockquote>
-<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
-</blockquote>
-</blockquote>
-<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
-<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
-<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>单片机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在Ubuntu上配置nodejs和redis</title>
     <url>//posts/Ubuntu-nr-help/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="在Ubuntu上配置nodejs和redis（记录篇）"><a href="#在Ubuntu上配置nodejs和redis（记录篇）" class="headerlink" title="在Ubuntu上配置nodejs和redis（记录篇）"></a>在Ubuntu上配置nodejs和redis（记录篇）</h2><p>由于嫌弃服务器上用Windows的话图形化界面太耗资源，这两天把服务器系统换成了Ubuntu，虽然速度提升聊胜于无，但蚊子腿再小也是肉~o.0~<br>为了防止云服务器到期的时候再配置又要查资料，在这里写一篇记录篇，查起来也方便  </p>
@@ -393,6 +374,25 @@
         <tag>Nodejs</tag>
         <tag>Ubuntu22.04</tag>
         <tag>Redis-Server</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>单片机项目驱动</title>
+    <url>//posts/Microcontroller-project-driver/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>项目：1602液晶显示  </p>
+<blockquote>
+<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
+</blockquote>
+</blockquote>
+<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
+<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
+<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>单片机</tag>
       </tags>
   </entry>
   <entry>
