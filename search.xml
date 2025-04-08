@@ -1,37 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
-    <url>//posts/command-collection/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
-<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
+    <title>工具获取</title>
+    <url>//posts/tools-acquisition/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<hr>
+<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
+<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/gf.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
+<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/srcn.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果不可用，使用以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12; Invoke-Expression (New-Object Net.WebClient).DownloadString(<span class="string">&quot;https://imgheybox.max-c.com/game/star_rail/link1.ps1&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
+<hr>
+<h3 id="Notepad-下载"><a href="#Notepad-下载" class="headerlink" title="Notepad++下载"></a>Notepad++下载</h3><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++ [ v8.6.4 ]</a></p>
+<hr>
+<center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>  
+<center><font size="5"><font color="#ADFF2F">↓↓看看瑶瑶吧✓</font></font></center>  
+
+<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
+<hr>
+<ul>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+</ul>
 ]]></content>
       <categories>
-        <category>教程</category>
+        <category>工具获取</category>
       </categories>
       <tags>
-        <tag>命令行</tag>
-        <tag>screen</tag>
-        <tag>vim</tag>
-        <tag>压缩解压</tag>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
       </tags>
   </entry>
   <entry>
@@ -139,91 +150,37 @@
       </tags>
   </entry>
   <entry>
-    <title>工具获取</title>
-    <url>//posts/tools-acquisition/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
-<p><del>（记得解压缩哦~）</del></p>
-<blockquote>
-<p>（换仓库了，不用解压缩了）  </p>
-</blockquote>
-</blockquote>
-<hr>
-<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
-<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/gf.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
+    <url>//posts/command-collection/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
 
-<hr>
-<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
-<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/srcn.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
 
-<p>如果不可用，使用以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12; Invoke-Expression (New-Object Net.WebClient).DownloadString(<span class="string">&quot;https://imgheybox.max-c.com/game/star_rail/link1.ps1&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
-<hr>
-<h3 id="Notepad-下载"><a href="#Notepad-下载" class="headerlink" title="Notepad++下载"></a>Notepad++下载</h3><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++ [ v8.6.4 ]</a></p>
-<hr>
-<center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>  
-<center><font size="5"><font color="#ADFF2F">↓↓看看瑶瑶吧✓</font></font></center>  
+<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
-<hr>
-<ul>
-<li><a href="https://kk-wuyue.top/">返回主页</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具获取</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>崩坏·星穹铁道</tag>
-        <tag>私服</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>将Clash配置到纯cli的Ubuntu</title>
-    <url>//posts/clash-for-linux/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="下载核心文件"><a href="#下载核心文件" class="headerlink" title="下载核心文件"></a>下载核心文件</h3><blockquote>
-<p>自己找资源</p>
-<blockquote>
-<p>不要用root用户，<code>su</code>到普通用户</p>
+<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
+<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
 </blockquote>
-</blockquote>
-<h3 id="赋予Clash可执行权限"><a href="#赋予Clash可执行权限" class="headerlink" title="赋予Clash可执行权限"></a>赋予Clash可执行权限</h3><p>给Clash核心文件创建一个目录，<code>cd</code>到目录里：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chomd -x <span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="试启动Clash"><a href="#试启动Clash" class="headerlink" title="试启动Clash"></a>试启动Clash</h3><p>在Clash可执行文件的目录下直接执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
-<p>配置文件会自己生成</p>
-<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span>  <span class="comment">#回到主目录</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> .config/clash</span><br><span class="line">vi config.yaml</span><br><span class="line"><span class="comment">#这边建议直接用Clash-for-Windows获取config之后直接上传替换文件</span></span><br></pre></td></tr></table></figure>
-<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
-<p>值得注意的是:  </p>
-<ol>
-<li>这样设置仅在当前会话有效，换言之重开个ssh连接或者screen窗口，在新建的窗口中环境变量都不会生效  </li>
-<li>端口要与<code>config.yaml</code>中相同</li>
-</ol>
-<p>要使上述情况生效，可以：<br>编辑<code>.bashrc</code>或<code>.zshrc</code>文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.zshrc</span><br></pre></td></tr></table></figure>
-<p>然后在文件末尾添加：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
-<p>保存文件后，执行以下命令使更改生效：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
-<h3 id="测试代理情况"><a href="#测试代理情况" class="headerlink" title="测试代理情况"></a>测试代理情况</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl www.google.com -I</span><br></pre></td></tr></table></figure>
-<p>如果响应返回<code>200</code>，即为代理配置成功</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>教程</category>
       </categories>
       <tags>
-        <tag>clash</tag>
-        <tag>ubuntu</tag>
+        <tag>命令行</tag>
+        <tag>screen</tag>
+        <tag>vim</tag>
+        <tag>压缩解压</tag>
       </tags>
   </entry>
   <entry>
@@ -299,6 +256,49 @@
       </tags>
   </entry>
   <entry>
+    <title>将Clash配置到纯cli的Ubuntu</title>
+    <url>//posts/clash-for-linux/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="下载核心文件"><a href="#下载核心文件" class="headerlink" title="下载核心文件"></a>下载核心文件</h3><blockquote>
+<p>自己找资源</p>
+<blockquote>
+<p>不要用root用户，<code>su</code>到普通用户</p>
+</blockquote>
+</blockquote>
+<h3 id="赋予Clash可执行权限"><a href="#赋予Clash可执行权限" class="headerlink" title="赋予Clash可执行权限"></a>赋予Clash可执行权限</h3><p>给Clash核心文件创建一个目录，<code>cd</code>到目录里：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chomd -x <span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="试启动Clash"><a href="#试启动Clash" class="headerlink" title="试启动Clash"></a>试启动Clash</h3><p>在Clash可执行文件的目录下直接执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
+<p>配置文件会自己生成</p>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span>  <span class="comment">#回到主目录</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> .config/clash</span><br><span class="line">vi config.yaml</span><br><span class="line"><span class="comment">#这边建议直接用Clash-for-Windows获取config之后直接上传替换文件</span></span><br></pre></td></tr></table></figure>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
+<p>值得注意的是:  </p>
+<ol>
+<li>这样设置仅在当前会话有效，换言之重开个ssh连接或者screen窗口，在新建的窗口中环境变量都不会生效  </li>
+<li>端口要与<code>config.yaml</code>中相同</li>
+</ol>
+<p>要使上述情况生效，可以：<br>编辑<code>.bashrc</code>或<code>.zshrc</code>文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>然后在文件末尾添加：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
+<p>保存文件后，执行以下命令使更改生效：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+<h3 id="测试代理情况"><a href="#测试代理情况" class="headerlink" title="测试代理情况"></a>测试代理情况</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl www.google.com -I</span><br></pre></td></tr></table></figure>
+<p>如果响应返回<code>200</code>，即为代理配置成功</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ffmpeg的配置和B站视频转化的简单使用</title>
     <url>//posts/ffmpeg-Deploy/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
@@ -328,23 +328,147 @@
       </tags>
   </entry>
   <entry>
-    <title>单片机项目驱动</title>
-    <url>//posts/Microcontroller-project-driver/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>项目：1602液晶显示  </p>
+    <title>如何将GitHub博客与域名关联</title>
+    <url>//posts/G-blog-To-domain/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="如何将GitHub博客与域名关联"><a href="#如何将GitHub博客与域名关联" class="headerlink" title="如何将GitHub博客与域名关联"></a>如何将GitHub博客与域名关联</h2><p>书接上文，配置好了在GitHub上的个人博客之后，由于GitHub给我们的网址是 <a href="https://xxx.github.io/">https://xxx.github.io</a> ，有的人可能会觉得不是很美观。那么，有没有什么方法改变这个网址呢？  </p>
+<p>当然是有的啦！首先我们需要准备一个域名</p>
+<h4 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h4><p>国内有很多域名注册商，可以找一个注册域名：  </p>
+<p>老牌域名注册商，运营正规 <a href="https://wanwang.aliyun.com/">万网</a> ⌈阿里云旗下⌋<br>专注于DNS解析服务 <a href="https://dnspod.cloud.tencent.com/">DNSPod</a> ⌈腾讯云旗下⌋  </p>
 <blockquote>
-<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
+<p>除了这两家还有很多域名注册商，不喜欢也可以换 新网，西部数码，易名中国 这些</p>
 </blockquote>
+<h4 id="进行DNS解析"><a href="#进行DNS解析" class="headerlink" title="进行DNS解析"></a>进行DNS解析</h4><p>什么？域名不能拿来就用吗？<br>当然不能啦！在使用域名之前，要先对域名进行DNS解析  </p>
+<blockquote>
+<p>域名解析（DNS解析）是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站的一种服务。IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成。  </p>
 </blockquote>
-<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
-<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
-<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
+<p>如果你是通过<code>万网</code>或<code>DNSPod</code>购买的域名，那么在购买完后进入控制台即可进行域名解析<br>或者，你还可以用 <a href="https://www.cloudflare-cn.com/">Cloudflare</a> 等进行解析  </p>
+<p><strong>以cloudflare为例：</strong>  </p>
+<blockquote>
+<p>Cloudflare有自带防DDOS攻击，太香了（doge  </p>
+</blockquote>
+<p>要想用Cloudflare，需要在域名注册商处将<code>NS</code>改为 Cloudflare 的 NS：  </p>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">brad.ns.cloudflare.com</span><br><span class="line">sunny.ns.cloudflare.com</span><br></pre></td></tr></table></figure>
+<p><img src="/Blog-domain/Blog-domain-3.png"><br>在<code>DNS</code>中添加四条<code>A</code>类型，指向GitHub服务器：  </p>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line"><span class="number">185.199.108.153</span></span><br><span class="line"><span class="number">185.199.109.153</span></span><br><span class="line"><span class="number">185.199.110.153</span></span><br><span class="line"><span class="number">185.199.111.153</span></span><br></pre></td></tr></table></figure>
+<p>添加一条www记录，让你的好友习惯性输入<code>www</code>后也可以访问你的博客：<br><img src="/Blog-domain/Blog-domain-1.png"><br>代理状态改为<code>已代理</code>，国内访问也很快啦！</p>
+<h4 id="将域名关联到GitHub"><a href="#将域名关联到GitHub" class="headerlink" title="将域名关联到GitHub"></a>将域名关联到GitHub</h4><p>我们已经成功解析了域名，将域名关联到GitHub后，就可以输入你的域名访问博客了  </p>
+<p>在输入域名之前，我们需要在本地 Blog 文件夹目录下的 sources 文件夹中新建一个 CHAME 文件：<br>新建 文本文档(.txt)&gt;&gt;双击打开编辑，在里面输入你的域名：<br><img src="/Blog-domain/Blog-domain-4.png"><br>保存，将文件后缀名<code>.txt</code>删除，返回 Blog 根目录，Hexo三连上传到GitHub    </p>
+<p>打开你的 <strong>博客仓库</strong> ，点击：Settings-Pages，在这里输入你的域名：<br><img src="/Blog-domain/Blog-domain-2.png"><br>点击<code>save</code>，GitHub会自动对你的DNS进行检测，显示<code>successful</code>的时候就大功告成啦！</p>
+]]></content>
       <categories>
         <category>教程</category>
       </categories>
       <tags>
-        <tag>单片机</tag>
+        <tag>GitHub</tag>
+        <tag>域名</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>preview</title>
+    <url>//posts/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol>
+<li><img src="https://kk-wuyue.top/image/1.jpg" alt="1.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/2.jpg" alt="2.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/3.jpg" alt="3.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/4.jpg" alt="4.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/5.jpg" alt="5.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/6.jpg" alt="6.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/7.jpg" alt="7.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/8.jpg" alt="8.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/9.jpg" alt="9.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/10.jpg" alt="10.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/11.jpg" alt="11.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/12.jpg" alt="12.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/13.jpg" alt="13.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/14.jpg" alt="14.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/15.jpg" alt="15.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/16.jpg" alt="16.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/17.jpg" alt="17.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/18.jpg" alt="18.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/19.jpg" alt="19.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/20.jpg" alt="20.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/21.jpg" alt="21.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/22.jpg" alt="22.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/23.jpg" alt="23.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/24.jpg" alt="24.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/25.jpg" alt="25.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/26.jpg" alt="26.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/27.jpg" alt="27.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/28.jpg" alt="28.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/29.jpg" alt="29.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/30.jpg" alt="30.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/31.jpg" alt="31.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/32.jpg" alt="32.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/33.jpg" alt="33.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/34.jpg" alt="34.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/35.jpg" alt="35.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/36.jpg" alt="36.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/37.jpg" alt="37.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/38.jpg" alt="38.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/39.jpg" alt="39.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/40.jpg" alt="40.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/41.jpg" alt="41.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/42.jpg" alt="42.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/43.jpg" alt="43.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/44.jpg" alt="44.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/45.jpg" alt="45.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/46.jpg" alt="46.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/47.jpg" alt="47.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/48.jpg" alt="48.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/49.jpg" alt="49.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/50.jpg" alt="50.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/51.jpg" alt="51.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/52.jpg" alt="52.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/53.jpg" alt="53.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/54.jpg" alt="54.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/55.jpg" alt="55.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/56.jpg" alt="56.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/57.jpg" alt="57.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/58.jpg" alt="58.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/59.jpg" alt="59.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/60.jpg" alt="60.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/61.jpg" alt="61.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/62.jpg" alt="62.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/63.jpg" alt="63.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/64.jpg" alt="64.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/65.jpg" alt="65.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/66.jpg" alt="66.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/67.jpg" alt="67.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/68.jpg" alt="68.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/69.jpg" alt="69.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/70.jpg" alt="70.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/71.jpg" alt="71.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/72.jpg" alt="72.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/73.jpg" alt="73.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/74.jpg" alt="74.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/75.jpg" alt="75.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/76.jpg" alt="76.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/77.jpg" alt="77.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/78.jpg" alt="78.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/79.jpg" alt="79.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/80.jpg" alt="80.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/81.jpg" alt="81.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/82.jpg" alt="82.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/83.jpg" alt="83.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/84.jpg" alt="84.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/85.jpg" alt="85.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/86.jpg" alt="86.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/87.jpg" alt="87.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/88.jpg" alt="88.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/89.jpg" alt="89.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/90.jpg" alt="90.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/91.jpg" alt="91.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/92.jpg" alt="92.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/93.jpg" alt="93.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/94.jpg" alt="94.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/95.jpg" alt="95.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/96.jpg" alt="96.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/97.jpg" alt="97.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/98.jpg" alt="98.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/99.jpg" alt="99.jpg">{:loading&#x3D;”lazy”}</li>
+<li><img src="https://kk-wuyue.top/image/100.jpg" alt="100.jpg">{:loading&#x3D;”lazy”}</li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>在Ubuntu上配置nodejs和redis</title>
@@ -399,147 +523,22 @@
       </tags>
   </entry>
   <entry>
-    <title>preview</title>
-    <url>//posts/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="图片列表"><a href="#图片列表" class="headerlink" title="图片列表"></a>图片列表</h1><p>以下是所有图片的列表，点击图片查看：</p>
-<ol>
-<li><img src="https://kk-wuyue.top/image/1.jpg" alt="1.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/2.jpg" alt="2.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/3.jpg" alt="3.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/4.jpg" alt="4.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/5.jpg" alt="5.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/6.jpg" alt="6.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/7.jpg" alt="7.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/8.jpg" alt="8.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/9.jpg" alt="9.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/10.jpg" alt="10.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/11.jpg" alt="11.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/12.jpg" alt="12.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/13.jpg" alt="13.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/14.jpg" alt="14.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/15.jpg" alt="15.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/16.jpg" alt="16.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/17.jpg" alt="17.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/18.jpg" alt="18.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/19.jpg" alt="19.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/20.jpg" alt="20.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/21.jpg" alt="21.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/22.jpg" alt="22.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/23.jpg" alt="23.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/24.jpg" alt="24.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/25.jpg" alt="25.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/26.jpg" alt="26.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/27.jpg" alt="27.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/28.jpg" alt="28.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/29.jpg" alt="29.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/30.jpg" alt="30.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/31.jpg" alt="31.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/32.jpg" alt="32.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/33.jpg" alt="33.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/34.jpg" alt="34.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/35.jpg" alt="35.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/36.jpg" alt="36.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/37.jpg" alt="37.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/38.jpg" alt="38.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/39.jpg" alt="39.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/40.jpg" alt="40.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/41.jpg" alt="41.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/42.jpg" alt="42.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/43.jpg" alt="43.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/44.jpg" alt="44.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/45.jpg" alt="45.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/46.jpg" alt="46.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/47.jpg" alt="47.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/48.jpg" alt="48.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/49.jpg" alt="49.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/50.jpg" alt="50.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/51.jpg" alt="51.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/52.jpg" alt="52.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/53.jpg" alt="53.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/54.jpg" alt="54.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/55.jpg" alt="55.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/56.jpg" alt="56.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/57.jpg" alt="57.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/58.jpg" alt="58.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/59.jpg" alt="59.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/60.jpg" alt="60.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/61.jpg" alt="61.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/62.jpg" alt="62.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/63.jpg" alt="63.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/64.jpg" alt="64.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/65.jpg" alt="65.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/66.jpg" alt="66.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/67.jpg" alt="67.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/68.jpg" alt="68.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/69.jpg" alt="69.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/70.jpg" alt="70.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/71.jpg" alt="71.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/72.jpg" alt="72.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/73.jpg" alt="73.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/74.jpg" alt="74.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/75.jpg" alt="75.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/76.jpg" alt="76.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/77.jpg" alt="77.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/78.jpg" alt="78.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/79.jpg" alt="79.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/80.jpg" alt="80.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/81.jpg" alt="81.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/82.jpg" alt="82.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/83.jpg" alt="83.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/84.jpg" alt="84.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/85.jpg" alt="85.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/86.jpg" alt="86.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/87.jpg" alt="87.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/88.jpg" alt="88.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/89.jpg" alt="89.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/90.jpg" alt="90.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/91.jpg" alt="91.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/92.jpg" alt="92.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/93.jpg" alt="93.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/94.jpg" alt="94.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/95.jpg" alt="95.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/96.jpg" alt="96.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/97.jpg" alt="97.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/98.jpg" alt="98.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/99.jpg" alt="99.jpg"></li>
-<li><img src="https://kk-wuyue.top/image/100.jpg" alt="100.jpg"></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>如何将GitHub博客与域名关联</title>
-    <url>//posts/G-blog-To-domain/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="如何将GitHub博客与域名关联"><a href="#如何将GitHub博客与域名关联" class="headerlink" title="如何将GitHub博客与域名关联"></a>如何将GitHub博客与域名关联</h2><p>书接上文，配置好了在GitHub上的个人博客之后，由于GitHub给我们的网址是 <a href="https://xxx.github.io/">https://xxx.github.io</a> ，有的人可能会觉得不是很美观。那么，有没有什么方法改变这个网址呢？  </p>
-<p>当然是有的啦！首先我们需要准备一个域名</p>
-<h4 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h4><p>国内有很多域名注册商，可以找一个注册域名：  </p>
-<p>老牌域名注册商，运营正规 <a href="https://wanwang.aliyun.com/">万网</a> ⌈阿里云旗下⌋<br>专注于DNS解析服务 <a href="https://dnspod.cloud.tencent.com/">DNSPod</a> ⌈腾讯云旗下⌋  </p>
+    <title>单片机项目驱动</title>
+    <url>//posts/Microcontroller-project-driver/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>项目：1602液晶显示  </p>
 <blockquote>
-<p>除了这两家还有很多域名注册商，不喜欢也可以换 新网，西部数码，易名中国 这些</p>
+<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
 </blockquote>
-<h4 id="进行DNS解析"><a href="#进行DNS解析" class="headerlink" title="进行DNS解析"></a>进行DNS解析</h4><p>什么？域名不能拿来就用吗？<br>当然不能啦！在使用域名之前，要先对域名进行DNS解析  </p>
-<blockquote>
-<p>域名解析（DNS解析）是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站的一种服务。IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成。  </p>
 </blockquote>
-<p>如果你是通过<code>万网</code>或<code>DNSPod</code>购买的域名，那么在购买完后进入控制台即可进行域名解析<br>或者，你还可以用 <a href="https://www.cloudflare-cn.com/">Cloudflare</a> 等进行解析  </p>
-<p><strong>以cloudflare为例：</strong>  </p>
-<blockquote>
-<p>Cloudflare有自带防DDOS攻击，太香了（doge  </p>
-</blockquote>
-<p>要想用Cloudflare，需要在域名注册商处将<code>NS</code>改为 Cloudflare 的 NS：  </p>
-<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">brad.ns.cloudflare.com</span><br><span class="line">sunny.ns.cloudflare.com</span><br></pre></td></tr></table></figure>
-<p><img src="/Blog-domain/Blog-domain-3.png"><br>在<code>DNS</code>中添加四条<code>A</code>类型，指向GitHub服务器：  </p>
-<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line"><span class="number">185.199.108.153</span></span><br><span class="line"><span class="number">185.199.109.153</span></span><br><span class="line"><span class="number">185.199.110.153</span></span><br><span class="line"><span class="number">185.199.111.153</span></span><br></pre></td></tr></table></figure>
-<p>添加一条www记录，让你的好友习惯性输入<code>www</code>后也可以访问你的博客：<br><img src="/Blog-domain/Blog-domain-1.png"><br>代理状态改为<code>已代理</code>，国内访问也很快啦！</p>
-<h4 id="将域名关联到GitHub"><a href="#将域名关联到GitHub" class="headerlink" title="将域名关联到GitHub"></a>将域名关联到GitHub</h4><p>我们已经成功解析了域名，将域名关联到GitHub后，就可以输入你的域名访问博客了  </p>
-<p>在输入域名之前，我们需要在本地 Blog 文件夹目录下的 sources 文件夹中新建一个 CHAME 文件：<br>新建 文本文档(.txt)&gt;&gt;双击打开编辑，在里面输入你的域名：<br><img src="/Blog-domain/Blog-domain-4.png"><br>保存，将文件后缀名<code>.txt</code>删除，返回 Blog 根目录，Hexo三连上传到GitHub    </p>
-<p>打开你的 <strong>博客仓库</strong> ，点击：Settings-Pages，在这里输入你的域名：<br><img src="/Blog-domain/Blog-domain-2.png"><br>点击<code>save</code>，GitHub会自动对你的DNS进行检测，显示<code>successful</code>的时候就大功告成啦！</p>
-]]></content>
+<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
+<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
+<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
       <categories>
         <category>教程</category>
       </categories>
       <tags>
-        <tag>GitHub</tag>
-        <tag>域名</tag>
+        <tag>单片机</tag>
       </tags>
   </entry>
 </search>
