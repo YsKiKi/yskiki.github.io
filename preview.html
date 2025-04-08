@@ -28,12 +28,12 @@
 <meta property="og:site_name" content="五月のBlog">
 <meta property="og:description" content="图片预览        body { font-family: sans-serif; margin: 0; padding: 0; background: #f2f2f2; }     img { max-width: 100%; max-height: 80vh; display: block; margin: 20px auto; border: 4px solid #ccc">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://kk-wuyue.top/images/1.png">
-<meta property="article:published_time" content="2025-04-08T13:46:38.601Z">
-<meta property="article:modified_time" content="2025-04-08T13:46:38.601Z">
+<meta property="og:image" content="https://kk-wuyue.top/image/1.png">
+<meta property="article:published_time" content="2025-04-08T13:54:51.321Z">
+<meta property="article:modified_time" content="2025-04-08T13:54:51.321Z">
 <meta property="article:author" content="May">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://kk-wuyue.top/images/1.png">
+<meta name="twitter:image" content="https://kk-wuyue.top/image/1.png">
 
 <link rel="canonical" href="https://kk-wuyue.top/preview">
 
@@ -234,7 +234,7 @@
 </head>
 <body>
   <div class="center">
-    <img id="preview" src="/images/1.png" alt="图片预览">
+    <img id="preview" src="/image/1.png" alt="图片预览">
     <div>
       <button onclick="prev()">上一张</button>
       <button onclick="next()">下一张</button>
@@ -243,10 +243,10 @@
   </div>
 
   <script>
-    const total = 100; // 你图片的总数
+    const total = 100; // 图片总数
     let index = 1;
     function updateImage() {
-      document.getElementById('preview').src = `/images/${index}.png`;
+      document.getElementById('preview').src = `/image/${index}.png`;
       document.getElementById('counter').innerText = `第 ${index} / ${total} 张`;
     }
     function prev() {
@@ -264,6 +264,7 @@
   </script>
 </body>
 </html>
+
       </div>
       
       
