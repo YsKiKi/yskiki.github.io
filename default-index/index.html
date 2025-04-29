@@ -186,6 +186,187 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/Windows-install-WSL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="May">
+      <meta itemprop="description" content="我将万物藏在心底的寒冬，只为它们能在春天发芽">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="五月のBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/Windows-install-WSL/" class="post-title-link" itemprop="url">Windows 安装WSL</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-04-29 20:06:19 / 修改时间：20:27:47" itemprop="dateCreated datePublished" datetime="2025-04-29T20:06:19+08:00">2025-04-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li><strong>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</strong></li>
+<li><strong>如不具备上述能力，请立即关闭此教程。</strong></li>
+<li><strong>本教程适用于 Windows 11 24H2 版本，其他版本可能略有不同。</strong><br>在 Windows 11 24H2 上安装 WSL2 和 Ubuntu 22.04 的步骤如下：</li>
+</ul>
+<hr>
+<h3 id="一、安装-WSL2"><a href="#一、安装-WSL2" class="headerlink" title="一、安装 WSL2"></a><strong>一、安装 WSL2</strong></h3><h4 id="方法1：通过命令快速安装（推荐）"><a href="#方法1：通过命令快速安装（推荐）" class="headerlink" title="方法1：通过命令快速安装（推荐）"></a>方法1：通过命令快速安装（推荐）</h4><ol>
+<li><p><strong>以管理员身份打开 PowerShell</strong>（Win + X → 终端(管理员)）</p>
+</li>
+<li><p>运行以下命令：  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">--install</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>此命令会自动启用所需功能、安装 WSL2 内核，并默认安装 Ubuntu。</li>
+</ul>
+<h4 id="方法2：手动步骤（如需自定义）"><a href="#方法2：手动步骤（如需自定义）" class="headerlink" title="方法2：手动步骤（如需自定义）"></a>方法2：手动步骤（如需自定义）</h4><ol>
+<li><p><strong>启用 WSL 和虚拟机平台功能</strong>：  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows-Subsystem-Linux</span> /all /norestart</span><br><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>重启电脑</strong>。</p>
+</li>
+<li><p><strong>设置 WSL2 为默认版本</strong>：  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">--set-default-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h3 id="二、安装-Ubuntu-22-04"><a href="#二、安装-Ubuntu-22-04" class="headerlink" title="二、安装 Ubuntu 22.04"></a><strong>二、安装 Ubuntu 22.04</strong></h3><ol>
+<li><p><strong>从 Microsoft Store 安装</strong>：</p>
+<ul>
+<li><p>打开 <a target="_blank" rel="noopener" href="https://apps.microsoft.com/">Microsoft Store</a> 搜索 <strong>Ubuntu 22.04 LTS</strong>，点击安装。</p>
+</li>
+<li><p>或通过命令行安装：  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">--install</span> <span class="literal">-d</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>初始化 Ubuntu</strong>：</p>
+<ul>
+<li><p>安装完成后，从开始菜单打开 Ubuntu 或运行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">-d</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span></span><br></pre></td></tr></table></figure></li>
+<li><p>首次启动会提示设置用户名和密码（密码输入时不可见，正常输入后回车）。</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、验证安装"><a href="#三、验证安装" class="headerlink" title="三、验证安装"></a><strong>三、验证安装</strong></h3><ol>
+<li><p>检查 WSL 版本和发行版：  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">-l</span> <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>确认 <code>Ubuntu-22.04</code> 的版本为 <strong>2</strong>。</li>
+</ul>
+</li>
+<li><p>更新系统（在 Ubuntu 内运行）：</p>
+</li>
+</ol>
+<blockquote>
+<p>如果没有梯子，下载速度可能会非常慢，建议参考 <a href="#%E5%9B%9B%E3%80%81Ubuntu%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C">将 apt 换源为阿里&#x2F;清华源</a> 来解决。  </p>
+</blockquote>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade -y</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a><strong>常见问题解决</strong></h3><ol>
+<li><strong>WSL2 要求虚拟化支持</strong>：<ul>
+<li>进入 BIOS 启用 <strong>VT-x&#x2F;AMD-V</strong> 虚拟化（具体按键因主板而异，通常为 F2&#x2F;Del）。</li>
+</ul>
+</li>
+<li><strong>安装后无法启动</strong>：<ul>
+<li>手动下载并安装 <a target="_blank" rel="noopener" href="https://aka.ms/wsl2kernel">WSL2 内核更新包</a>。</li>
+</ul>
+</li>
+<li><strong>网络问题</strong>：<ul>
+<li>若商店访问慢，可直接下载 <a target="_blank" rel="noopener" href="https://aka.ms/wslubuntu2204">Ubuntu 22.04 的 Appx 包</a> 手动安装。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a><strong>其他操作</strong></h3><ul>
+<li><p><strong>切换 WSL 版本</strong>：  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">--set-version</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>导出&#x2F;导入分发版</strong>（备份用）：  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">--export</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span> ubuntu2204.tar</span><br><span class="line">wsl <span class="literal">--import</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span> C:\wsl\ubuntu C:\backup\ubuntu2204.tar</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>完成以上步骤后，即可在 Windows 11 24H2 上使用 WSL2 运行 Ubuntu 22.04。  </p>
+<h3 id="四、Ubuntu常用操作"><a href="#四、Ubuntu常用操作" class="headerlink" title="四、Ubuntu常用操作"></a><strong>四、Ubuntu常用操作</strong></h3><p><strong>将 <code>apt</code> 换源为阿里&#x2F;清华源</strong>  </p>
+<ol>
+<li><p>备份原有的源列表（非常重要）  </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure></li>
+<li><p>修改 <code>sources.list</code> 文件</p>
+<p> 使用你喜欢的编辑器，比如 <code>vim</code> 或 <code>nano</code>：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<p> 清空原有内容，然后根据你的 Ubuntu 版本粘贴对应的阿里云源。</p>
+</li>
+<li><p>阿里云 Ubuntu 源示例（以 <strong>Ubuntu 22.04 Jammy</strong> 为例）：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse</span><br></pre></td></tr></table></figure></li>
+<li><p>保存并退出编辑器（在 <code>nano</code> 中按 <code>Ctrl + O</code> 保存，<code>Ctrl + X</code> 退出）。</p>
+</li>
+<li><p>更新软件源缓存  </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<p>   建议再执行一次升级（可选）：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/Castorice-Preview/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -618,113 +799,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/command-collection/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="May">
-      <meta itemprop="description" content="我将万物藏在心底的寒冬，只为它们能在春天发芽">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="五月のBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/command-collection/" class="post-title-link" itemprop="url">常用命令集：screen、vim、系统设置、压缩与解压</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-08-25 23:14:05" itemprop="dateCreated datePublished" datetime="2024-08-25T23:14:05+08:00">2024-08-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-09 10:48:53" itemprop="dateModified" datetime="2024-09-09T10:48:53+08:00">2024-09-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
-<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/clash-for-linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -818,6 +892,113 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
 <h3 id="测试代理情况"><a href="#测试代理情况" class="headerlink" title="测试代理情况"></a>测试代理情况</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl www.google.com -I</span><br></pre></td></tr></table></figure>
 <p>如果响应返回<code>200</code>，即为代理配置成功</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/command-collection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="May">
+      <meta itemprop="description" content="我将万物藏在心底的寒冬，只为它们能在春天发芽">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="五月のBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/command-collection/" class="post-title-link" itemprop="url">常用命令集：screen、vim、系统设置、压缩与解压</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-25 23:14:05" itemprop="dateCreated datePublished" datetime="2024-08-25T23:14:05+08:00">2024-08-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-09-09 10:48:53" itemprop="dateModified" datetime="2024-09-09T10:48:53+08:00">2024-09-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
+<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1269,184 +1450,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kk-wuyue.top/posts/Blog-building/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="May">
-      <meta itemprop="description" content="我将万物藏在心底的寒冬，只为它们能在春天发芽">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="五月のBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/Blog-building/" class="post-title-link" itemprop="url">基于GitHub的博客搭建</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-02-19 13:02:39" itemprop="dateCreated datePublished" datetime="2024-02-19T13:02:39+08:00">2024-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-16 17:12:50" itemprop="dateModified" datetime="2024-09-16T17:12:50+08:00">2024-09-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><strong>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</strong></li>
-<li><strong>如不具备上述能力，请立即关闭此教程。</strong></li>
-</ul>
-<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a target="_blank" rel="noopener" href="https://www.baidu.com/">百度</a>、<a target="_blank" rel="noopener" href="https://cn.bing.com/">bing</a>等进行搜索  </p>
-<p>↓ 附上下载链接 ↓</p>
-<ul>
-<li>Windows<br><a target="_blank" rel="noopener" href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/Git-2.43.0-64-bit.exe">Git-v2.43.0-x64</a><br><a target="_blank" rel="noopener" href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/node-v18.19.0-x64.msi">node-v18.19.0-x64</a></li>
-</ul>
-<h3 id="GitHub账号注册"><a href="#GitHub账号注册" class="headerlink" title="GitHub账号注册"></a>GitHub账号注册</h3><blockquote>
-<p>Github是全球最大的程序员交友♂平台（doge）</p>
-<blockquote>
-<p>有GitHub账号的可以跳过这一步</p>
-</blockquote>
-</blockquote>
-<p>点击进入<a target="_blank" rel="noopener" href="https://github.com/">Github官网</a>  </p>
-<p>点击右上角<code>sign up</code>进入注册页面，输入邮箱，创建密码，设置昵称</p>
-<blockquote>
-<p>然后 下一步 下一步 下一步 下一步……</p>
-<blockquote>
-<p>如果实在不会，请使用<a target="_blank" rel="noopener" href="https://www.baidu.com/">百度</a>、<a target="_blank" rel="noopener" href="https://cn.bing.com/">bing</a>进行搜索</p>
-</blockquote>
-</blockquote>
-<h3 id="Git通过ssh绑定GitHub"><a href="#Git通过ssh绑定GitHub" class="headerlink" title="Git通过ssh绑定GitHub"></a>Git通过ssh绑定GitHub</h3><blockquote>
-<p>SSH（安全外壳协议，Secure Shell 的缩写）是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。简单来说，SSH可以保障你的账户安全，将你的数据加密压缩，它不仅可以防止其他人截获你的数据，还能加快传输速度。</p>
-</blockquote>
-<p>由于Git bash自带ssh，所以无需安装  </p>
-<p>在任意位置点击鼠标右键，打开<code>Git Bash</code>，输入<code>ssh</code>检查ssh<br>如果出现以下内容即已安装ssh：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ssh</span><br><span class="line"><span class="function">usage: <span class="title">ssh</span> [-46<span class="title">AaCfGgKkMNnqsTtVvXxYy</span>] [-<span class="title">B</span> <span class="title">bind_interface</span>] [-<span class="title">b</span> <span class="title">bind_address</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">c</span> <span class="title">cipher_spec</span>] [-<span class="title">D</span> [<span class="title">bind_address</span>:]<span class="title">port</span>] [-<span class="title">E</span> <span class="title">log_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">e</span> <span class="title">escape_char</span>] [-<span class="title">F</span> <span class="title">configfile</span>] [-<span class="title">I</span> <span class="title">pkcs11</span>] [-<span class="title">i</span> <span class="title">identity_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">J</span> <span class="title">destination</span>] [-<span class="title">L</span> <span class="title">address</span>] [-<span class="title">l</span> <span class="title">login_name</span>] [-<span class="title">m</span> <span class="title">mac_spec</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">O</span> <span class="title">ctl_cmd</span>] [-<span class="title">o</span> <span class="title">option</span>] [-<span class="title">P</span> <span class="title">tag</span>] [-<span class="title">p</span> <span class="title">port</span>] [-<span class="title">Q</span> <span class="title">query_option</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">R</span> <span class="title">address</span>] [-<span class="title">S</span> <span class="title">ctl_path</span>] [-<span class="title">W</span> <span class="title">host:port</span>] [-<span class="title">w</span> <span class="title">local_tun</span>[:<span class="title">remote_tun</span>]]</span></span><br><span class="line"><span class="function">           <span class="title">destination</span> [<span class="title">command</span> [<span class="title">argument</span> ...]]</span></span><br></pre></td></tr></table></figure>
-<p>输入<code>ssh-keygen -t rsa</code>，敲击四次回车键，创建ssh密钥  </p>
-<p>ssh密钥保存在<code>C:\Users\&lt;你的用户名&gt;\.ssh</code>  </p>
-<blockquote>
-<p>如果没有<code>.ssh</code>,请打开“显示隐藏文件”<br>若不会，请通过<a target="_blank" rel="noopener" href="https://www.baidu.com/">百度</a>、<a target="_blank" rel="noopener" href="https://cn.bing.com/">bing</a>自行查找 ⌈如何显示隐藏文件⌋</p>
-</blockquote>
-<p>右键用记事本打开<code>id_rsa.pub</code>，复制里面的全部内容，进入你的 GitHub 主页，先点击右上角，再点击 <strong>settings</strong>  </p>
-<p>先点击右边的 <strong>SSH and GPG keys</strong>，再点击 <strong>New SSH key</strong>：<br><img src="/Resources/GitHub-1.png" alt="GitHub-1">  </p>
-<p>将复制的公钥 id_rsa.pub 的内容粘贴到 key 内，再点击 Add SSH key，如下图：<br><img src="/Resources/GitHub-2.png" alt="GitHub-2">  </p>
-<p>在<code>Git Bash</code>窗口输入<code>ssh -T git@github.com</code>进行检验，出现  </p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Are you sure you want to continue connecting(yes/no/[fingerprint])?</span><br></pre></td></tr></table></figure>
-<p>输入<code>yes</code>出现：  </p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi &lt;你的GitHub昵称&gt;! You&#x27;ve successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
-<p>即为成功  </p>
-<h3 id="Nodejs配置"><a href="#Nodejs配置" class="headerlink" title="Nodejs配置"></a>Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v18.<span class="number">19</span>.<span class="number">0</span></span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line"><span class="number">10</span>.<span class="number">2</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>主要是检查nodejs和npm有没有安装，版本不同影响不大  </p>
-</blockquote>
-<h4 id="设置npm在安装全局模块时的路径和环境变量"><a href="#设置npm在安装全局模块时的路径和环境变量" class="headerlink" title="设置npm在安装全局模块时的路径和环境变量"></a><strong>设置npm在安装全局模块时的路径和环境变量</strong></h4><p>在 <strong>你永远不会删除的地方中</strong> 新建 <strong>文件夹 “A”</strong><br>在其中 新建两个空文件夹<code>node_cache</code>、<code>node_global</code>：<br><img src="/Resources/GitHub-3.png" alt="GitHub-3">  </p>
-<blockquote>
-<p><strong>！！！请勿删除此文件夹！！！</strong><br>否则模块将被删除，需要重新配置</p>
-</blockquote>
-<p>打开cmd，输入如下两个命令：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix &quot;&lt;你的node_global文件夹路径&gt;&quot;</span><br><span class="line">npm config <span class="built_in">set</span> cache &quot;&lt;你的node_cache文件夹路径&gt;&quot;</span><br></pre></td></tr></table></figure>
-<p>设置环境变量：  </p>
-<p>右键 此电脑 –&gt; 属性 –&gt; 高级系统设置 –&gt; 环境变量  </p>
-<p>然后在系统变量中新建一个变量<br>点击<code>系统变量(S)</code>下的<code>新建(W)…</code><br>出现：<br><img src="/Resources/GitHub-4.png" alt="GitHub-4">  </p>
-<p>输入 变量名为 <strong>“NODE_PATH”</strong><br>输入 变量值为 <strong>“&lt;文件夹 “A” 的路径&gt;”</strong>  </p>
-<blockquote>
-<p>你问我什么是 <strong>文件夹 “A”</strong> ？</p>
-<blockquote>
-<p><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">喏，在这</a></p>
-</blockquote>
-</blockquote>
-<p>然后编辑<code>用户变量(U)</code>里的<code>Path</code>，点按<code>编辑(E)…</code>，将相应npm的路径改为：<br><code>&lt;你的node_global文件夹路径&gt;</code>  </p>
-<p><strong>按确定！按确定！按确定！</strong>  </p>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在 cmd 命令行下执行<code>npm install webpack -g</code>，出现：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ webpack@<span class="number">4</span>.<span class="number">41</span>.<span class="number">5</span></span><br><span class="line">added <span class="number">322</span> packages from <span class="number">197</span> contributors <span class="keyword">in</span> <span class="number">250</span>.<span class="number">122</span>s</span><br></pre></td></tr></table></figure>
-<p>即为成功，然后<code>webpack</code>这个模块已经在我们设置默认的文件夹中了  </p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h4><p>Hexo就是我们搭建博客的框架，在安装之前，我们要先在GitHub上创立一个仓库<br>进入<a target="_blank" rel="noopener" href="https://github.com/">GitHub个人主页</a>，右上角创建仓库：  </p>
-<p><img src="/Resources/GitHub-5.png" alt="GitHub-5"><br><img src="/Resources/GitHub-6.png" alt="GitHub-6"><br>点击 <strong>settings</strong> ：  </p>
-<p><img src="/Resources/GitHub-7.png" alt="GitHub-7"><br>点击 <strong>pages</strong> ：  </p>
-<p><img src="/Resources/GitHub-8.png" alt="GitHub-8"><br>出现<code>&lt;你的GitHub昵称&gt;.github.io</code>即为成功：  </p>
-<p><img src="/Resources/GitHub-9.png" alt="GitHub-9">  </p>
-<h4 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h4><p>新建Blog文件夹，在文件夹内右键打开<code>Git Bash</code>，输入以下npm命令安装Hexo：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成后，输入<code>hexo init</code>初始化博客,文件夹内会出现以下文件：  </p>
-<p><img src="/Resources/GitHub-10.png" alt="GitHub-10"><br>这个文件夹就是你的博客啦！  </p>
-<p>接下来，在 Bash 窗口内：<br>输入<code>hexo g</code>静态部署<br>输入<code>hexo s</code>在4000端口上部署：  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>这时候用浏览器打开 <a target="_blank" rel="noopener" href="https://localhost:4000/">https://localhost:4000</a> 即可看到新部署的网页。<br>别急，回到Git Bash窗口，按ctrl +c 停止运行服务器。  </p>
-<h4 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h4><p>在文件夹内 右键 用记事本打开<code>_config.yml</code>，在最底下加上：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:&lt;………………&gt;.github.io.git</span>  <span class="comment">#你的仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-<p>你的仓库地址：<br><img src="/Resources/GitHub-11.png" alt="GitHub-11">  </p>
-<p>回到Blog文件夹，右键<code>Git Bash here</code>，在Git Bash中输入：  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>然后 <strong>分别</strong> 输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g       <span class="comment">#生成网站静态文件到默认设置的 public 文件夹</span></span><br><span class="line">hexo d       <span class="comment">#生成网站静态文件，并部署到设定的仓库</span></span><br></pre></td></tr></table></figure>
-<p>或者输入：  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d		<span class="comment">#和上面的没有不同，只是将命令串起来了</span></span><br></pre></td></tr></table></figure>
-<p>完成以后，打开浏览器，输入 <a target="_blank" rel="noopener" href="https://xxx.github.io/">https://xxx.github.io</a> 就可以打开你的网页了。  </p>
-<p>下一篇：<a href="https://kk-wuyue.top/posts/G-blog-To-domain/">如何自定义博客域名</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1516,7 +1519,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1529,7 +1532,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1565,12 +1568,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">12k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="站点阅读时长">22 分钟</span>
 </div>
 
         
