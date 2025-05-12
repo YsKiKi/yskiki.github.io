@@ -150,78 +150,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows更改用户名</title>
-    <url>//posts/Windows-change-Username/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
-<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
-<li>右上角查看方式选择 <strong>类别</strong> 。</li>
-<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 更改账户名称。</li>
-<li>输入 <strong>纯英文</strong> 用户名，点击更改，确定。</li>
-</ol>
-<h3 id="更改-User-文件夹的名称"><a href="#更改-User-文件夹的名称" class="headerlink" title="更改 User 文件夹的名称"></a>更改 <code>User</code> 文件夹的名称</h3><ol>
-<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:yes</span><br></pre></td></tr></table></figure>
-<p>会显示：命令成功完成</p>
-</li>
-<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
-</li>
-<li><p>在登录界面右下角选择 <code>Administrator</code> 账户进行登录。</p>
-</li>
-<li><p>打开文件夹，在地址栏输入：<code>C:\Users</code> 快速导航。</p>
-</li>
-<li><p>更改 <strong>你的原中文用户名</strong> 为 <strong>你的新英文用户名</strong> 。</p>
-</li>
-</ol>
-<h3 id="更改注册表中的路径"><a href="#更改注册表中的路径" class="headerlink" title="更改注册表中的路径"></a>更改注册表中的路径</h3><ol start="0">
-<li>注意：注册表操作位高风险操作，建议操作前先备份注册表。</li>
-<li>按 <code>Win+R</code> 输入 <code>regedit</code> 进入注册表。</li>
-<li>依次展开以下路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code></li>
-<li>在此目录下有多个文件夹，注意 <code>ProfileImagePath</code> 的数据，找到你的原中文用户名，双击进入编辑，将其更改为你的新英文用户名，点击确定。</li>
-</ol>
-<h3 id="回到更改好的用户"><a href="#回到更改好的用户" class="headerlink" title="回到更改好的用户"></a>回到更改好的用户</h3><ol>
-<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:no</span><br></pre></td></tr></table></figure>
-<p>会显示：命令成功完成</p>
-</li>
-<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
-</li>
-<li><p>选择你的账户，输入密码登录。</p>
-</li>
-</ol>
-<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><h3 id="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"><a href="#在更改文件夹名称时，文件夹处于在使用状态，无法更改名称" class="headerlink" title="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"></a>在更改文件夹名称时，文件夹处于在使用状态，无法更改名称</h3><p>解决办法：</p>
-<ol>
-<li>按 <code>Win+R</code>，输入 <code>msconfig</code>，回车。</li>
-<li>在弹出的 <strong>系统配置</strong> 窗口中，选择 <strong>引导</strong> 标签页，然后勾选 <strong>安全引导</strong> 。</li>
-<li>点击 <strong>确定</strong> 并重启电脑，系统将进入安全模式。</li>
-<li>在此模式下对文件夹进行更改。</li>
-<li>改完后按照上述方法再次打开系统配置， <strong>取消</strong> 勾选安全引导</li>
-</ol>
-<h3 id="在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码"><a href="#在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码" class="headerlink" title="在登录 Administrator 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码"></a>在登录 <code>Administrator</code> 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码</h3><p>解决办法：</p>
-<ol>
-<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
-<li>右上角查看方式选择 <strong>类别</strong> 。</li>
-<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 管理其他账户。</li>
-<li>点击 <code>Administrator</code> 账户，修改密码。</li>
-<li>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> ，点击 <code>Administrator</code> 账户，输入密码进行登录。</li>
-</ol>
-<h3 id="我无法选择“更改账户名称”"><a href="#我无法选择“更改账户名称”" class="headerlink" title="我无法选择“更改账户名称”"></a>我无法选择“更改账户名称”</h3><p>解决办法：  通过命令提示符修改用户名  </p>
-<ol>
-<li>以管理员身份打开 命令提示符：</li>
-<li>按 Windows + X，选择 命令提示符（管理员） 或 Windows PowerShell（管理员）。</li>
-<li>输入以下命令来列出所有用户：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure></li>
-<li>找到你想要修改的用户名。</li>
-<li>输入以下命令来修改用户名：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user 旧用户名 新用户名</span><br></pre></td></tr></table></figure></li>
-<li>此方法只能更改登录的显示用户名，但不会更改 C:&#x2F;Users&#x2F;Username 文件夹的名称。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows 安装WSL</title>
     <url>//posts/Windows-install-WSL/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -336,35 +264,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ffmpeg的配置和B站视频转化的简单使用</title>
-    <url>//posts/ffmpeg-Deploy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
-<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
-<blockquote>
-<p>建议国内无VPN用户选择该方式下载</p>
-</blockquote>
-<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
-<blockquote>
-<p>建议有VPN的用户选择该方式下载</p>
-</blockquote>
-<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
-<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
-<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
-<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
-<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
-<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>ffmpeg</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
     <url>//posts/command-collection/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
@@ -396,6 +295,107 @@
         <tag>screen</tag>
         <tag>vim</tag>
         <tag>压缩解压</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows更改用户名</title>
+    <url>//posts/Windows-change-Username/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
+<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
+<li>右上角查看方式选择 <strong>类别</strong> 。</li>
+<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 更改账户名称。</li>
+<li>输入 <strong>纯英文</strong> 用户名，点击更改，确定。</li>
+</ol>
+<h3 id="更改-User-文件夹的名称"><a href="#更改-User-文件夹的名称" class="headerlink" title="更改 User 文件夹的名称"></a>更改 <code>User</code> 文件夹的名称</h3><ol>
+<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:yes</span><br></pre></td></tr></table></figure>
+<p>会显示：命令成功完成</p>
+</li>
+<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
+</li>
+<li><p>在登录界面右下角选择 <code>Administrator</code> 账户进行登录。</p>
+</li>
+<li><p>打开文件夹，在地址栏输入：<code>C:\Users</code> 快速导航。</p>
+</li>
+<li><p>更改 <strong>你的原中文用户名</strong> 为 <strong>你的新英文用户名</strong> 。</p>
+</li>
+</ol>
+<h3 id="更改注册表中的路径"><a href="#更改注册表中的路径" class="headerlink" title="更改注册表中的路径"></a>更改注册表中的路径</h3><ol start="0">
+<li>注意：注册表操作位高风险操作，建议操作前先备份注册表。</li>
+<li>按 <code>Win+R</code> 输入 <code>regedit</code> 进入注册表。</li>
+<li>依次展开以下路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code></li>
+<li>在此目录下有多个文件夹，注意 <code>ProfileImagePath</code> 的数据，找到你的原中文用户名，双击进入编辑，将其更改为你的新英文用户名，点击确定。</li>
+</ol>
+<h3 id="回到更改好的用户"><a href="#回到更改好的用户" class="headerlink" title="回到更改好的用户"></a>回到更改好的用户</h3><ol>
+<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:no</span><br></pre></td></tr></table></figure>
+<p>会显示：命令成功完成</p>
+</li>
+<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
+</li>
+<li><p>选择你的账户，输入密码登录。</p>
+</li>
+</ol>
+<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><h3 id="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"><a href="#在更改文件夹名称时，文件夹处于在使用状态，无法更改名称" class="headerlink" title="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"></a>在更改文件夹名称时，文件夹处于在使用状态，无法更改名称</h3><p>解决办法：</p>
+<ol>
+<li>按 <code>Win+R</code>，输入 <code>msconfig</code>，回车。</li>
+<li>在弹出的 <strong>系统配置</strong> 窗口中，选择 <strong>引导</strong> 标签页，然后勾选 <strong>安全引导</strong> 。</li>
+<li>点击 <strong>确定</strong> 并重启电脑，系统将进入安全模式。</li>
+<li>在此模式下对文件夹进行更改。</li>
+<li>改完后按照上述方法再次打开系统配置， <strong>取消</strong> 勾选安全引导</li>
+</ol>
+<h3 id="在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码"><a href="#在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码" class="headerlink" title="在登录 Administrator 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码"></a>在登录 <code>Administrator</code> 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码</h3><p>解决办法：</p>
+<ol>
+<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
+<li>右上角查看方式选择 <strong>类别</strong> 。</li>
+<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 管理其他账户。</li>
+<li>点击 <code>Administrator</code> 账户，修改密码。</li>
+<li>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> ，点击 <code>Administrator</code> 账户，输入密码进行登录。</li>
+</ol>
+<h3 id="我无法选择“更改账户名称”"><a href="#我无法选择“更改账户名称”" class="headerlink" title="我无法选择“更改账户名称”"></a>我无法选择“更改账户名称”</h3><p>解决办法：  通过命令提示符修改用户名  </p>
+<ol>
+<li>以管理员身份打开 命令提示符：</li>
+<li>按 Windows + X，选择 命令提示符（管理员） 或 Windows PowerShell（管理员）。</li>
+<li>输入以下命令来列出所有用户：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure></li>
+<li>找到你想要修改的用户名。</li>
+<li>输入以下命令来修改用户名：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user 旧用户名 新用户名</span><br></pre></td></tr></table></figure></li>
+<li>此方法只能更改登录的显示用户名，但不会更改 C:&#x2F;Users&#x2F;Username 文件夹的名称。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ffmpeg的配置和B站视频转化的简单使用</title>
+    <url>//posts/ffmpeg-Deploy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
+<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
+<blockquote>
+<p>建议国内无VPN用户选择该方式下载</p>
+</blockquote>
+<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
+<blockquote>
+<p>建议有VPN的用户选择该方式下载</p>
+</blockquote>
+<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
+<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
+<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
+<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
+<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>ffmpeg</tag>
       </tags>
   </entry>
   <entry>
@@ -439,6 +439,25 @@
       <tags>
         <tag>clash</tag>
         <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>单片机项目驱动</title>
+    <url>//posts/Microcontroller-project-driver/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>项目：1602液晶显示  </p>
+<blockquote>
+<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
+</blockquote>
+</blockquote>
+<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
+<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
+<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>单片机</tag>
       </tags>
   </entry>
   <entry>
@@ -527,25 +546,6 @@
       <tags>
         <tag>GitHub</tag>
         <tag>域名</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>单片机项目驱动</title>
-    <url>//posts/Microcontroller-project-driver/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>项目：1602液晶显示  </p>
-<blockquote>
-<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
-</blockquote>
-</blockquote>
-<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
-<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
-<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>单片机</tag>
       </tags>
   </entry>
 </search>
