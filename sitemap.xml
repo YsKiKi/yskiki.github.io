@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://kk-wuyue.top/posts/ai-with-human/</loc>
+    
+    <lastmod>2025-05-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kk-wuyue.top/posts/Windows-install-WSL/</loc>
     
     <lastmod>2025-04-29</lastmod>
@@ -149,27 +158,6 @@
   </url>
   
   <url>
-    <loc>https://kk-wuyue.top/tags/%E5%8E%9F%E7%A5%9E/</loc>
-    <lastmod>2025-05-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kk-wuyue.top/tags/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93/</loc>
-    <lastmod>2025-05-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kk-wuyue.top/tags/%E7%A7%81%E6%9C%8D/</loc>
-    <lastmod>2025-05-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kk-wuyue.top/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -226,6 +214,34 @@
   </url>
   
   <url>
+    <loc>https://kk-wuyue.top/tags/%E5%8E%9F%E7%A5%9E/</loc>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/tags/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93/</loc>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/tags/%E7%A7%81%E6%9C%8D/</loc>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kk-wuyue.top/tags/ffmpeg/</loc>
+    <lastmod>2025-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://kk-wuyue.top/tags/clash/</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -234,13 +250,6 @@
   
   <url>
     <loc>https://kk-wuyue.top/tags/ubuntu/</loc>
-    <lastmod>2025-05-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kk-wuyue.top/tags/ffmpeg/</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
