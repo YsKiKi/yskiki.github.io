@@ -298,6 +298,49 @@
       </tags>
   </entry>
   <entry>
+    <title>将Clash配置到纯cli的Ubuntu</title>
+    <url>//posts/clash-for-linux/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="下载核心文件"><a href="#下载核心文件" class="headerlink" title="下载核心文件"></a>下载核心文件</h3><blockquote>
+<p>自己找资源</p>
+<blockquote>
+<p>不要用root用户，<code>su</code>到普通用户</p>
+</blockquote>
+</blockquote>
+<h3 id="赋予Clash可执行权限"><a href="#赋予Clash可执行权限" class="headerlink" title="赋予Clash可执行权限"></a>赋予Clash可执行权限</h3><p>给Clash核心文件创建一个目录，<code>cd</code>到目录里：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chomd -x <span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="试启动Clash"><a href="#试启动Clash" class="headerlink" title="试启动Clash"></a>试启动Clash</h3><p>在Clash可执行文件的目录下直接执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
+<p>配置文件会自己生成</p>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span>  <span class="comment">#回到主目录</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> .config/clash</span><br><span class="line">vi config.yaml</span><br><span class="line"><span class="comment">#这边建议直接用Clash-for-Windows获取config之后直接上传替换文件</span></span><br></pre></td></tr></table></figure>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
+<p>值得注意的是:  </p>
+<ol>
+<li>这样设置仅在当前会话有效，换言之重开个ssh连接或者screen窗口，在新建的窗口中环境变量都不会生效  </li>
+<li>端口要与<code>config.yaml</code>中相同</li>
+</ol>
+<p>要使上述情况生效，可以：<br>编辑<code>.bashrc</code>或<code>.zshrc</code>文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>然后在文件末尾添加：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
+<p>保存文件后，执行以下命令使更改生效：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+<h3 id="测试代理情况"><a href="#测试代理情况" class="headerlink" title="测试代理情况"></a>测试代理情况</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl www.google.com -I</span><br></pre></td></tr></table></figure>
+<p>如果响应返回<code>200</code>，即为代理配置成功</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows更改用户名</title>
     <url>//posts/Windows-change-Username/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
@@ -370,6 +413,25 @@
       </tags>
   </entry>
   <entry>
+    <title>单片机项目驱动</title>
+    <url>//posts/Microcontroller-project-driver/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>项目：1602液晶显示  </p>
+<blockquote>
+<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
+</blockquote>
+</blockquote>
+<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
+<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
+<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>单片机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ffmpeg的配置和B站视频转化的简单使用</title>
     <url>//posts/ffmpeg-Deploy/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
@@ -396,68 +458,6 @@
       <tags>
         <tag>Windows</tag>
         <tag>ffmpeg</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>将Clash配置到纯cli的Ubuntu</title>
-    <url>//posts/clash-for-linux/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="下载核心文件"><a href="#下载核心文件" class="headerlink" title="下载核心文件"></a>下载核心文件</h3><blockquote>
-<p>自己找资源</p>
-<blockquote>
-<p>不要用root用户，<code>su</code>到普通用户</p>
-</blockquote>
-</blockquote>
-<h3 id="赋予Clash可执行权限"><a href="#赋予Clash可执行权限" class="headerlink" title="赋予Clash可执行权限"></a>赋予Clash可执行权限</h3><p>给Clash核心文件创建一个目录，<code>cd</code>到目录里：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chomd -x <span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="试启动Clash"><a href="#试启动Clash" class="headerlink" title="试启动Clash"></a>试启动Clash</h3><p>在Clash可执行文件的目录下直接执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
-<p>配置文件会自己生成</p>
-<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span>  <span class="comment">#回到主目录</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> .config/clash</span><br><span class="line">vi config.yaml</span><br><span class="line"><span class="comment">#这边建议直接用Clash-for-Windows获取config之后直接上传替换文件</span></span><br></pre></td></tr></table></figure>
-<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
-<p>值得注意的是:  </p>
-<ol>
-<li>这样设置仅在当前会话有效，换言之重开个ssh连接或者screen窗口，在新建的窗口中环境变量都不会生效  </li>
-<li>端口要与<code>config.yaml</code>中相同</li>
-</ol>
-<p>要使上述情况生效，可以：<br>编辑<code>.bashrc</code>或<code>.zshrc</code>文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.zshrc</span><br></pre></td></tr></table></figure>
-<p>然后在文件末尾添加：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
-<p>保存文件后，执行以下命令使更改生效：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
-<h3 id="测试代理情况"><a href="#测试代理情况" class="headerlink" title="测试代理情况"></a>测试代理情况</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl www.google.com -I</span><br></pre></td></tr></table></figure>
-<p>如果响应返回<code>200</code>，即为代理配置成功</p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-        <tag>ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>单片机项目驱动</title>
-    <url>//posts/Microcontroller-project-driver/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>项目：1602液晶显示  </p>
-<blockquote>
-<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
-</blockquote>
-</blockquote>
-<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
-<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
-<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>单片机</tag>
       </tags>
   </entry>
   <entry>
