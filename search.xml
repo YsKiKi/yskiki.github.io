@@ -377,6 +377,67 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows延迟更新</title>
+    <url>//posts/Windows-delay-update/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a><ul>
+<li><a href="#%E6%9A%82%E5%81%9Cwindows%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0">暂停Windows系统更新</a><ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%89%93%E5%BC%80%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8">第一步：打开注册表编辑器</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%AF%BC%E8%88%AA%E8%87%B3%E7%9B%AE%E6%A0%87%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84">第二步：导航至目标注册表路径</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84dword%E5%80%BC">第三步：创建新的DWORD值</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E4%BF%AE%E6%94%B9%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE">第四步：修改数值数据</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%87%E4%BB%BD%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">备份驱动程序</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="暂停Windows系统更新"><a href="#暂停Windows系统更新" class="headerlink" title="暂停Windows系统更新"></a>暂停Windows系统更新</h3><h4 id="第一步：打开注册表编辑器"><a href="#第一步：打开注册表编辑器" class="headerlink" title="第一步：打开注册表编辑器"></a>第一步：打开注册表编辑器</h4><ol>
+<li>按下键盘上的<code>Win + R</code>组合键，打开”运行”对话框</li>
+<li>在输入框中键入<code>regedit</code></li>
+<li>点击”确定”或按回车键</li>
+</ol>
+<h4 id="第二步：导航至目标注册表路径"><a href="#第二步：导航至目标注册表路径" class="headerlink" title="第二步：导航至目标注册表路径"></a>第二步：导航至目标注册表路径</h4><ol>
+<li><p>在注册表编辑器左侧导航栏中，依次展开以下路径：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果找不到上述路径，请确认您的Windows版本是否支持此设置（Windows 10 1803及以上版本）</p>
+</li>
+</ol>
+<h4 id="第三步：创建新的DWORD值"><a href="#第三步：创建新的DWORD值" class="headerlink" title="第三步：创建新的DWORD值"></a>第三步：创建新的DWORD值</h4><ol>
+<li><p>右键点击”Settings”文件夹</p>
+</li>
+<li><p>选择”新建” &gt; “DWORD (32位)值(D)”</p>
+</li>
+<li><p>将新建的值命名为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FlightSettingsMaxPauseDays</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="第四步：修改数值数据"><a href="#第四步：修改数值数据" class="headerlink" title="第四步：修改数值数据"></a>第四步：修改数值数据</h4><ol>
+<li><p>双击刚刚创建的<code>FlightSettingsMaxPauseDays</code>项</p>
+</li>
+<li><p>在”数值数据”输入框中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">65535</span><br></pre></td></tr></table></figure></li>
+<li><p>确保”基数”选项选择为”十进制”</p>
+</li>
+<li><p>点击”确定”保存更改</p>
+</li>
+</ol>
+<h3 id="备份驱动程序"><a href="#备份驱动程序" class="headerlink" title="备份驱动程序"></a>备份驱动程序</h3><ol>
+<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）  </p>
+</li>
+<li><p>执行以下命令将当前所有驱动备份到 <code>D:\DriverBackup</code>（可自定义路径）：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">dism /online /export-driver /destination:D:\DriverBackup</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作完成后，驱动文件会被保存到该文件夹中，重装后可用于手动安装或自动恢复。</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Windows</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows 安装WSL</title>
     <url>//posts/Windows-install-WSL/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -485,9 +546,9 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+        <tag>教程</tag>
         <tag>WSL</tag>
         <tag>Linux</tag>
-        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -563,63 +624,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows延迟更新</title>
-    <url>//posts/Windows-delay-update/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Windows更新暂停天数设置教程：延长至最长65535天"><a href="#Windows更新暂停天数设置教程：延长至最长65535天" class="headerlink" title="Windows更新暂停天数设置教程：延长至最长65535天"></a>Windows更新暂停天数设置教程：延长至最长65535天</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本教程将指导您如何通过修改Windows注册表，将系统更新暂停功能的最大天数延长至65535天（约179年）。这个设置特别适合那些需要长期保持系统稳定而不希望接收自动更新的用户。</p>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="第一步：打开注册表编辑器"><a href="#第一步：打开注册表编辑器" class="headerlink" title="第一步：打开注册表编辑器"></a>第一步：打开注册表编辑器</h3><ol>
-<li>按下键盘上的<code>Win + R</code>组合键，打开”运行”对话框</li>
-<li>在输入框中键入<code>regedit</code></li>
-<li>点击”确定”或按回车键</li>
-</ol>
-<h3 id="第二步：导航至目标注册表路径"><a href="#第二步：导航至目标注册表路径" class="headerlink" title="第二步：导航至目标注册表路径"></a>第二步：导航至目标注册表路径</h3><ol>
-<li><p>在注册表编辑器左侧导航栏中，依次展开以下路径：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果找不到上述路径，请确认您的Windows版本是否支持此设置（Windows 10 1803及以上版本）</p>
-</li>
-</ol>
-<h3 id="第三步：创建新的DWORD值"><a href="#第三步：创建新的DWORD值" class="headerlink" title="第三步：创建新的DWORD值"></a>第三步：创建新的DWORD值</h3><ol>
-<li><p>右键点击”Settings”文件夹</p>
-</li>
-<li><p>选择”新建” &gt; “DWORD (32位)值(D)”</p>
-</li>
-<li><p>将新建的值命名为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FlightSettingsMaxPauseDays</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="第四步：修改数值数据"><a href="#第四步：修改数值数据" class="headerlink" title="第四步：修改数值数据"></a>第四步：修改数值数据</h3><ol>
-<li><p>双击刚刚创建的<code>FlightSettingsMaxPauseDays</code>项</p>
-</li>
-<li><p>在”数值数据”输入框中输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">65535</span><br></pre></td></tr></table></figure></li>
-<li><p>确保”基数”选项选择为”十进制”</p>
-</li>
-<li><p>点击”确定”保存更改</p>
-</li>
-</ol>
-<h2 id="验证设置"><a href="#验证设置" class="headerlink" title="验证设置"></a>验证设置</h2><ol>
-<li>打开Windows设置（Win + I）</li>
-<li>进入”更新和安全” &gt; “Windows更新”</li>
-<li>点击”暂停更新”选项，查看可选择的暂停天数是否已增加</li>
-</ol>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li><strong>操作风险</strong>：修改注册表存在风险，建议操作前备份注册表或创建系统还原点</li>
-<li><strong>系统要求</strong>：此方法适用于Windows 10 1803及以上版本</li>
-<li><strong>管理员权限</strong>：操作需要管理员权限</li>
-<li><strong>安全考虑</strong>：长期暂停更新可能导致系统安全漏洞得不到修补</li>
-<li><strong>恢复默认</strong>：如需恢复默认设置，只需删除创建的 <code>FlightSettingsMaxPauseDays</code> 值即可</li>
-</ol>
-<h2 id="常见问题解答"><a href="#常见问题解答" class="headerlink" title="常见问题解答"></a>常见问题解答</h2><p><strong>Q：这个修改会影响系统其他功能吗？</strong><br>A：不会，它仅影响Windows更新暂停功能的最大天数设置。</p>
-<p><strong>Q：为什么我修改后看不到变化？</strong><br>A：可能需要重启系统或Windows更新服务才能生效。</p>
-<p><strong>Q：65535天后会发生什么？</strong><br>A：系统将恢复正常的更新周期，您可以选择再次暂停。</p>
-<p><strong>Q：这个修改会被Windows更新覆盖吗？</strong><br>A：通常不会，但重大系统版本更新可能会重置此设置。</p>
-<p>通过本教程，您已成功延长了Windows更新的最大暂停天数。请根据实际需求谨慎使用此功能，平衡系统安全性与稳定性需求。</p>
-]]></content>
-      <tags>
-        <tag>Windows</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>将Clash配置到纯cli的Ubuntu</title>
     <url>//posts/clash-for-linux/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="下载核心文件"><a href="#下载核心文件" class="headerlink" title="下载核心文件"></a>下载核心文件</h3><blockquote>
@@ -663,25 +667,6 @@
       </tags>
   </entry>
   <entry>
-    <title>单片机项目驱动</title>
-    <url>//posts/Microcontroller-project-driver/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>项目：1602液晶显示  </p>
-<blockquote>
-<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
-</blockquote>
-</blockquote>
-<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
-<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
-<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>单片机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ffmpeg的配置和B站视频转化的简单使用</title>
     <url>//posts/ffmpeg-Deploy/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
@@ -708,6 +693,61 @@
       <tags>
         <tag>Windows</tag>
         <tag>ffmpeg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>单片机项目驱动</title>
+    <url>//posts/Microcontroller-project-driver/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>项目：1602液晶显示  </p>
+<blockquote>
+<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
+</blockquote>
+</blockquote>
+<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
+<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
+<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>单片机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何将GitHub博客与域名关联</title>
+    <url>//posts/G-blog-To-domain/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="如何将GitHub博客与域名关联"><a href="#如何将GitHub博客与域名关联" class="headerlink" title="如何将GitHub博客与域名关联"></a>如何将GitHub博客与域名关联</h2><p>书接上文，配置好了在GitHub上的个人博客之后，由于GitHub给我们的网址是 <a href="https://xxx.github.io/">https://xxx.github.io</a> ，有的人可能会觉得不是很美观。那么，有没有什么方法改变这个网址呢？  </p>
+<p>当然是有的啦！首先我们需要准备一个域名</p>
+<h4 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h4><p>国内有很多域名注册商，可以找一个注册域名：  </p>
+<p>老牌域名注册商，运营正规 <a href="https://wanwang.aliyun.com/">万网</a> ⌈阿里云旗下⌋<br>专注于DNS解析服务 <a href="https://dnspod.cloud.tencent.com/">DNSPod</a> ⌈腾讯云旗下⌋  </p>
+<blockquote>
+<p>除了这两家还有很多域名注册商，不喜欢也可以换 新网，西部数码，易名中国 这些</p>
+</blockquote>
+<h4 id="进行DNS解析"><a href="#进行DNS解析" class="headerlink" title="进行DNS解析"></a>进行DNS解析</h4><p>什么？域名不能拿来就用吗？<br>当然不能啦！在使用域名之前，要先对域名进行DNS解析  </p>
+<blockquote>
+<p>域名解析（DNS解析）是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站的一种服务。IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成。  </p>
+</blockquote>
+<p>如果你是通过<code>万网</code>或<code>DNSPod</code>购买的域名，那么在购买完后进入控制台即可进行域名解析<br>或者，你还可以用 <a href="https://www.cloudflare-cn.com/">Cloudflare</a> 等进行解析  </p>
+<p><strong>以cloudflare为例：</strong>  </p>
+<blockquote>
+<p>Cloudflare有自带防DDOS攻击，太香了（doge  </p>
+</blockquote>
+<p>要想用Cloudflare，需要在域名注册商处将<code>NS</code>改为 Cloudflare 的 NS：  </p>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">brad.ns.cloudflare.com</span><br><span class="line">sunny.ns.cloudflare.com</span><br></pre></td></tr></table></figure>
+<p><img src="/Blog-domain/Blog-domain-3.png"><br>在<code>DNS</code>中添加四条<code>A</code>类型，指向GitHub服务器：  </p>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line"><span class="number">185.199.108.153</span></span><br><span class="line"><span class="number">185.199.109.153</span></span><br><span class="line"><span class="number">185.199.110.153</span></span><br><span class="line"><span class="number">185.199.111.153</span></span><br></pre></td></tr></table></figure>
+<p>添加一条www记录，让你的好友习惯性输入<code>www</code>后也可以访问你的博客：<br><img src="/Blog-domain/Blog-domain-1.png"><br>代理状态改为<code>已代理</code>，国内访问也很快啦！</p>
+<h4 id="将域名关联到GitHub"><a href="#将域名关联到GitHub" class="headerlink" title="将域名关联到GitHub"></a>将域名关联到GitHub</h4><p>我们已经成功解析了域名，将域名关联到GitHub后，就可以输入你的域名访问博客了  </p>
+<p>在输入域名之前，我们需要在本地 Blog 文件夹目录下的 sources 文件夹中新建一个 CHAME 文件：<br>新建 文本文档(.txt)&gt;&gt;双击打开编辑，在里面输入你的域名：<br><img src="/Blog-domain/Blog-domain-4.png"><br>保存，将文件后缀名<code>.txt</code>删除，返回 Blog 根目录，Hexo三连上传到GitHub    </p>
+<p>打开你的 <strong>博客仓库</strong> ，点击：Settings-Pages，在这里输入你的域名：<br><img src="/Blog-domain/Blog-domain-2.png"><br>点击<code>save</code>，GitHub会自动对你的DNS进行检测，显示<code>successful</code>的时候就大功告成啦！</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>域名</tag>
       </tags>
   </entry>
   <entry>
@@ -760,42 +800,6 @@
         <tag>Nodejs</tag>
         <tag>Ubuntu22.04</tag>
         <tag>Redis-Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何将GitHub博客与域名关联</title>
-    <url>//posts/G-blog-To-domain/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="如何将GitHub博客与域名关联"><a href="#如何将GitHub博客与域名关联" class="headerlink" title="如何将GitHub博客与域名关联"></a>如何将GitHub博客与域名关联</h2><p>书接上文，配置好了在GitHub上的个人博客之后，由于GitHub给我们的网址是 <a href="https://xxx.github.io/">https://xxx.github.io</a> ，有的人可能会觉得不是很美观。那么，有没有什么方法改变这个网址呢？  </p>
-<p>当然是有的啦！首先我们需要准备一个域名</p>
-<h4 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h4><p>国内有很多域名注册商，可以找一个注册域名：  </p>
-<p>老牌域名注册商，运营正规 <a href="https://wanwang.aliyun.com/">万网</a> ⌈阿里云旗下⌋<br>专注于DNS解析服务 <a href="https://dnspod.cloud.tencent.com/">DNSPod</a> ⌈腾讯云旗下⌋  </p>
-<blockquote>
-<p>除了这两家还有很多域名注册商，不喜欢也可以换 新网，西部数码，易名中国 这些</p>
-</blockquote>
-<h4 id="进行DNS解析"><a href="#进行DNS解析" class="headerlink" title="进行DNS解析"></a>进行DNS解析</h4><p>什么？域名不能拿来就用吗？<br>当然不能啦！在使用域名之前，要先对域名进行DNS解析  </p>
-<blockquote>
-<p>域名解析（DNS解析）是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站的一种服务。IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成。  </p>
-</blockquote>
-<p>如果你是通过<code>万网</code>或<code>DNSPod</code>购买的域名，那么在购买完后进入控制台即可进行域名解析<br>或者，你还可以用 <a href="https://www.cloudflare-cn.com/">Cloudflare</a> 等进行解析  </p>
-<p><strong>以cloudflare为例：</strong>  </p>
-<blockquote>
-<p>Cloudflare有自带防DDOS攻击，太香了（doge  </p>
-</blockquote>
-<p>要想用Cloudflare，需要在域名注册商处将<code>NS</code>改为 Cloudflare 的 NS：  </p>
-<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">brad.ns.cloudflare.com</span><br><span class="line">sunny.ns.cloudflare.com</span><br></pre></td></tr></table></figure>
-<p><img src="/Blog-domain/Blog-domain-3.png"><br>在<code>DNS</code>中添加四条<code>A</code>类型，指向GitHub服务器：  </p>
-<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line"><span class="number">185.199.108.153</span></span><br><span class="line"><span class="number">185.199.109.153</span></span><br><span class="line"><span class="number">185.199.110.153</span></span><br><span class="line"><span class="number">185.199.111.153</span></span><br></pre></td></tr></table></figure>
-<p>添加一条www记录，让你的好友习惯性输入<code>www</code>后也可以访问你的博客：<br><img src="/Blog-domain/Blog-domain-1.png"><br>代理状态改为<code>已代理</code>，国内访问也很快啦！</p>
-<h4 id="将域名关联到GitHub"><a href="#将域名关联到GitHub" class="headerlink" title="将域名关联到GitHub"></a>将域名关联到GitHub</h4><p>我们已经成功解析了域名，将域名关联到GitHub后，就可以输入你的域名访问博客了  </p>
-<p>在输入域名之前，我们需要在本地 Blog 文件夹目录下的 sources 文件夹中新建一个 CHAME 文件：<br>新建 文本文档(.txt)&gt;&gt;双击打开编辑，在里面输入你的域名：<br><img src="/Blog-domain/Blog-domain-4.png"><br>保存，将文件后缀名<code>.txt</code>删除，返回 Blog 根目录，Hexo三连上传到GitHub    </p>
-<p>打开你的 <strong>博客仓库</strong> ，点击：Settings-Pages，在这里输入你的域名：<br><img src="/Blog-domain/Blog-domain-2.png"><br>点击<code>save</code>，GitHub会自动对你的DNS进行检测，显示<code>successful</code>的时候就大功告成啦！</p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>域名</tag>
       </tags>
   </entry>
 </search>
