@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>工具获取</title>
+    <url>//posts/tools-acquisition/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
+</blockquote>
+</blockquote>
+<hr>
+<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
+<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/gf.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
+<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/srcn.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果不可用，使用以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12; Invoke-Expression (New-Object Net.WebClient).DownloadString(<span class="string">&quot;https://imgheybox.max-c.com/game/star_rail/link1.ps1&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
+<hr>
+<h3 id="Notepad-下载"><a href="#Notepad-下载" class="headerlink" title="Notepad++下载"></a>Notepad++下载</h3><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++ [ v8.6.4 ]</a></p>
+<hr>
+<center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>  
+<center><font size="5"><font color="#ADFF2F">↓↓看看瑶瑶吧✓</font></font></center>  
+
+<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
+<hr>
+<ul>
+<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具获取</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于GitHub的博客搭建</title>
     <url>//posts/Blog-building/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -102,51 +147,6 @@
         <tag>GitHub</tag>
         <tag>Blog</tag>
         <tag>Nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工具获取</title>
-    <url>//posts/tools-acquisition/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
-<p><del>（记得解压缩哦~）</del></p>
-<blockquote>
-<p>（换仓库了，不用解压缩了）  </p>
-</blockquote>
-</blockquote>
-<hr>
-<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
-<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/gf.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
-<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/srcn.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>如果不可用，使用以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12; Invoke-Expression (New-Object Net.WebClient).DownloadString(<span class="string">&quot;https://imgheybox.max-c.com/game/star_rail/link1.ps1&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
-<hr>
-<h3 id="Notepad-下载"><a href="#Notepad-下载" class="headerlink" title="Notepad++下载"></a>Notepad++下载</h3><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++ [ v8.6.4 ]</a></p>
-<hr>
-<center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>  
-<center><font size="5"><font color="#ADFF2F">↓↓看看瑶瑶吧✓</font></font></center>  
-
-<p><img src="/Resources/%E7%91%B6%E7%91%B6.jpg" alt="瑶瑶">  </p>
-<hr>
-<ul>
-<li><a href="https://kk-wuyue.top/">返回主页</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具获取</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>崩坏·星穹铁道</tag>
-        <tag>私服</tag>
       </tags>
   </entry>
   <entry>
@@ -560,6 +560,63 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows延迟更新</title>
+    <url>//posts/Windows-delay-update/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Windows更新暂停天数设置教程：延长至最长65535天"><a href="#Windows更新暂停天数设置教程：延长至最长65535天" class="headerlink" title="Windows更新暂停天数设置教程：延长至最长65535天"></a>Windows更新暂停天数设置教程：延长至最长65535天</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本教程将指导您如何通过修改Windows注册表，将系统更新暂停功能的最大天数延长至65535天（约179年）。这个设置特别适合那些需要长期保持系统稳定而不希望接收自动更新的用户。</p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="第一步：打开注册表编辑器"><a href="#第一步：打开注册表编辑器" class="headerlink" title="第一步：打开注册表编辑器"></a>第一步：打开注册表编辑器</h3><ol>
+<li>按下键盘上的<code>Win + R</code>组合键，打开”运行”对话框</li>
+<li>在输入框中键入<code>regedit</code></li>
+<li>点击”确定”或按回车键</li>
+</ol>
+<h3 id="第二步：导航至目标注册表路径"><a href="#第二步：导航至目标注册表路径" class="headerlink" title="第二步：导航至目标注册表路径"></a>第二步：导航至目标注册表路径</h3><ol>
+<li><p>在注册表编辑器左侧导航栏中，依次展开以下路径：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果找不到上述路径，请确认您的Windows版本是否支持此设置（Windows 10 1803及以上版本）</p>
+</li>
+</ol>
+<h3 id="第三步：创建新的DWORD值"><a href="#第三步：创建新的DWORD值" class="headerlink" title="第三步：创建新的DWORD值"></a>第三步：创建新的DWORD值</h3><ol>
+<li><p>右键点击”Settings”文件夹</p>
+</li>
+<li><p>选择”新建” &gt; “DWORD (32位)值(D)”</p>
+</li>
+<li><p>将新建的值命名为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FlightSettingsMaxPauseDays</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="第四步：修改数值数据"><a href="#第四步：修改数值数据" class="headerlink" title="第四步：修改数值数据"></a>第四步：修改数值数据</h3><ol>
+<li><p>双击刚刚创建的<code>FlightSettingsMaxPauseDays</code>项</p>
+</li>
+<li><p>在”数值数据”输入框中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">65535</span><br></pre></td></tr></table></figure></li>
+<li><p>确保”基数”选项选择为”十进制”</p>
+</li>
+<li><p>点击”确定”保存更改</p>
+</li>
+</ol>
+<h2 id="验证设置"><a href="#验证设置" class="headerlink" title="验证设置"></a>验证设置</h2><ol>
+<li>打开Windows设置（Win + I）</li>
+<li>进入”更新和安全” &gt; “Windows更新”</li>
+<li>点击”暂停更新”选项，查看可选择的暂停天数是否已增加</li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><strong>操作风险</strong>：修改注册表存在风险，建议操作前备份注册表或创建系统还原点</li>
+<li><strong>系统要求</strong>：此方法适用于Windows 10 1803及以上版本</li>
+<li><strong>管理员权限</strong>：操作需要管理员权限</li>
+<li><strong>安全考虑</strong>：长期暂停更新可能导致系统安全漏洞得不到修补</li>
+<li><strong>恢复默认</strong>：如需恢复默认设置，只需删除创建的 <code>FlightSettingsMaxPauseDays</code> 值即可</li>
+</ol>
+<h2 id="常见问题解答"><a href="#常见问题解答" class="headerlink" title="常见问题解答"></a>常见问题解答</h2><p><strong>Q：这个修改会影响系统其他功能吗？</strong><br>A：不会，它仅影响Windows更新暂停功能的最大天数设置。</p>
+<p><strong>Q：为什么我修改后看不到变化？</strong><br>A：可能需要重启系统或Windows更新服务才能生效。</p>
+<p><strong>Q：65535天后会发生什么？</strong><br>A：系统将恢复正常的更新周期，您可以选择再次暂停。</p>
+<p><strong>Q：这个修改会被Windows更新覆盖吗？</strong><br>A：通常不会，但重大系统版本更新可能会重置此设置。</p>
+<p>通过本教程，您已成功延长了Windows更新的最大暂停天数。请根据实际需求谨慎使用此功能，平衡系统安全性与稳定性需求。</p>
+]]></content>
+      <tags>
+        <tag>Windows</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
