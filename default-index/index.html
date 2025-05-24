@@ -202,7 +202,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/Windows-delay-update/" class="post-title-link" itemprop="url">Windows延迟更新</a>
+            <a href="/posts/Windows-delay-update/" class="post-title-link" itemprop="url">Windows优化设置</a>
         </h2>
 
         <div class="post-meta">
@@ -211,10 +211,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-05-23 12:55:07 / 修改时间：13:19:41" itemprop="dateCreated datePublished" datetime="2025-05-23T12:55:07+08:00">2025-05-23</time>
+              <time title="创建时间：2025-05-23 12:55:07" itemprop="dateCreated datePublished" datetime="2025-05-23T12:55:07+08:00">2025-05-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-05-24 23:31:04" itemprop="dateModified" datetime="2025-05-24T23:31:04+08:00">2025-05-24</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -222,14 +228,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>660</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -251,6 +257,7 @@
 </ul>
 </li>
 <li><a href="#%E5%A4%87%E4%BB%BD%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">备份驱动程序</a></li>
+<li><a href="#%E5%B0%86%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%94%B9%E4%B8%BA%E8%80%81%E7%89%88">将右键菜单改为老版</a></li>
 </ul>
 </li>
 </ul>
@@ -291,6 +298,30 @@
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dism /online /export-driver /destination:D:\DriverBackup</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>操作完成后，驱动文件会被保存到该文件夹中，重装后可用于手动安装或自动恢复。</p>
+</li>
+</ol>
+<h3 id="将右键菜单改为老版"><a href="#将右键菜单改为老版" class="headerlink" title="将右键菜单改为老版"></a>将右键菜单改为老版</h3><ol>
+<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）</p>
+</li>
+<li><p>执行以下命令：</p>
+<pre><code class="cmd">reg add &quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32&quot; /ve /d &quot;&quot; /f
+</code></pre>
+<ul>
+<li><p><code>reg add</code>：添加注册表项  </p>
+</li>
+<li><p><code>&quot;HKCU\Software\Classes\CLSID\&#123;...&#125;&quot;</code>：路径</p>
+</li>
+<li><p><code>\InprocServer32</code>：要新建的子项</p>
+</li>
+<li><p><code>/ve</code>：表示设置 <code>(默认)</code> 项</p>
+</li>
+<li><p><code>/d &quot;&quot;</code>：值为空字符串</p>
+</li>
+<li><p><code>/f</code>：强制执行，不弹确认</p>
+</li>
+</ul>
+</li>
+<li><p><code>Ctrl+Shift+Esc</code> 打开任务管理器，重启 <code>explorer.exe</code> 进程即可</p>
 </li>
 </ol>
 
@@ -1677,7 +1708,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">43 分钟</span>
+    <span title="站点阅读时长">44 分钟</span>
 </div>
 
         
