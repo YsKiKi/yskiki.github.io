@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/default.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.kk-wuyue.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="康威生命游戏              body {             margin: 20px;             font-family: Arial, sans-serif;         }          #gameCanvas {             border: 1px solid #000;             box-shad">
+<meta property="og:type" content="website">
+<meta property="og:title" content="初夏札记">
+<meta property="og:url" content="https://blog.kk-wuyue.top/LifeGame/">
+<meta property="og:site_name" content="初夏札记">
+<meta property="og:description" content="康威生命游戏              body {             margin: 20px;             font-family: Arial, sans-serif;         }          #gameCanvas {             border: 1px solid #000;             box-shad">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-05-28T16:42:51.998Z">
+<meta property="article:modified_time" content="2025-05-28T16:23:00.072Z">
+<meta property="article:author" content="May">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://blog.kk-wuyue.top/LifeGame/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 初夏札记
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">初夏札记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>康威生命游戏</title>
+    <style>
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        #gameCanvas {
+            border: 1px solid #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            height: auto;
+        }
+
+        .controls {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+
+        .control-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .control-row:last-child {
+            margin-bottom: 0;
+        }
+
+        button,
+        select {
+            margin: 0 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+
+        .speed-control,
+        .density-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 10px;
+            background: white;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 100px;
+            max-width: 150px;
+        }
+
+        .speed-slider,
+        .density-slider {
+            flex: 1;
+            width: 100px;
+            height: 5px;
+            -webkit-appearance: none;
+            background: #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .speed-slider::-webkit-slider-thumb,
+        .density-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #2196F3;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .speed-select {
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        #speedValue,
+        #densityValue {
+            min-width: 160px;
+            font-size: 0.9em;
+        }
+
+        #randomizeBtn {
+            white-space: nowrap;
+            padding: 3px 8px;
+        }
+
+        #patternSelect {
+            flex: 0 0 150px;
+        }
+
+        .stats-panel {
+            margin: 10px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2196F3;
+        }
+
+        .cycle-info {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+        }
+
+        .cycle-info .stat-label {
+            color: #1976D2;
+            font-weight: bold;
+        }
+
+        .toggle-btn {
+            min-width: 80px;
+            /* 固定最小宽度避免切换时按钮大小变化 */
+            background: #4CAF50;
+            /* 开始状态为绿色 */
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn.running {
+            background: #f44336;
+            /* 运行状态为红色 */
+        }
+
+        .toggle-btn:hover {
+            opacity: 0.9;
+        }
+
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="controls">
+        <div class="control-row">
+            <button id="toggleBtn" class="toggle-btn">
+                <span class="btn-text">开始</span>
+            </button>
+            <button id="clearBtn">清除</button>
+            <select id="patternSelect" style="width: 150px;">
+                <option value>选择预设图案</option>
+                <option value="glider">滑翔机</option>
+                <option value="blinker">闪烁器</option>
+                <option value="beacon">信标</option>
+                <option value="toad">蟾蜍</option>
+                <option value="spaceship">轻型飞船</option>
+                <option value="pulsar">脉冲星</option>
+                <option value="cross">十字花</option>
+                <option value="loafer">火箭</option>
+                <option value="gosperGun">Gosper滑翔机发射器</option>
+                <option value="simpleGun">简单发射器</option>
+                <option value="cordership">2-Engine Cordership</option>
+                <option value="copperhead">Copperhead 飞船</option>
+            </select>
+            <div class="control-row">
+                <label class="torus-mode">
+                    <input type="checkbox" id="torusMode"> 环面
+                </label>
+            </div>
+            <div class="speed-control">
+                <span>速度: </span>
+                <select id="speedPreset" class="speed-select">
+                    <option value="slow">慢速</option>
+                    <option value="medium" selected>中速</option>
+                    <option value="fast">快速</option>
+                    <option value="max">最大</option>
+                </select>
+                <div class="slider-container">
+                    <input type="range" id="speedSlider" class="speed-slider">
+                    <span id="speedValue">100ms/代</span>
+                </div>
+            </div>
+
+            <div class="density-control">
+                <span>随机密度: </span>
+                <input type="range" id="densitySlider" min="10" max="90" value="30" step="5" class="density-slider">
+                <span id="densityValue">30%</span>
+                <button id="randomizeBtn">随机生成</button>
+            </div>
+        </div>
+    </div>
+    <div id="gameStats" class="stats-panel"></div>
+    <div class="canvas-container">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+    <p>点击格子可以设置/清除细胞</p>
+    <script>
+        class GameOfLife {
+            constructor(width, height, cellSize) {
+                console.trace('GameOfLife constructor called');
+                console.log('Constructor arguments:', { width, height, cellSize });
+
+                this.width = width;
+                this.height = height;
+                this.cellSize = cellSize;
+                this.cols = Math.floor(width / cellSize);
+                this.rows = Math.floor(height / cellSize);
+                this.grid = this.createGrid();
+                this.isRunning = false;
+                this.intervalId = null;
+                this.updateInterval = 100;
+                this.torusMode = false;
+                this.density = 0.3;
+                this.i = 0;
+                console.log("i", this.i);
+
+                this.canvas = document.getElementById('gameCanvas');
+
+
+                const containerWidth = this.canvas.parentElement.clientWidth - 40;
+
+
+                this.canvas.width = width;
+                this.canvas.height = height;
+
+                this.ctx = this.canvas.getContext('2d');
+
+                this.bindEvents();
+
+                this.patterns = {
+                    glider: [
+                        [0, 1, 0],
+                        [0, 0, 1],
+                        [1, 1, 1]
+                    ],
+                    blinker: [
+                        [0, 0, 0],
+                        [1, 1, 1],
+                        [0, 0, 0]
+                    ],
+                    beacon: [
+                        [1, 1, 0, 0],
+                        [1, 1, 0, 0],
+                        [0, 0, 1, 1],
+                        [0, 0, 1, 1]
+                    ],
+                    toad: [
+                        [0, 1, 1, 1],
+                        [1, 1, 1, 0]
+                    ],
+                    spaceship: [
+                        [0, 1, 1, 1, 1],
+                        [1, 0, 0, 0, 1],
+                        [0, 0, 0, 0, 1],
+                        [1, 0, 0, 1, 0]
+                    ],
+                    pulsar: [
+                        [0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
+                        [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
+                        [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
+                        [0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0],
+                        [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
+                        [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
+                        [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0]
+                    ],
+                    cross: [
+                        [0, 1, 1, 0],
+                        [1, 0, 0, 1],
+                        [1, 0, 0, 1],
+                        [0, 1, 1, 0]
+                    ],
+                    loafer: [
+                        [0, 1, 1, 0],
+                        [1, 0, 0, 1],
+                        [0, 1, 0, 1],
+                        [0, 0, 1, 1]
+                    ],
+                    gosperGun: [
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+                        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                    ],
+                    simpleGun: [
+                        [0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+                        [0, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+                        [1, 1, 0, 1, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                    ],
+                    cordership: [
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                    ],
+                    copperhead: [
+                        [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+                        [0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0],
+                        [0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                        [0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0],
+                        [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    ]
+                };
+
+                this.setupSpeedControl();
+                this.bindDensityControls();
+                this.stats = this.createNewStats();
+
+
+                this.draw();
+            }
+
+            setupSpeedControl() {
+
+                this.speedLevels = this.calculateSpeedLevels();
+
+
+                this.updateInterval = this.speedLevels[Math.floor(this.speedLevels.length / 2)];
+
+                this.bindSpeedControls();
+            }
+
+            calculateSpeedLevels() {
+                const levels = [];
+                const ratio = 1.5;
+                const minSpeed = 1;
+                const maxSpeed = 2000;
+
+                let currentSpeed = maxSpeed;
+                while (currentSpeed >= minSpeed) {
+
+                    levels.push(Math.max(1, Math.round(currentSpeed)));
+                    currentSpeed = currentSpeed / ratio;
+                }
+
+                return levels.reverse();
+            }
+
+            bindSpeedControls() {
+                const slider = document.getElementById('speedSlider');
+                const speedValue = document.getElementById('speedValue');
+                const speedPreset = document.getElementById('speedPreset');
+
+
+                slider.min = 0;
+                slider.max = this.speedLevels.length - 1;
+                slider.value = Math.floor(this.speedLevels.length / 2);
+
+
+                this.updateSpeedDisplay(this.updateInterval);
+
+
+                slider.addEventListener('input', (e) => {
+                    const speed = this.speedLevels[e.target.value];
+                    this.updateSpeed(speed);
+                    this.updateSpeedDisplay(speed);
+                });
+
+
+                speedPreset.addEventListener('change', (e) => {
+                    const speedIndex = this.getSpeedPresetIndex(e.target.value);
+                    slider.value = speedIndex;
+                    const speed = this.speedLevels[speedIndex];
+                    this.updateSpeed(speed);
+                    this.updateSpeedDisplay(speed);
+                });
+            }
+
+            updateSpeedDisplay(speed) {
+                const speedValue = document.getElementById('speedValue');
+
+                if (speed >= 1000) {
+                    speedValue.textContent = `${(speed / 1000).toFixed(1)}秒/代`;
+                } else if (speed === 1) {
+                    speedValue.textContent = `最大速度`;
+                } else {
+                    speedValue.textContent = `${speed}毫秒/代`;
+                }
+            }
+
+            getSpeedPresetIndex(preset) {
+                const length = this.speedLevels.length;
+                switch (preset) {
+                    case 'slow': return Math.floor(length * 0.85);
+                    case 'medium': return Math.floor(length * 0.5);
+                    case 'fast': return Math.floor(length * 0.15);
+                    case 'max': return 0;
+                    default: return Math.floor(length * 0.5);
+                }
+            }
+
+            createGrid() {
+                return Array(this.rows).fill().map(() => Array(this.cols).fill(0));
+            }
+
+            bindEvents() {
+                const toggleBtn = document.getElementById('toggleBtn');
+                if (toggleBtn) {
+                    toggleBtn.addEventListener('click', () => {
+                        if (this.isRunning) {
+                            this.pause();
+                        } else {
+                            this.start();
+                        }
+                    });
+                }
+
+                const clearBtn = document.getElementById('clearBtn');
+                if (clearBtn) {
+                    clearBtn.addEventListener('click', () => {
+                        this.clear();
+                        const toggleBtn = document.getElementById('toggleBtn');
+                        if (toggleBtn) {
+                            toggleBtn.classList.remove('running');
+                            toggleBtn.querySelector('.btn-text').textContent = '开始';
+                        }
+                    });
+                }
+
+                const patternSelect = document.getElementById('patternSelect');
+                if (patternSelect) {
+                    patternSelect.addEventListener('change', (e) => {
+                        if (e.target.value) {
+                            this.createPattern(e.target.value);
+                        }
+                    });
+                }
+
+
+                let isMouseDown = false;
+                let toggleValue = null;
+
+                if (this.canvas) {
+                    this.canvas.addEventListener('mousedown', (e) => {
+                        isMouseDown = true;
+                        this.handleCanvasDraw(e, true);
+                    });
+
+                    this.canvas.addEventListener('mousemove', (e) => {
+                        if (isMouseDown) {
+                            this.handleCanvasDraw(e, false);
+                        }
+                    });
+
+                    document.addEventListener('mouseup', () => {
+                        isMouseDown = false;
+                        toggleValue = null;
+                    });
+                }
+
+                const torusMode = document.getElementById('torusMode');
+                if (torusMode) {
+                    torusMode.addEventListener('change', (e) => {
+                        this.torusMode = e.target.checked;
+                        this.draw();
+                    });
+                }
+
+
+                this.handleCanvasDraw = (e, toggle) => {
+                    const rect = this.canvas.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const col = Math.floor(x / this.cellSize);
+                    const row = Math.floor(y / this.cellSize);
+
+                    if (row >= 0 && row < this.rows && col >= 0 && col < this.cols) {
+                        if (toggleValue === null && toggle) {
+                            toggleValue = this.grid[row][col] ? 0 : 1;
+                        }
+                        if (toggleValue !== null) {
+                            this.grid[row][col] = toggleValue;
+                            this.draw();
+                        }
+                    }
+                };
+            }
+
+
+            draw() {
+
+                this.ctx.clearRect(0, 0, this.width, this.height);
+
+
+                this.ctx.strokeStyle = '#ddd';
+                this.ctx.lineWidth = 0.5;
+
+                this.ctx.beginPath();
+                for (let i = 0; i <= this.rows; i++) {
+                    this.ctx.moveTo(0, i * this.cellSize);
+                    this.ctx.lineTo(this.width, i * this.cellSize);
+                }
+                for (let i = 0; i <= this.cols; i++) {
+                    this.ctx.moveTo(i * this.cellSize, 0);
+                    this.ctx.lineTo(i * this.cellSize, this.height);
+                }
+                this.ctx.stroke();
+
+
+                this.ctx.fillStyle = '#08f';
+                for (let row = 0; row < this.rows; row++) {
+                    for (let col = 0; col < this.cols; col++) {
+                        if (this.grid[row][col]) {
+                            this.ctx.fillRect(
+                                col * this.cellSize + 1,
+                                row * this.cellSize + 1,
+                                this.cellSize - 1,
+                                this.cellSize - 1
+                            );
+                        }
+                    }
+                }
+            }
+
+            countNeighbors(row, col) {
+                let count = 0;
+                for (let i = -1; i <= 1; i++) {
+                    for (let j = -1; j <= 1; j++) {
+                        if (i === 0 && j === 0) continue;
+
+                        let newRow, newCol;
+
+                        if (this.torusMode) {
+
+                            newRow = (row + i + this.rows) % this.rows;
+                            newCol = (col + j + this.cols) % this.cols;
+                        } else {
+
+                            newRow = row + i;
+                            newCol = col + j;
+
+
+                            if (newRow < 0 || newRow >= this.rows ||
+                                newCol < 0 || newCol >= this.cols) {
+                                continue;
+                            }
+                        }
+
+                        count += this.grid[newRow][newCol];
+                    }
+                }
+                return count;
+            }
+
+            update() {
+                if (this.stats.cycleFound) {
+                    this.updateGridOnly();
+                } else {
+                    this.updateWithStats();
+                }
+            }
+
+
+            updateGridOnly() {
+                const newGrid = this.createGrid();
+                for (let row = 0; row < this.rows; row++) {
+                    for (let col = 0; col < this.cols; col++) {
+                        const neighbors = this.countNeighbors(row, col);
+                        if (this.grid[row][col]) {
+                            newGrid[row][col] = (neighbors === 2 || neighbors === 3) ? 1 : 0;
+                        } else {
+                            newGrid[row][col] = neighbors === 3 ? 1 : 0;
+                        }
+                    }
+                }
+                this.grid = newGrid;
+            }
+
+            updateWithStats() {
+                const beforeCount = this.countAliveCells();
+                const beforeHash = this.calculateGridHash();
+
+
+                const newGrid = this.createGrid();
+                let aliveCount = 0;
+
+                for (let row = 0; row < this.rows; row++) {
+                    for (let col = 0; col < this.cols; col++) {
+                        const neighbors = this.countNeighbors(row, col);
+                        if (this.grid[row][col]) {
+                            newGrid[row][col] = (neighbors === 2 || neighbors === 3) ? 1 : 0;
+                        } else {
+                            newGrid[row][col] = neighbors === 3 ? 1 : 0;
+                        }
+                        aliveCount += newGrid[row][col];
+                    }
+                }
+
+                this.grid = newGrid;
+
+
+                this.updateStats(beforeCount, aliveCount, beforeHash);
+                this.updateStatsDisplay();
+            }
+
+            updateStats(beforeCount, afterCount, currentHash) {
+                this.stats.generation++;
+
+
+                const births = Math.max(0, afterCount - beforeCount);
+                const deaths = Math.max(0, beforeCount - afterCount);
+                this.stats.births += births;
+                this.stats.deaths += deaths;
+                this.stats.currentAlive = afterCount;
+
+
+                if (!this.stats.cycleFound) {
+                    if (this.stats.stateHistory.has(currentHash)) {
+                        const previousGen = this.stats.stateHistory.get(currentHash);
+                        this.stats.cycleFound = true;
+                        this.stats.cycleLength = this.stats.generation - previousGen;
+                        this.stats.cycleStart = previousGen;
+                    } else {
+                        this.stats.stateHistory.set(currentHash, this.stats.generation);
+                    }
+                }
+            }
+
+            updateStatsDisplay() {
+                const statsDiv = document.getElementById('gameStats');
+                if (!statsDiv) return;
+
+                let html = `
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-label">代数</span>
+                    <span class="stat-value">${this.stats.generation}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">当前存活</span>
+                    <span class="stat-value">${this.stats.currentAlive}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">总出生数</span>
+                    <span class="stat-value">${this.stats.births}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">总死亡数</span>
+                    <span class="stat-value">${this.stats.deaths}</span>
+                </div>
+                <div class="stat-item cycle-info">
+                    ${this.stats.cycleFound ?
+                        `<span class="stat-label">发现循环!周期: ${this.stats.cycleLength}</span>
+                         <span class="stat-value">开始于第 ${this.stats.cycleStart} 代</span>`
+                        :
+                        `<span class="stat-label">循环状态</span>
+                        <span class="stat-value">正在寻找循环...</span>`}
+                </div>`;
+
+                html += `</div>`;
+                statsDiv.innerHTML = html;
+            }
+
+            start() {
+                if (!this.isRunning) {
+                    this.isRunning = true;
+                    this.lastUpdate = performance.now();
+                    const loop = (now) => {
+                        if (!this.isRunning) return;
+
+                        const elapsed = now - this.lastUpdate;
+                        if (elapsed >= this.updateInterval) {
+                            this.update();
+                            this.draw();
+                            this.lastUpdate = now;
+                        }
+
+                        this.animationFrameId = requestAnimationFrame(loop);
+                    };
+                    this.animationFrameId = requestAnimationFrame(loop);
+
+                    const toggleBtn = document.getElementById('toggleBtn');
+                    if (toggleBtn) {
+                        toggleBtn.classList.add('running');
+                        toggleBtn.querySelector('.btn-text').textContent = '暂停';
+                    }
+                }
+            }
+
+            pause() {
+                this.isRunning = false;
+                if (this.animationFrameId) {
+                    cancelAnimationFrame(this.animationFrameId);
+                    this.animationFrameId = null;
+                }
+
+                const toggleBtn = document.getElementById('toggleBtn');
+                if (toggleBtn) {
+                    toggleBtn.classList.remove('running');
+                    toggleBtn.querySelector('.btn-text').textContent = '开始';
+                }
+            }
+
+
+            clear() {
+                this.pause();
+                this.grid = this.createGrid();
+                this.stats = this.createNewStats();
+                if (this.isRunning) {
+                    this.updateStatsDisplay();
+                }
+                this.draw();
+            }
+
+            randomize() {
+                this.clear();
+                for (let row = 0; row < this.rows; row++) {
+                    for (let col = 0; col < this.cols; col++) {
+                        this.grid[row][col] = Math.random() < this.density ? 1 : 0;
+                    }
+                }
+                this.draw();
+            }
+
+            createPattern(patternName) {
+                this.clear();
+                const pattern = this.patterns[patternName];
+                if (!pattern) return;
+
+                const startRow = Math.floor(this.rows / 2 - pattern.length / 2);
+                const startCol = Math.floor(this.cols / 2 - pattern[0].length / 2);
+
+                for (let i = 0; i < pattern.length; i++) {
+                    for (let j = 0; j < pattern[i].length; j++) {
+                        if (startRow + i >= 0 && startRow + i < this.rows &&
+                            startCol + j >= 0 && startCol + j < this.cols) {
+                            this.grid[startRow + i][startCol + j] = pattern[i][j];
+                        }
+                    }
+                }
+                this.draw();
+            }
+
+            updateSpeed(newSpeed) {
+                this.updateInterval = newSpeed;
+
+                if (this.isRunning) {
+                    if (this.intervalId) {
+                        clearInterval(this.intervalId);
+                    }
+                    this.intervalId = setInterval(() => {
+                        if (this.isRunning) {
+                            this.update();
+                            this.draw();
+                        }
+                    }, this.updateInterval);
+                }
+            }
+
+            bindDensityControls() {
+                const slider = document.getElementById('densitySlider');
+                const densityValue = document.getElementById('densityValue');
+                const randomizeBtn = document.getElementById('randomizeBtn');
+
+
+                slider.addEventListener('input', (e) => {
+                    this.density = parseInt(e.target.value) / 100;
+                    densityValue.textContent = `${e.target.value}%`;
+                    this.updateRandomizeButtonText();
+                });
+
+
+                randomizeBtn.addEventListener('click', () => {
+                    if (this.isRunning) {
+                        this.pause();
+                    }
+                    this.randomize();
+                });
+
+
+                this.updateRandomizeButtonText();
+            }
+
+            updateRandomizeButtonText() {
+                const btn = document.getElementById('randomizeBtn');
+                const density = Math.round(this.density * 100);
+
+                let description;
+                if (density <= 20) description = "稀疏";
+                else if (density <= 40) description = "低密度";
+                else if (density <= 60) description = "中等";
+                else if (density <= 80) description = "高密度";
+                else description = "极密";
+
+                btn.textContent = `随机生成 (${description})`;
+            }
+
+
+            setDensityPreset(preset) {
+                const slider = document.getElementById('densitySlider');
+                const densityValue = document.getElementById('densityValue');
+
+                let density;
+                switch (preset) {
+                    case 'sparse': density = 15; break;
+                    case 'low': density = 30; break;
+                    case 'medium': density = 50; break;
+                    case 'high': density = 70; break;
+                    case 'extreme': density = 85; break;
+                    default: density = 30;
+                }
+
+                slider.value = density;
+                this.density = density / 100;
+                densityValue.textContent = `${density}%`;
+                this.updateRandomizeButtonText();
+            }
+
+
+            calculateGridHash() {
+                return this.grid.map(row => row.join('')).join('');
+            }
+
+            createNewStats() {
+                return {
+                    generation: 0,
+                    births: 0,
+                    deaths: 0,
+                    cycleFound: false,
+                    cycleLength: 0,
+                    cycleStart: 0,
+                    stateHistory: new Map(),
+                    currentAlive: 0
+                };
+            }
+
+            countAliveCells() {
+                let count = 0;
+                for (let row = 0; row < this.rows; row++) {
+                    for (let col = 0; col < this.cols; col++) {
+                        count += this.grid[row][col];
+                    }
+                }
+                return count;
+            }
+        }
+
+
+        let gameInstance = null;
+        console.log('Script loaded');
+
+        window.addEventListener('load', () => {
+            console.log('Load event fired');
+            if (!gameInstance) {
+                console.log('Creating new instance');
+                gameInstance = new GameOfLife(1760, 800, 5);
+                gameInstance.draw();
+            }
+        }, { once: true });  
+    </script>
+</body>
+
+</html>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">May</p>
+  <div class="site-description" itemprop="description">槐序初裁青玉案，墨痕新染碧云端</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">苏ICP备2025181445号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">May</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">24k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">44 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
