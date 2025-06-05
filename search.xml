@@ -354,6 +354,120 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows 安装WSL</title>
+    <url>//posts/Windows-install-WSL/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><strong>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</strong></li>
+<li><strong>如不具备上述能力，请立即关闭此教程。</strong></li>
+<li><strong>本教程适用于 Windows 11 24H2 版本，其他版本可能略有不同。</strong><br>在 Windows 11 24H2 上安装 WSL2 和 Ubuntu 22.04 的步骤如下：</li>
+</ul>
+<hr>
+<h3 id="一、安装-WSL2"><a href="#一、安装-WSL2" class="headerlink" title="一、安装 WSL2"></a><strong>一、安装 WSL2</strong></h3><h4 id="方法1：通过命令快速安装（推荐）"><a href="#方法1：通过命令快速安装（推荐）" class="headerlink" title="方法1：通过命令快速安装（推荐）"></a>方法1：通过命令快速安装（推荐）</h4><ol>
+<li><p><strong>以管理员身份打开 PowerShell</strong>（Win + X → 终端(管理员)）</p>
+</li>
+<li><p>运行以下命令：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--install</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>此命令会自动启用所需功能、安装 WSL2 内核，并默认安装 Ubuntu。</li>
+</ul>
+<h4 id="方法2：手动步骤（如需自定义）"><a href="#方法2：手动步骤（如需自定义）" class="headerlink" title="方法2：手动步骤（如需自定义）"></a>方法2：手动步骤（如需自定义）</h4><ol>
+<li><p><strong>启用 WSL 和虚拟机平台功能</strong>：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows-Subsystem-Linux</span> /all /norestart</span><br><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>重启电脑</strong>。</p>
+</li>
+<li><p><strong>设置 WSL2 为默认版本</strong>：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--set-default-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h3 id="二、安装-Ubuntu-22-04"><a href="#二、安装-Ubuntu-22-04" class="headerlink" title="二、安装 Ubuntu 22.04"></a><strong>二、安装 Ubuntu 22.04</strong></h3><ol>
+<li><p><strong>从 Microsoft Store 安装</strong>：</p>
+<ul>
+<li><p>打开 <a href="https://apps.microsoft.com/">Microsoft Store</a> 搜索 <strong>Ubuntu 22.04 LTS</strong>，点击安装。</p>
+</li>
+<li><p>或通过命令行安装：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--install</span> <span class="literal">-d</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>初始化 Ubuntu</strong>：</p>
+<ul>
+<li><p>安装完成后，从开始菜单打开 Ubuntu 或运行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">-d</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span></span><br></pre></td></tr></table></figure></li>
+<li><p>首次启动会提示设置用户名和密码（密码输入时不可见，正常输入后回车）。</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、验证安装"><a href="#三、验证安装" class="headerlink" title="三、验证安装"></a><strong>三、验证安装</strong></h3><ol>
+<li><p>检查 WSL 版本和发行版：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">-l</span> <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>确认 <code>Ubuntu-22.04</code> 的版本为 <strong>2</strong>。</li>
+</ul>
+</li>
+<li><p>更新系统（在 Ubuntu 内运行）：</p>
+</li>
+</ol>
+<blockquote>
+<p>如果没有梯子，下载速度可能会非常慢，建议参考 <a href="#%E5%9B%9B%E3%80%81Ubuntu%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C">将 apt 换源为阿里&#x2F;清华源</a> 来解决。  </p>
+</blockquote>
+   <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade -y</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a><strong>常见问题解决</strong></h3><ol>
+<li><strong>WSL2 要求虚拟化支持</strong>：<ul>
+<li>进入 BIOS 启用 <strong>VT-x&#x2F;AMD-V</strong> 虚拟化（具体按键因主板而异，通常为 F2&#x2F;Del）。</li>
+</ul>
+</li>
+<li><strong>安装后无法启动</strong>：<ul>
+<li>手动下载并安装 <a href="https://aka.ms/wsl2kernel">WSL2 内核更新包</a>。</li>
+</ul>
+</li>
+<li><strong>网络问题</strong>：<ul>
+<li>若商店访问慢，可直接下载 <a href="https://aka.ms/wslubuntu2204">Ubuntu 22.04 的 Appx 包</a> 手动安装。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a><strong>其他操作</strong></h3><ul>
+<li><p><strong>切换 WSL 版本</strong>：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--set-version</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>导出&#x2F;导入分发版</strong>（备份用）：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--export</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span> ubuntu2204.tar</span><br><span class="line">wsl <span class="literal">--import</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span> C:\wsl\ubuntu C:\backup\ubuntu2204.tar</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>完成以上步骤后，即可在 Windows 11 24H2 上使用 WSL2 运行 Ubuntu 22.04。  </p>
+<h3 id="四、Ubuntu常用操作"><a href="#四、Ubuntu常用操作" class="headerlink" title="四、Ubuntu常用操作"></a><strong>四、Ubuntu常用操作</strong></h3><p><strong>将 <code>apt</code> 换源为阿里&#x2F;清华源</strong>  </p>
+<ol>
+<li><p>备份原有的源列表（非常重要）  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure></li>
+<li><p>修改 <code>sources.list</code> 文件</p>
+<p> 使用你喜欢的编辑器，比如 <code>vim</code> 或 <code>nano</code>：</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<p> 清空原有内容，然后根据你的 Ubuntu 版本粘贴对应的阿里云源。</p>
+</li>
+<li><p>阿里云 Ubuntu 源示例（以 <strong>Ubuntu 22.04 Jammy</strong> 为例）：</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse</span><br></pre></td></tr></table></figure></li>
+<li><p>保存并退出编辑器（在 <code>nano</code> 中按 <code>Ctrl + O</code> 保存，<code>Ctrl + X</code> 退出）。</p>
+</li>
+<li><p>更新软件源缓存  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<p>   建议再执行一次升级（可选）：</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>WSL</tag>
+        <tag>Linux</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
     <url>//posts/command-collection/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
@@ -618,117 +732,22 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 安装WSL</title>
-    <url>//posts/Windows-install-WSL/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><strong>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</strong></li>
-<li><strong>如不具备上述能力，请立即关闭此教程。</strong></li>
-<li><strong>本教程适用于 Windows 11 24H2 版本，其他版本可能略有不同。</strong><br>在 Windows 11 24H2 上安装 WSL2 和 Ubuntu 22.04 的步骤如下：</li>
-</ul>
-<hr>
-<h3 id="一、安装-WSL2"><a href="#一、安装-WSL2" class="headerlink" title="一、安装 WSL2"></a><strong>一、安装 WSL2</strong></h3><h4 id="方法1：通过命令快速安装（推荐）"><a href="#方法1：通过命令快速安装（推荐）" class="headerlink" title="方法1：通过命令快速安装（推荐）"></a>方法1：通过命令快速安装（推荐）</h4><ol>
-<li><p><strong>以管理员身份打开 PowerShell</strong>（Win + X → 终端(管理员)）</p>
-</li>
-<li><p>运行以下命令：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--install</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<ul>
-<li>此命令会自动启用所需功能、安装 WSL2 内核，并默认安装 Ubuntu。</li>
-</ul>
-<h4 id="方法2：手动步骤（如需自定义）"><a href="#方法2：手动步骤（如需自定义）" class="headerlink" title="方法2：手动步骤（如需自定义）"></a>方法2：手动步骤（如需自定义）</h4><ol>
-<li><p><strong>启用 WSL 和虚拟机平台功能</strong>：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows-Subsystem-Linux</span> /all /norestart</span><br><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>重启电脑</strong>。</p>
-</li>
-<li><p><strong>设置 WSL2 为默认版本</strong>：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--set-default-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h3 id="二、安装-Ubuntu-22-04"><a href="#二、安装-Ubuntu-22-04" class="headerlink" title="二、安装 Ubuntu 22.04"></a><strong>二、安装 Ubuntu 22.04</strong></h3><ol>
-<li><p><strong>从 Microsoft Store 安装</strong>：</p>
-<ul>
-<li><p>打开 <a href="https://apps.microsoft.com/">Microsoft Store</a> 搜索 <strong>Ubuntu 22.04 LTS</strong>，点击安装。</p>
-</li>
-<li><p>或通过命令行安装：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--install</span> <span class="literal">-d</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><strong>初始化 Ubuntu</strong>：</p>
-<ul>
-<li><p>安装完成后，从开始菜单打开 Ubuntu 或运行：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">-d</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span></span><br></pre></td></tr></table></figure></li>
-<li><p>首次启动会提示设置用户名和密码（密码输入时不可见，正常输入后回车）。</p>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="三、验证安装"><a href="#三、验证安装" class="headerlink" title="三、验证安装"></a><strong>三、验证安装</strong></h3><ol>
-<li><p>检查 WSL 版本和发行版：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">-l</span> <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>确认 <code>Ubuntu-22.04</code> 的版本为 <strong>2</strong>。</li>
-</ul>
-</li>
-<li><p>更新系统（在 Ubuntu 内运行）：</p>
-</li>
-</ol>
+    <title>单片机项目驱动</title>
+    <url>//posts/Microcontroller-project-driver/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>项目：1602液晶显示  </p>
 <blockquote>
-<p>如果没有梯子，下载速度可能会非常慢，建议参考 <a href="#%E5%9B%9B%E3%80%81Ubuntu%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C">将 apt 换源为阿里&#x2F;清华源</a> 来解决。  </p>
+<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
 </blockquote>
-   <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade -y</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a><strong>常见问题解决</strong></h3><ol>
-<li><strong>WSL2 要求虚拟化支持</strong>：<ul>
-<li>进入 BIOS 启用 <strong>VT-x&#x2F;AMD-V</strong> 虚拟化（具体按键因主板而异，通常为 F2&#x2F;Del）。</li>
-</ul>
-</li>
-<li><strong>安装后无法启动</strong>：<ul>
-<li>手动下载并安装 <a href="https://aka.ms/wsl2kernel">WSL2 内核更新包</a>。</li>
-</ul>
-</li>
-<li><strong>网络问题</strong>：<ul>
-<li>若商店访问慢，可直接下载 <a href="https://aka.ms/wslubuntu2204">Ubuntu 22.04 的 Appx 包</a> 手动安装。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a><strong>其他操作</strong></h3><ul>
-<li><p><strong>切换 WSL 版本</strong>：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--set-version</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
-<li><p><strong>导出&#x2F;导入分发版</strong>（备份用）：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--export</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span> ubuntu2204.tar</span><br><span class="line">wsl <span class="literal">--import</span> Ubuntu<span class="literal">-22</span>.<span class="number">04</span> C:\wsl\ubuntu C:\backup\ubuntu2204.tar</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>完成以上步骤后，即可在 Windows 11 24H2 上使用 WSL2 运行 Ubuntu 22.04。  </p>
-<h3 id="四、Ubuntu常用操作"><a href="#四、Ubuntu常用操作" class="headerlink" title="四、Ubuntu常用操作"></a><strong>四、Ubuntu常用操作</strong></h3><p><strong>将 <code>apt</code> 换源为阿里&#x2F;清华源</strong>  </p>
-<ol>
-<li><p>备份原有的源列表（非常重要）  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure></li>
-<li><p>修改 <code>sources.list</code> 文件</p>
-<p> 使用你喜欢的编辑器，比如 <code>vim</code> 或 <code>nano</code>：</p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-<p> 清空原有内容，然后根据你的 Ubuntu 版本粘贴对应的阿里云源。</p>
-</li>
-<li><p>阿里云 Ubuntu 源示例（以 <strong>Ubuntu 22.04 Jammy</strong> 为例）：</p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse</span><br></pre></td></tr></table></figure></li>
-<li><p>保存并退出编辑器（在 <code>nano</code> 中按 <code>Ctrl + O</code> 保存，<code>Ctrl + X</code> 退出）。</p>
-</li>
-<li><p>更新软件源缓存  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
-<p>   建议再执行一次升级（可选）：</p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
+</blockquote>
+<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
+<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
+<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
       <categories>
         <category>教程</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
-        <tag>教程</tag>
-        <tag>WSL</tag>
-        <tag>Linux</tag>
+        <tag>单片机</tag>
       </tags>
   </entry>
   <entry>
@@ -781,25 +800,6 @@
         <tag>Nodejs</tag>
         <tag>Ubuntu22.04</tag>
         <tag>Redis-Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>单片机项目驱动</title>
-    <url>//posts/Microcontroller-project-driver/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>项目：1602液晶显示  </p>
-<blockquote>
-<p>点击下载 <strong><a href="https://gitee.com/YsKIKI/blog/releases/download/1.1.0/%E5%8D%95%E7%89%87%E6%9C%BA.zip">本期编程文件</a></strong></p>
-</blockquote>
-</blockquote>
-<h3 id="将文件添加到AVR中"><a href="#将文件添加到AVR中" class="headerlink" title="将文件添加到AVR中"></a>将文件添加到AVR中</h3><p><font color="red">先解压缩文件</font></p>
-<h4 id="将-c文件和-h文件添加到AVR："><a href="#将-c文件和-h文件添加到AVR：" class="headerlink" title="将.c文件和.h文件添加到AVR："></a>将<code>.c</code>文件和<code>.h</code>文件添加到AVR：</h4><p>AVR新建Project，<em><strong>Files</strong></em> 目录下添加<code>.c</code>文件，<em><strong>Headers</strong></em> 目录下添加<code>.h</code>文件。<br>点击上方 <font color="red">Project Options -&gt; Target</font> ，将<code>Device Configuration</code>项改为<code>ATmega16</code>，点击编译按钮进行编译。</p>
-<h3 id="将编译好的-hex文件添加到Proteus中"><a href="#将编译好的-hex文件添加到Proteus中" class="headerlink" title="将编译好的.hex文件添加到Proteus中"></a>将编译好的<code>.hex</code>文件添加到Proteus中</h3><h4 id="设置ATmega16的关联程序"><a href="#设置ATmega16的关联程序" class="headerlink" title="设置ATmega16的关联程序"></a>设置ATmega16的关联程序</h4><h4 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h4>]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>单片机</tag>
       </tags>
   </entry>
   <entry>

@@ -6,7 +6,7 @@ $ProgressPreference = 'SilentlyContinue'
 
 $game_path = ""
 
-Write-Host "$([char]0x590d)$([char]0x5236)$([char]0x5230)$([char]0x300c)$([char]0x7ef3)$([char]0x7f51)$([char]0x52a9)$([char]0x624b)$([char]0x300d)$([char]0x5373)$([char]0x53ef)$([char]0x67e5)$([char]0x770b)$([char]0x7ed3)$([char]0x679c)" -ForegroundColor Green
+Write-host "$([char]0x5173)$([char]0x6ce8)$([char]0x300c)$([char]0x7edd)$([char]0x533a)$([char]0x96f6)$([char]0x5de5)$([char]0x574a)$([char]0x300d)$([char]0x5fae)$([char]0x4fe1)$([char]0x516c)$([char]0x4f17)$([char]0x53f7)$([char]0xff0c)$([char]0x66f4)$([char]0x591a)$([char]0x8d44)$([char]0x8baf)$([char]0x653b)$([char]0x7565)$([char]0x548c)$([char]0x5b9e)$([char]0x7528)$([char]0x5de5)$([char]0x5177)$([char]0xff01)" -ForegroundColor Green
 
 if ($args.Length -eq 0) {
     $app_data = [Environment]::GetFolderPath('ApplicationData')
@@ -20,7 +20,7 @@ if ($args.Length -eq 0) {
         return
     }
 
-    $log_lines = Get-Content $log_path -First 5
+    $log_lines = Get-Content $log_path -First 10
 
     if ([string]::IsNullOrEmpty($log_lines)) {
         $log_path = "$locallow_path\Player-prev.log"
@@ -31,7 +31,7 @@ if ($args.Length -eq 0) {
             return
         }
 
-        $log_lines = Get-Content $log_path -First 5
+        $log_lines = Get-Content $log_path -First 10
     }
 
     if ([string]::IsNullOrEmpty($log_lines)) {
@@ -67,7 +67,8 @@ $max_version = 0
 
 for ($i = 0; $i -le $cache_folders.Length; $i++) {
     $cache_folder = $cache_folders[$i].Name
-    if ($cache_folder -match '^\d+\.\d+\.\d+\.\d+$') {
+    if ($cache_folder -match '^\d+\.\d+\.\d?\.\d+$') {
+    # if ($cache_folder -match '^\d+\.\d+\.\d+\.\d+$') {
         $version = [int]-join($cache_folder.Split("."))
         if ($version -ge $max_version) {
             $max_version = $version
@@ -107,7 +108,7 @@ for ($i = $cache_data_split.Length - 1; $i -ge 0; $i--) {
 
             Write-Output $latest_url
             Set-Clipboard -Value $latest_url
-            Write-Host "$([char]0x62bd)$([char]0x5361)$([char]0x5730)$([char]0x5740)$([char]0x5df2)$([char]0x590d)$([char]0x5236)$([char]0xff0c)$([char]0x7c98)$([char]0x8d34)$([char]0x5230)$([char]0x300c)$([char]0x7ef3)$([char]0x7f51)$([char]0x52a9)$([char]0x624b)$([char]0x300d)$([char]0x5373)$([char]0x53ef)$([char]0x67e5)$([char]0x8be2)" -ForegroundColor Green
+            Write-host "$([char]0x5df2)$([char]0x81ea)$([char]0x52a8)$([char]0x590d)$([char]0x5236)$([char]0x5230)$([char]0x526a)$([char]0x5207)$([char]0x677f)$([char]0xff0c)$([char]0x7c98)$([char]0x8d34)$([char]0x5230)$([char]0x300c)$([char]0x7edd)$([char]0x533a)$([char]0x5de5)$([char]0x574a)$([char]0x5c0f)$([char]0x52a9)$([char]0x624b)$([char]0x300d)$([char]0x5fae)$([char]0x4fe1)$([char]0x5c0f)$([char]0x7a0b)$([char]0x5e8f)$([char]0x4e2d)$([char]0x67e5)$([char]0x770b)$([char]0x5206)$([char]0x6790)$([char]0x7ed3)$([char]0x679c)$([char]0x007e)" -ForegroundColor Green
             return;
     }
 }

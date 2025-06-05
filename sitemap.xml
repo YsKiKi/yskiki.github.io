@@ -197,6 +197,34 @@
   </url>
   
   <url>
+    <loc>https://blog.kk-wuyue.top/tags/Windows/</loc>
+    <lastmod>2025-06-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kk-wuyue.top/tags/WSL/</loc>
+    <lastmod>2025-06-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kk-wuyue.top/tags/Linux/</loc>
+    <lastmod>2025-06-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kk-wuyue.top/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-06-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.kk-wuyue.top/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -225,20 +253,6 @@
   </url>
   
   <url>
-    <loc>https://blog.kk-wuyue.top/tags/Windows/</loc>
-    <lastmod>2025-06-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.kk-wuyue.top/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-06-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.kk-wuyue.top/tags/clash/</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -260,14 +274,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kk-wuyue.top/tags/WSL/</loc>
-    <lastmod>2025-06-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.kk-wuyue.top/tags/Linux/</loc>
+    <loc>https://blog.kk-wuyue.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -282,13 +289,6 @@
   
   <url>
     <loc>https://blog.kk-wuyue.top/tags/Redis-Server/</loc>
-    <lastmod>2025-06-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.kk-wuyue.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
