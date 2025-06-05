@@ -1,6 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>基于GitHub的博客搭建</title>
+    <url>//posts/Blog-building/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><strong>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</strong></li>
+<li><strong>如不具备上述能力，请立即关闭此教程。</strong></li>
+</ul>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
+<p>↓ 附上下载链接 ↓</p>
+<ul>
+<li>Windows<br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/Git-2.43.0-64-bit.exe">Git-v2.43.0-x64</a><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/node-v18.19.0-x64.msi">node-v18.19.0-x64</a></li>
+</ul>
+<h3 id="GitHub账号注册"><a href="#GitHub账号注册" class="headerlink" title="GitHub账号注册"></a>GitHub账号注册</h3><blockquote>
+<p>Github是全球最大的程序员交友♂平台（doge）</p>
+<blockquote>
+<p>有GitHub账号的可以跳过这一步</p>
+</blockquote>
+</blockquote>
+<p>点击进入<a href="https://github.com/">Github官网</a>  </p>
+<p>点击右上角<code>sign up</code>进入注册页面，输入邮箱，创建密码，设置昵称</p>
+<blockquote>
+<p>然后 下一步 下一步 下一步 下一步……</p>
+<blockquote>
+<p>如果实在不会，请使用<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>进行搜索</p>
+</blockquote>
+</blockquote>
+<h3 id="Git通过ssh绑定GitHub"><a href="#Git通过ssh绑定GitHub" class="headerlink" title="Git通过ssh绑定GitHub"></a>Git通过ssh绑定GitHub</h3><blockquote>
+<p>SSH（安全外壳协议，Secure Shell 的缩写）是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。简单来说，SSH可以保障你的账户安全，将你的数据加密压缩，它不仅可以防止其他人截获你的数据，还能加快传输速度。</p>
+</blockquote>
+<p>由于Git bash自带ssh，所以无需安装  </p>
+<p>在任意位置点击鼠标右键，打开<code>Git Bash</code>，输入<code>ssh</code>检查ssh<br>如果出现以下内容即已安装ssh：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ ssh</span><br><span class="line"><span class="function">usage: <span class="title">ssh</span> [-46<span class="title">AaCfGgKkMNnqsTtVvXxYy</span>] [-<span class="title">B</span> <span class="title">bind_interface</span>] [-<span class="title">b</span> <span class="title">bind_address</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">c</span> <span class="title">cipher_spec</span>] [-<span class="title">D</span> [<span class="title">bind_address</span>:]<span class="title">port</span>] [-<span class="title">E</span> <span class="title">log_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">e</span> <span class="title">escape_char</span>] [-<span class="title">F</span> <span class="title">configfile</span>] [-<span class="title">I</span> <span class="title">pkcs11</span>] [-<span class="title">i</span> <span class="title">identity_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">J</span> <span class="title">destination</span>] [-<span class="title">L</span> <span class="title">address</span>] [-<span class="title">l</span> <span class="title">login_name</span>] [-<span class="title">m</span> <span class="title">mac_spec</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">O</span> <span class="title">ctl_cmd</span>] [-<span class="title">o</span> <span class="title">option</span>] [-<span class="title">P</span> <span class="title">tag</span>] [-<span class="title">p</span> <span class="title">port</span>] [-<span class="title">Q</span> <span class="title">query_option</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">R</span> <span class="title">address</span>] [-<span class="title">S</span> <span class="title">ctl_path</span>] [-<span class="title">W</span> <span class="title">host:port</span>] [-<span class="title">w</span> <span class="title">local_tun</span>[:<span class="title">remote_tun</span>]]</span></span><br><span class="line"><span class="function">           <span class="title">destination</span> [<span class="title">command</span> [<span class="title">argument</span> ...]]</span></span><br></pre></td></tr></table></figure>
+<p>输入<code>ssh-keygen -t rsa</code>，敲击四次回车键，创建ssh密钥  </p>
+<p>ssh密钥保存在<code>C:\Users\&lt;你的用户名&gt;\.ssh</code>  </p>
+<blockquote>
+<p>如果没有<code>.ssh</code>,请打开“显示隐藏文件”<br>若不会，请通过<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>自行查找 ⌈如何显示隐藏文件⌋</p>
+</blockquote>
+<p>右键用记事本打开<code>id_rsa.pub</code>，复制里面的全部内容，进入你的 GitHub 主页，先点击右上角，再点击 <strong>settings</strong>  </p>
+<p>先点击右边的 <strong>SSH and GPG keys</strong>，再点击 <strong>New SSH key</strong>：<br><img src="/Resources/GitHub-1.png" alt="GitHub-1">  </p>
+<p>将复制的公钥 id_rsa.pub 的内容粘贴到 key 内，再点击 Add SSH key，如下图：<br><img src="/Resources/GitHub-2.png" alt="GitHub-2">  </p>
+<p>在<code>Git Bash</code>窗口输入<code>ssh -T git@github.com</code>进行检验，出现  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Are you sure you want to continue connecting(yes/no/[fingerprint])?</span><br></pre></td></tr></table></figure>
+<p>输入<code>yes</code>出现：  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Hi &lt;你的GitHub昵称&gt;! You&#x27;ve successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
+<p>即为成功  </p>
+<h3 id="Nodejs配置"><a href="#Nodejs配置" class="headerlink" title="Nodejs配置"></a>Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v18.<span class="number">19</span>.<span class="number">0</span></span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line"><span class="number">10</span>.<span class="number">2</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>主要是检查nodejs和npm有没有安装，版本不同影响不大  </p>
+</blockquote>
+<h4 id="设置npm在安装全局模块时的路径和环境变量"><a href="#设置npm在安装全局模块时的路径和环境变量" class="headerlink" title="设置npm在安装全局模块时的路径和环境变量"></a><strong>设置npm在安装全局模块时的路径和环境变量</strong></h4><p>在 <strong>你永远不会删除的地方中</strong> 新建 <strong>文件夹 “A”</strong><br>在其中 新建两个空文件夹<code>node_cache</code>、<code>node_global</code>：<br><img src="/Resources/GitHub-3.png" alt="GitHub-3">  </p>
+<blockquote>
+<p><strong>！！！请勿删除此文件夹！！！</strong><br>否则模块将被删除，需要重新配置</p>
+</blockquote>
+<p>打开cmd，输入如下两个命令：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix &quot;&lt;你的node_global文件夹路径&gt;&quot;</span><br><span class="line">npm config <span class="built_in">set</span> cache &quot;&lt;你的node_cache文件夹路径&gt;&quot;</span><br></pre></td></tr></table></figure>
+<p>设置环境变量：  </p>
+<p>右键 此电脑 –&gt; 属性 –&gt; 高级系统设置 –&gt; 环境变量  </p>
+<p>然后在系统变量中新建一个变量<br>点击<code>系统变量(S)</code>下的<code>新建(W)…</code><br>出现：<br><img src="/Resources/GitHub-4.png" alt="GitHub-4">  </p>
+<p>输入 变量名为 <strong>“NODE_PATH”</strong><br>输入 变量值为 <strong>“&lt;文件夹 “A” 的路径&gt;”</strong>  </p>
+<blockquote>
+<p>你问我什么是 <strong>文件夹 “A”</strong> ？</p>
+<blockquote>
+<p><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">喏，在这</a></p>
+</blockquote>
+</blockquote>
+<p>然后编辑<code>用户变量(U)</code>里的<code>Path</code>，点按<code>编辑(E)…</code>，将相应npm的路径改为：<br><code>&lt;你的node_global文件夹路径&gt;</code>  </p>
+<p><strong>按确定！按确定！按确定！</strong>  </p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在 cmd 命令行下执行<code>npm install webpack -g</code>，出现：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">+ webpack@<span class="number">4</span>.<span class="number">41</span>.<span class="number">5</span></span><br><span class="line">added <span class="number">322</span> packages from <span class="number">197</span> contributors <span class="keyword">in</span> <span class="number">250</span>.<span class="number">122</span>s</span><br></pre></td></tr></table></figure>
+<p>即为成功，然后<code>webpack</code>这个模块已经在我们设置默认的文件夹中了  </p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h4><p>Hexo就是我们搭建博客的框架，在安装之前，我们要先在GitHub上创立一个仓库<br>进入<a href="https://github.com/">GitHub个人主页</a>，右上角创建仓库：  </p>
+<p><img src="/Resources/GitHub-5.png" alt="GitHub-5"><br><img src="/Resources/GitHub-6.png" alt="GitHub-6"><br>点击 <strong>settings</strong> ：  </p>
+<p><img src="/Resources/GitHub-7.png" alt="GitHub-7"><br>点击 <strong>pages</strong> ：  </p>
+<p><img src="/Resources/GitHub-8.png" alt="GitHub-8"><br>出现<code>&lt;你的GitHub昵称&gt;.github.io</code>即为成功：  </p>
+<p><img src="/Resources/GitHub-9.png" alt="GitHub-9">  </p>
+<h4 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h4><p>新建Blog文件夹，在文件夹内右键打开<code>Git Bash</code>，输入以下npm命令安装Hexo：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装完成后，输入<code>hexo init</code>初始化博客,文件夹内会出现以下文件：  </p>
+<p><img src="/Resources/GitHub-10.png" alt="GitHub-10"><br>这个文件夹就是你的博客啦！  </p>
+<p>接下来，在 Bash 窗口内：<br>输入<code>hexo g</code>静态部署<br>输入<code>hexo s</code>在4000端口上部署：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>这时候用浏览器打开 <a href="https://localhost:4000/">https://localhost:4000</a> 即可看到新部署的网页。<br>别急，回到Git Bash窗口，按ctrl +c 停止运行服务器。  </p>
+<h4 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h4><p>在文件夹内 右键 用记事本打开<code>_config.yml</code>，在最底下加上：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:&lt;………………&gt;.github.io.git</span>  <span class="comment">#你的仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+<p>你的仓库地址：<br><img src="/Resources/GitHub-11.png" alt="GitHub-11">  </p>
+<p>回到Blog文件夹，右键<code>Git Bash here</code>，在Git Bash中输入：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后 <strong>分别</strong> 输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g       <span class="comment">#生成网站静态文件到默认设置的 public 文件夹</span></span><br><span class="line">hexo d       <span class="comment">#生成网站静态文件，并部署到设定的仓库</span></span><br></pre></td></tr></table></figure>
+<p>或者输入：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d		<span class="comment">#和上面的没有不同，只是将命令串起来了</span></span><br></pre></td></tr></table></figure>
+<p>完成以后，打开浏览器，输入 <a href="https://xxx.github.io/">https://xxx.github.io</a> 就可以打开你的网页了。  </p>
+<p>下一篇：<a href="https://kk-wuyue.top/posts/G-blog-To-domain/">如何自定义博客域名</a></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>Blog</tag>
+        <tag>Nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
+    <url>//posts/command-collection/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
+<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>命令行</tag>
+        <tag>screen</tag>
+        <tag>vim</tag>
+        <tag>压缩解压</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI与人</title>
     <url>//posts/ai-with-human/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -194,110 +332,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>基于GitHub的博客搭建</title>
-    <url>//posts/Blog-building/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><strong>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</strong></li>
-<li><strong>如不具备上述能力，请立即关闭此教程。</strong></li>
-</ul>
-<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
-<p>↓ 附上下载链接 ↓</p>
-<ul>
-<li>Windows<br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/Git-2.43.0-64-bit.exe">Git-v2.43.0-x64</a><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/node-v18.19.0-x64.msi">node-v18.19.0-x64</a></li>
-</ul>
-<h3 id="GitHub账号注册"><a href="#GitHub账号注册" class="headerlink" title="GitHub账号注册"></a>GitHub账号注册</h3><blockquote>
-<p>Github是全球最大的程序员交友♂平台（doge）</p>
-<blockquote>
-<p>有GitHub账号的可以跳过这一步</p>
-</blockquote>
-</blockquote>
-<p>点击进入<a href="https://github.com/">Github官网</a>  </p>
-<p>点击右上角<code>sign up</code>进入注册页面，输入邮箱，创建密码，设置昵称</p>
-<blockquote>
-<p>然后 下一步 下一步 下一步 下一步……</p>
-<blockquote>
-<p>如果实在不会，请使用<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>进行搜索</p>
-</blockquote>
-</blockquote>
-<h3 id="Git通过ssh绑定GitHub"><a href="#Git通过ssh绑定GitHub" class="headerlink" title="Git通过ssh绑定GitHub"></a>Git通过ssh绑定GitHub</h3><blockquote>
-<p>SSH（安全外壳协议，Secure Shell 的缩写）是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。简单来说，SSH可以保障你的账户安全，将你的数据加密压缩，它不仅可以防止其他人截获你的数据，还能加快传输速度。</p>
-</blockquote>
-<p>由于Git bash自带ssh，所以无需安装  </p>
-<p>在任意位置点击鼠标右键，打开<code>Git Bash</code>，输入<code>ssh</code>检查ssh<br>如果出现以下内容即已安装ssh：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ ssh</span><br><span class="line"><span class="function">usage: <span class="title">ssh</span> [-46<span class="title">AaCfGgKkMNnqsTtVvXxYy</span>] [-<span class="title">B</span> <span class="title">bind_interface</span>] [-<span class="title">b</span> <span class="title">bind_address</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">c</span> <span class="title">cipher_spec</span>] [-<span class="title">D</span> [<span class="title">bind_address</span>:]<span class="title">port</span>] [-<span class="title">E</span> <span class="title">log_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">e</span> <span class="title">escape_char</span>] [-<span class="title">F</span> <span class="title">configfile</span>] [-<span class="title">I</span> <span class="title">pkcs11</span>] [-<span class="title">i</span> <span class="title">identity_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">J</span> <span class="title">destination</span>] [-<span class="title">L</span> <span class="title">address</span>] [-<span class="title">l</span> <span class="title">login_name</span>] [-<span class="title">m</span> <span class="title">mac_spec</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">O</span> <span class="title">ctl_cmd</span>] [-<span class="title">o</span> <span class="title">option</span>] [-<span class="title">P</span> <span class="title">tag</span>] [-<span class="title">p</span> <span class="title">port</span>] [-<span class="title">Q</span> <span class="title">query_option</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">R</span> <span class="title">address</span>] [-<span class="title">S</span> <span class="title">ctl_path</span>] [-<span class="title">W</span> <span class="title">host:port</span>] [-<span class="title">w</span> <span class="title">local_tun</span>[:<span class="title">remote_tun</span>]]</span></span><br><span class="line"><span class="function">           <span class="title">destination</span> [<span class="title">command</span> [<span class="title">argument</span> ...]]</span></span><br></pre></td></tr></table></figure>
-<p>输入<code>ssh-keygen -t rsa</code>，敲击四次回车键，创建ssh密钥  </p>
-<p>ssh密钥保存在<code>C:\Users\&lt;你的用户名&gt;\.ssh</code>  </p>
-<blockquote>
-<p>如果没有<code>.ssh</code>,请打开“显示隐藏文件”<br>若不会，请通过<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>自行查找 ⌈如何显示隐藏文件⌋</p>
-</blockquote>
-<p>右键用记事本打开<code>id_rsa.pub</code>，复制里面的全部内容，进入你的 GitHub 主页，先点击右上角，再点击 <strong>settings</strong>  </p>
-<p>先点击右边的 <strong>SSH and GPG keys</strong>，再点击 <strong>New SSH key</strong>：<br><img src="/Resources/GitHub-1.png" alt="GitHub-1">  </p>
-<p>将复制的公钥 id_rsa.pub 的内容粘贴到 key 内，再点击 Add SSH key，如下图：<br><img src="/Resources/GitHub-2.png" alt="GitHub-2">  </p>
-<p>在<code>Git Bash</code>窗口输入<code>ssh -T git@github.com</code>进行检验，出现  </p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Are you sure you want to continue connecting(yes/no/[fingerprint])?</span><br></pre></td></tr></table></figure>
-<p>输入<code>yes</code>出现：  </p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Hi &lt;你的GitHub昵称&gt;! You&#x27;ve successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
-<p>即为成功  </p>
-<h3 id="Nodejs配置"><a href="#Nodejs配置" class="headerlink" title="Nodejs配置"></a>Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v18.<span class="number">19</span>.<span class="number">0</span></span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line"><span class="number">10</span>.<span class="number">2</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>主要是检查nodejs和npm有没有安装，版本不同影响不大  </p>
-</blockquote>
-<h4 id="设置npm在安装全局模块时的路径和环境变量"><a href="#设置npm在安装全局模块时的路径和环境变量" class="headerlink" title="设置npm在安装全局模块时的路径和环境变量"></a><strong>设置npm在安装全局模块时的路径和环境变量</strong></h4><p>在 <strong>你永远不会删除的地方中</strong> 新建 <strong>文件夹 “A”</strong><br>在其中 新建两个空文件夹<code>node_cache</code>、<code>node_global</code>：<br><img src="/Resources/GitHub-3.png" alt="GitHub-3">  </p>
-<blockquote>
-<p><strong>！！！请勿删除此文件夹！！！</strong><br>否则模块将被删除，需要重新配置</p>
-</blockquote>
-<p>打开cmd，输入如下两个命令：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix &quot;&lt;你的node_global文件夹路径&gt;&quot;</span><br><span class="line">npm config <span class="built_in">set</span> cache &quot;&lt;你的node_cache文件夹路径&gt;&quot;</span><br></pre></td></tr></table></figure>
-<p>设置环境变量：  </p>
-<p>右键 此电脑 –&gt; 属性 –&gt; 高级系统设置 –&gt; 环境变量  </p>
-<p>然后在系统变量中新建一个变量<br>点击<code>系统变量(S)</code>下的<code>新建(W)…</code><br>出现：<br><img src="/Resources/GitHub-4.png" alt="GitHub-4">  </p>
-<p>输入 变量名为 <strong>“NODE_PATH”</strong><br>输入 变量值为 <strong>“&lt;文件夹 “A” 的路径&gt;”</strong>  </p>
-<blockquote>
-<p>你问我什么是 <strong>文件夹 “A”</strong> ？</p>
-<blockquote>
-<p><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">喏，在这</a></p>
-</blockquote>
-</blockquote>
-<p>然后编辑<code>用户变量(U)</code>里的<code>Path</code>，点按<code>编辑(E)…</code>，将相应npm的路径改为：<br><code>&lt;你的node_global文件夹路径&gt;</code>  </p>
-<p><strong>按确定！按确定！按确定！</strong>  </p>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在 cmd 命令行下执行<code>npm install webpack -g</code>，出现：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">+ webpack@<span class="number">4</span>.<span class="number">41</span>.<span class="number">5</span></span><br><span class="line">added <span class="number">322</span> packages from <span class="number">197</span> contributors <span class="keyword">in</span> <span class="number">250</span>.<span class="number">122</span>s</span><br></pre></td></tr></table></figure>
-<p>即为成功，然后<code>webpack</code>这个模块已经在我们设置默认的文件夹中了  </p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h4><p>Hexo就是我们搭建博客的框架，在安装之前，我们要先在GitHub上创立一个仓库<br>进入<a href="https://github.com/">GitHub个人主页</a>，右上角创建仓库：  </p>
-<p><img src="/Resources/GitHub-5.png" alt="GitHub-5"><br><img src="/Resources/GitHub-6.png" alt="GitHub-6"><br>点击 <strong>settings</strong> ：  </p>
-<p><img src="/Resources/GitHub-7.png" alt="GitHub-7"><br>点击 <strong>pages</strong> ：  </p>
-<p><img src="/Resources/GitHub-8.png" alt="GitHub-8"><br>出现<code>&lt;你的GitHub昵称&gt;.github.io</code>即为成功：  </p>
-<p><img src="/Resources/GitHub-9.png" alt="GitHub-9">  </p>
-<h4 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h4><p>新建Blog文件夹，在文件夹内右键打开<code>Git Bash</code>，输入以下npm命令安装Hexo：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成后，输入<code>hexo init</code>初始化博客,文件夹内会出现以下文件：  </p>
-<p><img src="/Resources/GitHub-10.png" alt="GitHub-10"><br>这个文件夹就是你的博客啦！  </p>
-<p>接下来，在 Bash 窗口内：<br>输入<code>hexo g</code>静态部署<br>输入<code>hexo s</code>在4000端口上部署：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>这时候用浏览器打开 <a href="https://localhost:4000/">https://localhost:4000</a> 即可看到新部署的网页。<br>别急，回到Git Bash窗口，按ctrl +c 停止运行服务器。  </p>
-<h4 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h4><p>在文件夹内 右键 用记事本打开<code>_config.yml</code>，在最底下加上：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:&lt;………………&gt;.github.io.git</span>  <span class="comment">#你的仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-<p>你的仓库地址：<br><img src="/Resources/GitHub-11.png" alt="GitHub-11">  </p>
-<p>回到Blog文件夹，右键<code>Git Bash here</code>，在Git Bash中输入：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>然后 <strong>分别</strong> 输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g       <span class="comment">#生成网站静态文件到默认设置的 public 文件夹</span></span><br><span class="line">hexo d       <span class="comment">#生成网站静态文件，并部署到设定的仓库</span></span><br></pre></td></tr></table></figure>
-<p>或者输入：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d		<span class="comment">#和上面的没有不同，只是将命令串起来了</span></span><br></pre></td></tr></table></figure>
-<p>完成以后，打开浏览器，输入 <a href="https://xxx.github.io/">https://xxx.github.io</a> 就可以打开你的网页了。  </p>
-<p>下一篇：<a href="https://kk-wuyue.top/posts/G-blog-To-domain/">如何自定义博客域名</a></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>Blog</tag>
-        <tag>Nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>工具获取</title>
     <url>//posts/tools-acquisition/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
@@ -351,78 +385,6 @@
         <tag>原神</tag>
         <tag>崩坏·星穹铁道</tag>
         <tag>私服</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows更改用户名</title>
-    <url>//posts/Windows-change-Username/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
-<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
-<li>右上角查看方式选择 <strong>类别</strong> 。</li>
-<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 更改账户名称。</li>
-<li>输入 <strong>纯英文</strong> 用户名，点击更改，确定。</li>
-</ol>
-<h3 id="更改-User-文件夹的名称"><a href="#更改-User-文件夹的名称" class="headerlink" title="更改 User 文件夹的名称"></a>更改 <code>User</code> 文件夹的名称</h3><ol>
-<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:yes</span><br></pre></td></tr></table></figure>
-<p>会显示：命令成功完成</p>
-</li>
-<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
-</li>
-<li><p>在登录界面右下角选择 <code>Administrator</code> 账户进行登录。</p>
-</li>
-<li><p>打开文件夹，在地址栏输入：<code>C:\Users</code> 快速导航。</p>
-</li>
-<li><p>更改 <strong>你的原中文用户名</strong> 为 <strong>你的新英文用户名</strong> 。</p>
-</li>
-</ol>
-<h3 id="更改注册表中的路径"><a href="#更改注册表中的路径" class="headerlink" title="更改注册表中的路径"></a>更改注册表中的路径</h3><ol start="0">
-<li>注意：注册表操作位高风险操作，建议操作前先备份注册表。</li>
-<li>按 <code>Win+R</code> 输入 <code>regedit</code> 进入注册表。</li>
-<li>依次展开以下路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code></li>
-<li>在此目录下有多个文件夹，注意 <code>ProfileImagePath</code> 的数据，找到你的原中文用户名，双击进入编辑，将其更改为你的新英文用户名，点击确定。</li>
-</ol>
-<h3 id="回到更改好的用户"><a href="#回到更改好的用户" class="headerlink" title="回到更改好的用户"></a>回到更改好的用户</h3><ol>
-<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:no</span><br></pre></td></tr></table></figure>
-<p>会显示：命令成功完成</p>
-</li>
-<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
-</li>
-<li><p>选择你的账户，输入密码登录。</p>
-</li>
-</ol>
-<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><h3 id="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"><a href="#在更改文件夹名称时，文件夹处于在使用状态，无法更改名称" class="headerlink" title="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"></a>在更改文件夹名称时，文件夹处于在使用状态，无法更改名称</h3><p>解决办法：</p>
-<ol>
-<li>按 <code>Win+R</code>，输入 <code>msconfig</code>，回车。</li>
-<li>在弹出的 <strong>系统配置</strong> 窗口中，选择 <strong>引导</strong> 标签页，然后勾选 <strong>安全引导</strong> 。</li>
-<li>点击 <strong>确定</strong> 并重启电脑，系统将进入安全模式。</li>
-<li>在此模式下对文件夹进行更改。</li>
-<li>改完后按照上述方法再次打开系统配置， <strong>取消</strong> 勾选安全引导</li>
-</ol>
-<h3 id="在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码"><a href="#在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码" class="headerlink" title="在登录 Administrator 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码"></a>在登录 <code>Administrator</code> 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码</h3><p>解决办法：</p>
-<ol>
-<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
-<li>右上角查看方式选择 <strong>类别</strong> 。</li>
-<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 管理其他账户。</li>
-<li>点击 <code>Administrator</code> 账户，修改密码。</li>
-<li>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> ，点击 <code>Administrator</code> 账户，输入密码进行登录。</li>
-</ol>
-<h3 id="我无法选择“更改账户名称”"><a href="#我无法选择“更改账户名称”" class="headerlink" title="我无法选择“更改账户名称”"></a>我无法选择“更改账户名称”</h3><p>解决办法：  通过命令提示符修改用户名  </p>
-<ol>
-<li>以管理员身份打开 命令提示符：</li>
-<li>按 Windows + X，选择 命令提示符（管理员） 或 Windows PowerShell（管理员）。</li>
-<li>输入以下命令来列出所有用户：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure></li>
-<li>找到你想要修改的用户名。</li>
-<li>输入以下命令来修改用户名：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user 旧用户名 新用户名</span><br></pre></td></tr></table></figure></li>
-<li>此方法只能更改登录的显示用户名，但不会更改 C:&#x2F;Users&#x2F;Username 文件夹的名称。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -540,37 +502,104 @@
       </tags>
   </entry>
   <entry>
-    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
-    <url>//posts/command-collection/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
-<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
+    <title>Windows更改用户名</title>
+    <url>//posts/Windows-change-Username/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
+<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
+<li>右上角查看方式选择 <strong>类别</strong> 。</li>
+<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 更改账户名称。</li>
+<li>输入 <strong>纯英文</strong> 用户名，点击更改，确定。</li>
+</ol>
+<h3 id="更改-User-文件夹的名称"><a href="#更改-User-文件夹的名称" class="headerlink" title="更改 User 文件夹的名称"></a>更改 <code>User</code> 文件夹的名称</h3><ol>
+<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:yes</span><br></pre></td></tr></table></figure>
+<p>会显示：命令成功完成</p>
+</li>
+<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
+</li>
+<li><p>在登录界面右下角选择 <code>Administrator</code> 账户进行登录。</p>
+</li>
+<li><p>打开文件夹，在地址栏输入：<code>C:\Users</code> 快速导航。</p>
+</li>
+<li><p>更改 <strong>你的原中文用户名</strong> 为 <strong>你的新英文用户名</strong> 。</p>
+</li>
+</ol>
+<h3 id="更改注册表中的路径"><a href="#更改注册表中的路径" class="headerlink" title="更改注册表中的路径"></a>更改注册表中的路径</h3><ol start="0">
+<li>注意：注册表操作位高风险操作，建议操作前先备份注册表。</li>
+<li>按 <code>Win+R</code> 输入 <code>regedit</code> 进入注册表。</li>
+<li>依次展开以下路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code></li>
+<li>在此目录下有多个文件夹，注意 <code>ProfileImagePath</code> 的数据，找到你的原中文用户名，双击进入编辑，将其更改为你的新英文用户名，点击确定。</li>
+</ol>
+<h3 id="回到更改好的用户"><a href="#回到更改好的用户" class="headerlink" title="回到更改好的用户"></a>回到更改好的用户</h3><ol>
+<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:no</span><br></pre></td></tr></table></figure>
+<p>会显示：命令成功完成</p>
+</li>
+<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
+</li>
+<li><p>选择你的账户，输入密码登录。</p>
+</li>
+</ol>
+<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><h3 id="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"><a href="#在更改文件夹名称时，文件夹处于在使用状态，无法更改名称" class="headerlink" title="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"></a>在更改文件夹名称时，文件夹处于在使用状态，无法更改名称</h3><p>解决办法：</p>
+<ol>
+<li>按 <code>Win+R</code>，输入 <code>msconfig</code>，回车。</li>
+<li>在弹出的 <strong>系统配置</strong> 窗口中，选择 <strong>引导</strong> 标签页，然后勾选 <strong>安全引导</strong> 。</li>
+<li>点击 <strong>确定</strong> 并重启电脑，系统将进入安全模式。</li>
+<li>在此模式下对文件夹进行更改。</li>
+<li>改完后按照上述方法再次打开系统配置， <strong>取消</strong> 勾选安全引导</li>
+</ol>
+<h3 id="在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码"><a href="#在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码" class="headerlink" title="在登录 Administrator 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码"></a>在登录 <code>Administrator</code> 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码</h3><p>解决办法：</p>
+<ol>
+<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
+<li>右上角查看方式选择 <strong>类别</strong> 。</li>
+<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 管理其他账户。</li>
+<li>点击 <code>Administrator</code> 账户，修改密码。</li>
+<li>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> ，点击 <code>Administrator</code> 账户，输入密码进行登录。</li>
+</ol>
+<h3 id="我无法选择“更改账户名称”"><a href="#我无法选择“更改账户名称”" class="headerlink" title="我无法选择“更改账户名称”"></a>我无法选择“更改账户名称”</h3><p>解决办法：  通过命令提示符修改用户名  </p>
+<ol>
+<li>以管理员身份打开 命令提示符：</li>
+<li>按 Windows + X，选择 命令提示符（管理员） 或 Windows PowerShell（管理员）。</li>
+<li>输入以下命令来列出所有用户：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure></li>
+<li>找到你想要修改的用户名。</li>
+<li>输入以下命令来修改用户名：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user 旧用户名 新用户名</span><br></pre></td></tr></table></figure></li>
+<li>此方法只能更改登录的显示用户名，但不会更改 C:&#x2F;Users&#x2F;Username 文件夹的名称。</li>
+</ol>
 ]]></content>
       <categories>
         <category>教程</category>
       </categories>
       <tags>
-        <tag>命令行</tag>
-        <tag>screen</tag>
-        <tag>vim</tag>
-        <tag>压缩解压</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ffmpeg的配置和B站视频转化的简单使用</title>
+    <url>//posts/ffmpeg-Deploy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
+<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
+<blockquote>
+<p>建议国内无VPN用户选择该方式下载</p>
+</blockquote>
+<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
+<blockquote>
+<p>建议有VPN的用户选择该方式下载</p>
+</blockquote>
+<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
+<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
+<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
+<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
+<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>ffmpeg</tag>
       </tags>
   </entry>
   <entry>
@@ -676,35 +705,6 @@
       </categories>
       <tags>
         <tag>单片机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ffmpeg的配置和B站视频转化的简单使用</title>
-    <url>//posts/ffmpeg-Deploy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
-<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
-<blockquote>
-<p>建议国内无VPN用户选择该方式下载</p>
-</blockquote>
-<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
-<blockquote>
-<p>建议有VPN的用户选择该方式下载</p>
-</blockquote>
-<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
-<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
-<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
-<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
-<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
-<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>ffmpeg</tag>
       </tags>
   </entry>
   <entry>
