@@ -108,7 +108,7 @@ for ($i = $cache_data_split.Length - 1; $i -ge 0; $i--) {
 
             Write-Output $latest_url
             Set-Clipboard -Value $latest_url
-            Write-host "$([char]0x5df2)$([char]0x81ea)$([char]0x52a8)$([char]0x590d)$([char]0x5236)$([char]0x002c)$([char]0x8bf7)$([char]0x62d6)$([char]0x6258)$([char]0x5230)$([char]0x673a)$([char]0x5668)$([char]0x4eba)$([char]0x002f)$([char]0x5206)$([char]0x6790)$([char]0x5de5)$([char]0x5177)$([char]0x4f7f)$([char]0x7528)" -ForegroundColor Green
+            Write-host "$([char]0x5df2)$([char]0x81ea)$([char]0x52a8)$([char]0x590d)$([char]0x590d)$([char]0x5236)$([char]0x62bd)$([char]0x5361)$([char]0x94fe)$([char]0x63a5)$([char]0x5230)$([char]0x526a)$([char]0x8d34)$([char]0x677f)$([char]0x002c)$([char]0x8bf7)$([char]0x7c98)$([char]0x8d34)$([char]0x5230)$([char]0x673a)$([char]0x5668)$([char]0x4eba)$([char]0x002f)$([char]0x5206)$([char]0x6790)$([char]0x5de5)$([char]0x5177)$([char]0x4f7f)$([char]0x7528)" -ForegroundColor Green
             return;
     }
 }
