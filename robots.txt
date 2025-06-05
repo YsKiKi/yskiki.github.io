@@ -11,5 +11,6 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /categories/
+Disallow: /Resources/
 
 Sitemap: https://blog.kk-wuyue.top/sitemap.xml
