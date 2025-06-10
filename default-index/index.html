@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-06-10 21:30:48 / 修改时间：22:19:04" itemprop="dateCreated datePublished" datetime="2025-06-10T21:30:48+08:00">2025-06-10</time>
+              <time title="创建时间：2025-06-10 21:30:48 / 修改时间：22:31:12" itemprop="dateCreated datePublished" datetime="2025-06-10T21:30:48+08:00">2025-06-10</time>
             </span>
 
           <br>
@@ -222,7 +222,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -250,6 +250,7 @@
 <li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
 <li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
 <li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
+<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
 </ul>
 </li>
 </ul>
@@ -289,6 +290,14 @@
 <h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
 <li><p>所有操作系统一致：  </p>
  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
+<li><p>全局设置：  </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>文件夹设置（在当前目录下生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>临时设置（仅在当前shell会话中生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -1728,7 +1737,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">46 分钟</span>
+    <span title="站点阅读时长">47 分钟</span>
 </div><div style="display:inline-block">
   <a href="http://beian.miit.gov.cn/" rel="noopener" target="_blank">苏ICP备2025181445号-1</a>
 

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.kk-wuyue.top/posts/pyenv-installation/</loc>
+    
+    <lastmod>2025-06-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.kk-wuyue.top/posts/Blog-building/</loc>
     
     <lastmod>2025-06-10</lastmod>
@@ -30,15 +39,6 @@
   
   <url>
     <loc>https://blog.kk-wuyue.top/posts/Windows-delay-update/</loc>
-    
-    <lastmod>2025-06-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.kk-wuyue.top/posts/pyenv-installation/</loc>
     
     <lastmod>2025-06-10</lastmod>
     
@@ -164,6 +164,27 @@
 
   
   <url>
+    <loc>https://blog.kk-wuyue.top/tags/GitHub/</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kk-wuyue.top/tags/Blog/</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kk-wuyue.top/tags/Nodejs/</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.kk-wuyue.top/tags/Python/</loc>
     <lastmod>2025-06-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -206,27 +227,6 @@
   </url>
   
   <url>
-    <loc>https://blog.kk-wuyue.top/tags/Windows/</loc>
-    <lastmod>2025-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.kk-wuyue.top/tags/WSL/</loc>
-    <lastmod>2025-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.kk-wuyue.top/tags/Linux/</loc>
-    <lastmod>2025-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.kk-wuyue.top/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
     <lastmod>2025-06-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -255,21 +255,21 @@
   </url>
   
   <url>
-    <loc>https://blog.kk-wuyue.top/tags/GitHub/</loc>
+    <loc>https://blog.kk-wuyue.top/tags/Windows/</loc>
     <lastmod>2025-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.kk-wuyue.top/tags/Blog/</loc>
+    <loc>https://blog.kk-wuyue.top/tags/WSL/</loc>
     <lastmod>2025-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.kk-wuyue.top/tags/Nodejs/</loc>
+    <loc>https://blog.kk-wuyue.top/tags/Linux/</loc>
     <lastmod>2025-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -304,6 +304,13 @@
   </url>
   
   <url>
+    <loc>https://blog.kk-wuyue.top/tags/%E5%9F%9F%E5%90%8D/</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.kk-wuyue.top/tags/Ubuntu22-04/</loc>
     <lastmod>2025-06-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -317,24 +324,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://blog.kk-wuyue.top/tags/%E5%9F%9F%E5%90%8D/</loc>
-    <lastmod>2025-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://blog.kk-wuyue.top/categories/%E5%B7%A5%E5%85%B7%E8%8E%B7%E5%8F%96/</loc>
+    <loc>https://blog.kk-wuyue.top/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.kk-wuyue.top/categories/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://blog.kk-wuyue.top/categories/%E5%B7%A5%E5%85%B7%E8%8E%B7%E5%8F%96/</loc>
     <lastmod>2025-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
