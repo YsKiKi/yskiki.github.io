@@ -45,6 +45,19 @@
     lang   : 'zh-CN'
   };
 </script>
+<!-- 霞鹜文楷 Light 字体 -->
+<link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/lxgwwenkai-light/result.css">
+<style>
+/* 只替换常规文字字体，不影响图标、代码、已指定字体等 */
+body, h1, h2, h3, h4, h5, h6,
+p, span, a, li, td, th, blockquote, pre, code, time, label, input, textarea, select {
+  font-family: 'LXGW WenKai Light', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+}
+
+/* 明确排除自定义字体类（如 .huaixu） */
+.huaixu {
+  font-family: 'Huaixu', serif !important;
+}
 
   <title>初夏札记</title>
   
@@ -184,132 +197,6 @@
 
           <div class="content index posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.kk-wuyue.top/posts/Ubuntu-nr-help/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="May">
-      <meta itemprop="description" content="槐序初裁青玉案，墨痕新染碧云端">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="初夏札记">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/Ubuntu-nr-help/" class="post-title-link" itemprop="url">在Ubuntu上配置nodejs和redis</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-02-23 20:51:45" itemprop="dateCreated datePublished" datetime="2024-02-23T20:51:45+08:00">2024-02-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-16 17:19:11" itemprop="dateModified" datetime="2024-09-16T17:19:11+08:00">2024-09-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="在Ubuntu上配置nodejs和redis（记录篇）"><a href="#在Ubuntu上配置nodejs和redis（记录篇）" class="headerlink" title="在Ubuntu上配置nodejs和redis（记录篇）"></a>在Ubuntu上配置nodejs和redis（记录篇）</h2><p>由于嫌弃服务器上用Windows的话图形化界面太耗资源，这两天把服务器系统换成了Ubuntu，虽然速度提升聊胜于无，但蚊子腿再小也是肉~o.0~<br>为了防止云服务器到期的时候再配置又要查资料，在这里写一篇记录篇，查起来也方便  </p>
-<h3 id="系统：Ubuntu-20-04"><a href="#系统：Ubuntu-20-04" class="headerlink" title="系统：Ubuntu-20.04"></a>系统：Ubuntu-20.04</h3><p>Ubuntu自带apt包，所以大部分时候只要<code>apt-get install</code>就行了，非常方便  </p>
-<p>输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
-<p>进入管理员形态！！  </p>
-<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p>这个没什么好说的，脑子没毛病都知道怎么做</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
-<h4 id="安装Nodejs-18-x"><a href="#安装Nodejs-18-x" class="headerlink" title="安装Nodejs 18.x"></a>安装Nodejs 18.x</h4><p>先安装<code>curl</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install curl</span><br></pre></td></tr></table></figure>
-<p>然后输入以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &amp;&amp;\</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
-<p>Nodejs 18.x就安装好了<br>检查：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@VM-4-10-ubuntu:~<span class="comment"># node -v</span></span><br><span class="line">v18.19.1</span><br><span class="line">root@VM-4-10-ubuntu:~<span class="comment"># npm -v</span></span><br><span class="line">10.2.4</span><br><span class="line">root@VM-4-10-ubuntu:~<span class="comment"># npx -v</span></span><br><span class="line">10.2.4</span><br></pre></td></tr></table></figure>
-<p>装的好好的，没啥毛病✓</p>
-<h4 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h4><p>官方的apt包里包含了redis，所以同上：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install redis</span><br></pre></td></tr></table></figure>
-<p>就好了  </p>
-<p>与Windows里redis需要自己启动运行不同，这里的redis安装完自动运行，省心得很<br>如果要查看redis有没有在运行了，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status redis-server</span><br><span class="line">service --status-all				<span class="comment">#查询开启的服务</span></span><br></pre></td></tr></table></figure>
-<p>两个命令都可以看出redis的运行状态</p>
-<blockquote>
-<p>附上开启、关闭和重启redis服务命令：  </p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-server stop  </span><br><span class="line">redis-server start  </span><br><span class="line">redis-server restart  </span><br></pre></td></tr></table></figure>
-<blockquote>
-</blockquote>
-<h4 id="PS：一些ex人的地方："><a href="#PS：一些ex人的地方：" class="headerlink" title="PS：一些ex人的地方："></a>PS：一些ex人的地方：</h4><ul>
-<li>puppeteer的版本太新会抽风，使用以下代码进行治疗： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm install puppeteer@13.7.0 -w</span><br></pre></td></tr></table></figure></li>
-<li>Ubuntu会出现：<code>Error: Failed to launch the browser process!</code>，网上查了好久一点有用的没有，我直接：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ca-certificates fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 lsb-release wget xdg-utils -y</span><br></pre></td></tr></table></figure>
-安装依赖，然后就好了✓</li>
-<li>Ubuntu里要用screen同时运行 签名API 和 本体，附上↓↓↓仅供参考：<blockquote>
-<p>其实这玩意只要脑子没坏都知道，但是万一脑子坏了呢o.0</p>
-<blockquote>
-<p>签名API填地址用<code>http://</code>嗷，不要傻乎乎地用<code>https://</code></p>
-</blockquote>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">screen -S &lt;名字&gt;				<span class="comment">#创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D				<span class="comment">#退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>				<span class="comment">#查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit			<span class="comment">#删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;				<span class="comment">#切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
-到时候看需要再补充吧。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -703,7 +590,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -716,7 +603,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -752,12 +639,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">25k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">47 分钟</span>
+    <span title="站点阅读时长">46 分钟</span>
 </div><div style="display:inline-block">
   <a href="http://beian.miit.gov.cn/" rel="noopener" target="_blank">苏ICP备2025181445号-1</a>
 

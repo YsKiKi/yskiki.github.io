@@ -31,7 +31,7 @@
 <meta property="og:description" content="@font-face {   font-family: &#39;Huaixu&#39;;   src: url(&#39;&#x2F;Resources&#x2F;Huaixu.woff2&#39;) format(&#39;woff2&#39;);   font-display: swap; }  .huaixu {   font-family: &#39;Huaixu&#39;, serif;   font-size: 1.5rem;   color: #666;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-14T15:39:37.000Z">
-<meta property="article:modified_time" content="2025-05-28T16:52:15.976Z">
+<meta property="article:modified_time" content="2025-06-12T15:54:58.743Z">
 <meta property="article:author" content="May">
 <meta name="twitter:card" content="summary">
 
@@ -47,6 +47,19 @@
     lang   : 'zh-CN'
   };
 </script>
+<!-- 霞鹜文楷 Light 字体 -->
+<link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/lxgwwenkai-light/result.css">
+<style>
+/* 只替换常规文字字体，不影响图标、代码、已指定字体等 */
+body, h1, h2, h3, h4, h5, h6,
+p, span, a, li, td, th, blockquote, pre, code, time, label, input, textarea, select {
+  font-family: 'LXGW WenKai Light', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+}
+
+/* 明确排除自定义字体类（如 .huaixu） */
+.huaixu {
+  font-family: 'Huaixu', serif !important;
+}
 
   <title>初夏札记 | 初夏札记
 </title>
@@ -239,12 +252,34 @@
 </div>
 
 <hr>
+<div id="latest-posts" style="font-size: 0.9rem; text-align: left; margin-top: 2em;">
+  <strong style="display:block; padding-left: 2em;">📌 最新文章</strong>
+  <ul id="post-list" style="list-style: none; padding-left: 2.5em; margin-top: 1em;"></ul>
+</div>
+<script>
+fetch('/content.json')
+  .then(res => res.json())
+  .then(data => {
+    const postList = document.getElementById('post-list');
+    const posts = Object.values(data).sort((a, b) => new Date(b.date) - new Date(a.date));
+    posts.slice(0, 5).forEach(post => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${post.permalink}">${post.title}</a>`;
+      postList.appendChild(li);
+    });
+  })
+  .catch(err => {
+    console.error('文章加载失败:', err);
+  });
+</script>
+
+<hr>
 <div align="center" style="margin-top: 2em;">
 如有问题欢迎联系我
 </div>
 
 <blockquote>
-<p>💬 QQ：2786411898<br>📧 Email：<a href="mailto:&#x6d;&#x61;&#x69;&#108;&#x40;&#107;&#x6b;&#45;&#x77;&#117;&#x79;&#x75;&#101;&#46;&#116;&#111;&#x70;">&#x6d;&#x61;&#x69;&#108;&#x40;&#107;&#x6b;&#45;&#x77;&#117;&#x79;&#x75;&#101;&#46;&#116;&#111;&#x70;</a>  </p>
+<p>💬 QQ：2786411898<br>📧 Email：<a href="mailto:&#x6d;&#97;&#x69;&#108;&#x40;&#x6b;&#x6b;&#x2d;&#119;&#117;&#121;&#x75;&#101;&#x2e;&#x74;&#111;&#112;">&#x6d;&#97;&#x69;&#108;&#x40;&#x6b;&#x6b;&#x2d;&#119;&#117;&#121;&#x75;&#101;&#x2e;&#x74;&#111;&#112;</a>  </p>
 </blockquote>
 
       </div>
@@ -320,7 +355,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -333,7 +368,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -369,12 +404,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">25k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">47 分钟</span>
+    <span title="站点阅读时长">46 分钟</span>
 </div><div style="display:inline-block">
   <a href="http://beian.miit.gov.cn/" rel="noopener" target="_blank">苏ICP备2025181445号-1</a>
 
