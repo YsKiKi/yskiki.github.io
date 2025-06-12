@@ -33,10 +33,10 @@
 <meta property="article:published_time" content="2025-04-29T12:06:19.000Z">
 <meta property="article:modified_time" content="2025-04-29T12:27:47.997Z">
 <meta property="article:author" content="May">
-<meta property="article:tag" content="教程">
 <meta property="article:tag" content="Windows">
 <meta property="article:tag" content="WSL">
 <meta property="article:tag" content="Linux">
+<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://blog.kk-wuyue.top/posts/Windows-install-WSL/">
@@ -51,19 +51,24 @@
     lang   : 'zh-CN'
   };
 </script>
-<!-- 霞鹜文楷 Light 字体 -->
-<link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/lxgwwenkai-light/result.css">
 <style>
-/* 只替换常规文字字体，不影响图标、代码、已指定字体等 */
-body, h1, h2, h3, h4, h5, h6,
-p, span, a, li, td, th, blockquote, pre, code, time, label, input, textarea, select {
-  font-family: 'LXGW WenKai Light', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+@font-face {
+  font-family: 'WenKaiLocal';
+  src: url('/Resources/LXGW.woff2') format('woff2');
+  font-display: swap;
 }
 
-/* 明确排除自定义字体类（如 .huaixu） */
+/* 更广泛地应用于常规可见文字，不影响代码、图标、自定义类 */
+body, html, main, article, section, div, h1, h2, h3, h4, h5, h6,
+p, span, a, li, td, th, blockquote, time, label, input, textarea, select {
+  font-family: 'WenKaiLocal', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+}
+
+/* 保留你手动设置的字体 */
 .huaixu {
   font-family: 'Huaixu', serif !important;
 }
+</style>
 
   <title>Windows 安装WSL | 初夏札记</title>
   
@@ -378,10 +383,10 @@ p, span, a, li, td, th, blockquote, pre, code, time, label, input, textarea, sel
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
               <a href="/tags/Windows/" rel="tag"># Windows</a>
               <a href="/tags/WSL/" rel="tag"># WSL</a>
               <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
           </div>
 
         

@@ -47,19 +47,24 @@
     lang   : 'zh-CN'
   };
 </script>
-<!-- 霞鹜文楷 Light 字体 -->
-<link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/lxgwwenkai-light/result.css">
 <style>
-/* 只替换常规文字字体，不影响图标、代码、已指定字体等 */
-body, h1, h2, h3, h4, h5, h6,
-p, span, a, li, td, th, blockquote, pre, code, time, label, input, textarea, select {
-  font-family: 'LXGW WenKai Light', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+@font-face {
+  font-family: 'WenKaiLocal';
+  src: url('/Resources/LXGW.woff2') format('woff2');
+  font-display: swap;
 }
 
-/* 明确排除自定义字体类（如 .huaixu） */
+/* 更广泛地应用于常规可见文字，不影响代码、图标、自定义类 */
+body, html, main, article, section, div, h1, h2, h3, h4, h5, h6,
+p, span, a, li, td, th, blockquote, time, label, input, textarea, select {
+  font-family: 'WenKaiLocal', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+}
+
+/* 保留你手动设置的字体 */
 .huaixu {
   font-family: 'Huaixu', serif !important;
 }
+</style>
 
   <title>初夏札记 | 初夏札记
 </title>
@@ -279,7 +284,7 @@ fetch('/content.json')
 </div>
 
 <blockquote>
-<p>💬 QQ：2786411898<br>📧 Email：<a href="mailto:&#x6d;&#97;&#x69;&#108;&#x40;&#x6b;&#x6b;&#x2d;&#119;&#117;&#121;&#x75;&#101;&#x2e;&#x74;&#111;&#112;">&#x6d;&#97;&#x69;&#108;&#x40;&#x6b;&#x6b;&#x2d;&#119;&#117;&#121;&#x75;&#101;&#x2e;&#x74;&#111;&#112;</a>  </p>
+<p>💬 QQ：2786411898<br>📧 Email：<a href="mailto:&#109;&#97;&#105;&#x6c;&#64;&#x6b;&#x6b;&#x2d;&#x77;&#117;&#121;&#117;&#x65;&#x2e;&#x74;&#111;&#x70;">&#109;&#97;&#105;&#x6c;&#64;&#x6b;&#x6b;&#x2d;&#x77;&#117;&#121;&#117;&#x65;&#x2e;&#x74;&#111;&#x70;</a>  </p>
 </blockquote>
 
       </div>
