@@ -52,13 +52,11 @@
   font-display: swap;
 }
 
-/* 更广泛地应用于常规可见文字，不影响代码、图标、自定义类 */
 body, html, main, article, section, div, h1, h2, h3, h4, h5, h6, code,
 p, span, a, li, td, th, blockquote, time, label, input, textarea, select {
   font-family: 'WenKaiLocal', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
 }
 
-/* 保留你手动设置的字体 */
 .huaixu {
   font-family: 'Huaixu', serif !important;
 }
@@ -294,21 +292,21 @@ p, span, a, li, td, th, blockquote, time, label, input, textarea, select {
 </li>
 </ul>
 <h2 id="Hexo-博客部署到-Linux-服务器-Nginx"><a href="#Hexo-博客部署到-Linux-服务器-Nginx" class="headerlink" title="Hexo 博客部署到 Linux 服务器 + Nginx"></a>Hexo 博客部署到 Linux 服务器 + Nginx</h2><h3 id="第一步：服务器准备"><a href="#第一步：服务器准备" class="headerlink" title="第一步：服务器准备"></a>第一步：服务器准备</h3><p><strong>适用系统：</strong> Debian&#x2F;Ubuntu 等类 Unix 系统</p>
-<h4 id="1-安装-Nginx"><a href="#1-安装-Nginx" class="headerlink" title="1. 安装 Nginx"></a>1. 安装 Nginx</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install nginx -y</span><br></pre></td></tr></table></figure>
+<h4 id="1-安装-Nginx"><a href="#1-安装-Nginx" class="headerlink" title="1. 安装 Nginx"></a>1. 安装 Nginx</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install nginx -y</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-创建网站目录"><a href="#2-创建网站目录" class="headerlink" title="2. 创建网站目录"></a>2. 创建网站目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">mkdir</span> -p /var/www/hexo</span><br><span class="line">sudo <span class="built_in">chown</span> -R <span class="variable">$USER</span>:<span class="variable">$USER</span> /var/www/hexo</span><br></pre></td></tr></table></figure>
+<h4 id="2-创建网站目录"><a href="#2-创建网站目录" class="headerlink" title="2. 创建网站目录"></a>2. 创建网站目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /var/www/hexo</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R <span class="variable">$USER</span>:<span class="variable">$USER</span> /var/www/hexo</span><br></pre></td></tr></table></figure>
 
 <h4 id="3-配置-Nginx"><a href="#3-配置-Nginx" class="headerlink" title="3. 配置 Nginx"></a>3. 配置 Nginx</h4><p>编辑默认配置文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/nginx/sites-available/default</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/nginx/sites-available/default</span><br></pre></td></tr></table></figure>
 
 <p>替换 <code>server</code> 内容为：</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> _;  <span class="comment"># 可改成你的域名</span></span><br><span class="line"></span><br><span class="line">    <span class="attribute">root</span> /var/www/hexo;</span><br><span class="line">    <span class="attribute">index</span> index.html;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ =<span class="number">404</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>测试配置并重启：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -t</span><br><span class="line">sudo systemctl restart nginx</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nginx -t</span><br><span class="line"><span class="built_in">sudo</span> systemctl restart nginx</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="第二步：服务器配置-Git-自动部署"><a href="#第二步：服务器配置-Git-自动部署" class="headerlink" title="第二步：服务器配置 Git 自动部署"></a>第二步：服务器配置 Git 自动部署</h3><h4 id="1-安装-Git（服务器端）"><a href="#1-安装-Git（服务器端）" class="headerlink" title="1. 安装 Git（服务器端）"></a>1. 安装 Git（服务器端）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git -y</span><br></pre></td></tr></table></figure>
+<h3 id="第二步：服务器配置-Git-自动部署"><a href="#第二步：服务器配置-Git-自动部署" class="headerlink" title="第二步：服务器配置 Git 自动部署"></a>第二步：服务器配置 Git 自动部署</h3><h4 id="1-安装-Git（服务器端）"><a href="#1-安装-Git（服务器端）" class="headerlink" title="1. 安装 Git（服务器端）"></a>1. 安装 Git（服务器端）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install git -y</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-创建裸仓库"><a href="#2-创建裸仓库" class="headerlink" title="2. 创建裸仓库"></a>2. 创建裸仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/hexo.git &amp;&amp; <span class="built_in">cd</span> ~/hexo.git</span><br><span class="line">git init --bare</span><br></pre></td></tr></table></figure>
 
@@ -348,11 +346,11 @@ p, span, a, li, td, th, blockquote, time, label, input, textarea, select {
 <li><p>确认 <code>/var/www/hexo</code> 有 <code>index.html</code></p>
 </li>
 <li><p>设置权限：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> -R 755 /var/www/hexo</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> -R 755 /var/www/hexo</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p><strong>无法写入 &#x2F;var&#x2F;www&#x2F;hexo：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> -R youruser:youruser /var/www/hexo</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R youruser:youruser /var/www/hexo</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -1033,7 +1031,7 @@ p, span, a, li, td, th, blockquote, time, label, input, textarea, select {
 <blockquote>
 <p>如果没有梯子，下载速度可能会非常慢，建议参考 <a href="#%E5%9B%9B%E3%80%81Ubuntu%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C">将 apt 换源为阿里&#x2F;清华源</a> 来解决。  </p>
 </blockquote>
-   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade -y</span><br></pre></td></tr></table></figure>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a><strong>常见问题解决</strong></h3><ol>
@@ -1061,10 +1059,10 @@ p, span, a, li, td, th, blockquote, time, label, input, textarea, select {
 <h3 id="四、Ubuntu常用操作"><a href="#四、Ubuntu常用操作" class="headerlink" title="四、Ubuntu常用操作"></a><strong>四、Ubuntu常用操作</strong></h3><p><strong>将 <code>apt</code> 换源为阿里&#x2F;清华源</strong>  </p>
 <ol>
 <li><p>备份原有的源列表（非常重要）  </p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure></li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure></li>
 <li><p>修改 <code>sources.list</code> 文件</p>
 <p> 使用你喜欢的编辑器，比如 <code>vim</code> 或 <code>nano</code>：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
 <p> 清空原有内容，然后根据你的 Ubuntu 版本粘贴对应的阿里云源。</p>
 </li>
 <li><p>阿里云 Ubuntu 源示例（以 <strong>Ubuntu 22.04 Jammy</strong> 为例）：</p>
@@ -1072,10 +1070,10 @@ p, span, a, li, td, th, blockquote, time, label, input, textarea, select {
 <li><p>保存并退出编辑器（在 <code>nano</code> 中按 <code>Ctrl + O</code> 保存，<code>Ctrl + X</code> 退出）。</p>
 </li>
 <li><p>更新软件源缓存  </p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br></pre></td></tr></table></figure>
 
 <p>   建议再执行一次升级（可选）：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure></li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt upgrade</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
