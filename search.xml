@@ -1,74 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Pyenv安装</title>
-    <url>//posts/pyenv-installation/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><a href="#pyenv%E5%AE%89%E8%A3%85">Pyenv安装</a><ul>
-<li><a href="#windows-%E5%AE%89%E8%A3%85-pyenv">Windows 安装 Pyenv</a></li>
-<li><a href="#linux-%E5%AE%89%E8%A3%85pyenv">Linux 安装Pyenv</a></li>
-</ul>
-</li>
-<li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
-<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
-<li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
-<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Pyenv安装"><a href="#Pyenv安装" class="headerlink" title="Pyenv安装"></a>Pyenv安装</h3><h4 id="Windows-安装-Pyenv"><a href="#Windows-安装-Pyenv" class="headerlink" title="Windows 安装 Pyenv"></a>Windows 安装 Pyenv</h4><ol>
-<li><p>打开 <code>Powershell</code>  </p>
-</li>
-<li><p>执行以下命令安装 <code>pyenv-win</code>：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://gitee.com/treespacex/pyenv-win/blob/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上述内容为 <code>pyenv-win</code> 的gitee镜像地址，原始命令如下：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>安装完成后，重启 <code>Powershell</code>  </p>
-</li>
-<li><p>运行以下命令验证安装是否成功：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pyenv <span class="literal">--version</span></span><br></pre></td></tr></table></figure></li>
-<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
-</li>
-</ol>
-<h4 id="Linux-安装Pyenv"><a href="#Linux-安装Pyenv" class="headerlink" title="Linux 安装Pyenv"></a>Linux 安装Pyenv</h4><ol>
-<li><p>打开终端</p>
-</li>
-<li><p>执行以下命令安装 <code>pyenv</code>：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://pyenv.run | bash</span><br></pre></td></tr></table></figure></li>
-<li><p>验证安装是否成功：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure></li>
-<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
-</li>
-</ol>
-<h3 id="Pyenv-相关设置"><a href="#Pyenv-相关设置" class="headerlink" title="Pyenv 相关设置"></a>Pyenv 相关设置</h3><h4 id="通过镜像源下载python版本（以3-10-11为例）："><a href="#通过镜像源下载python版本（以3-10-11为例）：" class="headerlink" title="通过镜像源下载python版本（以3.10.11为例）："></a>通过镜像源下载python版本（以3.10.11为例）：</h4><ol>
-<li><p>设置镜像源的临时环境变量  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux</span></span><br><span class="line">PYTHON_BUILD_MIRROR_URL=<span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure>
- <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="variable">$env:PYTHON_BUILD_MIRROR_URL</span> = <span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>安装指定版本的Python：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv install 3.10.11</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
-<li><p>所有操作系统一致：  </p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
-<li><p>全局设置：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
-<li><p>文件夹设置（在当前目录下生效）：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
-<li><p>临时设置（仅在当前shell会话中生效）：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>Pyenv</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI与人</title>
     <url>//posts/ai-with-human/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -472,6 +404,74 @@
       </tags>
   </entry>
   <entry>
+    <title>Pyenv安装</title>
+    <url>//posts/pyenv-installation/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#pyenv%E5%AE%89%E8%A3%85">Pyenv安装</a><ul>
+<li><a href="#windows-%E5%AE%89%E8%A3%85-pyenv">Windows 安装 Pyenv</a></li>
+<li><a href="#linux-%E5%AE%89%E8%A3%85pyenv">Linux 安装Pyenv</a></li>
+</ul>
+</li>
+<li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
+<li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
+<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Pyenv安装"><a href="#Pyenv安装" class="headerlink" title="Pyenv安装"></a>Pyenv安装</h3><h4 id="Windows-安装-Pyenv"><a href="#Windows-安装-Pyenv" class="headerlink" title="Windows 安装 Pyenv"></a>Windows 安装 Pyenv</h4><ol>
+<li><p>打开 <code>Powershell</code>  </p>
+</li>
+<li><p>执行以下命令安装 <code>pyenv-win</code>：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://gitee.com/treespacex/pyenv-win/blob/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上述内容为 <code>pyenv-win</code> 的gitee镜像地址，原始命令如下：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>安装完成后，重启 <code>Powershell</code>  </p>
+</li>
+<li><p>运行以下命令验证安装是否成功：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pyenv <span class="literal">--version</span></span><br></pre></td></tr></table></figure></li>
+<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+</li>
+</ol>
+<h4 id="Linux-安装Pyenv"><a href="#Linux-安装Pyenv" class="headerlink" title="Linux 安装Pyenv"></a>Linux 安装Pyenv</h4><ol>
+<li><p>打开终端</p>
+</li>
+<li><p>执行以下命令安装 <code>pyenv</code>：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://pyenv.run | bash</span><br></pre></td></tr></table></figure></li>
+<li><p>验证安装是否成功：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure></li>
+<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+</li>
+</ol>
+<h3 id="Pyenv-相关设置"><a href="#Pyenv-相关设置" class="headerlink" title="Pyenv 相关设置"></a>Pyenv 相关设置</h3><h4 id="通过镜像源下载python版本（以3-10-11为例）："><a href="#通过镜像源下载python版本（以3-10-11为例）：" class="headerlink" title="通过镜像源下载python版本（以3.10.11为例）："></a>通过镜像源下载python版本（以3.10.11为例）：</h4><ol>
+<li><p>设置镜像源的临时环境变量  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux</span></span><br><span class="line">PYTHON_BUILD_MIRROR_URL=<span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="variable">$env:PYTHON_BUILD_MIRROR_URL</span> = <span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>安装指定版本的Python：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv install 3.10.11</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
+<li><p>所有操作系统一致：  </p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
+<li><p>全局设置：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>文件夹设置（在当前目录下生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>临时设置（仅在当前shell会话中生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>Pyenv</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows 安装WSL</title>
     <url>//posts/Windows-install-WSL/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -583,78 +583,6 @@
         <tag>Windows</tag>
         <tag>WSL</tag>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows更改用户名</title>
-    <url>//posts/Windows-change-Username/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
-<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
-<li>右上角查看方式选择 <strong>类别</strong> 。</li>
-<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 更改账户名称。</li>
-<li>输入 <strong>纯英文</strong> 用户名，点击更改，确定。</li>
-</ol>
-<h3 id="更改-User-文件夹的名称"><a href="#更改-User-文件夹的名称" class="headerlink" title="更改 User 文件夹的名称"></a>更改 <code>User</code> 文件夹的名称</h3><ol>
-<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:yes</span><br></pre></td></tr></table></figure>
-<p>会显示：命令成功完成</p>
-</li>
-<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
-</li>
-<li><p>在登录界面右下角选择 <code>Administrator</code> 账户进行登录。</p>
-</li>
-<li><p>打开文件夹，在地址栏输入：<code>C:\Users</code> 快速导航。</p>
-</li>
-<li><p>更改 <strong>你的原中文用户名</strong> 为 <strong>你的新英文用户名</strong> 。</p>
-</li>
-</ol>
-<h3 id="更改注册表中的路径"><a href="#更改注册表中的路径" class="headerlink" title="更改注册表中的路径"></a>更改注册表中的路径</h3><ol start="0">
-<li>注意：注册表操作位高风险操作，建议操作前先备份注册表。</li>
-<li>按 <code>Win+R</code> 输入 <code>regedit</code> 进入注册表。</li>
-<li>依次展开以下路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code></li>
-<li>在此目录下有多个文件夹，注意 <code>ProfileImagePath</code> 的数据，找到你的原中文用户名，双击进入编辑，将其更改为你的新英文用户名，点击确定。</li>
-</ol>
-<h3 id="回到更改好的用户"><a href="#回到更改好的用户" class="headerlink" title="回到更改好的用户"></a>回到更改好的用户</h3><ol>
-<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:no</span><br></pre></td></tr></table></figure>
-<p>会显示：命令成功完成</p>
-</li>
-<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
-</li>
-<li><p>选择你的账户，输入密码登录。</p>
-</li>
-</ol>
-<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><h3 id="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"><a href="#在更改文件夹名称时，文件夹处于在使用状态，无法更改名称" class="headerlink" title="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"></a>在更改文件夹名称时，文件夹处于在使用状态，无法更改名称</h3><p>解决办法：</p>
-<ol>
-<li>按 <code>Win+R</code>，输入 <code>msconfig</code>，回车。</li>
-<li>在弹出的 <strong>系统配置</strong> 窗口中，选择 <strong>引导</strong> 标签页，然后勾选 <strong>安全引导</strong> 。</li>
-<li>点击 <strong>确定</strong> 并重启电脑，系统将进入安全模式。</li>
-<li>在此模式下对文件夹进行更改。</li>
-<li>改完后按照上述方法再次打开系统配置， <strong>取消</strong> 勾选安全引导</li>
-</ol>
-<h3 id="在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码"><a href="#在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码" class="headerlink" title="在登录 Administrator 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码"></a>在登录 <code>Administrator</code> 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码</h3><p>解决办法：</p>
-<ol>
-<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
-<li>右上角查看方式选择 <strong>类别</strong> 。</li>
-<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 管理其他账户。</li>
-<li>点击 <code>Administrator</code> 账户，修改密码。</li>
-<li>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> ，点击 <code>Administrator</code> 账户，输入密码进行登录。</li>
-</ol>
-<h3 id="我无法选择“更改账户名称”"><a href="#我无法选择“更改账户名称”" class="headerlink" title="我无法选择“更改账户名称”"></a>我无法选择“更改账户名称”</h3><p>解决办法：  通过命令提示符修改用户名  </p>
-<ol>
-<li>以管理员身份打开 命令提示符：</li>
-<li>按 Windows + X，选择 命令提示符（管理员） 或 Windows PowerShell（管理员）。</li>
-<li>输入以下命令来列出所有用户：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure></li>
-<li>找到你想要修改的用户名。</li>
-<li>输入以下命令来修改用户名：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user 旧用户名 新用户名</span><br></pre></td></tr></table></figure></li>
-<li>此方法只能更改登录的显示用户名，但不会更改 C:&#x2F;Users&#x2F;Username 文件夹的名称。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -789,6 +717,78 @@
       <tags>
         <tag>clash</tag>
         <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows更改用户名</title>
+    <url>//posts/Windows-change-Username/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
+<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
+<li>右上角查看方式选择 <strong>类别</strong> 。</li>
+<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 更改账户名称。</li>
+<li>输入 <strong>纯英文</strong> 用户名，点击更改，确定。</li>
+</ol>
+<h3 id="更改-User-文件夹的名称"><a href="#更改-User-文件夹的名称" class="headerlink" title="更改 User 文件夹的名称"></a>更改 <code>User</code> 文件夹的名称</h3><ol>
+<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:yes</span><br></pre></td></tr></table></figure>
+<p>会显示：命令成功完成</p>
+</li>
+<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
+</li>
+<li><p>在登录界面右下角选择 <code>Administrator</code> 账户进行登录。</p>
+</li>
+<li><p>打开文件夹，在地址栏输入：<code>C:\Users</code> 快速导航。</p>
+</li>
+<li><p>更改 <strong>你的原中文用户名</strong> 为 <strong>你的新英文用户名</strong> 。</p>
+</li>
+</ol>
+<h3 id="更改注册表中的路径"><a href="#更改注册表中的路径" class="headerlink" title="更改注册表中的路径"></a>更改注册表中的路径</h3><ol start="0">
+<li>注意：注册表操作位高风险操作，建议操作前先备份注册表。</li>
+<li>按 <code>Win+R</code> 输入 <code>regedit</code> 进入注册表。</li>
+<li>依次展开以下路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code></li>
+<li>在此目录下有多个文件夹，注意 <code>ProfileImagePath</code> 的数据，找到你的原中文用户名，双击进入编辑，将其更改为你的新英文用户名，点击确定。</li>
+</ol>
+<h3 id="回到更改好的用户"><a href="#回到更改好的用户" class="headerlink" title="回到更改好的用户"></a>回到更改好的用户</h3><ol>
+<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:no</span><br></pre></td></tr></table></figure>
+<p>会显示：命令成功完成</p>
+</li>
+<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
+</li>
+<li><p>选择你的账户，输入密码登录。</p>
+</li>
+</ol>
+<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><h3 id="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"><a href="#在更改文件夹名称时，文件夹处于在使用状态，无法更改名称" class="headerlink" title="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"></a>在更改文件夹名称时，文件夹处于在使用状态，无法更改名称</h3><p>解决办法：</p>
+<ol>
+<li>按 <code>Win+R</code>，输入 <code>msconfig</code>，回车。</li>
+<li>在弹出的 <strong>系统配置</strong> 窗口中，选择 <strong>引导</strong> 标签页，然后勾选 <strong>安全引导</strong> 。</li>
+<li>点击 <strong>确定</strong> 并重启电脑，系统将进入安全模式。</li>
+<li>在此模式下对文件夹进行更改。</li>
+<li>改完后按照上述方法再次打开系统配置， <strong>取消</strong> 勾选安全引导</li>
+</ol>
+<h3 id="在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码"><a href="#在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码" class="headerlink" title="在登录 Administrator 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码"></a>在登录 <code>Administrator</code> 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码</h3><p>解决办法：</p>
+<ol>
+<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
+<li>右上角查看方式选择 <strong>类别</strong> 。</li>
+<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 管理其他账户。</li>
+<li>点击 <code>Administrator</code> 账户，修改密码。</li>
+<li>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> ，点击 <code>Administrator</code> 账户，输入密码进行登录。</li>
+</ol>
+<h3 id="我无法选择“更改账户名称”"><a href="#我无法选择“更改账户名称”" class="headerlink" title="我无法选择“更改账户名称”"></a>我无法选择“更改账户名称”</h3><p>解决办法：  通过命令提示符修改用户名  </p>
+<ol>
+<li>以管理员身份打开 命令提示符：</li>
+<li>按 Windows + X，选择 命令提示符（管理员） 或 Windows PowerShell（管理员）。</li>
+<li>输入以下命令来列出所有用户：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure></li>
+<li>找到你想要修改的用户名。</li>
+<li>输入以下命令来修改用户名：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user 旧用户名 新用户名</span><br></pre></td></tr></table></figure></li>
+<li>此方法只能更改登录的显示用户名，但不会更改 C:&#x2F;Users&#x2F;Username 文件夹的名称。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
