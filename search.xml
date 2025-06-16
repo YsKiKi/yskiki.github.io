@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Pyenv安装</title>
+    <url>//posts/pyenv-installation/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#pyenv%E5%AE%89%E8%A3%85">Pyenv安装</a><ul>
+<li><a href="#windows-%E5%AE%89%E8%A3%85-pyenv">Windows 安装 Pyenv</a></li>
+<li><a href="#linux-%E5%AE%89%E8%A3%85pyenv">Linux 安装Pyenv</a></li>
+</ul>
+</li>
+<li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
+<li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
+<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Pyenv安装"><a href="#Pyenv安装" class="headerlink" title="Pyenv安装"></a>Pyenv安装</h3><h4 id="Windows-安装-Pyenv"><a href="#Windows-安装-Pyenv" class="headerlink" title="Windows 安装 Pyenv"></a>Windows 安装 Pyenv</h4><ol>
+<li><p>打开 <code>Powershell</code>  </p>
+</li>
+<li><p>执行以下命令安装 <code>pyenv-win</code>：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://gitee.com/treespacex/pyenv-win/blob/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上述内容为 <code>pyenv-win</code> 的gitee镜像地址，原始命令如下：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>安装完成后，重启 <code>Powershell</code>  </p>
+</li>
+<li><p>运行以下命令验证安装是否成功：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pyenv <span class="literal">--version</span></span><br></pre></td></tr></table></figure></li>
+<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+</li>
+</ol>
+<h4 id="Linux-安装Pyenv"><a href="#Linux-安装Pyenv" class="headerlink" title="Linux 安装Pyenv"></a>Linux 安装Pyenv</h4><ol>
+<li><p>打开终端</p>
+</li>
+<li><p>执行以下命令安装 <code>pyenv</code>：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://pyenv.run | bash</span><br></pre></td></tr></table></figure></li>
+<li><p>验证安装是否成功：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure></li>
+<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+</li>
+</ol>
+<h3 id="Pyenv-相关设置"><a href="#Pyenv-相关设置" class="headerlink" title="Pyenv 相关设置"></a>Pyenv 相关设置</h3><h4 id="通过镜像源下载python版本（以3-10-11为例）："><a href="#通过镜像源下载python版本（以3-10-11为例）：" class="headerlink" title="通过镜像源下载python版本（以3.10.11为例）："></a>通过镜像源下载python版本（以3.10.11为例）：</h4><ol>
+<li><p>设置镜像源的临时环境变量  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux</span></span><br><span class="line">PYTHON_BUILD_MIRROR_URL=<span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="variable">$env:PYTHON_BUILD_MIRROR_URL</span> = <span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>安装指定版本的Python：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv install 3.10.11</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
+<li><p>所有操作系统一致：  </p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
+<li><p>全局设置：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>文件夹设置（在当前目录下生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>临时设置（仅在当前shell会话中生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>Pyenv</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI与人</title>
     <url>//posts/ai-with-human/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -250,6 +318,40 @@
       </tags>
   </entry>
   <entry>
+    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
+    <url>//posts/command-collection/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
+<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>命令行</tag>
+        <tag>screen</tag>
+        <tag>vim</tag>
+        <tag>压缩解压</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于GitHub的博客搭建</title>
     <url>//posts/Blog-building/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -367,108 +469,6 @@
         <tag>GitHub</tag>
         <tag>Blog</tag>
         <tag>Nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pyenv安装</title>
-    <url>//posts/pyenv-installation/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><a href="#pyenv%E5%AE%89%E8%A3%85">Pyenv安装</a><ul>
-<li><a href="#windows-%E5%AE%89%E8%A3%85-pyenv">Windows 安装 Pyenv</a></li>
-<li><a href="#linux-%E5%AE%89%E8%A3%85pyenv">Linux 安装Pyenv</a></li>
-</ul>
-</li>
-<li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
-<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
-<li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
-<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Pyenv安装"><a href="#Pyenv安装" class="headerlink" title="Pyenv安装"></a>Pyenv安装</h3><h4 id="Windows-安装-Pyenv"><a href="#Windows-安装-Pyenv" class="headerlink" title="Windows 安装 Pyenv"></a>Windows 安装 Pyenv</h4><ol>
-<li><p>打开 <code>Powershell</code>  </p>
-</li>
-<li><p>执行以下命令安装 <code>pyenv-win</code>：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://gitee.com/treespacex/pyenv-win/blob/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上述内容为 <code>pyenv-win</code> 的gitee镜像地址，原始命令如下：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>安装完成后，重启 <code>Powershell</code>  </p>
-</li>
-<li><p>运行以下命令验证安装是否成功：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pyenv <span class="literal">--version</span></span><br></pre></td></tr></table></figure></li>
-<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
-</li>
-</ol>
-<h4 id="Linux-安装Pyenv"><a href="#Linux-安装Pyenv" class="headerlink" title="Linux 安装Pyenv"></a>Linux 安装Pyenv</h4><ol>
-<li><p>打开终端</p>
-</li>
-<li><p>执行以下命令安装 <code>pyenv</code>：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://pyenv.run | bash</span><br></pre></td></tr></table></figure></li>
-<li><p>验证安装是否成功：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure></li>
-<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
-</li>
-</ol>
-<h3 id="Pyenv-相关设置"><a href="#Pyenv-相关设置" class="headerlink" title="Pyenv 相关设置"></a>Pyenv 相关设置</h3><h4 id="通过镜像源下载python版本（以3-10-11为例）："><a href="#通过镜像源下载python版本（以3-10-11为例）：" class="headerlink" title="通过镜像源下载python版本（以3.10.11为例）："></a>通过镜像源下载python版本（以3.10.11为例）：</h4><ol>
-<li><p>设置镜像源的临时环境变量  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux</span></span><br><span class="line">PYTHON_BUILD_MIRROR_URL=<span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure>
- <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="variable">$env:PYTHON_BUILD_MIRROR_URL</span> = <span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>安装指定版本的Python：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv install 3.10.11</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
-<li><p>所有操作系统一致：  </p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
-<li><p>全局设置：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
-<li><p>文件夹设置（在当前目录下生效）：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
-<li><p>临时设置（仅在当前shell会话中生效）：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>Pyenv</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
-    <url>//posts/command-collection/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
-<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>命令行</tag>
-        <tag>screen</tag>
-        <tag>vim</tag>
-        <tag>压缩解压</tag>
       </tags>
   </entry>
   <entry>
@@ -658,89 +658,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows优化设置</title>
-    <url>//posts/Windows-delay-update/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><a href="#%E6%9A%82%E5%81%9Cwindows%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0">暂停Windows系统更新</a><ul>
-<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%89%93%E5%BC%80%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8">第一步：打开注册表编辑器</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%AF%BC%E8%88%AA%E8%87%B3%E7%9B%AE%E6%A0%87%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84">第二步：导航至目标注册表路径</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84dword%E5%80%BC">第三步：创建新的DWORD值</a></li>
-<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E4%BF%AE%E6%94%B9%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE">第四步：修改数值数据</a></li>
-</ul>
-</li>
-<li><a href="#%E5%A4%87%E4%BB%BD%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">备份驱动程序</a></li>
-<li><a href="#%E5%B0%86%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%94%B9%E4%B8%BA%E8%80%81%E7%89%88">将右键菜单改为老版</a></li>
-</ul>
-<h3 id="暂停Windows系统更新"><a href="#暂停Windows系统更新" class="headerlink" title="暂停Windows系统更新"></a>暂停Windows系统更新</h3><h4 id="第一步：打开注册表编辑器"><a href="#第一步：打开注册表编辑器" class="headerlink" title="第一步：打开注册表编辑器"></a>第一步：打开注册表编辑器</h4><ol>
-<li>按下键盘上的<code>Win + R</code>组合键，打开”运行”对话框</li>
-<li>在输入框中键入<code>regedit</code></li>
-<li>点击”确定”或按回车键</li>
-</ol>
-<h4 id="第二步：导航至目标注册表路径"><a href="#第二步：导航至目标注册表路径" class="headerlink" title="第二步：导航至目标注册表路径"></a>第二步：导航至目标注册表路径</h4><ol>
-<li><p>在注册表编辑器左侧导航栏中，依次展开以下路径：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果找不到上述路径，请确认您的Windows版本是否支持此设置（Windows 10 1803及以上版本）</p>
-</li>
-</ol>
-<h4 id="第三步：创建新的DWORD值"><a href="#第三步：创建新的DWORD值" class="headerlink" title="第三步：创建新的DWORD值"></a>第三步：创建新的DWORD值</h4><ol>
-<li><p>右键点击”Settings”文件夹</p>
-</li>
-<li><p>选择”新建” &gt; “DWORD (32位)值(D)”</p>
-</li>
-<li><p>将新建的值命名为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FlightSettingsMaxPauseDays</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h4 id="第四步：修改数值数据"><a href="#第四步：修改数值数据" class="headerlink" title="第四步：修改数值数据"></a>第四步：修改数值数据</h4><ol>
-<li><p>双击刚刚创建的<code>FlightSettingsMaxPauseDays</code>项</p>
-</li>
-<li><p>在”数值数据”输入框中输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">65535</span><br></pre></td></tr></table></figure></li>
-<li><p>确保”基数”选项选择为”十进制”</p>
-</li>
-<li><p>点击”确定”保存更改</p>
-</li>
-</ol>
-<h3 id="备份驱动程序"><a href="#备份驱动程序" class="headerlink" title="备份驱动程序"></a>备份驱动程序</h3><ol>
-<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）  </p>
-</li>
-<li><p>执行以下命令将当前所有驱动备份到 <code>D:\DriverBackup</code>（可自定义路径）：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">dism /online /export-driver /destination:D:\DriverBackup</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>操作完成后，驱动文件会被保存到该文件夹中，重装后可用于手动安装或自动恢复。</p>
-</li>
-</ol>
-<h3 id="将右键菜单改为老版"><a href="#将右键菜单改为老版" class="headerlink" title="将右键菜单改为老版"></a>将右键菜单改为老版</h3><ol>
-<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）</p>
-</li>
-<li><p>执行以下命令：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">reg add &quot;HKCU\Software\Classes\CLSID\&#123;<span class="number">86</span>ca1aa0-<span class="number">34</span>aa-<span class="number">4</span>e8b-a509-<span class="number">50</span>c905bae2a2&#125;\InprocServer32&quot; /ve /d &quot;&quot; /f</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><code>reg add</code>：添加注册表项  </p>
-</li>
-<li><p><code>&quot;HKCU\Software\Classes\CLSID\&#123;...&#125;&quot;</code>：路径</p>
-</li>
-<li><p><code>\InprocServer32</code>：要新建的子项</p>
-</li>
-<li><p><code>/ve</code>：表示设置 <code>(默认)</code> 项</p>
-</li>
-<li><p><code>/d &quot;&quot;</code>：值为空字符串</p>
-</li>
-<li><p><code>/f</code>：强制执行，不弹确认</p>
-</li>
-</ul>
-</li>
-<li><p><code>Ctrl+Shift+Esc</code> 打开任务管理器，重启 <code>explorer.exe</code> 进程即可</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>教程</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>将Clash配置到纯cli的Ubuntu</title>
     <url>//posts/clash-for-linux/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -834,6 +751,89 @@
       <tags>
         <tag>Windows</tag>
         <tag>ffmpeg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows优化设置</title>
+    <url>//posts/Windows-delay-update/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#%E6%9A%82%E5%81%9Cwindows%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0">暂停Windows系统更新</a><ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%89%93%E5%BC%80%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8">第一步：打开注册表编辑器</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%AF%BC%E8%88%AA%E8%87%B3%E7%9B%AE%E6%A0%87%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84">第二步：导航至目标注册表路径</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84dword%E5%80%BC">第三步：创建新的DWORD值</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E4%BF%AE%E6%94%B9%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE">第四步：修改数值数据</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%87%E4%BB%BD%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">备份驱动程序</a></li>
+<li><a href="#%E5%B0%86%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%94%B9%E4%B8%BA%E8%80%81%E7%89%88">将右键菜单改为老版</a></li>
+</ul>
+<h3 id="暂停Windows系统更新"><a href="#暂停Windows系统更新" class="headerlink" title="暂停Windows系统更新"></a>暂停Windows系统更新</h3><h4 id="第一步：打开注册表编辑器"><a href="#第一步：打开注册表编辑器" class="headerlink" title="第一步：打开注册表编辑器"></a>第一步：打开注册表编辑器</h4><ol>
+<li>按下键盘上的<code>Win + R</code>组合键，打开”运行”对话框</li>
+<li>在输入框中键入<code>regedit</code></li>
+<li>点击”确定”或按回车键</li>
+</ol>
+<h4 id="第二步：导航至目标注册表路径"><a href="#第二步：导航至目标注册表路径" class="headerlink" title="第二步：导航至目标注册表路径"></a>第二步：导航至目标注册表路径</h4><ol>
+<li><p>在注册表编辑器左侧导航栏中，依次展开以下路径：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果找不到上述路径，请确认您的Windows版本是否支持此设置（Windows 10 1803及以上版本）</p>
+</li>
+</ol>
+<h4 id="第三步：创建新的DWORD值"><a href="#第三步：创建新的DWORD值" class="headerlink" title="第三步：创建新的DWORD值"></a>第三步：创建新的DWORD值</h4><ol>
+<li><p>右键点击”Settings”文件夹</p>
+</li>
+<li><p>选择”新建” &gt; “DWORD (32位)值(D)”</p>
+</li>
+<li><p>将新建的值命名为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FlightSettingsMaxPauseDays</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="第四步：修改数值数据"><a href="#第四步：修改数值数据" class="headerlink" title="第四步：修改数值数据"></a>第四步：修改数值数据</h4><ol>
+<li><p>双击刚刚创建的<code>FlightSettingsMaxPauseDays</code>项</p>
+</li>
+<li><p>在”数值数据”输入框中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">65535</span><br></pre></td></tr></table></figure></li>
+<li><p>确保”基数”选项选择为”十进制”</p>
+</li>
+<li><p>点击”确定”保存更改</p>
+</li>
+</ol>
+<h3 id="备份驱动程序"><a href="#备份驱动程序" class="headerlink" title="备份驱动程序"></a>备份驱动程序</h3><ol>
+<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）  </p>
+</li>
+<li><p>执行以下命令将当前所有驱动备份到 <code>D:\DriverBackup</code>（可自定义路径）：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">dism /online /export-driver /destination:D:\DriverBackup</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作完成后，驱动文件会被保存到该文件夹中，重装后可用于手动安装或自动恢复。</p>
+</li>
+</ol>
+<h3 id="将右键菜单改为老版"><a href="#将右键菜单改为老版" class="headerlink" title="将右键菜单改为老版"></a>将右键菜单改为老版</h3><ol>
+<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）</p>
+</li>
+<li><p>执行以下命令：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">reg add &quot;HKCU\Software\Classes\CLSID\&#123;<span class="number">86</span>ca1aa0-<span class="number">34</span>aa-<span class="number">4</span>e8b-a509-<span class="number">50</span>c905bae2a2&#125;\InprocServer32&quot; /ve /d &quot;&quot; /f</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>reg add</code>：添加注册表项  </p>
+</li>
+<li><p><code>&quot;HKCU\Software\Classes\CLSID\&#123;...&#125;&quot;</code>：路径</p>
+</li>
+<li><p><code>\InprocServer32</code>：要新建的子项</p>
+</li>
+<li><p><code>/ve</code>：表示设置 <code>(默认)</code> 项</p>
+</li>
+<li><p><code>/d &quot;&quot;</code>：值为空字符串</p>
+</li>
+<li><p><code>/f</code>：强制执行，不弹确认</p>
+</li>
+</ul>
+</li>
+<li><p><code>Ctrl+Shift+Esc</code> 打开任务管理器，重启 <code>explorer.exe</code> 进程即可</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -942,42 +942,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何将GitHub博客与域名关联</title>
-    <url>//posts/G-blog-To-domain/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="如何将GitHub博客与域名关联"><a href="#如何将GitHub博客与域名关联" class="headerlink" title="如何将GitHub博客与域名关联"></a>如何将GitHub博客与域名关联</h2><p>书接上文，配置好了在GitHub上的个人博客之后，由于GitHub给我们的网址是 <a href="https://xxx.github.io/">https://xxx.github.io</a> ，有的人可能会觉得不是很美观。那么，有没有什么方法改变这个网址呢？  </p>
-<p>当然是有的啦！首先我们需要准备一个域名</p>
-<h4 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h4><p>国内有很多域名注册商，可以找一个注册域名：  </p>
-<p>老牌域名注册商，运营正规 <a href="https://wanwang.aliyun.com/">万网</a> ⌈阿里云旗下⌋<br>专注于DNS解析服务 <a href="https://dnspod.cloud.tencent.com/">DNSPod</a> ⌈腾讯云旗下⌋  </p>
-<blockquote>
-<p>除了这两家还有很多域名注册商，不喜欢也可以换 新网，西部数码，易名中国 这些</p>
-</blockquote>
-<h4 id="进行DNS解析"><a href="#进行DNS解析" class="headerlink" title="进行DNS解析"></a>进行DNS解析</h4><p>什么？域名不能拿来就用吗？<br>当然不能啦！在使用域名之前，要先对域名进行DNS解析  </p>
-<blockquote>
-<p>域名解析（DNS解析）是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站的一种服务。IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成。  </p>
-</blockquote>
-<p>如果你是通过<code>万网</code>或<code>DNSPod</code>购买的域名，那么在购买完后进入控制台即可进行域名解析<br>或者，你还可以用 <a href="https://www.cloudflare-cn.com/">Cloudflare</a> 等进行解析  </p>
-<p><strong>以cloudflare为例：</strong>  </p>
-<blockquote>
-<p>Cloudflare有自带防DDOS攻击，太香了（doge  </p>
-</blockquote>
-<p>要想用Cloudflare，需要在域名注册商处将<code>NS</code>改为 Cloudflare 的 NS：  </p>
-<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">brad.ns.cloudflare.com</span><br><span class="line">sunny.ns.cloudflare.com</span><br></pre></td></tr></table></figure>
-<p><img src="/Blog-domain/Blog-domain-3.png"><br>在<code>DNS</code>中添加四条<code>A</code>类型，指向GitHub服务器：  </p>
-<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line"><span class="number">185.199.108.153</span></span><br><span class="line"><span class="number">185.199.109.153</span></span><br><span class="line"><span class="number">185.199.110.153</span></span><br><span class="line"><span class="number">185.199.111.153</span></span><br></pre></td></tr></table></figure>
-<p>添加一条www记录，让你的好友习惯性输入<code>www</code>后也可以访问你的博客：<br><img src="/Blog-domain/Blog-domain-1.png"><br>代理状态改为<code>已代理</code>，国内访问也很快啦！</p>
-<h4 id="将域名关联到GitHub"><a href="#将域名关联到GitHub" class="headerlink" title="将域名关联到GitHub"></a>将域名关联到GitHub</h4><p>我们已经成功解析了域名，将域名关联到GitHub后，就可以输入你的域名访问博客了  </p>
-<p>在输入域名之前，我们需要在本地 Blog 文件夹目录下的 sources 文件夹中新建一个 CHAME 文件：<br>新建 文本文档(.txt)&gt;&gt;双击打开编辑，在里面输入你的域名：<br><img src="/Blog-domain/Blog-domain-4.png"><br>保存，将文件后缀名<code>.txt</code>删除，返回 Blog 根目录，Hexo三连上传到GitHub    </p>
-<p>打开你的 <strong>博客仓库</strong> ，点击：Settings-Pages，在这里输入你的域名：<br><img src="/Blog-domain/Blog-domain-2.png"><br>点击<code>save</code>，GitHub会自动对你的DNS进行检测，显示<code>successful</code>的时候就大功告成啦！</p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>域名</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在Ubuntu上配置nodejs和redis</title>
     <url>//posts/Ubuntu-nr-help/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="在Ubuntu上配置nodejs和redis（记录篇）"><a href="#在Ubuntu上配置nodejs和redis（记录篇）" class="headerlink" title="在Ubuntu上配置nodejs和redis（记录篇）"></a>在Ubuntu上配置nodejs和redis（记录篇）</h2><p>由于嫌弃服务器上用Windows的话图形化界面太耗资源，这两天把服务器系统换成了Ubuntu，虽然速度提升聊胜于无，但蚊子腿再小也是肉~o.0~<br>为了防止云服务器到期的时候再配置又要查资料，在这里写一篇记录篇，查起来也方便  </p>
@@ -1027,6 +991,42 @@
         <tag>Nodejs</tag>
         <tag>Ubuntu22.04</tag>
         <tag>Redis-Server</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何将GitHub博客与域名关联</title>
+    <url>//posts/G-blog-To-domain/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="如何将GitHub博客与域名关联"><a href="#如何将GitHub博客与域名关联" class="headerlink" title="如何将GitHub博客与域名关联"></a>如何将GitHub博客与域名关联</h2><p>书接上文，配置好了在GitHub上的个人博客之后，由于GitHub给我们的网址是 <a href="https://xxx.github.io/">https://xxx.github.io</a> ，有的人可能会觉得不是很美观。那么，有没有什么方法改变这个网址呢？  </p>
+<p>当然是有的啦！首先我们需要准备一个域名</p>
+<h4 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h4><p>国内有很多域名注册商，可以找一个注册域名：  </p>
+<p>老牌域名注册商，运营正规 <a href="https://wanwang.aliyun.com/">万网</a> ⌈阿里云旗下⌋<br>专注于DNS解析服务 <a href="https://dnspod.cloud.tencent.com/">DNSPod</a> ⌈腾讯云旗下⌋  </p>
+<blockquote>
+<p>除了这两家还有很多域名注册商，不喜欢也可以换 新网，西部数码，易名中国 这些</p>
+</blockquote>
+<h4 id="进行DNS解析"><a href="#进行DNS解析" class="headerlink" title="进行DNS解析"></a>进行DNS解析</h4><p>什么？域名不能拿来就用吗？<br>当然不能啦！在使用域名之前，要先对域名进行DNS解析  </p>
+<blockquote>
+<p>域名解析（DNS解析）是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站的一种服务。IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成。  </p>
+</blockquote>
+<p>如果你是通过<code>万网</code>或<code>DNSPod</code>购买的域名，那么在购买完后进入控制台即可进行域名解析<br>或者，你还可以用 <a href="https://www.cloudflare-cn.com/">Cloudflare</a> 等进行解析  </p>
+<p><strong>以cloudflare为例：</strong>  </p>
+<blockquote>
+<p>Cloudflare有自带防DDOS攻击，太香了（doge  </p>
+</blockquote>
+<p>要想用Cloudflare，需要在域名注册商处将<code>NS</code>改为 Cloudflare 的 NS：  </p>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">brad.ns.cloudflare.com</span><br><span class="line">sunny.ns.cloudflare.com</span><br></pre></td></tr></table></figure>
+<p><img src="/Blog-domain/Blog-domain-3.png"><br>在<code>DNS</code>中添加四条<code>A</code>类型，指向GitHub服务器：  </p>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line"><span class="number">185.199.108.153</span></span><br><span class="line"><span class="number">185.199.109.153</span></span><br><span class="line"><span class="number">185.199.110.153</span></span><br><span class="line"><span class="number">185.199.111.153</span></span><br></pre></td></tr></table></figure>
+<p>添加一条www记录，让你的好友习惯性输入<code>www</code>后也可以访问你的博客：<br><img src="/Blog-domain/Blog-domain-1.png"><br>代理状态改为<code>已代理</code>，国内访问也很快啦！</p>
+<h4 id="将域名关联到GitHub"><a href="#将域名关联到GitHub" class="headerlink" title="将域名关联到GitHub"></a>将域名关联到GitHub</h4><p>我们已经成功解析了域名，将域名关联到GitHub后，就可以输入你的域名访问博客了  </p>
+<p>在输入域名之前，我们需要在本地 Blog 文件夹目录下的 sources 文件夹中新建一个 CHAME 文件：<br>新建 文本文档(.txt)&gt;&gt;双击打开编辑，在里面输入你的域名：<br><img src="/Blog-domain/Blog-domain-4.png"><br>保存，将文件后缀名<code>.txt</code>删除，返回 Blog 根目录，Hexo三连上传到GitHub    </p>
+<p>打开你的 <strong>博客仓库</strong> ，点击：Settings-Pages，在这里输入你的域名：<br><img src="/Blog-domain/Blog-domain-2.png"><br>点击<code>save</code>，GitHub会自动对你的DNS进行检测，显示<code>successful</code>的时候就大功告成啦！</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>域名</tag>
       </tags>
   </entry>
 </search>
