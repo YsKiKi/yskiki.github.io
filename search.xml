@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Pyenv安装</title>
+    <url>//posts/pyenv-installation/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#pyenv%E5%AE%89%E8%A3%85">Pyenv安装</a><ul>
+<li><a href="#windows-%E5%AE%89%E8%A3%85-pyenv">Windows 安装 Pyenv</a></li>
+<li><a href="#linux-%E5%AE%89%E8%A3%85pyenv">Linux 安装Pyenv</a></li>
+</ul>
+</li>
+<li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
+<li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
+<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Pyenv安装"><a href="#Pyenv安装" class="headerlink" title="Pyenv安装"></a>Pyenv安装</h3><h4 id="Windows-安装-Pyenv"><a href="#Windows-安装-Pyenv" class="headerlink" title="Windows 安装 Pyenv"></a>Windows 安装 Pyenv</h4><ol>
+<li><p>打开 <code>Powershell</code>  </p>
+</li>
+<li><p>执行以下命令安装 <code>pyenv-win</code>：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://gitee.com/treespacex/pyenv-win/blob/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上述内容为 <code>pyenv-win</code> 的gitee镜像地址，原始命令如下：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>安装完成后，重启 <code>Powershell</code>  </p>
+</li>
+<li><p>运行以下命令验证安装是否成功：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pyenv <span class="literal">--version</span></span><br></pre></td></tr></table></figure></li>
+<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+</li>
+</ol>
+<h4 id="Linux-安装Pyenv"><a href="#Linux-安装Pyenv" class="headerlink" title="Linux 安装Pyenv"></a>Linux 安装Pyenv</h4><ol>
+<li><p>打开终端</p>
+</li>
+<li><p>执行以下命令安装 <code>pyenv</code>：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://pyenv.run | bash</span><br></pre></td></tr></table></figure></li>
+<li><p>验证安装是否成功：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure></li>
+<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+</li>
+</ol>
+<h3 id="Pyenv-相关设置"><a href="#Pyenv-相关设置" class="headerlink" title="Pyenv 相关设置"></a>Pyenv 相关设置</h3><h4 id="通过镜像源下载python版本（以3-10-11为例）："><a href="#通过镜像源下载python版本（以3-10-11为例）：" class="headerlink" title="通过镜像源下载python版本（以3.10.11为例）："></a>通过镜像源下载python版本（以3.10.11为例）：</h4><ol>
+<li><p>设置镜像源的临时环境变量  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux</span></span><br><span class="line">PYTHON_BUILD_MIRROR_URL=<span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="variable">$env:PYTHON_BUILD_MIRROR_URL</span> = <span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>安装指定版本的Python：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv install 3.10.11</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
+<li><p>所有操作系统一致：  </p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
+<li><p>全局设置：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>文件夹设置（在当前目录下生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>临时设置（仅在当前shell会话中生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>Pyenv</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI与人</title>
     <url>//posts/ai-with-human/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -404,71 +472,86 @@
       </tags>
   </entry>
   <entry>
-    <title>Pyenv安装</title>
-    <url>//posts/pyenv-installation/</url>
+    <title>Windows优化设置</title>
+    <url>//posts/Windows-delay-update/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><a href="#pyenv%E5%AE%89%E8%A3%85">Pyenv安装</a><ul>
-<li><a href="#windows-%E5%AE%89%E8%A3%85-pyenv">Windows 安装 Pyenv</a></li>
-<li><a href="#linux-%E5%AE%89%E8%A3%85pyenv">Linux 安装Pyenv</a></li>
+<li><a href="#%E6%9A%82%E5%81%9Cwindows%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0">暂停Windows系统更新</a><ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%89%93%E5%BC%80%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8">第一步：打开注册表编辑器</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%AF%BC%E8%88%AA%E8%87%B3%E7%9B%AE%E6%A0%87%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84">第二步：导航至目标注册表路径</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84dword%E5%80%BC">第三步：创建新的DWORD值</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E4%BF%AE%E6%94%B9%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE">第四步：修改数值数据</a></li>
 </ul>
 </li>
-<li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
-<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
-<li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
-<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
+<li><a href="#%E5%A4%87%E4%BB%BD%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">备份驱动程序</a></li>
+<li><a href="#%E5%B0%86%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%94%B9%E4%B8%BA%E8%80%81%E7%89%88">将右键菜单改为老版</a></li>
 </ul>
+<h3 id="暂停Windows系统更新"><a href="#暂停Windows系统更新" class="headerlink" title="暂停Windows系统更新"></a>暂停Windows系统更新</h3><h4 id="第一步：打开注册表编辑器"><a href="#第一步：打开注册表编辑器" class="headerlink" title="第一步：打开注册表编辑器"></a>第一步：打开注册表编辑器</h4><ol>
+<li>按下键盘上的<code>Win + R</code>组合键，打开”运行”对话框</li>
+<li>在输入框中键入<code>regedit</code></li>
+<li>点击”确定”或按回车键</li>
+</ol>
+<h4 id="第二步：导航至目标注册表路径"><a href="#第二步：导航至目标注册表路径" class="headerlink" title="第二步：导航至目标注册表路径"></a>第二步：导航至目标注册表路径</h4><ol>
+<li><p>在注册表编辑器左侧导航栏中，依次展开以下路径：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<h3 id="Pyenv安装"><a href="#Pyenv安装" class="headerlink" title="Pyenv安装"></a>Pyenv安装</h3><h4 id="Windows-安装-Pyenv"><a href="#Windows-安装-Pyenv" class="headerlink" title="Windows 安装 Pyenv"></a>Windows 安装 Pyenv</h4><ol>
-<li><p>打开 <code>Powershell</code>  </p>
-</li>
-<li><p>执行以下命令安装 <code>pyenv-win</code>：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://gitee.com/treespacex/pyenv-win/blob/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上述内容为 <code>pyenv-win</code> 的gitee镜像地址，原始命令如下：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>安装完成后，重启 <code>Powershell</code>  </p>
-</li>
-<li><p>运行以下命令验证安装是否成功：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pyenv <span class="literal">--version</span></span><br></pre></td></tr></table></figure></li>
-<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+<li><p>如果找不到上述路径，请确认您的Windows版本是否支持此设置（Windows 10 1803及以上版本）</p>
 </li>
 </ol>
-<h4 id="Linux-安装Pyenv"><a href="#Linux-安装Pyenv" class="headerlink" title="Linux 安装Pyenv"></a>Linux 安装Pyenv</h4><ol>
-<li><p>打开终端</p>
+<h4 id="第三步：创建新的DWORD值"><a href="#第三步：创建新的DWORD值" class="headerlink" title="第三步：创建新的DWORD值"></a>第三步：创建新的DWORD值</h4><ol>
+<li><p>右键点击”Settings”文件夹</p>
 </li>
-<li><p>执行以下命令安装 <code>pyenv</code>：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://pyenv.run | bash</span><br></pre></td></tr></table></figure></li>
-<li><p>验证安装是否成功：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure></li>
-<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+<li><p>选择”新建” &gt; “DWORD (32位)值(D)”</p>
+</li>
+<li><p>将新建的值命名为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FlightSettingsMaxPauseDays</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="第四步：修改数值数据"><a href="#第四步：修改数值数据" class="headerlink" title="第四步：修改数值数据"></a>第四步：修改数值数据</h4><ol>
+<li><p>双击刚刚创建的<code>FlightSettingsMaxPauseDays</code>项</p>
+</li>
+<li><p>在”数值数据”输入框中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">65535</span><br></pre></td></tr></table></figure></li>
+<li><p>确保”基数”选项选择为”十进制”</p>
+</li>
+<li><p>点击”确定”保存更改</p>
 </li>
 </ol>
-<h3 id="Pyenv-相关设置"><a href="#Pyenv-相关设置" class="headerlink" title="Pyenv 相关设置"></a>Pyenv 相关设置</h3><h4 id="通过镜像源下载python版本（以3-10-11为例）："><a href="#通过镜像源下载python版本（以3-10-11为例）：" class="headerlink" title="通过镜像源下载python版本（以3.10.11为例）："></a>通过镜像源下载python版本（以3.10.11为例）：</h4><ol>
-<li><p>设置镜像源的临时环境变量  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux</span></span><br><span class="line">PYTHON_BUILD_MIRROR_URL=<span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure>
- <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="variable">$env:PYTHON_BUILD_MIRROR_URL</span> = <span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>安装指定版本的Python：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv install 3.10.11</span><br></pre></td></tr></table></figure></li>
+<h3 id="备份驱动程序"><a href="#备份驱动程序" class="headerlink" title="备份驱动程序"></a>备份驱动程序</h3><ol>
+<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）  </p>
+</li>
+<li><p>执行以下命令将当前所有驱动备份到 <code>D:\DriverBackup</code>（可自定义路径）：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">dism /online /export-driver /destination:D:\DriverBackup</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作完成后，驱动文件会被保存到该文件夹中，重装后可用于手动安装或自动恢复。</p>
+</li>
 </ol>
-<h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
-<li><p>所有操作系统一致：  </p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
+<h3 id="将右键菜单改为老版"><a href="#将右键菜单改为老版" class="headerlink" title="将右键菜单改为老版"></a>将右键菜单改为老版</h3><ol>
+<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）</p>
+</li>
+<li><p>执行以下命令：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">reg add &quot;HKCU\Software\Classes\CLSID\&#123;<span class="number">86</span>ca1aa0-<span class="number">34</span>aa-<span class="number">4</span>e8b-a509-<span class="number">50</span>c905bae2a2&#125;\InprocServer32&quot; /ve /d &quot;&quot; /f</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>reg add</code>：添加注册表项  </p>
+</li>
+<li><p><code>&quot;HKCU\Software\Classes\CLSID\&#123;...&#125;&quot;</code>：路径</p>
+</li>
+<li><p><code>\InprocServer32</code>：要新建的子项</p>
+</li>
+<li><p><code>/ve</code>：表示设置 <code>(默认)</code> 项</p>
+</li>
+<li><p><code>/d &quot;&quot;</code>：值为空字符串</p>
+</li>
+<li><p><code>/f</code>：强制执行，不弹确认</p>
+</li>
 </ul>
-<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
-<li><p>全局设置：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
-<li><p>文件夹设置（在当前目录下生效）：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
-<li><p>临时设置（仅在当前shell会话中生效）：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
-</ul>
+</li>
+<li><p><code>Ctrl+Shift+Esc</code> 打开任务管理器，重启 <code>explorer.exe</code> 进程即可</p>
+</li>
+</ol>
 ]]></content>
       <tags>
-        <tag>Python</tag>
-        <tag>Pyenv</tag>
         <tag>教程</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -586,140 +669,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows优化设置</title>
-    <url>//posts/Windows-delay-update/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><a href="#%E6%9A%82%E5%81%9Cwindows%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0">暂停Windows系统更新</a><ul>
-<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%89%93%E5%BC%80%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8">第一步：打开注册表编辑器</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%AF%BC%E8%88%AA%E8%87%B3%E7%9B%AE%E6%A0%87%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84">第二步：导航至目标注册表路径</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84dword%E5%80%BC">第三步：创建新的DWORD值</a></li>
-<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E4%BF%AE%E6%94%B9%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE">第四步：修改数值数据</a></li>
-</ul>
-</li>
-<li><a href="#%E5%A4%87%E4%BB%BD%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">备份驱动程序</a></li>
-<li><a href="#%E5%B0%86%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%94%B9%E4%B8%BA%E8%80%81%E7%89%88">将右键菜单改为老版</a></li>
-</ul>
-<h3 id="暂停Windows系统更新"><a href="#暂停Windows系统更新" class="headerlink" title="暂停Windows系统更新"></a>暂停Windows系统更新</h3><h4 id="第一步：打开注册表编辑器"><a href="#第一步：打开注册表编辑器" class="headerlink" title="第一步：打开注册表编辑器"></a>第一步：打开注册表编辑器</h4><ol>
-<li>按下键盘上的<code>Win + R</code>组合键，打开”运行”对话框</li>
-<li>在输入框中键入<code>regedit</code></li>
-<li>点击”确定”或按回车键</li>
-</ol>
-<h4 id="第二步：导航至目标注册表路径"><a href="#第二步：导航至目标注册表路径" class="headerlink" title="第二步：导航至目标注册表路径"></a>第二步：导航至目标注册表路径</h4><ol>
-<li><p>在注册表编辑器左侧导航栏中，依次展开以下路径：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果找不到上述路径，请确认您的Windows版本是否支持此设置（Windows 10 1803及以上版本）</p>
-</li>
-</ol>
-<h4 id="第三步：创建新的DWORD值"><a href="#第三步：创建新的DWORD值" class="headerlink" title="第三步：创建新的DWORD值"></a>第三步：创建新的DWORD值</h4><ol>
-<li><p>右键点击”Settings”文件夹</p>
-</li>
-<li><p>选择”新建” &gt; “DWORD (32位)值(D)”</p>
-</li>
-<li><p>将新建的值命名为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FlightSettingsMaxPauseDays</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h4 id="第四步：修改数值数据"><a href="#第四步：修改数值数据" class="headerlink" title="第四步：修改数值数据"></a>第四步：修改数值数据</h4><ol>
-<li><p>双击刚刚创建的<code>FlightSettingsMaxPauseDays</code>项</p>
-</li>
-<li><p>在”数值数据”输入框中输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">65535</span><br></pre></td></tr></table></figure></li>
-<li><p>确保”基数”选项选择为”十进制”</p>
-</li>
-<li><p>点击”确定”保存更改</p>
-</li>
-</ol>
-<h3 id="备份驱动程序"><a href="#备份驱动程序" class="headerlink" title="备份驱动程序"></a>备份驱动程序</h3><ol>
-<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）  </p>
-</li>
-<li><p>执行以下命令将当前所有驱动备份到 <code>D:\DriverBackup</code>（可自定义路径）：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">dism /online /export-driver /destination:D:\DriverBackup</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>操作完成后，驱动文件会被保存到该文件夹中，重装后可用于手动安装或自动恢复。</p>
-</li>
-</ol>
-<h3 id="将右键菜单改为老版"><a href="#将右键菜单改为老版" class="headerlink" title="将右键菜单改为老版"></a>将右键菜单改为老版</h3><ol>
-<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）</p>
-</li>
-<li><p>执行以下命令：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">reg add &quot;HKCU\Software\Classes\CLSID\&#123;<span class="number">86</span>ca1aa0-<span class="number">34</span>aa-<span class="number">4</span>e8b-a509-<span class="number">50</span>c905bae2a2&#125;\InprocServer32&quot; /ve /d &quot;&quot; /f</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><code>reg add</code>：添加注册表项  </p>
-</li>
-<li><p><code>&quot;HKCU\Software\Classes\CLSID\&#123;...&#125;&quot;</code>：路径</p>
-</li>
-<li><p><code>\InprocServer32</code>：要新建的子项</p>
-</li>
-<li><p><code>/ve</code>：表示设置 <code>(默认)</code> 项</p>
-</li>
-<li><p><code>/d &quot;&quot;</code>：值为空字符串</p>
-</li>
-<li><p><code>/f</code>：强制执行，不弹确认</p>
-</li>
-</ul>
-</li>
-<li><p><code>Ctrl+Shift+Esc</code> 打开任务管理器，重启 <code>explorer.exe</code> 进程即可</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>教程</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>将Clash配置到纯cli的Ubuntu</title>
-    <url>//posts/clash-for-linux/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><a href="#%E4%B8%8B%E8%BD%BD%E6%A0%B8%E5%BF%83%E6%96%87%E4%BB%B6">下载核心文件</a></li>
-<li><a href="#%E8%B5%8B%E4%BA%88clash%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90">赋予Clash可执行权限</a></li>
-<li><a href="#%E8%AF%95%E5%90%AF%E5%8A%A8clash">试启动Clash</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">修改配置文件</a></li>
-<li><a href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">设置环境变量</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%90%86%E6%83%85%E5%86%B5">测试代理情况</a></li>
-</ul>
-<h3 id="下载核心文件"><a href="#下载核心文件" class="headerlink" title="下载核心文件"></a>下载核心文件</h3><blockquote>
-<p>自己找资源</p>
-<blockquote>
-<p>不要用root用户，<code>su</code>到普通用户</p>
-</blockquote>
-</blockquote>
-<h3 id="赋予Clash可执行权限"><a href="#赋予Clash可执行权限" class="headerlink" title="赋予Clash可执行权限"></a>赋予Clash可执行权限</h3><p>给Clash核心文件创建一个目录，<code>cd</code>到目录里：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chomd -x <span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="试启动Clash"><a href="#试启动Clash" class="headerlink" title="试启动Clash"></a>试启动Clash</h3><p>在Clash可执行文件的目录下直接执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
-<p>配置文件会自己生成</p>
-<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span>  <span class="comment">#回到主目录</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> .config/clash</span><br><span class="line">vi config.yaml</span><br><span class="line"><span class="comment">#这边建议直接用Clash-for-Windows获取config之后直接上传替换文件</span></span><br></pre></td></tr></table></figure>
-<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
-<p>值得注意的是:  </p>
-<ol>
-<li>这样设置仅在当前会话有效，换言之重开个ssh连接或者screen窗口，在新建的窗口中环境变量都不会生效  </li>
-<li>端口要与<code>config.yaml</code>中相同</li>
-</ol>
-<p>要使上述情况生效，可以：<br>编辑<code>.bashrc</code>或<code>.zshrc</code>文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.zshrc</span><br></pre></td></tr></table></figure>
-<p>然后在文件末尾添加：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
-<p>保存文件后，执行以下命令使更改生效：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
-<h3 id="测试代理情况"><a href="#测试代理情况" class="headerlink" title="测试代理情况"></a>测试代理情况</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl www.google.com -I</span><br></pre></td></tr></table></figure>
-<p>如果响应返回<code>200</code>，即为代理配置成功</p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-        <tag>ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows更改用户名</title>
     <url>//posts/Windows-change-Username/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
@@ -789,6 +738,162 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo 服务器部署</title>
+    <url>//posts/hexo-server-deploy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#hexo-%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8--nginx">Hexo 博客部署到 Linux 服务器 + Nginx</a><ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%87%86%E5%A4%87">第一步：服务器准备</a><ul>
+<li><a href="#1-%E5%AE%89%E8%A3%85-nginx">1. 安装 Nginx</a></li>
+<li><a href="#2-%E5%88%9B%E5%BB%BA%E7%BD%91%E7%AB%99%E7%9B%AE%E5%BD%95">2. 创建网站目录</a></li>
+<li><a href="#3-%E9%85%8D%E7%BD%AE-nginx">3. 配置 Nginx</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE-git-%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2">第二步：服务器配置 Git 自动部署</a><ul>
+<li><a href="#1-%E5%AE%89%E8%A3%85-git%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF">1. 安装 Git（服务器端）</a></li>
+<li><a href="#2-%E5%88%9B%E5%BB%BA%E8%A3%B8%E4%BB%93%E5%BA%93">2. 创建裸仓库</a></li>
+<li><a href="#3-%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E8%84%9A%E6%9C%AC">3. 设置自动部署脚本</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE-hexo-%E7%9A%84-git-%E9%83%A8%E7%BD%B2">第三步：本地配置 Hexo 的 Git 部署</a><ul>
+<li><a href="#1-%E4%BF%AE%E6%94%B9%E6%9C%AC%E5%9C%B0-hexo-%E7%9A%84-_configyml">1. 修改本地 Hexo 的 <code>_config.yml</code></a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85-hexo-git-%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6">2. 安装 Hexo Git 部署插件</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B">第四步：部署流程</a><ul>
+<li><a href="#1-%E6%9C%AC%E5%9C%B0%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6">1. 本地生成静态文件</a></li>
+<li><a href="#2-%E6%8E%A8%E9%80%81%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8">2. 推送到服务器</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%E5%8F%AF%E9%80%89%E9%85%8D%E7%BD%AE-ssh-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95">第五步（可选）：配置 SSH 免密登录</a><ul>
+<li><a href="#%E6%9C%AC%E5%9C%B0%E7%94%9F%E6%88%90-ssh-%E5%AF%86%E9%92%A5">本地生成 SSH 密钥</a></li>
+<li><a href="#%E4%B8%8A%E4%BC%A0%E5%85%AC%E9%92%A5%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8">上传公钥到服务器</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E6%AD%A5%E8%AE%BF%E9%97%AE%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2">第六步：访问你的博客</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">常见问题解决</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Hexo-博客部署到-Linux-服务器-Nginx"><a href="#Hexo-博客部署到-Linux-服务器-Nginx" class="headerlink" title="Hexo 博客部署到 Linux 服务器 + Nginx"></a>Hexo 博客部署到 Linux 服务器 + Nginx</h2><h3 id="第一步：服务器准备"><a href="#第一步：服务器准备" class="headerlink" title="第一步：服务器准备"></a>第一步：服务器准备</h3><p><strong>适用系统：</strong> Debian&#x2F;Ubuntu 等类 Unix 系统</p>
+<h4 id="1-安装-Nginx"><a href="#1-安装-Nginx" class="headerlink" title="1. 安装 Nginx"></a>1. 安装 Nginx</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install nginx -y</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-创建网站目录"><a href="#2-创建网站目录" class="headerlink" title="2. 创建网站目录"></a>2. 创建网站目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">mkdir</span> -p /var/www/hexo</span><br><span class="line">sudo <span class="built_in">chown</span> -R <span class="variable">$USER</span>:<span class="variable">$USER</span> /var/www/hexo</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-配置-Nginx"><a href="#3-配置-Nginx" class="headerlink" title="3. 配置 Nginx"></a>3. 配置 Nginx</h4><p>编辑默认配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/nginx/sites-available/default</span><br></pre></td></tr></table></figure>
+
+<p>替换 <code>server</code> 内容为：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> _;  <span class="comment"># 可改成你的域名</span></span><br><span class="line"></span><br><span class="line">    <span class="attribute">root</span> /var/www/hexo;</span><br><span class="line">    <span class="attribute">index</span> index.html;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ =<span class="number">404</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试配置并重启：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo nginx -t</span><br><span class="line">sudo systemctl restart nginx</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="第二步：服务器配置-Git-自动部署"><a href="#第二步：服务器配置-Git-自动部署" class="headerlink" title="第二步：服务器配置 Git 自动部署"></a>第二步：服务器配置 Git 自动部署</h3><h4 id="1-安装-Git（服务器端）"><a href="#1-安装-Git（服务器端）" class="headerlink" title="1. 安装 Git（服务器端）"></a>1. 安装 Git（服务器端）</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install git -y</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-创建裸仓库"><a href="#2-创建裸仓库" class="headerlink" title="2. 创建裸仓库"></a>2. 创建裸仓库</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/hexo.git &amp;&amp; <span class="built_in">cd</span> ~/hexo.git</span><br><span class="line">git init --bare</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-设置自动部署脚本"><a href="#3-设置自动部署脚本" class="headerlink" title="3. 设置自动部署脚本"></a>3. 设置自动部署脚本</h4><p>编辑钩子脚本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/hexo.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+
+<p>写入内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git --work-tree=/var/www/hexo --git-dir=/home/<span class="variable">$USER</span>/hexo.git checkout -f</span><br></pre></td></tr></table></figure>
+
+<p>然后：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x ~/hexo.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="第三步：本地配置-Hexo-的-Git-部署"><a href="#第三步：本地配置-Hexo-的-Git-部署" class="headerlink" title="第三步：本地配置 Hexo 的 Git 部署"></a>第三步：本地配置 Hexo 的 Git 部署</h3><h4 id="1-修改本地-Hexo-的-config-yml"><a href="#1-修改本地-Hexo-的-config-yml" class="headerlink" title="1. 修改本地 Hexo 的 _config.yml"></a>1. 修改本地 Hexo 的 <code>_config.yml</code></h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">youruser@your.server.ip:/home/youruser/hexo.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-安装-Hexo-Git-部署插件"><a href="#2-安装-Hexo-Git-部署插件" class="headerlink" title="2. 安装 Hexo Git 部署插件"></a>2. 安装 Hexo Git 部署插件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="第四步：部署流程"><a href="#第四步：部署流程" class="headerlink" title="第四步：部署流程"></a>第四步：部署流程</h3><h4 id="1-本地生成静态文件"><a href="#1-本地生成静态文件" class="headerlink" title="1. 本地生成静态文件"></a>1. 本地生成静态文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-推送到服务器"><a href="#2-推送到服务器" class="headerlink" title="2. 推送到服务器"></a>2. 推送到服务器</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="第五步（可选）：配置-SSH-免密登录"><a href="#第五步（可选）：配置-SSH-免密登录" class="headerlink" title="第五步（可选）：配置 SSH 免密登录"></a>第五步（可选）：配置 SSH 免密登录</h3><h4 id="本地生成-SSH-密钥"><a href="#本地生成-SSH-密钥" class="headerlink" title="本地生成 SSH 密钥"></a>本地生成 SSH 密钥</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+
+<h4 id="上传公钥到服务器"><a href="#上传公钥到服务器" class="headerlink" title="上传公钥到服务器"></a>上传公钥到服务器</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-copy-id youruser@your.server.ip</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="第六步：访问你的博客"><a href="#第六步：访问你的博客" class="headerlink" title="第六步：访问你的博客"></a>第六步：访问你的博客</h3><p>打开浏览器访问：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://your.server.ip</span><br></pre></td></tr></table></figure>
+
+<p>或者绑定域名后访问你的域名。</p>
+<hr>
+<h3 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a>常见问题解决</h3><ul>
+<li><p><strong>403 Forbidden：</strong></p>
+<ul>
+<li><p>确认 <code>/var/www/hexo</code> 有 <code>index.html</code></p>
+</li>
+<li><p>设置权限：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> -R 755 /var/www/hexo</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>无法写入 &#x2F;var&#x2F;www&#x2F;hexo：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> -R youruser:youruser /var/www/hexo</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将Clash配置到纯cli的Ubuntu</title>
+    <url>//posts/clash-for-linux/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E6%A0%B8%E5%BF%83%E6%96%87%E4%BB%B6">下载核心文件</a></li>
+<li><a href="#%E8%B5%8B%E4%BA%88clash%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90">赋予Clash可执行权限</a></li>
+<li><a href="#%E8%AF%95%E5%90%AF%E5%8A%A8clash">试启动Clash</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">修改配置文件</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">设置环境变量</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%90%86%E6%83%85%E5%86%B5">测试代理情况</a></li>
+</ul>
+<h3 id="下载核心文件"><a href="#下载核心文件" class="headerlink" title="下载核心文件"></a>下载核心文件</h3><blockquote>
+<p>自己找资源</p>
+<blockquote>
+<p>不要用root用户，<code>su</code>到普通用户</p>
+</blockquote>
+</blockquote>
+<h3 id="赋予Clash可执行权限"><a href="#赋予Clash可执行权限" class="headerlink" title="赋予Clash可执行权限"></a>赋予Clash可执行权限</h3><p>给Clash核心文件创建一个目录，<code>cd</code>到目录里：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chomd -x <span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="试启动Clash"><a href="#试启动Clash" class="headerlink" title="试启动Clash"></a>试启动Clash</h3><p>在Clash可执行文件的目录下直接执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
+<p>配置文件会自己生成</p>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span>  <span class="comment">#回到主目录</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> .config/clash</span><br><span class="line">vi config.yaml</span><br><span class="line"><span class="comment">#这边建议直接用Clash-for-Windows获取config之后直接上传替换文件</span></span><br></pre></td></tr></table></figure>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
+<p>值得注意的是:  </p>
+<ol>
+<li>这样设置仅在当前会话有效，换言之重开个ssh连接或者screen窗口，在新建的窗口中环境变量都不会生效  </li>
+<li>端口要与<code>config.yaml</code>中相同</li>
+</ol>
+<p>要使上述情况生效，可以：<br>编辑<code>.bashrc</code>或<code>.zshrc</code>文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>然后在文件末尾添加：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
+<p>保存文件后，执行以下命令使更改生效：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+<h3 id="测试代理情况"><a href="#测试代理情况" class="headerlink" title="测试代理情况"></a>测试代理情况</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl www.google.com -I</span><br></pre></td></tr></table></figure>
+<p>如果响应返回<code>200</code>，即为代理配置成功</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
