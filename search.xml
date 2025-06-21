@@ -1,228 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>基于GitHub的博客搭建</title>
-    <url>//posts/Blog-building/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><strong>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</strong></li>
-<li><strong>如不具备上述能力，请立即关闭此教程。</strong></li>
-</ul>
-<ul>
-<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
-<li><a href="#github%E8%B4%A6%E5%8F%B7%E6%B3%A8%E5%86%8C">GitHub账号注册</a></li>
-<li><a href="#git%E9%80%9A%E8%BF%87ssh%E7%BB%91%E5%AE%9Agithub">Git通过ssh绑定GitHub</a></li>
-<li><a href="#nodejs%E9%85%8D%E7%BD%AE">Nodejs配置</a><ul>
-<li><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">设置npm在安装全局模块时的路径和环境变量</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95">测试</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%89%E8%A3%85hexo">安装Hexo</a><ul>
-<li><a href="#%E5%88%9B%E5%BB%BAgithub-pages">创建GitHub Pages</a></li>
-<li><a href="#%E6%AD%A3%E5%BC%8F%E5%AE%89%E8%A3%85hexo">正式安装Hexo</a></li>
-<li><a href="#%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0github">将Hexo部署到GitHub</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
-<p>↓ 附上下载链接 ↓</p>
-<ul>
-<li>Windows<br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/Git-2.43.0-64-bit.exe">Git-v2.43.0-x64</a><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/node-v18.19.0-x64.msi">node-v18.19.0-x64</a></li>
-</ul>
-<h3 id="GitHub账号注册"><a href="#GitHub账号注册" class="headerlink" title="GitHub账号注册"></a>GitHub账号注册</h3><blockquote>
-<p>Github是全球最大的程序员交友♂平台（doge）</p>
-<blockquote>
-<p>有GitHub账号的可以跳过这一步</p>
-</blockquote>
-</blockquote>
-<p>点击进入<a href="https://github.com/">Github官网</a>  </p>
-<p>点击右上角<code>sign up</code>进入注册页面，输入邮箱，创建密码，设置昵称</p>
-<blockquote>
-<p>然后 下一步 下一步 下一步 下一步……</p>
-<blockquote>
-<p>如果实在不会，请使用<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>进行搜索</p>
-</blockquote>
-</blockquote>
-<h3 id="Git通过ssh绑定GitHub"><a href="#Git通过ssh绑定GitHub" class="headerlink" title="Git通过ssh绑定GitHub"></a>Git通过ssh绑定GitHub</h3><blockquote>
-<p>SSH（安全外壳协议，Secure Shell 的缩写）是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。简单来说，SSH可以保障你的账户安全，将你的数据加密压缩，它不仅可以防止其他人截获你的数据，还能加快传输速度。</p>
-</blockquote>
-<p>由于Git bash自带ssh，所以无需安装  </p>
-<p>在任意位置点击鼠标右键，打开<code>Git Bash</code>，输入<code>ssh</code>检查ssh<br>如果出现以下内容即已安装ssh：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ ssh</span><br><span class="line"><span class="function">usage: <span class="title">ssh</span> [-46<span class="title">AaCfGgKkMNnqsTtVvXxYy</span>] [-<span class="title">B</span> <span class="title">bind_interface</span>] [-<span class="title">b</span> <span class="title">bind_address</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">c</span> <span class="title">cipher_spec</span>] [-<span class="title">D</span> [<span class="title">bind_address</span>:]<span class="title">port</span>] [-<span class="title">E</span> <span class="title">log_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">e</span> <span class="title">escape_char</span>] [-<span class="title">F</span> <span class="title">configfile</span>] [-<span class="title">I</span> <span class="title">pkcs11</span>] [-<span class="title">i</span> <span class="title">identity_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">J</span> <span class="title">destination</span>] [-<span class="title">L</span> <span class="title">address</span>] [-<span class="title">l</span> <span class="title">login_name</span>] [-<span class="title">m</span> <span class="title">mac_spec</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">O</span> <span class="title">ctl_cmd</span>] [-<span class="title">o</span> <span class="title">option</span>] [-<span class="title">P</span> <span class="title">tag</span>] [-<span class="title">p</span> <span class="title">port</span>] [-<span class="title">Q</span> <span class="title">query_option</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">R</span> <span class="title">address</span>] [-<span class="title">S</span> <span class="title">ctl_path</span>] [-<span class="title">W</span> <span class="title">host:port</span>] [-<span class="title">w</span> <span class="title">local_tun</span>[:<span class="title">remote_tun</span>]]</span></span><br><span class="line"><span class="function">           <span class="title">destination</span> [<span class="title">command</span> [<span class="title">argument</span> ...]]</span></span><br></pre></td></tr></table></figure>
-<p>输入<code>ssh-keygen -t rsa</code>，敲击四次回车键，创建ssh密钥  </p>
-<p>ssh密钥保存在<code>C:\Users\&lt;你的用户名&gt;\.ssh</code>  </p>
-<blockquote>
-<p>如果没有<code>.ssh</code>,请打开“显示隐藏文件”<br>若不会，请通过<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>自行查找 ⌈如何显示隐藏文件⌋</p>
-</blockquote>
-<p>右键用记事本打开<code>id_rsa.pub</code>，复制里面的全部内容，进入你的 GitHub 主页，先点击右上角，再点击 <strong>settings</strong>  </p>
-<p>先点击右边的 <strong>SSH and GPG keys</strong>，再点击 <strong>New SSH key</strong>：<br><img src="/Resources/GitHub-1.png" alt="GitHub-1">  </p>
-<p>将复制的公钥 id_rsa.pub 的内容粘贴到 key 内，再点击 Add SSH key，如下图：<br><img src="/Resources/GitHub-2.png" alt="GitHub-2">  </p>
-<p>在<code>Git Bash</code>窗口输入<code>ssh -T git@github.com</code>进行检验，出现  </p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Are you sure you want to continue connecting(yes/no/[fingerprint])?</span><br></pre></td></tr></table></figure>
-<p>输入<code>yes</code>出现：  </p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Hi &lt;你的GitHub昵称&gt;! You&#x27;ve successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
-<p>即为成功  </p>
-<h3 id="Nodejs配置"><a href="#Nodejs配置" class="headerlink" title="Nodejs配置"></a>Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v18.<span class="number">19</span>.<span class="number">0</span></span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line"><span class="number">10</span>.<span class="number">2</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>主要是检查nodejs和npm有没有安装，版本不同影响不大  </p>
-</blockquote>
-<h4 id="设置npm在安装全局模块时的路径和环境变量"><a href="#设置npm在安装全局模块时的路径和环境变量" class="headerlink" title="设置npm在安装全局模块时的路径和环境变量"></a>设置npm在安装全局模块时的路径和环境变量</h4><p>在 <strong>你永远不会删除的地方中</strong> 新建 <strong>文件夹 “A”</strong><br>在其中 新建两个空文件夹<code>node_cache</code>、<code>node_global</code>：<br><img src="/Resources/GitHub-3.png" alt="GitHub-3">  </p>
-<blockquote>
-<p><strong>！！！请勿删除此文件夹！！！</strong><br>否则模块将被删除，需要重新配置</p>
-</blockquote>
-<p>打开cmd，输入如下两个命令：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix &quot;&lt;你的node_global文件夹路径&gt;&quot;</span><br><span class="line">npm config <span class="built_in">set</span> cache &quot;&lt;你的node_cache文件夹路径&gt;&quot;</span><br></pre></td></tr></table></figure>
-<p>设置环境变量：  </p>
-<p>右键 此电脑 –&gt; 属性 –&gt; 高级系统设置 –&gt; 环境变量  </p>
-<p>然后在系统变量中新建一个变量<br>点击<code>系统变量(S)</code>下的<code>新建(W)…</code><br>出现：<br><img src="/Resources/GitHub-4.png" alt="GitHub-4">  </p>
-<p>输入 变量名为 <strong>“NODE_PATH”</strong><br>输入 变量值为 <strong>“&lt;文件夹 “A” 的路径&gt;”</strong>  </p>
-<blockquote>
-<p>你问我什么是 <strong>文件夹 “A”</strong> ？</p>
-<blockquote>
-<p><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">喏，在这</a></p>
-</blockquote>
-</blockquote>
-<p>然后编辑<code>用户变量(U)</code>里的<code>Path</code>，点按<code>编辑(E)…</code>，将相应npm的路径改为：<br><code>&lt;你的node_global文件夹路径&gt;</code>  </p>
-<p><strong>按确定！按确定！按确定！</strong>  </p>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在 cmd 命令行下执行<code>npm install webpack -g</code>，出现：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">+ webpack@<span class="number">4</span>.<span class="number">41</span>.<span class="number">5</span></span><br><span class="line">added <span class="number">322</span> packages from <span class="number">197</span> contributors <span class="keyword">in</span> <span class="number">250</span>.<span class="number">122</span>s</span><br></pre></td></tr></table></figure>
-<p>即为成功，然后<code>webpack</code>这个模块已经在我们设置默认的文件夹中了  </p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h4><p>Hexo就是我们搭建博客的框架，在安装之前，我们要先在GitHub上创立一个仓库<br>进入<a href="https://github.com/">GitHub个人主页</a>，右上角创建仓库：  </p>
-<p><img src="/Resources/GitHub-5.png" alt="GitHub-5"><br><img src="/Resources/GitHub-6.png" alt="GitHub-6"><br>点击 <strong>settings</strong> ：  </p>
-<p><img src="/Resources/GitHub-7.png" alt="GitHub-7"><br>点击 <strong>pages</strong> ：  </p>
-<p><img src="/Resources/GitHub-8.png" alt="GitHub-8"><br>出现<code>&lt;你的GitHub昵称&gt;.github.io</code>即为成功：  </p>
-<p><img src="/Resources/GitHub-9.png" alt="GitHub-9">  </p>
-<h4 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h4><p>新建Blog文件夹，在文件夹内右键打开<code>Git Bash</code>，输入以下npm命令安装Hexo：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成后，输入<code>hexo init</code>初始化博客,文件夹内会出现以下文件：  </p>
-<p><img src="/Resources/GitHub-10.png" alt="GitHub-10"><br>这个文件夹就是你的博客啦！  </p>
-<p>接下来，在 Bash 窗口内：<br>输入<code>hexo g</code>静态部署<br>输入<code>hexo s</code>在4000端口上部署：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>这时候用浏览器打开 <a href="https://localhost:4000/">https://localhost:4000</a> 即可看到新部署的网页。<br>别急，回到Git Bash窗口，按ctrl +c 停止运行服务器。  </p>
-<h4 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h4><p>在文件夹内 右键 用记事本打开<code>_config.yml</code>，在最底下加上：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:&lt;………………&gt;.github.io.git</span>  <span class="comment">#你的仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-<p>你的仓库地址：<br><img src="/Resources/GitHub-11.png" alt="GitHub-11">  </p>
-<p>回到Blog文件夹，右键<code>Git Bash here</code>，在Git Bash中输入：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>然后 <strong>分别</strong> 输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g       <span class="comment">#生成网站静态文件到默认设置的 public 文件夹</span></span><br><span class="line">hexo d       <span class="comment">#生成网站静态文件，并部署到设定的仓库</span></span><br></pre></td></tr></table></figure>
-<p>或者输入：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d		<span class="comment">#和上面的没有不同，只是将命令串起来了</span></span><br></pre></td></tr></table></figure>
-<p>完成以后，打开浏览器，输入 <a href="https://xxx.github.io/">https://xxx.github.io</a> 就可以打开你的网页了。  </p>
-<p>下一篇：<a href="https://kk-wuyue.top/posts/G-blog-To-domain/">如何自定义博客域名</a></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>Blog</tag>
-        <tag>Nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pyenv安装</title>
-    <url>//posts/pyenv-installation/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><a href="#pyenv%E5%AE%89%E8%A3%85">Pyenv安装</a><ul>
-<li><a href="#windows-%E5%AE%89%E8%A3%85-pyenv">Windows 安装 Pyenv</a></li>
-<li><a href="#linux-%E5%AE%89%E8%A3%85pyenv">Linux 安装Pyenv</a></li>
-</ul>
-</li>
-<li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
-<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
-<li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
-<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Pyenv安装"><a href="#Pyenv安装" class="headerlink" title="Pyenv安装"></a>Pyenv安装</h3><h4 id="Windows-安装-Pyenv"><a href="#Windows-安装-Pyenv" class="headerlink" title="Windows 安装 Pyenv"></a>Windows 安装 Pyenv</h4><ol>
-<li><p>打开 <code>Powershell</code>  </p>
-</li>
-<li><p>执行以下命令安装 <code>pyenv-win</code>：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://gitee.com/treespacex/pyenv-win/blob/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上述内容为 <code>pyenv-win</code> 的gitee镜像地址，原始命令如下：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>安装完成后，重启 <code>Powershell</code>  </p>
-</li>
-<li><p>运行以下命令验证安装是否成功：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pyenv <span class="literal">--version</span></span><br></pre></td></tr></table></figure></li>
-<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
-</li>
-</ol>
-<h4 id="Linux-安装Pyenv"><a href="#Linux-安装Pyenv" class="headerlink" title="Linux 安装Pyenv"></a>Linux 安装Pyenv</h4><ol>
-<li><p>打开终端</p>
-</li>
-<li><p>执行以下命令安装 <code>pyenv</code>：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://pyenv.run | bash</span><br></pre></td></tr></table></figure></li>
-<li><p>验证安装是否成功：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure></li>
-<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
-</li>
-</ol>
-<h3 id="Pyenv-相关设置"><a href="#Pyenv-相关设置" class="headerlink" title="Pyenv 相关设置"></a>Pyenv 相关设置</h3><h4 id="通过镜像源下载python版本（以3-10-11为例）："><a href="#通过镜像源下载python版本（以3-10-11为例）：" class="headerlink" title="通过镜像源下载python版本（以3.10.11为例）："></a>通过镜像源下载python版本（以3.10.11为例）：</h4><ol>
-<li><p>设置镜像源的临时环境变量  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux</span></span><br><span class="line">PYTHON_BUILD_MIRROR_URL=<span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure>
- <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="variable">$env:PYTHON_BUILD_MIRROR_URL</span> = <span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>安装指定版本的Python：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv install 3.10.11</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
-<li><p>所有操作系统一致：  </p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
-<li><p>全局设置：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
-<li><p>文件夹设置（在当前目录下生效）：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
-<li><p>临时设置（仅在当前shell会话中生效）：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>Pyenv</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
-    <url>//posts/command-collection/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
-<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>命令行</tag>
-        <tag>screen</tag>
-        <tag>vim</tag>
-        <tag>压缩解压</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI与人</title>
     <url>//posts/ai-with-human/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -416,6 +194,194 @@
 ]]></content>
   </entry>
   <entry>
+    <title>基于GitHub的博客搭建</title>
+    <url>//posts/Blog-building/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><strong>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</strong></li>
+<li><strong>如不具备上述能力，请立即关闭此教程。</strong></li>
+</ul>
+<ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
+<li><a href="#github%E8%B4%A6%E5%8F%B7%E6%B3%A8%E5%86%8C">GitHub账号注册</a></li>
+<li><a href="#git%E9%80%9A%E8%BF%87ssh%E7%BB%91%E5%AE%9Agithub">Git通过ssh绑定GitHub</a></li>
+<li><a href="#nodejs%E9%85%8D%E7%BD%AE">Nodejs配置</a><ul>
+<li><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">设置npm在安装全局模块时的路径和环境变量</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95">测试</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E8%A3%85hexo">安装Hexo</a><ul>
+<li><a href="#%E5%88%9B%E5%BB%BAgithub-pages">创建GitHub Pages</a></li>
+<li><a href="#%E6%AD%A3%E5%BC%8F%E5%AE%89%E8%A3%85hexo">正式安装Hexo</a></li>
+<li><a href="#%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0github">将Hexo部署到GitHub</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
+<p>↓ 附上下载链接 ↓</p>
+<ul>
+<li>Windows<br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/Git-2.43.0-64-bit.exe">Git-v2.43.0-x64</a><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/node-v18.19.0-x64.msi">node-v18.19.0-x64</a></li>
+</ul>
+<h3 id="GitHub账号注册"><a href="#GitHub账号注册" class="headerlink" title="GitHub账号注册"></a>GitHub账号注册</h3><blockquote>
+<p>Github是全球最大的程序员交友♂平台（doge）</p>
+<blockquote>
+<p>有GitHub账号的可以跳过这一步</p>
+</blockquote>
+</blockquote>
+<p>点击进入<a href="https://github.com/">Github官网</a>  </p>
+<p>点击右上角<code>sign up</code>进入注册页面，输入邮箱，创建密码，设置昵称</p>
+<blockquote>
+<p>然后 下一步 下一步 下一步 下一步……</p>
+<blockquote>
+<p>如果实在不会，请使用<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>进行搜索</p>
+</blockquote>
+</blockquote>
+<h3 id="Git通过ssh绑定GitHub"><a href="#Git通过ssh绑定GitHub" class="headerlink" title="Git通过ssh绑定GitHub"></a>Git通过ssh绑定GitHub</h3><blockquote>
+<p>SSH（安全外壳协议，Secure Shell 的缩写）是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。简单来说，SSH可以保障你的账户安全，将你的数据加密压缩，它不仅可以防止其他人截获你的数据，还能加快传输速度。</p>
+</blockquote>
+<p>由于Git bash自带ssh，所以无需安装  </p>
+<p>在任意位置点击鼠标右键，打开<code>Git Bash</code>，输入<code>ssh</code>检查ssh<br>如果出现以下内容即已安装ssh：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ ssh</span><br><span class="line"><span class="function">usage: <span class="title">ssh</span> [-46<span class="title">AaCfGgKkMNnqsTtVvXxYy</span>] [-<span class="title">B</span> <span class="title">bind_interface</span>] [-<span class="title">b</span> <span class="title">bind_address</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">c</span> <span class="title">cipher_spec</span>] [-<span class="title">D</span> [<span class="title">bind_address</span>:]<span class="title">port</span>] [-<span class="title">E</span> <span class="title">log_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">e</span> <span class="title">escape_char</span>] [-<span class="title">F</span> <span class="title">configfile</span>] [-<span class="title">I</span> <span class="title">pkcs11</span>] [-<span class="title">i</span> <span class="title">identity_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">J</span> <span class="title">destination</span>] [-<span class="title">L</span> <span class="title">address</span>] [-<span class="title">l</span> <span class="title">login_name</span>] [-<span class="title">m</span> <span class="title">mac_spec</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">O</span> <span class="title">ctl_cmd</span>] [-<span class="title">o</span> <span class="title">option</span>] [-<span class="title">P</span> <span class="title">tag</span>] [-<span class="title">p</span> <span class="title">port</span>] [-<span class="title">Q</span> <span class="title">query_option</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">R</span> <span class="title">address</span>] [-<span class="title">S</span> <span class="title">ctl_path</span>] [-<span class="title">W</span> <span class="title">host:port</span>] [-<span class="title">w</span> <span class="title">local_tun</span>[:<span class="title">remote_tun</span>]]</span></span><br><span class="line"><span class="function">           <span class="title">destination</span> [<span class="title">command</span> [<span class="title">argument</span> ...]]</span></span><br></pre></td></tr></table></figure>
+<p>输入<code>ssh-keygen -t rsa</code>，敲击四次回车键，创建ssh密钥  </p>
+<p>ssh密钥保存在<code>C:\Users\&lt;你的用户名&gt;\.ssh</code>  </p>
+<blockquote>
+<p>如果没有<code>.ssh</code>,请打开“显示隐藏文件”<br>若不会，请通过<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>自行查找 ⌈如何显示隐藏文件⌋</p>
+</blockquote>
+<p>右键用记事本打开<code>id_rsa.pub</code>，复制里面的全部内容，进入你的 GitHub 主页，先点击右上角，再点击 <strong>settings</strong>  </p>
+<p>先点击右边的 <strong>SSH and GPG keys</strong>，再点击 <strong>New SSH key</strong>：<br><img src="/Resources/GitHub-1.png" alt="GitHub-1">  </p>
+<p>将复制的公钥 id_rsa.pub 的内容粘贴到 key 内，再点击 Add SSH key，如下图：<br><img src="/Resources/GitHub-2.png" alt="GitHub-2">  </p>
+<p>在<code>Git Bash</code>窗口输入<code>ssh -T git@github.com</code>进行检验，出现  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Are you sure you want to continue connecting(yes/no/[fingerprint])?</span><br></pre></td></tr></table></figure>
+<p>输入<code>yes</code>出现：  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Hi &lt;你的GitHub昵称&gt;! You&#x27;ve successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
+<p>即为成功  </p>
+<h3 id="Nodejs配置"><a href="#Nodejs配置" class="headerlink" title="Nodejs配置"></a>Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v18.<span class="number">19</span>.<span class="number">0</span></span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line"><span class="number">10</span>.<span class="number">2</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>主要是检查nodejs和npm有没有安装，版本不同影响不大  </p>
+</blockquote>
+<h4 id="设置npm在安装全局模块时的路径和环境变量"><a href="#设置npm在安装全局模块时的路径和环境变量" class="headerlink" title="设置npm在安装全局模块时的路径和环境变量"></a>设置npm在安装全局模块时的路径和环境变量</h4><p>在 <strong>你永远不会删除的地方中</strong> 新建 <strong>文件夹 “A”</strong><br>在其中 新建两个空文件夹<code>node_cache</code>、<code>node_global</code>：<br><img src="/Resources/GitHub-3.png" alt="GitHub-3">  </p>
+<blockquote>
+<p><strong>！！！请勿删除此文件夹！！！</strong><br>否则模块将被删除，需要重新配置</p>
+</blockquote>
+<p>打开cmd，输入如下两个命令：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix &quot;&lt;你的node_global文件夹路径&gt;&quot;</span><br><span class="line">npm config <span class="built_in">set</span> cache &quot;&lt;你的node_cache文件夹路径&gt;&quot;</span><br></pre></td></tr></table></figure>
+<p>设置环境变量：  </p>
+<p>右键 此电脑 –&gt; 属性 –&gt; 高级系统设置 –&gt; 环境变量  </p>
+<p>然后在系统变量中新建一个变量<br>点击<code>系统变量(S)</code>下的<code>新建(W)…</code><br>出现：<br><img src="/Resources/GitHub-4.png" alt="GitHub-4">  </p>
+<p>输入 变量名为 <strong>“NODE_PATH”</strong><br>输入 变量值为 <strong>“&lt;文件夹 “A” 的路径&gt;”</strong>  </p>
+<blockquote>
+<p>你问我什么是 <strong>文件夹 “A”</strong> ？</p>
+<blockquote>
+<p><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">喏，在这</a></p>
+</blockquote>
+</blockquote>
+<p>然后编辑<code>用户变量(U)</code>里的<code>Path</code>，点按<code>编辑(E)…</code>，将相应npm的路径改为：<br><code>&lt;你的node_global文件夹路径&gt;</code>  </p>
+<p><strong>按确定！按确定！按确定！</strong>  </p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在 cmd 命令行下执行<code>npm install webpack -g</code>，出现：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">+ webpack@<span class="number">4</span>.<span class="number">41</span>.<span class="number">5</span></span><br><span class="line">added <span class="number">322</span> packages from <span class="number">197</span> contributors <span class="keyword">in</span> <span class="number">250</span>.<span class="number">122</span>s</span><br></pre></td></tr></table></figure>
+<p>即为成功，然后<code>webpack</code>这个模块已经在我们设置默认的文件夹中了  </p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h4><p>Hexo就是我们搭建博客的框架，在安装之前，我们要先在GitHub上创立一个仓库<br>进入<a href="https://github.com/">GitHub个人主页</a>，右上角创建仓库：  </p>
+<p><img src="/Resources/GitHub-5.png" alt="GitHub-5"><br><img src="/Resources/GitHub-6.png" alt="GitHub-6"><br>点击 <strong>settings</strong> ：  </p>
+<p><img src="/Resources/GitHub-7.png" alt="GitHub-7"><br>点击 <strong>pages</strong> ：  </p>
+<p><img src="/Resources/GitHub-8.png" alt="GitHub-8"><br>出现<code>&lt;你的GitHub昵称&gt;.github.io</code>即为成功：  </p>
+<p><img src="/Resources/GitHub-9.png" alt="GitHub-9">  </p>
+<h4 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h4><p>新建Blog文件夹，在文件夹内右键打开<code>Git Bash</code>，输入以下npm命令安装Hexo：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装完成后，输入<code>hexo init</code>初始化博客,文件夹内会出现以下文件：  </p>
+<p><img src="/Resources/GitHub-10.png" alt="GitHub-10"><br>这个文件夹就是你的博客啦！  </p>
+<p>接下来，在 Bash 窗口内：<br>输入<code>hexo g</code>静态部署<br>输入<code>hexo s</code>在4000端口上部署：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>这时候用浏览器打开 <a href="https://localhost:4000/">https://localhost:4000</a> 即可看到新部署的网页。<br>别急，回到Git Bash窗口，按ctrl +c 停止运行服务器。  </p>
+<h4 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h4><p>在文件夹内 右键 用记事本打开<code>_config.yml</code>，在最底下加上：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:&lt;………………&gt;.github.io.git</span>  <span class="comment">#你的仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+<p>你的仓库地址：<br><img src="/Resources/GitHub-11.png" alt="GitHub-11">  </p>
+<p>回到Blog文件夹，右键<code>Git Bash here</code>，在Git Bash中输入：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后 <strong>分别</strong> 输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g       <span class="comment">#生成网站静态文件到默认设置的 public 文件夹</span></span><br><span class="line">hexo d       <span class="comment">#生成网站静态文件，并部署到设定的仓库</span></span><br></pre></td></tr></table></figure>
+<p>或者输入：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d		<span class="comment">#和上面的没有不同，只是将命令串起来了</span></span><br></pre></td></tr></table></figure>
+<p>完成以后，打开浏览器，输入 <a href="https://xxx.github.io/">https://xxx.github.io</a> 就可以打开你的网页了。  </p>
+<p>下一篇：<a href="https://kk-wuyue.top/posts/G-blog-To-domain/">如何自定义博客域名</a></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>Blog</tag>
+        <tag>Nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pyenv安装</title>
+    <url>//posts/pyenv-installation/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#pyenv%E5%AE%89%E8%A3%85">Pyenv安装</a><ul>
+<li><a href="#windows-%E5%AE%89%E8%A3%85-pyenv">Windows 安装 Pyenv</a></li>
+<li><a href="#linux-%E5%AE%89%E8%A3%85pyenv">Linux 安装Pyenv</a></li>
+</ul>
+</li>
+<li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
+<li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
+<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Pyenv安装"><a href="#Pyenv安装" class="headerlink" title="Pyenv安装"></a>Pyenv安装</h3><h4 id="Windows-安装-Pyenv"><a href="#Windows-安装-Pyenv" class="headerlink" title="Windows 安装 Pyenv"></a>Windows 安装 Pyenv</h4><ol>
+<li><p>打开 <code>Powershell</code>  </p>
+</li>
+<li><p>执行以下命令安装 <code>pyenv-win</code>：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://gitee.com/treespacex/pyenv-win/blob/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上述内容为 <code>pyenv-win</code> 的gitee镜像地址，原始命令如下：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>安装完成后，重启 <code>Powershell</code>  </p>
+</li>
+<li><p>运行以下命令验证安装是否成功：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pyenv <span class="literal">--version</span></span><br></pre></td></tr></table></figure></li>
+<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+</li>
+</ol>
+<h4 id="Linux-安装Pyenv"><a href="#Linux-安装Pyenv" class="headerlink" title="Linux 安装Pyenv"></a>Linux 安装Pyenv</h4><ol>
+<li><p>打开终端</p>
+</li>
+<li><p>执行以下命令安装 <code>pyenv</code>：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://pyenv.run | bash</span><br></pre></td></tr></table></figure></li>
+<li><p>验证安装是否成功：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure></li>
+<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+</li>
+</ol>
+<h3 id="Pyenv-相关设置"><a href="#Pyenv-相关设置" class="headerlink" title="Pyenv 相关设置"></a>Pyenv 相关设置</h3><h4 id="通过镜像源下载python版本（以3-10-11为例）："><a href="#通过镜像源下载python版本（以3-10-11为例）：" class="headerlink" title="通过镜像源下载python版本（以3.10.11为例）："></a>通过镜像源下载python版本（以3.10.11为例）：</h4><ol>
+<li><p>设置镜像源的临时环境变量  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux</span></span><br><span class="line">PYTHON_BUILD_MIRROR_URL=<span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="variable">$env:PYTHON_BUILD_MIRROR_URL</span> = <span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>安装指定版本的Python：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv install 3.10.11</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
+<li><p>所有操作系统一致：  </p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
+<li><p>全局设置：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>文件夹设置（在当前目录下生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>临时设置（仅在当前shell会话中生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>Pyenv</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>工具获取</title>
     <url>//posts/tools-acquisition/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
@@ -448,18 +414,18 @@
 <hr>
 <center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>
 <br>
-<div id="random-img"></div>
+<div id="random-img" style="width: clamp(200px, 100%, 450px); aspect-ratio: 1/1; margin: 0 auto;">
+  <img style="width: 100%; height: 100%; object-fit: cover;">
+</div>
 <script>
-  const img = new Image();
+  const img = document.querySelector('#random-img img');
   img.src = "https://image.kk-wuyue.top/random?dir=Quan&type=img&t=" + Date.now();
-  img.width = 450;
-  img.height = 450;
-  document.getElementById("random-img").appendChild(img);
 </script>
-  
+<br>
+
 <hr>
 <ul>
-<li><a href="https://kk-wuyue.top/">返回主页</a></li>
+<li><a href="https://blog.kk-wuyue.top/">返回主页</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -586,182 +552,37 @@
       </tags>
   </entry>
   <entry>
-    <title>将Clash配置到纯cli的Ubuntu</title>
-    <url>//posts/clash-for-linux/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><a href="#%E4%B8%8B%E8%BD%BD%E6%A0%B8%E5%BF%83%E6%96%87%E4%BB%B6">下载核心文件</a></li>
-<li><a href="#%E8%B5%8B%E4%BA%88clash%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90">赋予Clash可执行权限</a></li>
-<li><a href="#%E8%AF%95%E5%90%AF%E5%8A%A8clash">试启动Clash</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">修改配置文件</a></li>
-<li><a href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">设置环境变量</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%90%86%E6%83%85%E5%86%B5">测试代理情况</a></li>
-</ul>
-<h3 id="下载核心文件"><a href="#下载核心文件" class="headerlink" title="下载核心文件"></a>下载核心文件</h3><blockquote>
-<p>自己找资源</p>
-<blockquote>
-<p>不要用root用户，<code>su</code>到普通用户</p>
-</blockquote>
-</blockquote>
-<h3 id="赋予Clash可执行权限"><a href="#赋予Clash可执行权限" class="headerlink" title="赋予Clash可执行权限"></a>赋予Clash可执行权限</h3><p>给Clash核心文件创建一个目录，<code>cd</code>到目录里：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chomd -x <span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="试启动Clash"><a href="#试启动Clash" class="headerlink" title="试启动Clash"></a>试启动Clash</h3><p>在Clash可执行文件的目录下直接执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
-<p>配置文件会自己生成</p>
-<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span>  <span class="comment">#回到主目录</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> .config/clash</span><br><span class="line">vi config.yaml</span><br><span class="line"><span class="comment">#这边建议直接用Clash-for-Windows获取config之后直接上传替换文件</span></span><br></pre></td></tr></table></figure>
-<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
-<p>值得注意的是:  </p>
-<ol>
-<li>这样设置仅在当前会话有效，换言之重开个ssh连接或者screen窗口，在新建的窗口中环境变量都不会生效  </li>
-<li>端口要与<code>config.yaml</code>中相同</li>
-</ol>
-<p>要使上述情况生效，可以：<br>编辑<code>.bashrc</code>或<code>.zshrc</code>文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.zshrc</span><br></pre></td></tr></table></figure>
-<p>然后在文件末尾添加：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
-<p>保存文件后，执行以下命令使更改生效：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
-<h3 id="测试代理情况"><a href="#测试代理情况" class="headerlink" title="测试代理情况"></a>测试代理情况</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl www.google.com -I</span><br></pre></td></tr></table></figure>
-<p>如果响应返回<code>200</code>，即为代理配置成功</p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
-        <tag>ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows优化设置</title>
-    <url>//posts/Windows-delay-update/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><a href="#%E6%9A%82%E5%81%9Cwindows%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0">暂停Windows系统更新</a><ul>
-<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%89%93%E5%BC%80%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8">第一步：打开注册表编辑器</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%AF%BC%E8%88%AA%E8%87%B3%E7%9B%AE%E6%A0%87%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84">第二步：导航至目标注册表路径</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84dword%E5%80%BC">第三步：创建新的DWORD值</a></li>
-<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E4%BF%AE%E6%94%B9%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE">第四步：修改数值数据</a></li>
-</ul>
-</li>
-<li><a href="#%E5%A4%87%E4%BB%BD%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">备份驱动程序</a></li>
-<li><a href="#%E5%B0%86%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%94%B9%E4%B8%BA%E8%80%81%E7%89%88">将右键菜单改为老版</a></li>
-</ul>
-<h3 id="暂停Windows系统更新"><a href="#暂停Windows系统更新" class="headerlink" title="暂停Windows系统更新"></a>暂停Windows系统更新</h3><h4 id="第一步：打开注册表编辑器"><a href="#第一步：打开注册表编辑器" class="headerlink" title="第一步：打开注册表编辑器"></a>第一步：打开注册表编辑器</h4><ol>
-<li>按下键盘上的<code>Win + R</code>组合键，打开”运行”对话框</li>
-<li>在输入框中键入<code>regedit</code></li>
-<li>点击”确定”或按回车键</li>
-</ol>
-<h4 id="第二步：导航至目标注册表路径"><a href="#第二步：导航至目标注册表路径" class="headerlink" title="第二步：导航至目标注册表路径"></a>第二步：导航至目标注册表路径</h4><ol>
-<li><p>在注册表编辑器左侧导航栏中，依次展开以下路径：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果找不到上述路径，请确认您的Windows版本是否支持此设置（Windows 10 1803及以上版本）</p>
-</li>
-</ol>
-<h4 id="第三步：创建新的DWORD值"><a href="#第三步：创建新的DWORD值" class="headerlink" title="第三步：创建新的DWORD值"></a>第三步：创建新的DWORD值</h4><ol>
-<li><p>右键点击”Settings”文件夹</p>
-</li>
-<li><p>选择”新建” &gt; “DWORD (32位)值(D)”</p>
-</li>
-<li><p>将新建的值命名为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FlightSettingsMaxPauseDays</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h4 id="第四步：修改数值数据"><a href="#第四步：修改数值数据" class="headerlink" title="第四步：修改数值数据"></a>第四步：修改数值数据</h4><ol>
-<li><p>双击刚刚创建的<code>FlightSettingsMaxPauseDays</code>项</p>
-</li>
-<li><p>在”数值数据”输入框中输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">65535</span><br></pre></td></tr></table></figure></li>
-<li><p>确保”基数”选项选择为”十进制”</p>
-</li>
-<li><p>点击”确定”保存更改</p>
-</li>
-</ol>
-<h3 id="备份驱动程序"><a href="#备份驱动程序" class="headerlink" title="备份驱动程序"></a>备份驱动程序</h3><ol>
-<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）  </p>
-</li>
-<li><p>执行以下命令将当前所有驱动备份到 <code>D:\DriverBackup</code>（可自定义路径）：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">dism /online /export-driver /destination:D:\DriverBackup</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>操作完成后，驱动文件会被保存到该文件夹中，重装后可用于手动安装或自动恢复。</p>
-</li>
-</ol>
-<h3 id="将右键菜单改为老版"><a href="#将右键菜单改为老版" class="headerlink" title="将右键菜单改为老版"></a>将右键菜单改为老版</h3><ol>
-<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）</p>
-</li>
-<li><p>执行以下命令：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">reg add &quot;HKCU\Software\Classes\CLSID\&#123;<span class="number">86</span>ca1aa0-<span class="number">34</span>aa-<span class="number">4</span>e8b-a509-<span class="number">50</span>c905bae2a2&#125;\InprocServer32&quot; /ve /d &quot;&quot; /f</span><br></pre></td></tr></table></figure>
+    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
+    <url>//posts/command-collection/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><p><code>reg add</code>：添加注册表项  </p>
-</li>
-<li><p><code>&quot;HKCU\Software\Classes\CLSID\&#123;...&#125;&quot;</code>：路径</p>
-</li>
-<li><p><code>\InprocServer32</code>：要新建的子项</p>
-</li>
-<li><p><code>/ve</code>：表示设置 <code>(默认)</code> 项</p>
-</li>
-<li><p><code>/d &quot;&quot;</code>：值为空字符串</p>
-</li>
-<li><p><code>/f</code>：强制执行，不弹确认</p>
-</li>
-</ul>
-</li>
-<li><p><code>Ctrl+Shift+Esc</code> 打开任务管理器，重启 <code>explorer.exe</code> 进程即可</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>教程</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ffmpeg的配置和B站视频转化的简单使用</title>
-    <url>//posts/ffmpeg-Deploy/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
-<ul>
-<li><a href="#ffmpeg%E7%9A%84%E9%85%8D%E7%BD%AE">ffmpeg的配置</a><ul>
-<li><a href="#%E4%B8%8B%E8%BD%BDffmpeg%E5%8C%85">下载ffmpeg包</a></li>
-<li><a href="#%E8%A7%A3%E5%8E%8B%E7%BC%A9">解压缩</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">配置环境变量</a><ul>
-<li><a href="#%E9%85%8D%E7%BD%AE">配置</a></li>
-<li><a href="#%E6%A3%80%E6%9F%A5">检查</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%B0%86b%E7%AB%99%E8%A7%86%E9%A2%91%E8%BD%AC%E5%8C%96%E4%B8%BAmp4%E6%A0%BC%E5%BC%8F">将B站视频转化为.mp4格式</a><ul>
-<li><a href="#%E6%89%BE%E5%88%B0b%E7%AB%99%E8%A7%86%E9%A2%91%E5%82%A8%E5%AD%98%E8%B7%AF%E5%BE%84">找到B站视频储存路径</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
-<blockquote>
-<p>建议国内无VPN用户选择该方式下载</p>
+<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
+<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
 </blockquote>
-<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
-<blockquote>
-<p>建议有VPN的用户选择该方式下载</p>
-</blockquote>
-<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
-<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
-<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
-<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
-<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
-<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>教程</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
-        <tag>ffmpeg</tag>
+        <tag>命令行</tag>
+        <tag>screen</tag>
+        <tag>vim</tag>
+        <tag>压缩解压</tag>
       </tags>
   </entry>
   <entry>
@@ -834,6 +655,102 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将Clash配置到纯cli的Ubuntu</title>
+    <url>//posts/clash-for-linux/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E6%A0%B8%E5%BF%83%E6%96%87%E4%BB%B6">下载核心文件</a></li>
+<li><a href="#%E8%B5%8B%E4%BA%88clash%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90">赋予Clash可执行权限</a></li>
+<li><a href="#%E8%AF%95%E5%90%AF%E5%8A%A8clash">试启动Clash</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">修改配置文件</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">设置环境变量</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%90%86%E6%83%85%E5%86%B5">测试代理情况</a></li>
+</ul>
+<h3 id="下载核心文件"><a href="#下载核心文件" class="headerlink" title="下载核心文件"></a>下载核心文件</h3><blockquote>
+<p>自己找资源</p>
+<blockquote>
+<p>不要用root用户，<code>su</code>到普通用户</p>
+</blockquote>
+</blockquote>
+<h3 id="赋予Clash可执行权限"><a href="#赋予Clash可执行权限" class="headerlink" title="赋予Clash可执行权限"></a>赋予Clash可执行权限</h3><p>给Clash核心文件创建一个目录，<code>cd</code>到目录里：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chomd -x <span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="试启动Clash"><a href="#试启动Clash" class="headerlink" title="试启动Clash"></a>试启动Clash</h3><p>在Clash可执行文件的目录下直接执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="string">&quot;clash文件名&quot;</span></span><br></pre></td></tr></table></figure>
+<p>配置文件会自己生成</p>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span>  <span class="comment">#回到主目录</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> .config/clash</span><br><span class="line">vi config.yaml</span><br><span class="line"><span class="comment">#这边建议直接用Clash-for-Windows获取config之后直接上传替换文件</span></span><br></pre></td></tr></table></figure>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
+<p>值得注意的是:  </p>
+<ol>
+<li>这样设置仅在当前会话有效，换言之重开个ssh连接或者screen窗口，在新建的窗口中环境变量都不会生效  </li>
+<li>端口要与<code>config.yaml</code>中相同</li>
+</ol>
+<p>要使上述情况生效，可以：<br>编辑<code>.bashrc</code>或<code>.zshrc</code>文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>然后在文件末尾添加：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
+<p>保存文件后，执行以下命令使更改生效：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+<h3 id="测试代理情况"><a href="#测试代理情况" class="headerlink" title="测试代理情况"></a>测试代理情况</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl www.google.com -I</span><br></pre></td></tr></table></figure>
+<p>如果响应返回<code>200</code>，即为代理配置成功</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ffmpeg的配置和B站视频转化的简单使用</title>
+    <url>//posts/ffmpeg-Deploy/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>环境：<br>    - Windows<br>工具：<br>    - <a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++</a><br>    - ffmpeg  </p>
+<ul>
+<li><a href="#ffmpeg%E7%9A%84%E9%85%8D%E7%BD%AE">ffmpeg的配置</a><ul>
+<li><a href="#%E4%B8%8B%E8%BD%BDffmpeg%E5%8C%85">下载ffmpeg包</a></li>
+<li><a href="#%E8%A7%A3%E5%8E%8B%E7%BC%A9">解压缩</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">配置环境变量</a><ul>
+<li><a href="#%E9%85%8D%E7%BD%AE">配置</a></li>
+<li><a href="#%E6%A3%80%E6%9F%A5">检查</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%B0%86b%E7%AB%99%E8%A7%86%E9%A2%91%E8%BD%AC%E5%8C%96%E4%B8%BAmp4%E6%A0%BC%E5%BC%8F">将B站视频转化为.mp4格式</a><ul>
+<li><a href="#%E6%89%BE%E5%88%B0b%E7%AB%99%E8%A7%86%E9%A2%91%E5%82%A8%E5%AD%98%E8%B7%AF%E5%BE%84">找到B站视频储存路径</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="ffmpeg的配置"><a href="#ffmpeg的配置" class="headerlink" title="ffmpeg的配置"></a>ffmpeg的配置</h3><h4 id="下载ffmpeg包"><a href="#下载ffmpeg包" class="headerlink" title="下载ffmpeg包"></a>下载ffmpeg包</h4><p>你可以下载 <a href="fhttps://gitee.com/YsKIKI/blog/releases/download/1.0.2/ffmpeg.7z">这里</a> 的包  </p>
+<blockquote>
+<p>建议国内无VPN用户选择该方式下载</p>
+</blockquote>
+<p>也可以在<a href="https://ffmpeg.org/">ffmpeg官网</a>下载最新包</p>
+<blockquote>
+<p>建议有VPN的用户选择该方式下载</p>
+</blockquote>
+<h4 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h4><p>将ffmpeg的压缩包解压缩到一个 <strong>纯英文路径</strong> 的文件夹</p>
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>打开 <code>ffmpeg</code>文件夹 &gt;&gt; <code>bin</code>目录<br>复制bin目录路径备用<br><code>win-I</code>打开设置 &gt;&gt; 系统 &gt;&gt; 系统信息 &gt;&gt; 高级系统设置 &gt;&gt; 环境变量<br>在<code>系统变量(S)</code>中找到<code>Path</code>，点击<code>编辑(I)…</code>，点击新建，粘贴你的bin目录路径：<br><img src="/ffmpeg-building/ffmpeg-1.png"><br><img src="/ffmpeg-building/ffmpeg-2.png"><br>点击 <strong><code>确定</code></strong> &gt;&gt; <strong><code>确定</code></strong> &gt;&gt; __<code>确定</code>__，环境变量即配置完毕</p>
+<h5 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h5><p><code>win-R</code>打开<code>cmd</code>，输入：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ffmpeg -version</span><br></pre></td></tr></table></figure>
+<p>出现：<br><img src="/ffmpeg-building/ffmpeg-3.png"><br>即配置完成</p>
+<h3 id="将B站视频转化为-mp4格式"><a href="#将B站视频转化为-mp4格式" class="headerlink" title="将B站视频转化为.mp4格式"></a>将B站视频转化为.mp4格式</h3><h4 id="找到B站视频储存路径"><a href="#找到B站视频储存路径" class="headerlink" title="找到B站视频储存路径"></a>找到B站视频储存路径</h4><p>首先，我们要找到B站视频缓存的文件夹位置，找到两个<code>.m4s</code>文件，将其拷贝到另一空文件夹：<br><img src="/ffmpeg-building/ffmpeg-4.png"><br>将两个文件重命名为<code>video.m4s</code>和<code>audio.m4s</code>:<br><img src="/ffmpeg-building/ffmpeg-5.png"><br><font color="red"><font size="5">将两个文件都</font></font> 右键选择用<code>notepad++</code>打开，删除最前面的00……0，保存：<br><img src="/ffmpeg-building/ffmpeg-6.png"><br>在 此空文件夹 空白处右键 打开终端，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i video.m4s -i audio.m4s -codec copy output.mp4</span><br></pre></td></tr></table></figure>
+<p>执行命令后，出现：<br><img src="/ffmpeg-building/ffmpeg-7.png"><br>同时文件夹内出现的<code>output.mp4</code>即为转化完的视频 </p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>ffmpeg</tag>
       </tags>
   </entry>
   <entry>
@@ -939,6 +856,89 @@
         <tag>教程</tag>
         <tag>Hexo</tag>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows优化设置</title>
+    <url>//posts/Windows-delay-update/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#%E6%9A%82%E5%81%9Cwindows%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0">暂停Windows系统更新</a><ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%89%93%E5%BC%80%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%BC%96%E8%BE%91%E5%99%A8">第一步：打开注册表编辑器</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E5%AF%BC%E8%88%AA%E8%87%B3%E7%9B%AE%E6%A0%87%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84">第二步：导航至目标注册表路径</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84dword%E5%80%BC">第三步：创建新的DWORD值</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E4%BF%AE%E6%94%B9%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE">第四步：修改数值数据</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%87%E4%BB%BD%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">备份驱动程序</a></li>
+<li><a href="#%E5%B0%86%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%94%B9%E4%B8%BA%E8%80%81%E7%89%88">将右键菜单改为老版</a></li>
+</ul>
+<h3 id="暂停Windows系统更新"><a href="#暂停Windows系统更新" class="headerlink" title="暂停Windows系统更新"></a>暂停Windows系统更新</h3><h4 id="第一步：打开注册表编辑器"><a href="#第一步：打开注册表编辑器" class="headerlink" title="第一步：打开注册表编辑器"></a>第一步：打开注册表编辑器</h4><ol>
+<li>按下键盘上的<code>Win + R</code>组合键，打开”运行”对话框</li>
+<li>在输入框中键入<code>regedit</code></li>
+<li>点击”确定”或按回车键</li>
+</ol>
+<h4 id="第二步：导航至目标注册表路径"><a href="#第二步：导航至目标注册表路径" class="headerlink" title="第二步：导航至目标注册表路径"></a>第二步：导航至目标注册表路径</h4><ol>
+<li><p>在注册表编辑器左侧导航栏中，依次展开以下路径：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果找不到上述路径，请确认您的Windows版本是否支持此设置（Windows 10 1803及以上版本）</p>
+</li>
+</ol>
+<h4 id="第三步：创建新的DWORD值"><a href="#第三步：创建新的DWORD值" class="headerlink" title="第三步：创建新的DWORD值"></a>第三步：创建新的DWORD值</h4><ol>
+<li><p>右键点击”Settings”文件夹</p>
+</li>
+<li><p>选择”新建” &gt; “DWORD (32位)值(D)”</p>
+</li>
+<li><p>将新建的值命名为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FlightSettingsMaxPauseDays</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="第四步：修改数值数据"><a href="#第四步：修改数值数据" class="headerlink" title="第四步：修改数值数据"></a>第四步：修改数值数据</h4><ol>
+<li><p>双击刚刚创建的<code>FlightSettingsMaxPauseDays</code>项</p>
+</li>
+<li><p>在”数值数据”输入框中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">65535</span><br></pre></td></tr></table></figure></li>
+<li><p>确保”基数”选项选择为”十进制”</p>
+</li>
+<li><p>点击”确定”保存更改</p>
+</li>
+</ol>
+<h3 id="备份驱动程序"><a href="#备份驱动程序" class="headerlink" title="备份驱动程序"></a>备份驱动程序</h3><ol>
+<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）  </p>
+</li>
+<li><p>执行以下命令将当前所有驱动备份到 <code>D:\DriverBackup</code>（可自定义路径）：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">dism /online /export-driver /destination:D:\DriverBackup</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作完成后，驱动文件会被保存到该文件夹中，重装后可用于手动安装或自动恢复。</p>
+</li>
+</ol>
+<h3 id="将右键菜单改为老版"><a href="#将右键菜单改为老版" class="headerlink" title="将右键菜单改为老版"></a>将右键菜单改为老版</h3><ol>
+<li><p>使用管理员权限打开命令提示符（Win + S 输入 <code>cmd</code>，右键以管理员身份运行）</p>
+</li>
+<li><p>执行以下命令：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">reg add &quot;HKCU\Software\Classes\CLSID\&#123;<span class="number">86</span>ca1aa0-<span class="number">34</span>aa-<span class="number">4</span>e8b-a509-<span class="number">50</span>c905bae2a2&#125;\InprocServer32&quot; /ve /d &quot;&quot; /f</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>reg add</code>：添加注册表项  </p>
+</li>
+<li><p><code>&quot;HKCU\Software\Classes\CLSID\&#123;...&#125;&quot;</code>：路径</p>
+</li>
+<li><p><code>\InprocServer32</code>：要新建的子项</p>
+</li>
+<li><p><code>/ve</code>：表示设置 <code>(默认)</code> 项</p>
+</li>
+<li><p><code>/d &quot;&quot;</code>：值为空字符串</p>
+</li>
+<li><p><code>/f</code>：强制执行，不弹确认</p>
+</li>
+</ul>
+</li>
+<li><p><code>Ctrl+Shift+Esc</code> 打开任务管理器，重启 <code>explorer.exe</code> 进程即可</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
