@@ -1,126 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>基于GitHub的博客搭建</title>
-    <url>//posts/Blog-building/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><strong>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</strong></li>
-<li><strong>如不具备上述能力，请立即关闭此教程。</strong></li>
-</ul>
-<ul>
-<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
-<li><a href="#github%E8%B4%A6%E5%8F%B7%E6%B3%A8%E5%86%8C">GitHub账号注册</a></li>
-<li><a href="#git%E9%80%9A%E8%BF%87ssh%E7%BB%91%E5%AE%9Agithub">Git通过ssh绑定GitHub</a></li>
-<li><a href="#nodejs%E9%85%8D%E7%BD%AE">Nodejs配置</a><ul>
-<li><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">设置npm在安装全局模块时的路径和环境变量</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95">测试</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%89%E8%A3%85hexo">安装Hexo</a><ul>
-<li><a href="#%E5%88%9B%E5%BB%BAgithub-pages">创建GitHub Pages</a></li>
-<li><a href="#%E6%AD%A3%E5%BC%8F%E5%AE%89%E8%A3%85hexo">正式安装Hexo</a></li>
-<li><a href="#%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0github">将Hexo部署到GitHub</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
-<p>↓ 附上下载链接 ↓</p>
-<ul>
-<li>Windows<br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/Git-2.43.0-64-bit.exe">Git-v2.43.0-x64</a><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/node-v18.19.0-x64.msi">node-v18.19.0-x64</a></li>
-</ul>
-<h3 id="GitHub账号注册"><a href="#GitHub账号注册" class="headerlink" title="GitHub账号注册"></a>GitHub账号注册</h3><blockquote>
-<p>Github是全球最大的程序员交友♂平台（doge）</p>
-<blockquote>
-<p>有GitHub账号的可以跳过这一步</p>
-</blockquote>
-</blockquote>
-<p>点击进入<a href="https://github.com/">Github官网</a>  </p>
-<p>点击右上角<code>sign up</code>进入注册页面，输入邮箱，创建密码，设置昵称</p>
-<blockquote>
-<p>然后 下一步 下一步 下一步 下一步……</p>
-<blockquote>
-<p>如果实在不会，请使用<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>进行搜索</p>
-</blockquote>
-</blockquote>
-<h3 id="Git通过ssh绑定GitHub"><a href="#Git通过ssh绑定GitHub" class="headerlink" title="Git通过ssh绑定GitHub"></a>Git通过ssh绑定GitHub</h3><blockquote>
-<p>SSH（安全外壳协议，Secure Shell 的缩写）是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。简单来说，SSH可以保障你的账户安全，将你的数据加密压缩，它不仅可以防止其他人截获你的数据，还能加快传输速度。</p>
-</blockquote>
-<p>由于Git bash自带ssh，所以无需安装  </p>
-<p>在任意位置点击鼠标右键，打开<code>Git Bash</code>，输入<code>ssh</code>检查ssh<br>如果出现以下内容即已安装ssh：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ ssh</span><br><span class="line"><span class="function">usage: <span class="title">ssh</span> [-46<span class="title">AaCfGgKkMNnqsTtVvXxYy</span>] [-<span class="title">B</span> <span class="title">bind_interface</span>] [-<span class="title">b</span> <span class="title">bind_address</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">c</span> <span class="title">cipher_spec</span>] [-<span class="title">D</span> [<span class="title">bind_address</span>:]<span class="title">port</span>] [-<span class="title">E</span> <span class="title">log_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">e</span> <span class="title">escape_char</span>] [-<span class="title">F</span> <span class="title">configfile</span>] [-<span class="title">I</span> <span class="title">pkcs11</span>] [-<span class="title">i</span> <span class="title">identity_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">J</span> <span class="title">destination</span>] [-<span class="title">L</span> <span class="title">address</span>] [-<span class="title">l</span> <span class="title">login_name</span>] [-<span class="title">m</span> <span class="title">mac_spec</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">O</span> <span class="title">ctl_cmd</span>] [-<span class="title">o</span> <span class="title">option</span>] [-<span class="title">P</span> <span class="title">tag</span>] [-<span class="title">p</span> <span class="title">port</span>] [-<span class="title">Q</span> <span class="title">query_option</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">R</span> <span class="title">address</span>] [-<span class="title">S</span> <span class="title">ctl_path</span>] [-<span class="title">W</span> <span class="title">host:port</span>] [-<span class="title">w</span> <span class="title">local_tun</span>[:<span class="title">remote_tun</span>]]</span></span><br><span class="line"><span class="function">           <span class="title">destination</span> [<span class="title">command</span> [<span class="title">argument</span> ...]]</span></span><br></pre></td></tr></table></figure>
-<p>输入<code>ssh-keygen -t rsa</code>，敲击四次回车键，创建ssh密钥  </p>
-<p>ssh密钥保存在<code>C:\Users\&lt;你的用户名&gt;\.ssh</code>  </p>
-<blockquote>
-<p>如果没有<code>.ssh</code>,请打开“显示隐藏文件”<br>若不会，请通过<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>自行查找 ⌈如何显示隐藏文件⌋</p>
-</blockquote>
-<p>右键用记事本打开<code>id_rsa.pub</code>，复制里面的全部内容，进入你的 GitHub 主页，先点击右上角，再点击 <strong>settings</strong>  </p>
-<p>先点击右边的 <strong>SSH and GPG keys</strong>，再点击 <strong>New SSH key</strong>：<br><img src="/Resources/GitHub-1.png" alt="GitHub-1">  </p>
-<p>将复制的公钥 id_rsa.pub 的内容粘贴到 key 内，再点击 Add SSH key，如下图：<br><img src="/Resources/GitHub-2.png" alt="GitHub-2">  </p>
-<p>在<code>Git Bash</code>窗口输入<code>ssh -T git@github.com</code>进行检验，出现  </p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Are you sure you want to continue connecting(yes/no/[fingerprint])?</span><br></pre></td></tr></table></figure>
-<p>输入<code>yes</code>出现：  </p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Hi &lt;你的GitHub昵称&gt;! You&#x27;ve successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
-<p>即为成功  </p>
-<h3 id="Nodejs配置"><a href="#Nodejs配置" class="headerlink" title="Nodejs配置"></a>Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v18.<span class="number">19</span>.<span class="number">0</span></span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line"><span class="number">10</span>.<span class="number">2</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>主要是检查nodejs和npm有没有安装，版本不同影响不大  </p>
-</blockquote>
-<h4 id="设置npm在安装全局模块时的路径和环境变量"><a href="#设置npm在安装全局模块时的路径和环境变量" class="headerlink" title="设置npm在安装全局模块时的路径和环境变量"></a>设置npm在安装全局模块时的路径和环境变量</h4><p>在 <strong>你永远不会删除的地方中</strong> 新建 <strong>文件夹 “A”</strong><br>在其中 新建两个空文件夹<code>node_cache</code>、<code>node_global</code>：<br><img src="/Resources/GitHub-3.png" alt="GitHub-3">  </p>
-<blockquote>
-<p><strong>！！！请勿删除此文件夹！！！</strong><br>否则模块将被删除，需要重新配置</p>
-</blockquote>
-<p>打开cmd，输入如下两个命令：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix &quot;&lt;你的node_global文件夹路径&gt;&quot;</span><br><span class="line">npm config <span class="built_in">set</span> cache &quot;&lt;你的node_cache文件夹路径&gt;&quot;</span><br></pre></td></tr></table></figure>
-<p>设置环境变量：  </p>
-<p>右键 此电脑 –&gt; 属性 –&gt; 高级系统设置 –&gt; 环境变量  </p>
-<p>然后在系统变量中新建一个变量<br>点击<code>系统变量(S)</code>下的<code>新建(W)…</code><br>出现：<br><img src="/Resources/GitHub-4.png" alt="GitHub-4">  </p>
-<p>输入 变量名为 <strong>“NODE_PATH”</strong><br>输入 变量值为 <strong>“&lt;文件夹 “A” 的路径&gt;”</strong>  </p>
-<blockquote>
-<p>你问我什么是 <strong>文件夹 “A”</strong> ？</p>
-<blockquote>
-<p><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">喏，在这</a></p>
-</blockquote>
-</blockquote>
-<p>然后编辑<code>用户变量(U)</code>里的<code>Path</code>，点按<code>编辑(E)…</code>，将相应npm的路径改为：<br><code>&lt;你的node_global文件夹路径&gt;</code>  </p>
-<p><strong>按确定！按确定！按确定！</strong>  </p>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在 cmd 命令行下执行<code>npm install webpack -g</code>，出现：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">+ webpack@<span class="number">4</span>.<span class="number">41</span>.<span class="number">5</span></span><br><span class="line">added <span class="number">322</span> packages from <span class="number">197</span> contributors <span class="keyword">in</span> <span class="number">250</span>.<span class="number">122</span>s</span><br></pre></td></tr></table></figure>
-<p>即为成功，然后<code>webpack</code>这个模块已经在我们设置默认的文件夹中了  </p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h4><p>Hexo就是我们搭建博客的框架，在安装之前，我们要先在GitHub上创立一个仓库<br>进入<a href="https://github.com/">GitHub个人主页</a>，右上角创建仓库：  </p>
-<p><img src="/Resources/GitHub-5.png" alt="GitHub-5"><br><img src="/Resources/GitHub-6.png" alt="GitHub-6"><br>点击 <strong>settings</strong> ：  </p>
-<p><img src="/Resources/GitHub-7.png" alt="GitHub-7"><br>点击 <strong>pages</strong> ：  </p>
-<p><img src="/Resources/GitHub-8.png" alt="GitHub-8"><br>出现<code>&lt;你的GitHub昵称&gt;.github.io</code>即为成功：  </p>
-<p><img src="/Resources/GitHub-9.png" alt="GitHub-9">  </p>
-<h4 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h4><p>新建Blog文件夹，在文件夹内右键打开<code>Git Bash</code>，输入以下npm命令安装Hexo：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成后，输入<code>hexo init</code>初始化博客,文件夹内会出现以下文件：  </p>
-<p><img src="/Resources/GitHub-10.png" alt="GitHub-10"><br>这个文件夹就是你的博客啦！  </p>
-<p>接下来，在 Bash 窗口内：<br>输入<code>hexo g</code>静态部署<br>输入<code>hexo s</code>在4000端口上部署：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>这时候用浏览器打开 <a href="https://localhost:4000/">https://localhost:4000</a> 即可看到新部署的网页。<br>别急，回到Git Bash窗口，按ctrl +c 停止运行服务器。  </p>
-<h4 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h4><p>在文件夹内 右键 用记事本打开<code>_config.yml</code>，在最底下加上：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:&lt;………………&gt;.github.io.git</span>  <span class="comment">#你的仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-<p>你的仓库地址：<br><img src="/Resources/GitHub-11.png" alt="GitHub-11">  </p>
-<p>回到Blog文件夹，右键<code>Git Bash here</code>，在Git Bash中输入：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>然后 <strong>分别</strong> 输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g       <span class="comment">#生成网站静态文件到默认设置的 public 文件夹</span></span><br><span class="line">hexo d       <span class="comment">#生成网站静态文件，并部署到设定的仓库</span></span><br></pre></td></tr></table></figure>
-<p>或者输入：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d		<span class="comment">#和上面的没有不同，只是将命令串起来了</span></span><br></pre></td></tr></table></figure>
-<p>完成以后，打开浏览器，输入 <a href="https://xxx.github.io/">https://xxx.github.io</a> 就可以打开你的网页了。  </p>
-<p>下一篇：<a href="https://kk-wuyue.top/posts/G-blog-To-domain/">如何自定义博客域名</a></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>Blog</tag>
-        <tag>Nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI与人</title>
     <url>//posts/ai-with-human/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -314,59 +194,123 @@
 ]]></content>
   </entry>
   <entry>
-    <title>工具获取</title>
-    <url>//posts/tools-acquisition/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
-<p><del>（记得解压缩哦~）</del></p>
-<blockquote>
-<p>（换仓库了，不用解压缩了）  </p>
-</blockquote>
-</blockquote>
-<hr>
-<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
-<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/gf.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
-<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">irm</span> https://blog.kk<span class="literal">-wuyue</span>.top/Resources/hksr.ps1 | <span class="built_in">iex</span></span><br></pre></td></tr></table></figure>
-
-<p>如果不可用，使用以下内容：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">[<span class="type">Net.ServicePointManager</span>]::SecurityProtocol = [<span class="type">Net.ServicePointManager</span>]::SecurityProtocol <span class="operator">-bor</span> [<span class="type">Net.SecurityProtocolType</span>]::Tls12; <span class="built_in">Invoke-Expression</span> (<span class="built_in">New-Object</span> Net.WebClient).DownloadString(<span class="string">&quot;https://imgheybox.max-c.com/game/star_rail/link1.ps1&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="绝区零-抽卡链接获取工具"><a href="#绝区零-抽卡链接获取工具" class="headerlink" title="绝区零 抽卡链接获取工具"></a>绝区零 抽卡链接获取工具</h3><h4 id="Windows：-2"><a href="#Windows：-2" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">iex</span>(<span class="built_in">irm</span> <span class="string">&#x27;https://blog.kk-wuyue.top/Resources/zzzgacha.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
-<hr>
-<h3 id="Notepad-下载"><a href="#Notepad-下载" class="headerlink" title="Notepad++下载"></a>Notepad++下载</h3><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++ [ v8.6.4 ]</a></p>
-<hr>
-<center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>
-<br>
-<div id="random-img" style="width: clamp(200px, 100%, 450px); aspect-ratio: 1/1; margin: 0 auto;">
-  <img style="width: 100%; height: 100%; object-fit: cover;">
-</div>
-<script>
-  const img = document.querySelector('#random-img img');
-  img.src = "https://image.kk-wuyue.top/random?dir=Quan&type=img&t=" + Date.now();
-</script>
-<br>
-
-<hr>
-<ul>
-<li><a href="https://blog.kk-wuyue.top/">返回主页</a></li>
+    <title>基于GitHub的博客搭建</title>
+    <url>//posts/Blog-building/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><strong>前提紧要：请确保自身具备最基本的阅读理解能力，会使用翻译，会使用搜索引擎。</strong></li>
+<li><strong>如不具备上述能力，请立即关闭此教程。</strong></li>
 </ul>
+<ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
+<li><a href="#github%E8%B4%A6%E5%8F%B7%E6%B3%A8%E5%86%8C">GitHub账号注册</a></li>
+<li><a href="#git%E9%80%9A%E8%BF%87ssh%E7%BB%91%E5%AE%9Agithub">Git通过ssh绑定GitHub</a></li>
+<li><a href="#nodejs%E9%85%8D%E7%BD%AE">Nodejs配置</a><ul>
+<li><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">设置npm在安装全局模块时的路径和环境变量</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95">测试</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E8%A3%85hexo">安装Hexo</a><ul>
+<li><a href="#%E5%88%9B%E5%BB%BAgithub-pages">创建GitHub Pages</a></li>
+<li><a href="#%E6%AD%A3%E5%BC%8F%E5%AE%89%E8%A3%85hexo">正式安装Hexo</a></li>
+<li><a href="#%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0github">将Hexo部署到GitHub</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>所需环境：Windows、Git、Nodejs<br><strong>打开安装包后全部下一步即可</strong><br>如果实在不会，请进入<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>等进行搜索  </p>
+<p>↓ 附上下载链接 ↓</p>
+<ul>
+<li>Windows<br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/Git-2.43.0-64-bit.exe">Git-v2.43.0-x64</a><br><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.1/node-v18.19.0-x64.msi">node-v18.19.0-x64</a></li>
+</ul>
+<h3 id="GitHub账号注册"><a href="#GitHub账号注册" class="headerlink" title="GitHub账号注册"></a>GitHub账号注册</h3><blockquote>
+<p>Github是全球最大的程序员交友♂平台（doge）</p>
+<blockquote>
+<p>有GitHub账号的可以跳过这一步</p>
+</blockquote>
+</blockquote>
+<p>点击进入<a href="https://github.com/">Github官网</a>  </p>
+<p>点击右上角<code>sign up</code>进入注册页面，输入邮箱，创建密码，设置昵称</p>
+<blockquote>
+<p>然后 下一步 下一步 下一步 下一步……</p>
+<blockquote>
+<p>如果实在不会，请使用<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>进行搜索</p>
+</blockquote>
+</blockquote>
+<h3 id="Git通过ssh绑定GitHub"><a href="#Git通过ssh绑定GitHub" class="headerlink" title="Git通过ssh绑定GitHub"></a>Git通过ssh绑定GitHub</h3><blockquote>
+<p>SSH（安全外壳协议，Secure Shell 的缩写）是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议，利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。简单来说，SSH可以保障你的账户安全，将你的数据加密压缩，它不仅可以防止其他人截获你的数据，还能加快传输速度。</p>
+</blockquote>
+<p>由于Git bash自带ssh，所以无需安装  </p>
+<p>在任意位置点击鼠标右键，打开<code>Git Bash</code>，输入<code>ssh</code>检查ssh<br>如果出现以下内容即已安装ssh：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ ssh</span><br><span class="line"><span class="function">usage: <span class="title">ssh</span> [-46<span class="title">AaCfGgKkMNnqsTtVvXxYy</span>] [-<span class="title">B</span> <span class="title">bind_interface</span>] [-<span class="title">b</span> <span class="title">bind_address</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">c</span> <span class="title">cipher_spec</span>] [-<span class="title">D</span> [<span class="title">bind_address</span>:]<span class="title">port</span>] [-<span class="title">E</span> <span class="title">log_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">e</span> <span class="title">escape_char</span>] [-<span class="title">F</span> <span class="title">configfile</span>] [-<span class="title">I</span> <span class="title">pkcs11</span>] [-<span class="title">i</span> <span class="title">identity_file</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">J</span> <span class="title">destination</span>] [-<span class="title">L</span> <span class="title">address</span>] [-<span class="title">l</span> <span class="title">login_name</span>] [-<span class="title">m</span> <span class="title">mac_spec</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">O</span> <span class="title">ctl_cmd</span>] [-<span class="title">o</span> <span class="title">option</span>] [-<span class="title">P</span> <span class="title">tag</span>] [-<span class="title">p</span> <span class="title">port</span>] [-<span class="title">Q</span> <span class="title">query_option</span>]</span></span><br><span class="line"><span class="function">           [-<span class="title">R</span> <span class="title">address</span>] [-<span class="title">S</span> <span class="title">ctl_path</span>] [-<span class="title">W</span> <span class="title">host:port</span>] [-<span class="title">w</span> <span class="title">local_tun</span>[:<span class="title">remote_tun</span>]]</span></span><br><span class="line"><span class="function">           <span class="title">destination</span> [<span class="title">command</span> [<span class="title">argument</span> ...]]</span></span><br></pre></td></tr></table></figure>
+<p>输入<code>ssh-keygen -t rsa</code>，敲击四次回车键，创建ssh密钥  </p>
+<p>ssh密钥保存在<code>C:\Users\&lt;你的用户名&gt;\.ssh</code>  </p>
+<blockquote>
+<p>如果没有<code>.ssh</code>,请打开“显示隐藏文件”<br>若不会，请通过<a href="https://www.baidu.com/">百度</a>、<a href="https://cn.bing.com/">bing</a>自行查找 ⌈如何显示隐藏文件⌋</p>
+</blockquote>
+<p>右键用记事本打开<code>id_rsa.pub</code>，复制里面的全部内容，进入你的 GitHub 主页，先点击右上角，再点击 <strong>settings</strong>  </p>
+<p>先点击右边的 <strong>SSH and GPG keys</strong>，再点击 <strong>New SSH key</strong>：<br><img src="/Resources/GitHub-1.png" alt="GitHub-1">  </p>
+<p>将复制的公钥 id_rsa.pub 的内容粘贴到 key 内，再点击 Add SSH key，如下图：<br><img src="/Resources/GitHub-2.png" alt="GitHub-2">  </p>
+<p>在<code>Git Bash</code>窗口输入<code>ssh -T git@github.com</code>进行检验，出现  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Are you sure you want to continue connecting(yes/no/[fingerprint])?</span><br></pre></td></tr></table></figure>
+<p>输入<code>yes</code>出现：  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Hi &lt;你的GitHub昵称&gt;! You&#x27;ve successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell access.</span><br></pre></td></tr></table></figure>
+<p>即为成功  </p>
+<h3 id="Nodejs配置"><a href="#Nodejs配置" class="headerlink" title="Nodejs配置"></a>Nodejs配置</h3><p>在<code>Git Bash</code>窗口输入<code>node -v</code>和<code>npm -v</code>命令检查版本：  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v18.<span class="number">19</span>.<span class="number">0</span></span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line"><span class="number">10</span>.<span class="number">2</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>主要是检查nodejs和npm有没有安装，版本不同影响不大  </p>
+</blockquote>
+<h4 id="设置npm在安装全局模块时的路径和环境变量"><a href="#设置npm在安装全局模块时的路径和环境变量" class="headerlink" title="设置npm在安装全局模块时的路径和环境变量"></a>设置npm在安装全局模块时的路径和环境变量</h4><p>在 <strong>你永远不会删除的地方中</strong> 新建 <strong>文件夹 “A”</strong><br>在其中 新建两个空文件夹<code>node_cache</code>、<code>node_global</code>：<br><img src="/Resources/GitHub-3.png" alt="GitHub-3">  </p>
+<blockquote>
+<p><strong>！！！请勿删除此文件夹！！！</strong><br>否则模块将被删除，需要重新配置</p>
+</blockquote>
+<p>打开cmd，输入如下两个命令：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix &quot;&lt;你的node_global文件夹路径&gt;&quot;</span><br><span class="line">npm config <span class="built_in">set</span> cache &quot;&lt;你的node_cache文件夹路径&gt;&quot;</span><br></pre></td></tr></table></figure>
+<p>设置环境变量：  </p>
+<p>右键 此电脑 –&gt; 属性 –&gt; 高级系统设置 –&gt; 环境变量  </p>
+<p>然后在系统变量中新建一个变量<br>点击<code>系统变量(S)</code>下的<code>新建(W)…</code><br>出现：<br><img src="/Resources/GitHub-4.png" alt="GitHub-4">  </p>
+<p>输入 变量名为 <strong>“NODE_PATH”</strong><br>输入 变量值为 <strong>“&lt;文件夹 “A” 的路径&gt;”</strong>  </p>
+<blockquote>
+<p>你问我什么是 <strong>文件夹 “A”</strong> ？</p>
+<blockquote>
+<p><a href="#%E8%AE%BE%E7%BD%AEnpm%E5%9C%A8%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E6%97%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">喏，在这</a></p>
+</blockquote>
+</blockquote>
+<p>然后编辑<code>用户变量(U)</code>里的<code>Path</code>，点按<code>编辑(E)…</code>，将相应npm的路径改为：<br><code>&lt;你的node_global文件夹路径&gt;</code>  </p>
+<p><strong>按确定！按确定！按确定！</strong>  </p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在 cmd 命令行下执行<code>npm install webpack -g</code>，出现：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">+ webpack@<span class="number">4</span>.<span class="number">41</span>.<span class="number">5</span></span><br><span class="line">added <span class="number">322</span> packages from <span class="number">197</span> contributors <span class="keyword">in</span> <span class="number">250</span>.<span class="number">122</span>s</span><br></pre></td></tr></table></figure>
+<p>即为成功，然后<code>webpack</code>这个模块已经在我们设置默认的文件夹中了  </p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h4><p>Hexo就是我们搭建博客的框架，在安装之前，我们要先在GitHub上创立一个仓库<br>进入<a href="https://github.com/">GitHub个人主页</a>，右上角创建仓库：  </p>
+<p><img src="/Resources/GitHub-5.png" alt="GitHub-5"><br><img src="/Resources/GitHub-6.png" alt="GitHub-6"><br>点击 <strong>settings</strong> ：  </p>
+<p><img src="/Resources/GitHub-7.png" alt="GitHub-7"><br>点击 <strong>pages</strong> ：  </p>
+<p><img src="/Resources/GitHub-8.png" alt="GitHub-8"><br>出现<code>&lt;你的GitHub昵称&gt;.github.io</code>即为成功：  </p>
+<p><img src="/Resources/GitHub-9.png" alt="GitHub-9">  </p>
+<h4 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h4><p>新建Blog文件夹，在文件夹内右键打开<code>Git Bash</code>，输入以下npm命令安装Hexo：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装完成后，输入<code>hexo init</code>初始化博客,文件夹内会出现以下文件：  </p>
+<p><img src="/Resources/GitHub-10.png" alt="GitHub-10"><br>这个文件夹就是你的博客啦！  </p>
+<p>接下来，在 Bash 窗口内：<br>输入<code>hexo g</code>静态部署<br>输入<code>hexo s</code>在4000端口上部署：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>这时候用浏览器打开 <a href="https://localhost:4000/">https://localhost:4000</a> 即可看到新部署的网页。<br>别急，回到Git Bash窗口，按ctrl +c 停止运行服务器。  </p>
+<h4 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h4><p>在文件夹内 右键 用记事本打开<code>_config.yml</code>，在最底下加上：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:&lt;………………&gt;.github.io.git</span>  <span class="comment">#你的仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+<p>你的仓库地址：<br><img src="/Resources/GitHub-11.png" alt="GitHub-11">  </p>
+<p>回到Blog文件夹，右键<code>Git Bash here</code>，在Git Bash中输入：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后 <strong>分别</strong> 输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g       <span class="comment">#生成网站静态文件到默认设置的 public 文件夹</span></span><br><span class="line">hexo d       <span class="comment">#生成网站静态文件，并部署到设定的仓库</span></span><br></pre></td></tr></table></figure>
+<p>或者输入：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d		<span class="comment">#和上面的没有不同，只是将命令串起来了</span></span><br></pre></td></tr></table></figure>
+<p>完成以后，打开浏览器，输入 <a href="https://xxx.github.io/">https://xxx.github.io</a> 就可以打开你的网页了。  </p>
+<p>下一篇：<a href="https://kk-wuyue.top/posts/G-blog-To-domain/">如何自定义博客域名</a></p>
 ]]></content>
       <categories>
-        <category>工具获取</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>原神</tag>
-        <tag>崩坏·星穹铁道</tag>
-        <tag>私服</tag>
+        <tag>GitHub</tag>
+        <tag>Blog</tag>
+        <tag>Nodejs</tag>
       </tags>
   </entry>
   <entry>
@@ -435,6 +379,62 @@
         <tag>Python</tag>
         <tag>Pyenv</tag>
         <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工具获取</title>
+    <url>//posts/tools-acquisition/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
+<p><del>（记得解压缩哦~）</del></p>
+<blockquote>
+<p>（换仓库了，不用解压缩了）  </p>
+</blockquote>
+</blockquote>
+<hr>
+<h3 id="原神-抽卡链接获取工具"><a href="#原神-抽卡链接获取工具" class="headerlink" title="原神 抽卡链接获取工具"></a>原神 抽卡链接获取工具</h3><h4 id="Android："><a href="#Android：" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Genshin-Link.apk</a>  </p>
+<h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iex(irm  <span class="string">&#x27;https://img.lelaer.com/gf.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="崩坏·星穹铁道-抽卡链接获取工具"><a href="#崩坏·星穹铁道-抽卡链接获取工具" class="headerlink" title="崩坏·星穹铁道 抽卡链接获取工具"></a>崩坏·星穹铁道 抽卡链接获取工具</h3><h4 id="Android：-1"><a href="#Android：-1" class="headerlink" title="Android："></a>Android：</h4><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0/%E5%B4%A9%E5%9D%8F%C2%B7%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%E6%8A%BD%E5%8D%A1%E9%93%BE%E6%8E%A5%E8%8E%B7%E5%8F%96%E5%B7%A5%E5%85%B7.apk">Star Rail-Link.apk</a>  </p>
+<h4 id="Windows：-1"><a href="#Windows：-1" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">irm</span> https://blog.kk<span class="literal">-wuyue</span>.top/Resources/hksr.ps1 | <span class="built_in">iex</span></span><br></pre></td></tr></table></figure>
+
+<p>如果不可用，使用以下内容：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">[<span class="type">Net.ServicePointManager</span>]::SecurityProtocol = [<span class="type">Net.ServicePointManager</span>]::SecurityProtocol <span class="operator">-bor</span> [<span class="type">Net.SecurityProtocolType</span>]::Tls12; <span class="built_in">Invoke-Expression</span> (<span class="built_in">New-Object</span> Net.WebClient).DownloadString(<span class="string">&quot;https://imgheybox.max-c.com/game/star_rail/link1.ps1&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="绝区零-抽卡链接获取工具"><a href="#绝区零-抽卡链接获取工具" class="headerlink" title="绝区零 抽卡链接获取工具"></a>绝区零 抽卡链接获取工具</h3><h4 id="Windows：-2"><a href="#Windows：-2" class="headerlink" title="Windows："></a>Windows：</h4><p>打开游戏，<font color="red">切换到抽卡记录页面，翻几页</font><br>返回桌面，按住<code>Shift</code>右键打开<code>PowerShell</code>，输入以下内容：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">iex</span>(<span class="built_in">irm</span> <span class="string">&#x27;https://blog.kk-wuyue.top/Resources/zzzgacha.ps1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="原神、崩铁三端私服打包下载"><a href="#原神、崩铁三端私服打包下载" class="headerlink" title="原神、崩铁三端私服打包下载"></a>原神、崩铁三端私服打包下载</h3><p><a href="https://www.acfun.cn/v/ac24519842">私服</a></p>
+<hr>
+<h3 id="Notepad-下载"><a href="#Notepad-下载" class="headerlink" title="Notepad++下载"></a>Notepad++下载</h3><p><a href="https://gitee.com/YsKIKI/blog/releases/download/1.0.4/Notepad_plus_plus_V8.6.4.exe">Notepad++ [ v8.6.4 ]</a></p>
+<hr>
+<center><del>其他资源不定期更新中，我必咕咕咕OwO（雾）</del> </center>
+<br>
+<div id="random-img" style="width: clamp(200px, 100%, 450px); aspect-ratio: 1/1; margin: 0 auto;">
+  <img style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+<script>
+  const img = document.querySelector('#random-img img');
+  img.src = "https://image.kk-wuyue.top/random?dir=Quan&type=img&t=" + Date.now();
+</script>
+<br>
+
+<hr>
+<ul>
+<li><a href="https://blog.kk-wuyue.top/">返回主页</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具获取</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>崩坏·星穹铁道</tag>
+        <tag>私服</tag>
       </tags>
   </entry>
   <entry>
@@ -586,6 +586,78 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows更改用户名</title>
+    <url>//posts/Windows-change-Username/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
+<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
+<li>右上角查看方式选择 <strong>类别</strong> 。</li>
+<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 更改账户名称。</li>
+<li>输入 <strong>纯英文</strong> 用户名，点击更改，确定。</li>
+</ol>
+<h3 id="更改-User-文件夹的名称"><a href="#更改-User-文件夹的名称" class="headerlink" title="更改 User 文件夹的名称"></a>更改 <code>User</code> 文件夹的名称</h3><ol>
+<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:yes</span><br></pre></td></tr></table></figure>
+<p>会显示：命令成功完成</p>
+</li>
+<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
+</li>
+<li><p>在登录界面右下角选择 <code>Administrator</code> 账户进行登录。</p>
+</li>
+<li><p>打开文件夹，在地址栏输入：<code>C:\Users</code> 快速导航。</p>
+</li>
+<li><p>更改 <strong>你的原中文用户名</strong> 为 <strong>你的新英文用户名</strong> 。</p>
+</li>
+</ol>
+<h3 id="更改注册表中的路径"><a href="#更改注册表中的路径" class="headerlink" title="更改注册表中的路径"></a>更改注册表中的路径</h3><ol start="0">
+<li>注意：注册表操作位高风险操作，建议操作前先备份注册表。</li>
+<li>按 <code>Win+R</code> 输入 <code>regedit</code> 进入注册表。</li>
+<li>依次展开以下路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code></li>
+<li>在此目录下有多个文件夹，注意 <code>ProfileImagePath</code> 的数据，找到你的原中文用户名，双击进入编辑，将其更改为你的新英文用户名，点击确定。</li>
+</ol>
+<h3 id="回到更改好的用户"><a href="#回到更改好的用户" class="headerlink" title="回到更改好的用户"></a>回到更改好的用户</h3><ol>
+<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:no</span><br></pre></td></tr></table></figure>
+<p>会显示：命令成功完成</p>
+</li>
+<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
+</li>
+<li><p>选择你的账户，输入密码登录。</p>
+</li>
+</ol>
+<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><h3 id="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"><a href="#在更改文件夹名称时，文件夹处于在使用状态，无法更改名称" class="headerlink" title="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"></a>在更改文件夹名称时，文件夹处于在使用状态，无法更改名称</h3><p>解决办法：</p>
+<ol>
+<li>按 <code>Win+R</code>，输入 <code>msconfig</code>，回车。</li>
+<li>在弹出的 <strong>系统配置</strong> 窗口中，选择 <strong>引导</strong> 标签页，然后勾选 <strong>安全引导</strong> 。</li>
+<li>点击 <strong>确定</strong> 并重启电脑，系统将进入安全模式。</li>
+<li>在此模式下对文件夹进行更改。</li>
+<li>改完后按照上述方法再次打开系统配置， <strong>取消</strong> 勾选安全引导</li>
+</ol>
+<h3 id="在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码"><a href="#在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码" class="headerlink" title="在登录 Administrator 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码"></a>在登录 <code>Administrator</code> 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码</h3><p>解决办法：</p>
+<ol>
+<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
+<li>右上角查看方式选择 <strong>类别</strong> 。</li>
+<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 管理其他账户。</li>
+<li>点击 <code>Administrator</code> 账户，修改密码。</li>
+<li>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> ，点击 <code>Administrator</code> 账户，输入密码进行登录。</li>
+</ol>
+<h3 id="我无法选择“更改账户名称”"><a href="#我无法选择“更改账户名称”" class="headerlink" title="我无法选择“更改账户名称”"></a>我无法选择“更改账户名称”</h3><p>解决办法：  通过命令提示符修改用户名  </p>
+<ol>
+<li>以管理员身份打开 命令提示符：</li>
+<li>按 Windows + X，选择 命令提示符（管理员） 或 Windows PowerShell（管理员）。</li>
+<li>输入以下命令来列出所有用户：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure></li>
+<li>找到你想要修改的用户名。</li>
+<li>输入以下命令来修改用户名：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user 旧用户名 新用户名</span><br></pre></td></tr></table></figure></li>
+<li>此方法只能更改登录的显示用户名，但不会更改 C:&#x2F;Users&#x2F;Username 文件夹的名称。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows优化设置</title>
     <url>//posts/Windows-delay-update/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -665,78 +737,6 @@
 ]]></content>
       <tags>
         <tag>教程</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows更改用户名</title>
-    <url>//posts/Windows-change-Username/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Windows如何更改用户名为英文"><a href="#Windows如何更改用户名为英文" class="headerlink" title="Windows如何更改用户名为英文"></a>Windows如何更改用户名为英文</h2><h3 id="控制面板更改用户名"><a href="#控制面板更改用户名" class="headerlink" title="控制面板更改用户名"></a>控制面板更改用户名</h3><ol>
-<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
-<li>右上角查看方式选择 <strong>类别</strong> 。</li>
-<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 更改账户名称。</li>
-<li>输入 <strong>纯英文</strong> 用户名，点击更改，确定。</li>
-</ol>
-<h3 id="更改-User-文件夹的名称"><a href="#更改-User-文件夹的名称" class="headerlink" title="更改 User 文件夹的名称"></a>更改 <code>User</code> 文件夹的名称</h3><ol>
-<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:yes</span><br></pre></td></tr></table></figure>
-<p>会显示：命令成功完成</p>
-</li>
-<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
-</li>
-<li><p>在登录界面右下角选择 <code>Administrator</code> 账户进行登录。</p>
-</li>
-<li><p>打开文件夹，在地址栏输入：<code>C:\Users</code> 快速导航。</p>
-</li>
-<li><p>更改 <strong>你的原中文用户名</strong> 为 <strong>你的新英文用户名</strong> 。</p>
-</li>
-</ol>
-<h3 id="更改注册表中的路径"><a href="#更改注册表中的路径" class="headerlink" title="更改注册表中的路径"></a>更改注册表中的路径</h3><ol start="0">
-<li>注意：注册表操作位高风险操作，建议操作前先备份注册表。</li>
-<li>按 <code>Win+R</code> 输入 <code>regedit</code> 进入注册表。</li>
-<li>依次展开以下路径：<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code></li>
-<li>在此目录下有多个文件夹，注意 <code>ProfileImagePath</code> 的数据，找到你的原中文用户名，双击进入编辑，将其更改为你的新英文用户名，点击确定。</li>
-</ol>
-<h3 id="回到更改好的用户"><a href="#回到更改好的用户" class="headerlink" title="回到更改好的用户"></a>回到更改好的用户</h3><ol>
-<li><p>按 <code>Win+X</code> 打开 <strong>终端管理员</strong> ，输入：  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">net user administrator /active:no</span><br></pre></td></tr></table></figure>
-<p>会显示：命令成功完成</p>
-</li>
-<li><p>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> 。</p>
-</li>
-<li><p>选择你的账户，输入密码登录。</p>
-</li>
-</ol>
-<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><h3 id="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"><a href="#在更改文件夹名称时，文件夹处于在使用状态，无法更改名称" class="headerlink" title="在更改文件夹名称时，文件夹处于在使用状态，无法更改名称"></a>在更改文件夹名称时，文件夹处于在使用状态，无法更改名称</h3><p>解决办法：</p>
-<ol>
-<li>按 <code>Win+R</code>，输入 <code>msconfig</code>，回车。</li>
-<li>在弹出的 <strong>系统配置</strong> 窗口中，选择 <strong>引导</strong> 标签页，然后勾选 <strong>安全引导</strong> 。</li>
-<li>点击 <strong>确定</strong> 并重启电脑，系统将进入安全模式。</li>
-<li>在此模式下对文件夹进行更改。</li>
-<li>改完后按照上述方法再次打开系统配置， <strong>取消</strong> 勾选安全引导</li>
-</ol>
-<h3 id="在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码"><a href="#在登录-Administrator-账户时，需要输入密码，但是-不知道-忘记了-密码" class="headerlink" title="在登录 Administrator 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码"></a>在登录 <code>Administrator</code> 账户时，需要输入密码，但是 不知道&#x2F;忘记了 密码</h3><p>解决办法：</p>
-<ol>
-<li>按 <code>Win+R</code> 输入 <code>control</code> 打开控制面板。</li>
-<li>右上角查看方式选择 <strong>类别</strong> 。</li>
-<li>点击 用户账户 &#x3D;&gt; 用户账户 &#x3D;&gt; 管理其他账户。</li>
-<li>点击 <code>Administrator</code> 账户，修改密码。</li>
-<li>返回桌面，<code>Alt+F4</code> ，选择 <strong>注销</strong> ，点击 <code>Administrator</code> 账户，输入密码进行登录。</li>
-</ol>
-<h3 id="我无法选择“更改账户名称”"><a href="#我无法选择“更改账户名称”" class="headerlink" title="我无法选择“更改账户名称”"></a>我无法选择“更改账户名称”</h3><p>解决办法：  通过命令提示符修改用户名  </p>
-<ol>
-<li>以管理员身份打开 命令提示符：</li>
-<li>按 Windows + X，选择 命令提示符（管理员） 或 Windows PowerShell（管理员）。</li>
-<li>输入以下命令来列出所有用户：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure></li>
-<li>找到你想要修改的用户名。</li>
-<li>输入以下命令来修改用户名：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net user 旧用户名 新用户名</span><br></pre></td></tr></table></figure></li>
-<li>此方法只能更改登录的显示用户名，但不会更改 C:&#x2F;Users&#x2F;Username 文件夹的名称。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
         <tag>Windows</tag>
       </tags>
   </entry>
