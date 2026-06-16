@@ -194,6 +194,74 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Pyenv安装</title>
+    <url>//posts/pyenv-installation/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#pyenv%E5%AE%89%E8%A3%85">Pyenv安装</a><ul>
+<li><a href="#windows-%E5%AE%89%E8%A3%85-pyenv">Windows 安装 Pyenv</a></li>
+<li><a href="#linux-%E5%AE%89%E8%A3%85pyenv">Linux 安装Pyenv</a></li>
+</ul>
+</li>
+<li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
+<li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
+<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Pyenv安装"><a href="#Pyenv安装" class="headerlink" title="Pyenv安装"></a>Pyenv安装</h3><h4 id="Windows-安装-Pyenv"><a href="#Windows-安装-Pyenv" class="headerlink" title="Windows 安装 Pyenv"></a>Windows 安装 Pyenv</h4><ol>
+<li><p>打开 <code>Powershell</code>  </p>
+</li>
+<li><p>执行以下命令安装 <code>pyenv-win</code>：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://gitee.com/treespacex/pyenv-win/blob/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上述内容为 <code>pyenv-win</code> 的gitee镜像地址，原始命令如下：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>安装完成后，重启 <code>Powershell</code>  </p>
+</li>
+<li><p>运行以下命令验证安装是否成功：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pyenv <span class="literal">--version</span></span><br></pre></td></tr></table></figure></li>
+<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+</li>
+</ol>
+<h4 id="Linux-安装Pyenv"><a href="#Linux-安装Pyenv" class="headerlink" title="Linux 安装Pyenv"></a>Linux 安装Pyenv</h4><ol>
+<li><p>打开终端</p>
+</li>
+<li><p>执行以下命令安装 <code>pyenv</code>：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://pyenv.run | bash</span><br></pre></td></tr></table></figure></li>
+<li><p>验证安装是否成功：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure></li>
+<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
+</li>
+</ol>
+<h3 id="Pyenv-相关设置"><a href="#Pyenv-相关设置" class="headerlink" title="Pyenv 相关设置"></a>Pyenv 相关设置</h3><h4 id="通过镜像源下载python版本（以3-10-11为例）："><a href="#通过镜像源下载python版本（以3-10-11为例）：" class="headerlink" title="通过镜像源下载python版本（以3.10.11为例）："></a>通过镜像源下载python版本（以3.10.11为例）：</h4><ol>
+<li><p>设置镜像源的临时环境变量  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux</span></span><br><span class="line">PYTHON_BUILD_MIRROR_URL=<span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="variable">$env:PYTHON_BUILD_MIRROR_URL</span> = <span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>安装指定版本的Python：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv install 3.10.11</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
+<li><p>所有操作系统一致：  </p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
+<li><p>全局设置：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>文件夹设置（在当前目录下生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
+<li><p>临时设置（仅在当前shell会话中生效）：  </p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>Pyenv</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于GitHub的博客搭建</title>
     <url>//posts/Blog-building/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
@@ -314,6 +382,40 @@
       </tags>
   </entry>
   <entry>
+    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
+    <url>//posts/command-collection/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
+<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>命令行</tag>
+        <tag>screen</tag>
+        <tag>vim</tag>
+        <tag>压缩解压</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>工具获取</title>
     <url>//posts/tools-acquisition/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h1><blockquote>
@@ -367,108 +469,6 @@
         <tag>原神</tag>
         <tag>崩坏·星穹铁道</tag>
         <tag>私服</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pyenv安装</title>
-    <url>//posts/pyenv-installation/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
-<li><a href="#pyenv%E5%AE%89%E8%A3%85">Pyenv安装</a><ul>
-<li><a href="#windows-%E5%AE%89%E8%A3%85-pyenv">Windows 安装 Pyenv</a></li>
-<li><a href="#linux-%E5%AE%89%E8%A3%85pyenv">Linux 安装Pyenv</a></li>
-</ul>
-</li>
-<li><a href="#pyenv-%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">Pyenv 相关设置</a><ul>
-<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E6%BA%90%E4%B8%8B%E8%BD%BDpython%E7%89%88%E6%9C%AC%E4%BB%A531011%E4%B8%BA%E4%BE%8B">通过镜像源下载python版本（以3.10.11为例）：</a></li>
-<li><a href="#python-pip-%E6%8D%A2%E6%BA%90">Python pip 换源：</a></li>
-<li><a href="#pyenv%E8%AE%BE%E7%BD%AE%E4%BD%BF%E7%94%A8%E7%9A%84python%E7%89%88%E6%9C%AC">Pyenv设置使用的Python版本：</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Pyenv安装"><a href="#Pyenv安装" class="headerlink" title="Pyenv安装"></a>Pyenv安装</h3><h4 id="Windows-安装-Pyenv"><a href="#Windows-安装-Pyenv" class="headerlink" title="Windows 安装 Pyenv"></a>Windows 安装 Pyenv</h4><ol>
-<li><p>打开 <code>Powershell</code>  </p>
-</li>
-<li><p>执行以下命令安装 <code>pyenv-win</code>：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://gitee.com/treespacex/pyenv-win/blob/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上述内容为 <code>pyenv-win</code> 的gitee镜像地址，原始命令如下：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Invoke-WebRequest</span> <span class="literal">-UseBasicParsing</span> <span class="literal">-Uri</span> <span class="string">&quot;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&quot;</span> <span class="literal">-OutFile</span> <span class="string">&quot;./install-pyenv-win.ps1&quot;</span>; &amp;<span class="string">&quot;./install-pyenv-win.ps1&quot;</span></span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>安装完成后，重启 <code>Powershell</code>  </p>
-</li>
-<li><p>运行以下命令验证安装是否成功：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pyenv <span class="literal">--version</span></span><br></pre></td></tr></table></figure></li>
-<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
-</li>
-</ol>
-<h4 id="Linux-安装Pyenv"><a href="#Linux-安装Pyenv" class="headerlink" title="Linux 安装Pyenv"></a>Linux 安装Pyenv</h4><ol>
-<li><p>打开终端</p>
-</li>
-<li><p>执行以下命令安装 <code>pyenv</code>：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://pyenv.run | bash</span><br></pre></td></tr></table></figure></li>
-<li><p>验证安装是否成功：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv --version</span><br></pre></td></tr></table></figure></li>
-<li><p>如果安装成功，你将看到 <code>pyenv</code> 的版本信息。</p>
-</li>
-</ol>
-<h3 id="Pyenv-相关设置"><a href="#Pyenv-相关设置" class="headerlink" title="Pyenv 相关设置"></a>Pyenv 相关设置</h3><h4 id="通过镜像源下载python版本（以3-10-11为例）："><a href="#通过镜像源下载python版本（以3-10-11为例）：" class="headerlink" title="通过镜像源下载python版本（以3.10.11为例）："></a>通过镜像源下载python版本（以3.10.11为例）：</h4><ol>
-<li><p>设置镜像源的临时环境变量  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux</span></span><br><span class="line">PYTHON_BUILD_MIRROR_URL=<span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure>
- <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Windows</span></span><br><span class="line"><span class="variable">$env:PYTHON_BUILD_MIRROR_URL</span> = <span class="string">&quot;https://npm.taobao.org/mirrors/python&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>安装指定版本的Python：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv install 3.10.11</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h4 id="Python-pip-换源："><a href="#Python-pip-换源：" class="headerlink" title="Python pip 换源："></a>Python pip 换源：</h4><ul>
-<li><p>所有操作系统一致：  </p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="Pyenv设置使用的Python版本："><a href="#Pyenv设置使用的Python版本：" class="headerlink" title="Pyenv设置使用的Python版本："></a>Pyenv设置使用的Python版本：</h4><ul>
-<li><p>全局设置：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv global 3.10.11</span><br></pre></td></tr></table></figure></li>
-<li><p>文件夹设置（在当前目录下生效）：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv <span class="built_in">local</span> 3.10.11</span><br></pre></td></tr></table></figure></li>
-<li><p>临时设置（仅在当前shell会话中生效）：  </p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyenv shell 3.10.11</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>Pyenv</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用命令集：screen、vim、系统设置、压缩与解压</title>
-    <url>//posts/command-collection/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Screen相关命令："><a href="#Screen相关命令：" class="headerlink" title="Screen相关命令："></a>Screen相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen -S &lt;名字&gt;        <span class="comment"># 创建一个新的终端会话</span></span><br><span class="line">Ctrl-A-D                <span class="comment"># 退出当前的终端会话，保持后台运行</span></span><br><span class="line">screen -<span class="built_in">ls</span>              <span class="comment"># 查看当前存在的所有终端会话</span></span><br><span class="line">screen -S &lt;名字&gt; -X quit <span class="comment"># 删除某个终端会话</span></span><br><span class="line">screen -r &lt;名字&gt;        <span class="comment"># 切换到某个终端会话</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Vim相关命令："><a href="#Vim相关命令：" class="headerlink" title="Vim相关命令："></a>Vim相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim &lt;文件名&gt;            <span class="comment"># 打开文件</span></span><br><span class="line">i                       <span class="comment"># 进入 insert 编辑模式</span></span><br><span class="line">esc                     <span class="comment"># 退出 insert 编辑模式</span></span><br><span class="line">:w                      <span class="comment"># 保存但不退出</span></span><br><span class="line">:w &lt;新文件名&gt;           <span class="comment"># 将文件另存为新文件</span></span><br><span class="line">:q                      <span class="comment"># 不保存退出</span></span><br><span class="line">:wq                     <span class="comment"># 保存并退出</span></span><br><span class="line">:!                      <span class="comment"># 强制执行命令</span></span><br><span class="line">:q!                     <span class="comment"># 强制不保存退出，用于修改文件之后不保存数据退出</span></span><br><span class="line">:wq!                    <span class="comment"># 强制保存退出，当文件所有者或 root 用户对文件没有写权限时，强制写入数据使用</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="修改系统运行级别，重启后依然显示桌面："><a href="#修改系统运行级别，重启后依然显示桌面：" class="headerlink" title="修改系统运行级别，重启后依然显示桌面："></a>修改系统运行级别，重启后依然显示桌面：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件相关命令："><a href="#文件相关命令：" class="headerlink" title="文件相关命令："></a>文件相关命令：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> &lt;文件名&gt;          <span class="comment"># 新建文件</span></span><br><span class="line"><span class="built_in">mkdir</span> &lt;目录名&gt;          <span class="comment"># 新建文件夹</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常用解压与压缩命令："><a href="#常用解压与压缩命令：" class="headerlink" title="常用解压与压缩命令："></a>常用解压与压缩命令：</h3><h4 id="tar文件"><a href="#tar文件" class="headerlink" title=".tar文件"></a>.tar文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf &lt;文件名&gt;.tar                  <span class="comment"># 解包（仅打包，不压缩）</span></span><br><span class="line">tar -cvf &lt;文件名&gt;.tar DirName          <span class="comment"># 将DirName和其下所有文件（夹）打包</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="gz文件"><a href="#gz文件" class="headerlink" title=".gz文件"></a>.gz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip &lt;文件名&gt;.gz                     <span class="comment"># 解压方式1</span></span><br><span class="line">gzip -d &lt;文件名&gt;.gz                    <span class="comment"># 解压方式2</span></span><br><span class="line">gzip &lt;文件名&gt;                          <span class="comment"># 压缩，只能压缩文件</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="tar-gz-和-tgz文件"><a href="#tar-gz-和-tgz文件" class="headerlink" title=".tar.gz 和 .tgz文件"></a>.tar.gz 和 .tgz文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf &lt;文件名&gt;.tar.gz              <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;文件名&gt;.tar.gz DirName      <span class="comment"># 压缩，将DirName和其下所有文件（夹）压缩</span></span><br><span class="line">tar -C DesDirName -zxvf &lt;文件名&gt;.tar.gz <span class="comment"># 解压到目标路径</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="zip文件"><a href="#zip文件" class="headerlink" title=".zip文件"></a>.zip文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip &lt;文件名&gt;.zip                     <span class="comment"># 解压</span></span><br><span class="line">zip &lt;文件名&gt;.zip DirName               <span class="comment"># 将DirName压缩</span></span><br><span class="line">zip -r &lt;文件名&gt;.zip DirName            <span class="comment"># 压缩，递归处理，将指定目录下的所有文件和子目录一并压缩</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="rar文件"><a href="#rar文件" class="headerlink" title=".rar文件"></a>.rar文件</h4><blockquote>
-<p>注意：macOS和Linux默认没有自带rar工具，需要单独安装。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rar x &lt;文件名&gt;.rar                     <span class="comment"># 解压</span></span><br><span class="line">rar a &lt;文件名&gt;.rar DirName             <span class="comment"># 压缩</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>命令行</tag>
-        <tag>screen</tag>
-        <tag>vim</tag>
-        <tag>压缩解压</tag>
       </tags>
   </entry>
   <entry>
@@ -1027,6 +1027,68 @@
       <tags>
         <tag>GitHub</tag>
         <tag>域名</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Minecraft 机械动力食用指南</title>
+    <url>//posts/mcMechanicalPowerGuide/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul>
+<li><a href="#1-%E6%95%B4%E5%90%88%E5%8C%85%E4%B8%8B%E8%BD%BD">1. 整合包下载</a></li>
+<li><a href="#2-%E5%AF%BC%E5%85%A5%E6%95%B4%E5%90%88%E5%8C%85%E5%88%B0%E5%90%AF%E5%8A%A8%E5%99%A8">2. 导入整合包到启动器</a><ul>
+<li><a href="#21-%E4%BD%BF%E7%94%A8-pcl2%E5%90%AF%E5%8A%A8%E5%99%A8">2.1 使用 PCL2启动器</a></li>
+<li><a href="#22-%E4%BD%BF%E7%94%A8-hmcl%E5%90%AF%E5%8A%A8%E5%99%A8">2.2 使用 HMCL启动器</a></li>
+<li><a href="#23-%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E5%90%AF%E5%8A%A8%E5%99%A8">2.3 使用其他启动器</a></li>
+</ul>
+</li>
+<li><a href="#3-%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F">3. 启动游戏</a></li>
+<li><a href="#4-%E5%A4%9A%E4%BA%BA%E6%B8%B8%E6%88%8F%E6%8C%87%E5%8D%97">4. 多人游戏指南</a></li>
+</ul>
+<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>本文将指导 <font color="#b3dff9">有一定计算机使用能力</font> 的用户进行 <a href="https://www.齿轮盛宴.com/">机械动力6.0 齿轮盛宴</a> 的下载安装</p>
+<h3 id="1-整合包下载"><a href="#1-整合包下载" class="headerlink" title="1. 整合包下载"></a>1. 整合包下载</h3><p>访问 <a href="https://www.齿轮盛宴.com/">机械动力6.0 齿轮盛宴</a> 官方网站，使用提供的下载方式进行整合包 <strong>v0.4.8.10</strong> 的下载。</p>
+<blockquote>
+<p>或直接点击 <a href="https://ghcdn.kk-wuyue.top/https://github.com/Jasons-impart/Create-Delight-Remake/releases/download/v0.4.8.10/Client-Create-Delight-Remake-v0.4.8.10.zip">这里</a> 下载整合包</p>
+</blockquote>
+<p><font color="red">注意：如果您没有独立找到您下载的文件的能力，请在下载时将整合包 <strong>另存为</strong> 到桌面</font></p>
+<h3 id="2-导入整合包到启动器"><a href="#2-导入整合包到启动器" class="headerlink" title="2. 导入整合包到启动器"></a>2. 导入整合包到启动器</h3><h4 id="2-1-使用-PCL2启动器"><a href="#2-1-使用-PCL2启动器" class="headerlink" title="2.1 使用 PCL2启动器"></a>2.1 使用 PCL2启动器</h4><ol>
+<li>打开PCL2启动器，点击上方的 <strong>下载</strong> 标签。</li>
+<li>选中左侧快捷栏中的 <strong>整合包</strong> 。</li>
+<li>点击 <strong>安装现有整合包</strong> 。</li>
+<li>在弹出的文件选择窗口中，选中刚刚下载的zip整合包文件，点击确认。</li>
+<li>下一步，等待整合包安装完成</li>
+</ol>
+<h4 id="2-2-使用-HMCL启动器"><a href="#2-2-使用-HMCL启动器" class="headerlink" title="2.2 使用 HMCL启动器"></a>2.2 使用 HMCL启动器</h4><ol>
+<li>打开HMCL启动器，点击左侧快捷栏中的 <strong>下载</strong> 。</li>
+<li>点击左侧快捷栏中的 <strong>整合包</strong> 。</li>
+<li>点击页面中靠右侧的 <strong>安装整合包</strong></li>
+<li>选择 <strong>导入本地整合包文件</strong></li>
+<li>在弹出的文件选择窗口中，选中刚刚下载的zip整合包文件，点击确认。</li>
+<li>下一步，等待整合包安装完成</li>
+</ol>
+<h4 id="2-3-使用其他启动器"><a href="#2-3-使用其他启动器" class="headerlink" title="2.3 使用其他启动器"></a>2.3 使用其他启动器</h4><p>市面上常用的启动器较多且使用方法大多无较大差异，您可以：</p>
+<ul>
+<li>根据上述两个启动器的指南自行探索安装方式。</li>
+<li>查阅启动器官方文档。</li>
+<li>询问使用相同启动器的其他玩家。</li>
+<li>询问带你入坑的大佬，让他帮你装。</li>
+<li><del>在<abbr title="工作时间：周一至周五 08:00AM~17:00PM UTC+8"><strong>非工作时间</strong></abbr>联系<a href="mailto:wuyue_kiki@163.com">本文作者</a>，支付5元精神损失费，帮助您安装整合包。</del><blockquote>
+<p>特别注意：整合包为免费资源，服务本身无需付费，您支付的是服务产生的精神损失费。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="3-启动游戏"><a href="#3-启动游戏" class="headerlink" title="3. 启动游戏"></a>3. 启动游戏</h3><p>若您的 <a href="#2-%E5%AF%BC%E5%85%A5%E6%95%B4%E5%90%88%E5%8C%85%E5%88%B0%E5%90%AF%E5%8A%A8%E5%99%A8">步骤2</a> 成功完成，您可以回到启动器首页，选择 <strong>机械动力实例</strong> 进行游玩。</p>
+<h3 id="4-多人游戏指南"><a href="#4-多人游戏指南" class="headerlink" title="4. 多人游戏指南"></a>4. 多人游戏指南</h3><p> 您仅需三个步骤即可游玩多人游戏：</p>
+<ol>
+<li>在游戏启动后，点击主页面的 <strong>多人游玩</strong> 或任何文字说明像多人游玩的按钮。</li>
+<li>点击 <strong>添加服务器</strong> ，填入您的服主给您的 <strong>IP地址&#x2F;域名:&lt;端口号&gt;</strong> 。</li>
+<li>进入服务器进行游玩。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>Minecraft</tag>
       </tags>
   </entry>
 </search>
